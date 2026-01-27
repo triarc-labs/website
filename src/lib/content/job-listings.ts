@@ -24,6 +24,7 @@ export const JobPostings: JobPosting[] = [
       'Hochschulabschluss in Informatik (ETH/FH/vergleichbarer Leistungsnachweis)',
       'Hohe Methodenkompetenz und logisches, vernetztes Denken',
       'Freude am aktiven Kundenkontakt und die Fähigkeit, zwischen Kunde und Technologie zu übersetzen',
+      'Erfahrung mit KI (Einsatz während Software Entwicklung), sowie Umsetzung von Software mit KI-Funktionalitäten',
       'Spass an der Arbeit im Team',
       'Lösungsorientiertes Denken und Handeln',
       'Lernfähigkeit und kontinuierliche Weiterentwicklung',
