@@ -5,7 +5,6 @@
   import pascal from '$lib/assets/team/pascal.jpg?w=768&format=webp;png&metadata&enhanced'
   import mlinkLogo from '$lib/assets/img/mlink/tree.svg'
   import m3expressIcon from '$lib/assets/img/lab/m3express-icon.svg'
-  import zimmerpflanzenIcon from '$lib/assets/img/lab/zimmerpflanzen-icon.svg'
   import fairpizzaIcon from '$lib/assets/img/lab/fairpizza-icon-512.png'
   import aiPoc from '$lib/assets/img/thumbnail/ai-poc-poster.png'
   import slothiIcon from '$lib/assets/img/lab/slothi.svg'

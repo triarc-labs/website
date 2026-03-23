@@ -292,7 +292,9 @@
                 </div>
                 <div class="col-span-full">
                   <div class="flex justify-between">
-                    <label for="lohn" class="block text-sm font-medium text-gray-900">Deine Lohnvorstellung im Jahr</label>
+                    <label for="lohn" class="block text-sm font-medium text-gray-900"
+                      >Deine Lohnvorstellung im Jahr</label
+                    >
                     <span id="lohn-required" class="text-sm text-gray-500">Pflichtfeld</span>
                   </div>
                   <div class="mt-1">
