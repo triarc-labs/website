@@ -294,7 +294,7 @@
                 </div>
                 <div class="col-span-full">
                   <div class="flex justify-between">
-                    <label for="lohn" class="block text-sm font-medium text-gray-900">Deine Lohnvorstellung</label>
+                    <label for="lohn" class="block text-sm font-medium text-gray-900">Deine Lohnvorstellung im Jahr</label>
                     <span id="lohn-required" class="text-sm text-gray-500">Pflichtfeld</span>
                   </div>
                   <div class="mt-1">
@@ -303,7 +303,7 @@
                       name="lohn"
                       type="text"
                       required
-                      placeholder="90'000"
+                      placeholder=""
                       bind:value={lohn}
                       class="block w-full rounded-md border-gray-300 py-3 px-4 text-gray-900 shadow-sm focus:border-blue-triarc focus:ring-blue-triarc"
                     />
