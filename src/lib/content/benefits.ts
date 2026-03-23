@@ -30,7 +30,7 @@ export const ourBenefits: BlockContent = {
     {
       title: 'Transparenz für alle',
       content:
-        'Alle Löhne werden offen kommuniziert. Es gibt keine individuellen Löhne. Die Löhne richten sich nach deiner Stufe im Trackeesystem. Für Seniors gibt’s aktuell 104k – 136k CHF.',
+        'Alle Löhne werden offen kommuniziert. Es gibt keine individuellen Löhne. Die Löhne richten sich nach deiner Stufe im Trackeesystem. Für die höchste Stufe gibt’s aktuell 96k zuzgl. Bonus von 8 - 16k CHF.',
     },
     {
       title: 'Office Jungle',

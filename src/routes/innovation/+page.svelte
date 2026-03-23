@@ -53,14 +53,14 @@
       image: { src: mlinkLogo, alt: 'mlink logo' },
       link: { href: '/mlink', text: 'Mehr dazu', target: '_blank' },
     },
-    {
-      title: 'Zimmerpflanzen.de',
-      content:
-        'Ein Online-Shop für Zimmerpflanzen und Zubehör. Durch eine direkte Anbindung an die Schnittstellen der Züchter, ist die Zimmerpflanze in kürzester Zeit beim Kunden.',
-
-      image: { src: zimmerpflanzenIcon, width: 200, alt: 'zimmerpflanzen.de' },
-      link: { href: 'https://zimmerpflanzen.de', text: 'Mehr dazu', target: '_blank' },
-    },
+    // {
+    //   title: 'Zimmerpflanzen.de',
+    //   content:
+    //     'Ein Online-Shop für Zimmerpflanzen und Zubehör. Durch eine direkte Anbindung an die Schnittstellen der Züchter, ist die Zimmerpflanze in kürzester Zeit beim Kunden.',
+    //
+    //   image: { src: zimmerpflanzenIcon, width: 200, alt: 'zimmerpflanzen.de' },
+    //   link: { href: 'https://zimmerpflanzen.de', text: 'Mehr dazu', target: '_blank' },
+    // },
     {
       title: 'M3Express',
       content:
