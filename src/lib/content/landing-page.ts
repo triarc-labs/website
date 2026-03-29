@@ -30,7 +30,7 @@ export const landingPageCards: TriarcLandingPageText = {
     description:
       'Automatisierte Abläufe, intuitive Bedienung und gezielter Wissenstransfer sorgen für reibungslose Zusammenarbeit, hochwertige Daten und eine starke operative Performance.',
     iconSource: gear,
-    sectionLink: 'operations',
+    sectionLink: '/operations',
   },
   future: {
     prefix: 'Wir sichern',
@@ -128,7 +128,7 @@ export const missionPageQuotes: MissionBlock[] = [
         'Unseren Anspruch, revolutionäre Lösungen zu entwickeln, erreichen wir nur mit der Leidenschaft, die uns ausmacht. Da können Schnittstellen, Synapsen und Diskussionen auch mal heisslaufen.',
       color: 'red-green',
       buttonLabel: 'InnovationLab',
-      linksTo: 'innovation',
+      linksTo: '/innovation',
     },
   },
   {

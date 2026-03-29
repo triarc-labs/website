@@ -3,7 +3,6 @@
 
   import { beforeUpdate, onMount } from 'svelte'
   import logo from '../lib/assets/triarc-labs-black.svg'
-  import logoNoText from '../lib/assets/triarc-logo.svg'
   import NavDropDown from '$lib/components/NavDropDown.svelte'
   import NavDropDownItem from '$lib/components/NavDropDownItem.svelte'
   import type { MetaInfo, NavItem } from '$lib/components/TypeDefinitions'
@@ -55,6 +54,24 @@
           title: 'Team',
           path: '/team',
           description: 'Wer wir sind',
+        },
+        {
+          type: 'link',
+          title: 'Strategie',
+          path: '/strategy',
+          description: 'Strategie in die Praxis',
+        },
+        {
+          type: 'link',
+          title: 'Operationen',
+          path: '/operations',
+          description: 'Operativen Reibungsverlust reduzieren',
+        },
+        {
+          type: 'link',
+          title: 'Zukunft',
+          path: '/future',
+          description: 'Wettbewerbsfähigkeit sichern',
         },
       ],
     },
