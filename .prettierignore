@@ -26,4 +26,7 @@ yarn.lock
 # Ignore github yaml workflows
 .github
 
+# Ignore agents file
+AGENTS.md
+
 
