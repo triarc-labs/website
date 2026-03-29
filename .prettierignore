@@ -26,6 +26,9 @@ yarn.lock
 # Ignore github yaml workflows
 .github
 
+# Ignore agents file
+AGENTS.md
+
 
 
 # Local Claude Code session files
