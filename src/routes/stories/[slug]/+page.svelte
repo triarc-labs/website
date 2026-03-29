@@ -6,6 +6,7 @@
   import Container from '$lib/components/Container.svelte'
   import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import { goto, afterNavigate } from '$app/navigation'
+  import { browser } from '$app/environment'
   import { base } from '$app/paths'
   import { page } from '$app/stores'
 
@@ -39,6 +40,9 @@
     mainEntityOfPage: $page.url.href,
   }
 
+  $: schemaJson = JSON.stringify(schema)
+  $: schemaScript = `<script type="application/ld+json">${schemaJson}</scr` + `ipt>`
+
   afterNavigate(({ from }) => {
     previousPage = from?.url.pathname || previousPage
   })
@@ -59,7 +63,10 @@
   <meta property="og:title" content={data.meta_title ?? data.title} />
   <meta name="description" content={data.meta_description ?? data.excerpt ?? ''} />
   <meta property="og:description" content={data.meta_description ?? data.excerpt ?? ''} />
-  {@html `<script type="application/ld+json">${JSON.stringify(schema)}</script>`}
+  {#if !browser}
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -- JSON-LD schema is trusted server-rendered content -->
+    {@html schemaScript}
+  {/if}
 </svelte:head>
 
 <div class="bg-white min-h-screen pt-16 md:pt-24 w-full">

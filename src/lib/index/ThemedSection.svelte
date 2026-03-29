@@ -16,7 +16,7 @@
       title={sectionContent.main.title}
       iconSrc={sectionContent.main.iconSource}
       iconColor={sectionColor}
-    ></ProjectStickyTitle>
+    />
     <div id="projects">
       <div class="text-lg text-white md:ml-[3.75rem] pb-20">
         {sectionContent.main.description}

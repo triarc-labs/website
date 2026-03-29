@@ -95,7 +95,7 @@
             {/if}
           </div>
         </div>
-        <div class="md:hidden h-[220px] w-[165px] shrink-0">
+        <div class="md:hidden h-[260px] w-[195px] shrink-0">
           <div class="relative aspect-[3/4] h-full flex w-auto justify-center items-center">
             <!-- Needed as safeguard if images in use are svgs -->
             {#if typeof quote.image === 'string'}
