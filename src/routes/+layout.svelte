@@ -46,15 +46,21 @@
       items: [
         {
           type: 'link',
-          title: 'Mission',
-          path: '/mission',
-          description: 'Was uns ausmacht',
+          title: 'Strategie in Praxis übersetzen',
+          path: '/strategy',
+          description: '',
         },
         {
           type: 'link',
-          title: 'Team',
-          path: '/team',
-          description: 'Wer wir sind',
+          title: 'Operativen Reibungsverlust Reduzieren',
+          path: '/operations',
+          description: '',
+        },
+        {
+          type: 'link',
+          title: 'Wettbewerbsfähigkeit garantieren',
+          path: '/future',
+          description: '',
         },
       ],
     },
@@ -64,7 +70,13 @@
       items: [
         {
           type: 'link',
-          title: 'μLink',
+          title: 'Stories',
+          description: 'Neustes von uns und unserem Umfeld',
+          path: '/stories',
+        },
+        {
+          type: 'link',
+          title: 'Produkte',
           description: 'Real time data hub',
           path: '/mlink',
         },
@@ -74,17 +86,11 @@
           description: 'Erfahrungen und Referenzen',
           path: '/references',
         },
-        {
-          type: 'link',
-          title: 'Stories',
-          description: 'Neustes von uns und unserem Umfeld',
-          path: '/stories',
-        },
       ],
     },
     {
       type: 'heading',
-      title: 'Dienstleistung',
+      title: 'Dienstleistungen',
       items: [
         {
           type: 'link',
@@ -108,13 +114,19 @@
     },
     {
       type: 'heading',
-      title: 'Kontakt',
+      title: 'Über uns',
       items: [
         {
           type: 'link',
-          title: 'Kontaktinfos',
+          title: 'Kontakt',
           description: 'Sprich mit uns über deine Anliegen',
           path: '/contact',
+        },
+        {
+          type: 'link',
+          title: 'Team',
+          description: 'Wer wir sind',
+          path: '/team',
         },
         {
           type: 'link',
@@ -122,6 +134,13 @@
           description: 'Für Begeisterte und Motivierte',
           path: '/jobs',
         },
+        // ToDo enable when Page exists
+        // {
+        //   type: 'link',
+        //   title: 'Partner',
+        //   description: '',
+        //   path: '/jobs',
+        // },
       ],
     },
   ]

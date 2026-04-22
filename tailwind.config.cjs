@@ -68,6 +68,7 @@ module.exports = {
               paddingLeft: theme('spacing.5'),
               marginTop: theme('spacing.4'),
               marginBottom: theme('spacing.4'),
+              maxWidth: theme('maxWidth.prose'),
               marginLeft: 128,
             },
             ol: {
@@ -75,6 +76,7 @@ module.exports = {
               paddingLeft: theme('spacing.5'),
               marginTop: theme('spacing.4'),
               marginBottom: theme('spacing.4'),
+              maxWidth: theme('maxWidth.prose'),
               marginLeft: 128,
             },
             li: {

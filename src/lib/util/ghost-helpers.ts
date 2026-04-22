@@ -41,6 +41,7 @@ export interface GhostPage {
   url: string
   slug: string
   twitter_image: string | null
+  twitter_title: string | null
   primary_author: {
     name: string
   }
@@ -118,7 +119,7 @@ export function mapPages(pageData: { pages: GhostPage[] }): TriarcProjectContent
     .map((page: GhostPage) => {
       return {
         content: {
-          prefix: 'placeholder',
+          prefix: page.twitter_title ?? '',
           sectionLink: 'projects/' + page.slug,
           title: page.title,
           description: page.excerpt.length === 500 ? page.excerpt + '...' : page.excerpt,
