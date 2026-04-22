@@ -8,7 +8,7 @@ Benötigter Inhalt:
 - Bild Übersichtskarte: "feature image" hinterlegt. Ohne Bild wird die Seite nicht in der Projektübersicht angezeigt.
 - Beschreibung Übersichtskarte/Unterseite: Excerpt-Feld
 - URL: Page-URL-Feld. Unter diesem Link ist die Seite erreichbar via website/projects/url.
-- 
+- Präfix/Titelüberschrift Überschriftskarte: X/Twitter Title wird aus Ghost zweckentfremdet um dieses Feld zu befüllen
 
 ### Seite in Projektübersicht anzeigen
 Damit die Seite angezeigt wird, muss sie den entsprechenden Tag der Übersichtsseite erhalten.
