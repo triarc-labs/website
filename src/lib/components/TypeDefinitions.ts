@@ -210,6 +210,7 @@ export interface TriarcProjectDetailContent {
     iconSource: string
     iconColor: TriarcColor
   }[]
+  gradient?: GradientColor
 }
 
 export interface TriarcPageMetadata {

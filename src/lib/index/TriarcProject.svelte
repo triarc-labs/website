@@ -4,11 +4,11 @@
   import Icon from '$lib/components/Icon.svelte'
   import type { GradientColor, TriarcProjectDetailContent } from '$lib/components/TypeDefinitions'
 
-  export let projectGradientColor: GradientColor = 'red-green'
+  // export let projectGradientColor: GradientColor = 'red-green'
   export let project: TriarcProjectDetailContent
 </script>
 
-<div class="relative h-full {`gradient-${projectGradientColor}`} ">
+<div class="relative h-full {`gradient-${project.gradient}`} ">
   <Container>
     <div class="flex flex-col lg:flex-row gap-y-2 gap-x-4 bg-transparent py-8 mt-12 lg:mt-32 mb-36">
       <div

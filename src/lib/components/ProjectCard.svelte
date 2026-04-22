@@ -43,7 +43,7 @@
     <img
       src={card.image.src}
       srcset={card.image.srcset}
-      sizes="auto"
+      sizes={card.image.sizes}
       loading="lazy"
       alt={card.image.alt}
       class="object-contain"

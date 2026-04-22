@@ -1,5 +1,10 @@
 import { Puzzle, Gear, Rocket } from '$lib/content/icons'
-import type { TriarcColor, TriarcProjectContent, TriarcProjectDetailContent } from '$lib/components/TypeDefinitions'
+import type {
+  GradientColor,
+  TriarcColor,
+  TriarcProjectContent,
+  TriarcProjectDetailContent,
+} from '$lib/components/TypeDefinitions'
 import { error, type LoadEvent } from '@sveltejs/kit'
 
 export interface GhostPost {
@@ -151,6 +156,7 @@ export function mapPage(pageData: { pages: GhostPage[] }): TriarcProjectDetailCo
       : undefined,
     htmlContent: page.html,
     icons: getIconsFromTags(page.tags),
+    gradient: getGradientFromTags(page.tags),
   }
 }
 
@@ -160,8 +166,22 @@ const tagToIconMap: Record<string, { iconSource: string; iconColor: TriarcColor 
   'hash-innovation': { iconSource: Rocket, iconColor: 'blue' },
 }
 
+const tagToGradientMap: Record<string, GradientColor> = {
+  'hash-strategy': 'red-green',
+  'hash-operations': 'green-blue',
+  'hash-innovation': 'red-blue',
+}
+
 export function getIconsFromTags(tags: { slug: string }[] = []) {
   return tags.map((tag) => tagToIconMap[tag.slug]).filter(Boolean) // Remove tags that don't have a mapped icon
+}
+
+export function getGradientFromTags(tags: { slug: string }[] = []): GradientColor {
+  const firstSlug = tags[0]?.slug
+  if (!firstSlug) {
+    return 'red-green'
+  }
+  return tagToGradientMap[firstSlug] ?? 'red-green'
 }
 
 export async function fetchGhostPages(fetch: LoadEvent['fetch'], tag: string) {
