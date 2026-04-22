@@ -31,7 +31,7 @@
   >
 </div>
 
-<style>
+<style lang="postcss">
   .scrolled .project-title {
     @apply md:scale-75;
   }

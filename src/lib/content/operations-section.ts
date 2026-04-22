@@ -1,5 +1,4 @@
 import type { TriarcSubsectionDefinition } from '$lib/components/TypeDefinitions'
-import teamwerk from '$lib/assets/img/strategy/TeamWerkExample.png?w=768&format=webp;png&metadata&enhanced'
 import gear from '$lib/assets/icons/gear-light-full.svg'
 
 export const operationSectionContent: TriarcSubsectionDefinition = {

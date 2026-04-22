@@ -3,7 +3,6 @@
 
   import { beforeUpdate, onMount } from 'svelte'
   import logo from '../lib/assets/triarc-labs-black.svg'
-  import logoNoText from '../lib/assets/triarc-logo.svg'
   import NavDropDown from '$lib/components/NavDropDown.svelte'
   import NavDropDownItem from '$lib/components/NavDropDownItem.svelte'
   import type { MetaInfo, NavItem } from '$lib/components/TypeDefinitions'

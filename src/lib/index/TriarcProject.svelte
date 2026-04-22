@@ -35,6 +35,7 @@
   <Container>
     <!-- Fallback if no secondary image is defined -->
     <div class="prose-custom max-w-none lg:pt-12 pb-20">
+      <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->
       {@html project.htmlContent}
     </div>
   </Container>

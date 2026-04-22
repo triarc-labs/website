@@ -1,5 +1,4 @@
 <script lang="ts">
-  import EnhancedImage from '$lib/index/EnhancedImage.svelte'
   import Button from '$lib/components/Button.svelte'
   import type { TriarcColor, TriarcProjectContent } from '$lib/components/TypeDefinitions'
 

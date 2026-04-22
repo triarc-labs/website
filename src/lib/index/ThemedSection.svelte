@@ -12,7 +12,7 @@
 
   let scrollY = 0
   let elementScrolled = false
-  let navbarHeight = 64
+  // let navbarHeight = 64
 
   function handleScroll() {
     scrollY = Math.max(0, window.scrollY)
@@ -23,7 +23,7 @@
     await tick()
     const container = document.querySelector('.navbar') as HTMLElement
     if (container) {
-      navbarHeight = container.offsetHeight
+      // navbarHeight = container.offsetHeight
     }
     handleScroll()
   })

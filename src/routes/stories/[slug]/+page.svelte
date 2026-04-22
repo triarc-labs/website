@@ -39,6 +39,13 @@
     mainEntityOfPage: $page.url.href,
   }
 
+  $: schemaTag =
+    '<script type="application/ld+json">' +
+    JSON.stringify(schema, null, 2) +
+    // prettier-ignore
+    // eslint-disable-next-line
+    '<\/script>'
+
   afterNavigate(({ from }) => {
     previousPage = from?.url.pathname || previousPage
   })
@@ -59,7 +66,8 @@
   <meta property="og:title" content={data.meta_title ?? data.title} />
   <meta name="description" content={data.meta_description ?? data.excerpt ?? ''} />
   <meta property="og:description" content={data.meta_description ?? data.excerpt ?? ''} />
-  {@html `<script type="application/ld+json">${JSON.stringify(schema)}</script>`}
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is from trusted source -->
+  {@html schemaTag}
 </svelte:head>
 
 <div class="bg-white min-h-screen pt-16 md:pt-24 w-full">

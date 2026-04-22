@@ -51,7 +51,6 @@
           : 'text-gray-600'} sm:text-2xl sm:leading-9"
       >
         <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->
-        <!-- ToDo Ask about quote size -->
         <p><span class="">&laquo;</span> {@html quote.content} <span class="">&raquo;</span></p>
       </blockquote>
       <div class="flex mt-8 justify-between group-odd:flex-row-reverse group-even:flex-row">
@@ -114,7 +113,6 @@
           : 'text-gray-600'} sm:text-2xl sm:leading-9"
       >
         <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->
-        <!-- ToDo Ask about quote size -->
         <p><span class="">&laquo;</span> {@html quote.content} <span class="">&raquo;</span></p>
       </blockquote>
       <!--      </figure>-->
