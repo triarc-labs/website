@@ -39,7 +39,7 @@
       scrolled={elementScrolled}
     ></ProjectStickyTitle>
     <div id="projects" class="md:[clip-path:inset(var(--scroll-y)_0_0_0)]" style="--scroll-y: {scrollY}px;">
-      <div class="text-lg text-white md:ml-[3.75rem] pb-20">
+      <div class="text-lg text-white md:ml-[84px] pb-20">
         {sectionContent.main.description}
       </div>
       {#each sectionContent.projects as project}
