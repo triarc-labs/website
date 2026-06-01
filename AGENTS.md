@@ -6,10 +6,10 @@ Guidance for humans and coding agents working in this repository.
 
 Marketing site for **Triarc Laboratories** ([triarc-labs.com](https://triarc-labs.com), dev: [dev.triarc-labs.com](https://dev.triarc-labs.com/)).
 
-| Part | Role |
-|------|------|
-| **Root (`/`)** | SvelteKit 2 + Svelte 4 frontend, deployed with `@sveltejs/adapter-vercel` |
-| **`api/`** | Separate NestJS service (chat, email, file storage) — not started by `npm run dev` in the root |
+| Part           | Role                                                                                           |
+| -------------- | ---------------------------------------------------------------------------------------------- |
+| **Root (`/`)** | SvelteKit 2 + Svelte 4 frontend, deployed with `@sveltejs/adapter-vercel`                      |
+| **`api/`**     | Separate NestJS service (chat, email, file storage) — not started by `npm run dev` in the root |
 
 Most pages are **static TypeScript content** composed with shared UI. **Projects**, **stories**, and some listing pages load data from **Ghost** (`blog.triarc-labs.com`). Forms and live chat call **`chatbot.triarc-labs.com`**.
 
@@ -35,15 +35,15 @@ Path alias: **`$lib`** → `src/lib` (see `svelte.config.js` / Kit defaults).
 
 From repository root:
 
-| Command | Purpose |
-|---------|---------|
-| `npm install` | Install frontend dependencies |
-| `npm run dev` | Vite dev server (SvelteKit) |
-| `npm run build` | Production build |
+| Command           | Purpose                          |
+| ----------------- | -------------------------------- |
+| `npm install`     | Install frontend dependencies    |
+| `npm run dev`     | Vite dev server (SvelteKit)      |
+| `npm run build`   | Production build                 |
 | `npm run preview` | Preview production build locally |
-| `npm run check` | `svelte-check` + sync (types) |
-| `npm run lint` | Prettier check + ESLint |
-| `npm run format` | Prettier write |
+| `npm run check`   | `svelte-check` + sync (types)    |
+| `npm run lint`    | Prettier check + ESLint          |
+| `npm run format`  | Prettier write                   |
 
 For **`api/`**: `npm install` and `npm run start` (Nest watch) inside `api/` when changing backend behavior.
 
@@ -126,14 +126,14 @@ Remote is **GitHub** (`triarc/website`); team may track work in GitLab issues �
 
 ## Common tasks (quick reference)
 
-| Task | Where to look |
-|------|----------------|
-| New static service page | `custom-software/+page.svelte`, `$lib/content/*-section.ts` |
-| Ghost project detail | `projects/[slug]/+page.ts`, `ghost-helpers.ts` |
-| Stories / blog listing | `stories/+page.ts`, `stories/[slug]/+page.ts` |
-| Jobs | `jobs/[slug]/`, `ApplicationForm.svelte`, `$lib/content/application-process.ts` |
-| Sitemap | `routes/sitemap.xml/+server.ts` |
-| Chat / contact submit | `api/src/chat.*`, frontend `*Form.svelte` / `LiveChat.svelte` |
+| Task                    | Where to look                                                                   |
+| ----------------------- | ------------------------------------------------------------------------------- |
+| New static service page | `custom-software/+page.svelte`, `$lib/content/*-section.ts`                     |
+| Ghost project detail    | `projects/[slug]/+page.ts`, `ghost-helpers.ts`                                  |
+| Stories / blog listing  | `stories/+page.ts`, `stories/[slug]/+page.ts`                                   |
+| Jobs                    | `jobs/[slug]/`, `ApplicationForm.svelte`, `$lib/content/application-process.ts` |
+| Sitemap                 | `routes/sitemap.xml/+server.ts`                                                 |
+| Chat / contact submit   | `api/src/chat.*`, frontend `*Form.svelte` / `LiveChat.svelte`                   |
 
 ## Optional: Cursor rules
 
