@@ -8,6 +8,8 @@
   import { goto, afterNavigate } from '$app/navigation'
   import { base } from '$app/paths'
   import { page } from '$app/stores'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { storiesMetadata } from '$lib/content/triarc-page-metadata'
 
   let previousPage: string = base
 
@@ -59,6 +61,8 @@
     goto(previousPage)
   }
 </script>
+
+<MetaHead pageMetadata={storiesMetadata}></MetaHead>
 
 <svelte:head>
   <title>{data.title} - triarc-labs</title>

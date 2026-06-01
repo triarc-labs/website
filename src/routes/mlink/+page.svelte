@@ -14,6 +14,8 @@
   import orthoTeamLogo from '$lib/assets/img/customer/ortho-team-logo.svg'
   import kibagLogo from '$lib/assets/img/customer/kibag-logo.svg'
   import waloLogo from '$lib/assets/img/customer/walo-logo.svg'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { mlinkMetadata } from '$lib/content/triarc-page-metadata'
 
   let contents: BlockContent[] = [
     {
@@ -167,6 +169,8 @@
     },
   ]
 </script>
+
+<MetaHead pageMetadata={mlinkMetadata}></MetaHead>
 
 <svelte:head>
   <title>mLink Data Broker - triarc-labs</title>

@@ -13,6 +13,8 @@
   import teardown from '$lib/assets/img/custom-software/product_teardown.svg'
   import goals from '$lib/assets/img/intro/shared_goals.svg'
   import baustelle from '$lib/assets/img/thumbnail/baustelle-poster.png'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { missionMetadata } from '$lib/content/triarc-page-metadata'
 
   let contents: BlockContent[] = [
     {
@@ -179,6 +181,8 @@
     // },
   ]
 </script>
+
+<MetaHead pageMetadata={missionMetadata}></MetaHead>
 
 <svelte:head>
   <title>together you succeed - triarc-labs</title>

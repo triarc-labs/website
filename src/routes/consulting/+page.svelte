@@ -10,6 +10,8 @@
   import type { MappedPost } from './+page'
   import ContactForm from '$lib/components/ContactForm.svelte'
   import type { FeaturedContent } from '$lib/components/FeaturedContent'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { consultingMetadata } from '$lib/content/triarc-page-metadata'
 
   export let data
   export let contactString = 'Iris direkt kontaktieren'
@@ -94,6 +96,8 @@
     ],
   }
 </script>
+
+<MetaHead pageMetadata={consultingMetadata}></MetaHead>
 
 <svelte:head>
   <title>Beratung - triarc-labs</title>

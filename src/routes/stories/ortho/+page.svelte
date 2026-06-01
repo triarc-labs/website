@@ -5,6 +5,8 @@
   import applicationIPadViewImage from '$lib/assets/img/stories/ortho/application-iPad-view-1080.webp'
   import orthoLogo from '$lib/assets/img/stories/ortho/ortho-logo.png'
   import orthoTeamImage from '$lib/assets/img/stories/ortho/ortho-team.jpg'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { storiesMetadata } from '$lib/content/triarc-page-metadata'
   let scanBoxes = {
     image: scanBoxesImage,
     imageAlt: 'scan boxes',
@@ -22,6 +24,8 @@
     imageAlt: 'application close up view',
   }
 </script>
+
+<MetaHead pageMetadata={storiesMetadata}></MetaHead>
 
 <svelte:head>
   <title>Success stories - triarc-labs</title>

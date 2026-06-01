@@ -3,6 +3,8 @@
   import FairPizza from '$lib/assets/img/lab/fairpizza-dashboard.png?format=webp;png&w=500&enhanced'
   import Slothi from '$lib/assets/img/lab/slothi.png?format=webp;png&w=500&enhanced'
   import labImage from '$lib/assets/img/lab/lab.svg'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { labMetadata } from '$lib/content/triarc-page-metadata'
   let email = ''
   let submitted = false
 
@@ -20,6 +22,8 @@
     submitted = true
   }
 </script>
+
+<MetaHead pageMetadata={labMetadata}></MetaHead>
 
 <svelte:head>
   <title>Innovation Lab - triarc-labs</title>

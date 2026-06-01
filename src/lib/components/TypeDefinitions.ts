@@ -217,4 +217,7 @@ export interface TriarcPageMetadata {
   title: string
   metaTitle?: string
   description: string
+  ogImage?: string
+  /** Canonical URL – falls abweichend von der aktuellen Seiten-URL */
+  canonicalUrl?: string
 }

@@ -4,7 +4,7 @@ import type { RequestHandler } from '@sveltejs/kit'
 declare const __BUILD_TIME__: string
 const LAST_MODIFIED = typeof __BUILD_TIME__ !== 'undefined' ? __BUILD_TIME__ : new Date().toISOString()
 
-const SITE_URL = 'https://www.triarc-labs.com'
+const SITE_URL = 'https://triarc-labs.com'
 const GHOST_SITEMAP = 'https://blog.triarc-labs.com/sitemap-posts.xml'
 const BASE_DIR = '/src/routes'
 const STORIES_DIR = 'stories'
@@ -76,9 +76,9 @@ const sitemap = (pages: string[], stories: ParsedUrl[]) => `<?xml version="1.0" 
       (page) => `
   <url>
     <loc>${SITE_URL}${page}</loc>
-    <changefreq>weekly</changefreq>
+    <changefreq>${page === '/' ? 'daily' : 'weekly'}</changefreq>
     <lastmod>${LAST_MODIFIED}</lastmod>
-    <priority>1</priority>
+    <priority>${page === '/' ? '1.0' : page === '/contact' || page === '/lab' ? '0.5' : '0.8'}</priority>
   </url>
   `
     )

@@ -10,6 +10,8 @@
   import Partners from '$lib/index/Partners.svelte'
   import NavJump from '$lib/components/NavJump.svelte'
   import type { BlockContent } from '$lib/components/TypeDefinitions'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { landingMetadata } from '$lib/content/triarc-page-metadata'
 
   let content: BlockContent = {
     quote: {
@@ -23,6 +25,8 @@
     },
   }
 </script>
+
+<MetaHead pageMetadata={landingMetadata}></MetaHead>
 
 <svelte:head>
   <title>Lösungen - triarc-labs</title>

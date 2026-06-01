@@ -4,6 +4,8 @@
   import heroImage from '$lib/assets/hero/Contact.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import iris from '$lib/assets/team/iris.jpg?format=webp;png&w=500&enhanced'
   import serge from '$lib/assets/team/serge.jpg?format=webp;png&w=1024&enhanced'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { contactMetadata } from '$lib/content/triarc-page-metadata'
 
   let firstName = '',
     lastName = '',
@@ -32,6 +34,8 @@
     })
   }
 </script>
+
+<MetaHead pageMetadata={contactMetadata}></MetaHead>
 
 <svelte:head>
   <title>Kontakt - triarc-labs</title>

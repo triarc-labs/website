@@ -10,6 +10,8 @@
   import heroImage from '$lib/assets/hero/Stories.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { MappedPost } from '../consulting/+page'
   import { MasonryInfiniteGrid } from '@egjs/svelte-infinitegrid'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { storiesMetadata } from '$lib/content/triarc-page-metadata'
 
   export let data: PageData
   let pageNumber = 2 //
@@ -59,6 +61,8 @@
     return [...items, ...newPosts]
   }
 </script>
+
+<MetaHead pageMetadata={storiesMetadata}></MetaHead>
 
 <svelte:head>
   <title>Stories - triarc-labs</title>

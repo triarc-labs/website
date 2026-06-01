@@ -6,6 +6,8 @@
   import Footer from '$lib/components/Footer.svelte'
   import heroImage from '$lib/assets/hero/CustomSoftware.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { BlockContent } from '$lib/components/TypeDefinitions'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { customSoftwareMetadata } from '$lib/content/triarc-page-metadata'
 
   let contents: BlockContent[] = [
     {
@@ -109,6 +111,8 @@
     },
   ]
 </script>
+
+<MetaHead pageMetadata={customSoftwareMetadata}></MetaHead>
 
 <svelte:head>
   <title>Custom Software - triarc-labs</title>

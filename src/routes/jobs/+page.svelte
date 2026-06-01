@@ -10,6 +10,8 @@
   import CompanyAbout from '$lib/components/CompanyAbout.svelte'
   import { Initiativbewerbung, JobPostings } from '$lib/content/job-listings'
   import { DetailedJobListings } from '$lib/content/job-listings.js'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { jobsMetadata } from '$lib/content/triarc-page-metadata'
   const listedJob = 'Initiativbewerbung'
 
   function serializeSchema(jobPosting: JobPosting) {
@@ -86,6 +88,8 @@
   let initiativbewerbung = Initiativbewerbung
   let listings: DetailedJobListing[] = DetailedJobListings
 </script>
+
+<MetaHead pageMetadata={jobsMetadata}></MetaHead>
 
 <svelte:head>
   <title>Jobs - triarc-labs</title>

@@ -210,7 +210,55 @@
       video.play()
     }
   })
+
+  // BreadcrumbList JSON-LD – erzeugt Breadcrumbs aus dem aktuellen Pfad
+  $: breadcrumbSegments = getBreadcrumbSegments(data.pathname)
+
+  function getBreadcrumbSegments(pathname: string) {
+    if (pathname === '/') return []
+    const segments = pathname.split('/').filter(Boolean)
+    const items: { name: string; url: string }[] = []
+    let cumulativePath = ''
+    for (const segment of segments) {
+      cumulativePath += '/' + segment
+      const linkInfo = linkMetaInfo[cumulativePath]
+      items.push({
+        name: linkInfo?.title ?? segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
+        url: `https://triarc-labs.com${cumulativePath}`,
+      })
+    }
+    return items
+  }
+
+  $: breadcrumbJsonLd =
+    breadcrumbSegments.length > 0
+      ? JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: 'https://triarc-labs.com',
+            },
+            ...breadcrumbSegments.map((seg, i) => ({
+              '@type': 'ListItem',
+              position: i + 2,
+              name: seg.name,
+              item: seg.url,
+            })),
+          ],
+        })
+      : ''
 </script>
+
+<svelte:head>
+  {#if breadcrumbJsonLd}
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -- Static JSON-LD -->
+    {@html `<script type="application/ld+json">${breadcrumbJsonLd}</script` + '>'}
+  {/if}
+</svelte:head>
 
 <ContactButton></ContactButton>
 <div id="page" class="content {menuOpen ? 'open' : 'closed'}">

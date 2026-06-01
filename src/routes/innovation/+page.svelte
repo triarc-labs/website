@@ -11,6 +11,8 @@
   import slothiIcon from '$lib/assets/img/lab/slothi.svg'
   import heroImage from '$lib/assets/hero/InnovationLab.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { BlockContent } from '$lib/components/TypeDefinitions'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { innovationMetadata } from '$lib/content/triarc-page-metadata'
 
   let contents: BlockContent[] = [
     {
@@ -93,6 +95,8 @@
     },
   ]
 </script>
+
+<MetaHead pageMetadata={innovationMetadata}></MetaHead>
 
 <svelte:head>
   <title>Innovation Lab - triarc-labs</title>
