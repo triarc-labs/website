@@ -39,7 +39,7 @@
             },
           },
           jobBenefits:
-            'Junges dynamisches Team. Modernste Technologien. Spannende Abwechslungsreiche Projekte. Soziokratie. Erfolgsbeteiligung. Grünes Open-Space Office mit Bar und Gym zentral in Zürich. Flexible Arbeitszeiten, Homeoffice und Remote. Innovation Lab, Agile Entwicklung',
+            'Junges dynamisches Team. Modernste Technologien. Spannende, abwechslungsreiche Projekte. Soziokratie. Erfolgsbeteiligung. Grünes Open-Space Office mit Bar und Gym zentral in Zürich. Flexible Arbeitszeiten, Homeoffice und Remote. Innovation Lab, Agile Entwicklung',
           datePosted: '2022-05-13',
           description: `Beschreibung: Triarc Labs sucht ${jobPosting.claim} 60 - 100%`,
           educationRequirements:
@@ -111,7 +111,7 @@
         <span class="block">Unsere Stellen</span>
       </h2>
       <p class="mt-4 text-lg leading-6">
-        Wir bieten unterschiedliche Stufen, in welcher du deine Karriere bei uns starten kannst.
+        Wir bieten unterschiedliche Stufen, auf denen du deine Karriere bei uns starten kannst.
       </p>
     </div>
   </div>

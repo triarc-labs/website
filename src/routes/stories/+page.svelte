@@ -66,7 +66,7 @@
 
 <Hero
   title="Stories"
-  content="Erfahre mehr über uns, lese was uns beschäftigt und wir gerade tun!"
+  content="Erfahre mehr über uns, lies, was uns beschäftigt und was wir gerade tun!"
   image={heroImage}
   imageAlt="Triarc Stories Header"
 />

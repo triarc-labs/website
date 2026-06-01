@@ -23,7 +23,7 @@
     {
       title: 'Lösungen entwickeln',
       content:
-        'Dank unserer jahrelangen Erfahrung und Knowhow sind wir in der Lage, einzigartige Lösungen zu entwickeln, die den Kunden helfen, ihre Ziele effizient und kosteneffektiv zu erreichen. Wir verstehen, dass jedes Unternehmen einzigartig ist und dass es keine "One-Size-Fits-All"-Lösungen gibt.<br/><br/>' +
+        'Dank unserer jahrelangen Erfahrung und unserem Know-how sind wir in der Lage, einzigartige Lösungen zu entwickeln, die den Kunden helfen, ihre Ziele effizient und kosteneffektiv zu erreichen. Wir verstehen, dass jedes Unternehmen einzigartig ist und dass es keine "One-Size-Fits-All"-Lösungen gibt.<br/><br/>' +
         'Unser Ziel ist es, unseren Kunden die besten und innovativsten Lösungen zu bieten, die ihnen dabei helfen, ihr Geschäft zu verbessern und ihre Wettbewerbsfähigkeit zu erhöhen.',
     },
     {
@@ -34,12 +34,12 @@
         {
           title: 'Concept',
           content:
-            'Zusammen erarbeiten wir Ziele sowie Anforderungen, welche erfüllt werden sollen. Gemeinsam erarbeitet durch Management, Mitarbeitern sowie unserer Projektleitung.',
+            'Zusammen erarbeiten wir Ziele sowie Anforderungen, welche erfüllt werden sollen. Gemeinsam erarbeitet durch das Management, die Mitarbeitenden sowie unsere Projektleitung.',
         },
         {
           title: 'Planning',
           content:
-            'Nach einer Aufarbeitung der Anforderungen und Einschätzung des Aufwands, werden Anforderungen zusammen mit dem Aufwand priorisiert, verschoben oder angepasst. Das Resultat ist ein Sprint mit Anforderungen von 100-180 Stunden Entwicklungsaufwand.',
+            'Nach einer Aufarbeitung der Anforderungen und Einschätzung des Aufwands werden Anforderungen zusammen mit dem Aufwand priorisiert, verschoben oder angepasst. Das Resultat ist ein Sprint mit Anforderungen von 100-180 Stunden Entwicklungsaufwand.',
         },
         {
           title: 'Entwicklung',
@@ -48,7 +48,7 @@
         {
           title: 'Review',
           content:
-            'Die Entwicklung ist abgeschlossen und das Resultat kann vom Kunden getestet werden. Sobald abgenommen, gehts direkt in den produktiven Betrieb und die Anwender dürfen sich über die neusten Änderungen freuen.',
+            'Die Entwicklung ist abgeschlossen und das Resultat kann vom Kunden getestet werden. Sobald abgenommen, geht es direkt in den produktiven Betrieb und die Anwender dürfen sich über die neuesten Änderungen freuen.',
         },
       ],
     },
@@ -84,7 +84,7 @@
         {
           title: 'Effizienzsteigerung',
           content:
-            'Durch die schrittweise Entwicklung und kontinuierlichem Testen werden Fehler und Fehlentwicklungen früh entdeckt und können sofort eliminiert werden.',
+            'Durch die schrittweise Entwicklung und kontinuierliches Testen werden Fehler und Fehlentwicklungen früh entdeckt und können sofort eliminiert werden.',
         },
         {
           title: 'Geringeres Risiko',
@@ -104,7 +104,7 @@
       content:
         'Der Betrieb sowie die Wartung unserer Software ist uns ein wichtiges Anliegen. Wir betreiben unsere Software flexibel in unserem Cloud Angebot oder auf deinen vorhandenen Servern.' +
         '<br/><br/>' +
-        'Regelmässige Wartung der Software sowie das Einspielen von sicherheitsrelevanten Patches ist für uns ein Routine-Job und läst uns Nachts besser schlafen.',
+        'Regelmässige Wartung der Software sowie das Einspielen von sicherheitsrelevanten Patches ist für uns ein Routine-Job und lässt uns nachts besser schlafen.',
       image: { src: maintenance, alt: 'Wartung' },
     },
   ]

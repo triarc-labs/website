@@ -72,7 +72,7 @@
     {
       title: 'Fair Pizza',
       content:
-        'Fair Pizza bietet Restaurants eine einfache und günstige Alternative Angebot selbständig Online zu\n' +
+        'Fair Pizza bietet Restaurants eine einfache und günstige Alternative, ihr Angebot selbstständig online zu\n' +
         '              verkaufen. Die Whitelabel Lösung bietet eine Vielzahl von Konfigurationsmöglichkeiten inklusive einem\n' +
         '              Pizzabuilder. Mit Stripe lassen sich die Zahlungen bequem online abwickeln.',
 
@@ -83,8 +83,8 @@
       title: 'Slothi',
       content:
         'Slothi soll deine Terminprobleme lösen. Eine smarte Lösung, welche dir den passenden Termin für alle\n' +
-        '              Teilnehmer findet. \n\nDamit du möglichst einfach einen Termin planen kannst, wählst du den Zeitraum in welchem der Termin\n' +
-        '              stattfinden soll. Die erforderliche Zeitdauer und die Teilnehmer welche daran teilnehmen sollen. Ab da\n' +
+        '              Teilnehmer findet. \n\nDamit du möglichst einfach einen Termin planen kannst, wählst du den Zeitraum in dem der Termin\n' +
+        '              stattfinden soll. Die erforderliche Zeitdauer sowie die Teilnehmer, die daran teilnehmen sollen. Ab da\n' +
         '              übernimmt Slothi für dich und prüft die Verfügbarkeiten aller Teilnehmer. Du erhältst eine Auswahl an\n' +
         '              möglichen Terminvorschlägen und kannst einen fixen Termin einplanen.',
 

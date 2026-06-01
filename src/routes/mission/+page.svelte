@@ -30,7 +30,7 @@
     {
       title: 'Erfolgreich digitalisieren',
       content:
-        'Wir sind Ihr Partner für erfolgreiche Digitalisierungsprojekte. Software nach Mass, inklusive Strategieberatung und Change Management Begleitung; alles aus einem Haus.',
+        'Wir sind Ihr Partner für erfolgreiche Digitalisierungsprojekte. Software nach Mass, inklusive Strategieberatung und Change-Management-Begleitung – alles aus einem Haus.',
       video: {
         videoTitle: 'Triarc auf der Baustelle',
         videoId: 'baustelle',
@@ -71,7 +71,7 @@
     {
       title: 'Digitale Transformation ist menschlich ',
       content:
-        'Technologie ist nur ein Teil der digitalen Transformation. Wir betrachten den Prozess ganzheitlich und verbinden die Technologie mit den Menschen, der Unternehmenskultur, den Prozessen und Strategie Ihrer Organisation.',
+        'Technologie ist nur ein Teil der digitalen Transformation. Wir betrachten den Prozess ganzheitlich und verbinden die Technologie mit den Menschen, der Unternehmenskultur, den Prozessen und der Strategie Ihrer Organisation.',
       image: { src: goals, height: 271, alt: 'Gemeinsame Ziele' },
       link: { href: '/consulting', text: 'Beratung' },
     },
@@ -103,7 +103,7 @@
         highlight: 'blue',
         linkedin: 'https://www.linkedin.com/in/elke-engel-6761998/',
         content:
-          'Unsere Form der co-kreativen, agilen und ja, manchmal auch intensiven, direkten Zusammenarbeit ist ein grundlegender Erfolgsfaktor für digitale Resultate, die Sie weiterbringen. ',
+          'Unsere Form der co-kreativen, agilen und ja, manchmal auch intensiven und direkten Zusammenarbeit ist ein grundlegender Erfolgsfaktor für digitale Resultate, die Sie weiterbringen. ',
       },
     },
     {
@@ -122,7 +122,7 @@
         highlight: 'red',
         linkedin: 'https://www.linkedin.com/company/triarc-laboratories-ltd/',
         content:
-          'Denn wir lieben was wir tun, und dass wir das gemeinsam tun. So kommen Spass und Freude in der Zusammenarbeit mit triarc-labs garantiert nicht zu kurz.',
+          'Denn wir lieben, was wir tun, und dass wir das gemeinsam tun. So kommen Spass und Freude in der Zusammenarbeit mit triarc-labs garantiert nicht zu kurz.',
       },
     },
 

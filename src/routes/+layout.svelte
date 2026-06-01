@@ -183,7 +183,7 @@
       en: "%c We're hiring! Checkout https://triarc-labs.com/jobs",
       de: '%c Wir suchen dich! https://triarc-labs.com/jobs',
       'de-DE': '%c Wir suchen dich! https://triarc-labs.com/jobs',
-      'de-CH': '%c Mir suched dich! https://triarc-labs.com/job s',
+      'de-CH': '%c Mir suched dich! https://triarc-labs.com/jobs',
     }
     const message = messages[navigator.language] || messages['en']
     console.log(

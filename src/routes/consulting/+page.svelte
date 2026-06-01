@@ -19,7 +19,7 @@
         'Der Mensch digitalisiert für die Menschen - wir stellen den User in den Mittelpunkt damit der Wandel von allen getragen und gelebt wird. Nur dann ist die Digitalisierung nachhaltig. ',
       person: 'Iris Zenegaglia',
       image: iris,
-      personTitle: 'Digitalisierungs/Organisationsberaterin <br> ' + 'Coach (bso i.A) <br> Partnerin',
+      personTitle: 'Digitalisierungs/Organisationsberaterin <br> ' + 'Coach (bso i. A.) <br> Partnerin',
       linkedin: 'https://www.linkedin.com/in/iriszenegagliagloor/',
       email: 'iris@triarc-labs.com',
       highlight: 'green',
@@ -34,12 +34,12 @@
         posts: data.posts.consulting as MappedPost[],
       },
       {
-        title: 'Analysieren sie ihr Digitalisierungspotential',
+        title: 'Analysieren Sie Ihr Digitalisierungspotenzial',
         content: '',
         posts: data.posts.potential as MappedPost[],
       },
       {
-        title: 'Visions-und Strategieentwicklung',
+        title: 'Visions- und Strategieentwicklung',
         content:
           'Für eine Transformation braucht es ein konkretes Zielbild. Wir entwickeln zusammen mit unseren Kunden eine Vision und Strategie ihrer Digitalisierung. Daraus entstehen Massnahmen für die konkrete Umsetzung und schlussendlich Erreichung des Zielbildes. So wird die massgeschneiderte Software für das ganze Unternehmen zum vollen Erfolg! ',
         posts: data.posts.vision as MappedPost[],
@@ -47,7 +47,7 @@
       {
         title: 'Change Management. Der Mensch steht im Mittelpunkt.',
         content:
-          'Eine Veränderung ist erst dann erfolgreich, wenn sie sich nachhaltig im Unternehmen verankert. Dabei spielen die Mitarbeiter eine zentrale Rolle. Nur mit einer gemeinsamen Vision und der Erkennung der Notwendigkeit blicken die Mitarbeiter der Veränderung motiviert entgegen. <br/><br/>Wir begleiten die Mitarbeiter durch die Transformation, nehmen ihr Ängste und Befürchtungen ernst, binden sie im Entwicklungsprozess mit ein und unterstützen sie bei der Einführung der neuen Technologie.',
+          'Eine Veränderung ist erst dann erfolgreich, wenn sie sich nachhaltig im Unternehmen verankert. Dabei spielen die Mitarbeiter eine zentrale Rolle. Nur mit einer gemeinsamen Vision und der Erkennung der Notwendigkeit blicken die Mitarbeiter der Veränderung motiviert entgegen. <br/><br/>Wir begleiten die Mitarbeiter durch die Transformation, nehmen ihre Ängste und Befürchtungen ernst, binden sie im Entwicklungsprozess mit ein und unterstützen sie bei der Einführung der neuen Technologie.',
         posts: data.posts.changeManagement as MappedPost[],
       },
       {
@@ -73,8 +73,8 @@
             source: 'Patric Masar von Helvetas',
             content:
               '«Dank der effizienten und zielorientierten Methodik konnten wir in nur zwei von Triarc moderierten halbtägigen Workshops ' +
-              'ein umfassendes Konzept für eine Zeiterfassunges und Spesenapp mit dem Erweiterungspotential für eine vielzahl weiterer ' +
-              'Anwendung erarbeiten. Neben dem definieren der Kernanforderungen haben wir in Brainstormingsessions auch Ideen für zukünftige ' +
+              'ein umfassendes Konzept für eine Zeiterfassungs- und Spesenapp mit dem Erweiterungspotential für eine Vielzahl weiterer ' +
+              'Anwendung erarbeiten. Neben dem Definieren der Kernanforderungen haben wir in Brainstormingsessions auch Ideen für zukünftige ' +
               'Anwendungsgebiete der App erarbeitet. Es ist erstaunlich welche Vielzahl an guten und realisierbaren Ideen daraus resultierten.»',
           },
         },
@@ -86,7 +86,7 @@
             source: 'Andrea Isler von Analytica',
             content:
               '«Dank der Organisationsanalyse der Firma Triarc konnten wir die komplexe Struktur unserer ICT-Organisation besser verstehen und in der Folge die Effizienz unserer Abläufe verbessern sowie deren Innovation fördern.' +
-              'Der didaktische Ansatz der Berater:innen einerseits Wissen zu vermitteln und andererseits unsere Fachkräfte persönlich zu coachen wurde als besonders gewinnbringend eingeschätzt.' +
+              'Der didaktische Ansatz der Berater:innen einerseits Wissen zu vermitteln und andererseits unsere Fachkräfte persönlich zu coachen, wurde als besonders gewinnbringend eingeschätzt.' +
               'Zusammenfassend beurteilt war der Einsatz der Firma Triarc für uns ein voller Erfolg.»',
           },
         },

@@ -10,7 +10,7 @@
       <div class="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
         <h2 class="text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl">Unsere Technologien</h2>
         <p class="text-xl leading-7">
-          Unsere Team bringen ein breites Fachwissen mit und beherrscht <span class="underline">fast</span>
+          Unser Team bringt ein breites Fachwissen mit und beherrscht <span class="underline">fast</span>
           alle gängigen Programmiersprachen. <br />
           Wir freuen uns auf deine Unterstützung in unseren Projekten, welche wir über mehrere Technologien hinweg zum Erfolg
           führen.

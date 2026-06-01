@@ -21,7 +21,7 @@
 </svelte:head>
 <Hero
   title="Unser Team"
-  content="Wir lieben was wir tun, und dass wir das gemeinsam tun.
+  content="Wir lieben, was wir tun, und dass wir das gemeinsam tun.
         Von der Vision bis zur Anwendung können Sie sich auf unsere Kompetenz und Konstanz verlassen.
         Sie werden von erfahrenen, engagierten Spezialisten persönlich begleitet."
   image={heroImage}

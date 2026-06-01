@@ -258,7 +258,7 @@
       <div class="py-16">
         <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">Kontaktformular</h2>
         <h3 class="text-lg mt-3 font-medium text-gray-500">
-          Interessiert? Trete in Kontakt, damit wir gemeinsam Lösungen schaffen
+          Interessiert? Tritt in Kontakt, damit wir gemeinsam Lösungen schaffen
         </h3>
         <form action="#" method="POST" class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
           <div>

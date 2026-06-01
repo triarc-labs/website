@@ -30,7 +30,7 @@
 
 <Hero
   title="Lösungen"
-  content="Was haben wir vollbracht und woraus ist es entstanden"
+  content="Was wir vollbracht haben – und woraus es entstanden ist"
   image={heroImage}
   imageAlt="Triarc Reference Projects Header"
 />

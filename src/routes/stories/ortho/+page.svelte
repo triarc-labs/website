@@ -195,7 +195,7 @@
       </div>
       <div class="relative text-base py-4 max-w-prose mx-auto lg:max-w-5xl lg:mx-0 lg:pr-72">
         <p class="text-lg text-gray-500">
-          «Dabei haben wir 1:1 mitbekommen, wieviel Kreativität, Erfahrung und Engagement bei der Umsetzung
+          «Dabei haben wir 1:1 mitbekommen, wie viel Kreativität, Erfahrung und Engagement bei der Umsetzung
           unterschiedlichster Anforderungen eingeflossen sind. Mit ein Grund dafür ist sicherlich, dass triarc-labs
           inhabergeführt ist.»
         </p>

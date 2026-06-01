@@ -471,7 +471,7 @@
                         for="condition-checkbox"
                         class="inline pl-4 text-wrap text-s font-medium text-gray-900 decoration-red-triarc"
                       >
-                        Wir akzeptieren keine Bewerbungen über Personalvermittlern oder Headhuntern. Ich bestätige, dass
+                        Wir akzeptieren keine Bewerbungen über Personalvermittler oder Headhunter. Ich bestätige, dass
                         ich mich direkt bewerbe.
                       </label>
                     </div>
