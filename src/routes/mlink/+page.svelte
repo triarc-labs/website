@@ -19,7 +19,7 @@
     {
       title: 'μLink Datahub',
       content:
-        'Die Schnittstellenlösung, welche ihre komplette Software-Infrastruktur unter einen Hut bringt! ERP, CRM, Disposition, Zeiterfassung, Projektsoftware, HR Suite, Lagerbewirtschaftung usw. sind mit µLink in einem einzigen digitalen Ökosystem vereint. <br/><br/>' +
+        'Die Schnittstellenlösung, welche Ihre komplette Software-Infrastruktur unter einen Hut bringt! ERP, CRM, Disposition, Zeiterfassung, Projektsoftware, HR Suite, Lagerbewirtschaftung usw. sind mit µLink in einem einzigen digitalen Ökosystem vereint. <br/><br/>' +
         'Unternehmen, die konsequent auf digitale Lösungen setzen, haben einen klaren Wettbewerbsvorteil. Dabei wird mithilfe unterschiedlicher Softwarelösungen ein Prozess nach dem anderen digitalisiert. Durch dieses stetig wachsende und sich verändernde Ökosystem entsteht das Bedürfnis die Datenflüsse zu managen. <br/><br/>' +
         'Essenziell sind dabei Bedürfnisse wie das Verhindern manueller Arbeitsschritte, die direkte Zusammenarbeit von Mitarbeitern über Systemgrenzen hinweg, sowie das schnelle Finden aller massgebenden Informationen in den angebundenen Softwarelösungen. µLink liefert dafür die hochmoderne und effiziente Lösung mit dem Fokus auf Echtzeitkommunikation und Sicherheit.',
       image: { src: mLinkTree, alt: 'mlink logo' },
@@ -45,7 +45,7 @@
       title: 'Softwareökosystem',
       image: { src: mLinkDatenfluss, alt: 'mlink ecosystem' },
       content:
-        'Schritt für Schritt zur perfekten Schnittstelle. Bei der Digitalisierung von Geschäftsprozessen kommen meist mehrere Software Systeme zum Einsatz. Die Schnittstellen zwischen den verschiedenen Systemen mit unterschiedlichen Technologien stellt Unternehmen vor grosse Herausforderungen. µLink vereinfacht als zentrale Instanz die Schnittstellenproblematik, vernetzt die verschiedenen Systeme und ermöglicht damit die ' +
+        'Schritt für Schritt zur perfekten Schnittstelle. Bei der Digitalisierung von Geschäftsprozessen kommen meist mehrere Softwaresysteme zum Einsatz. Die Schnittstellen zwischen den verschiedenen Systemen mit unterschiedlichen Technologien stellt Unternehmen vor grosse Herausforderungen. µLink vereinfacht als zentrale Instanz die Schnittstellenproblematik, vernetzt die verschiedenen Systeme und ermöglicht damit die ' +
         'zentrale Bewirtschaftung der Schnittstellen. So kann mit minimalem Aufwand neue ' +
         'Software ins Ökosystem integriert oder bestehende abgelöst werden.',
     },
@@ -63,7 +63,7 @@
       image: { src: businessIntelligence, alt: 'scale' },
     },
     {
-      title: 'Die Vorteile von µlink im Überblick',
+      title: 'Die Vorteile von µLink im Überblick',
       cards: [
         {
           title: 'Klare Grenzen',

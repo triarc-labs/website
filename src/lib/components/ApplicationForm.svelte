@@ -368,7 +368,7 @@
                       /></svg
                     >
                     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                      <span class="text-blue-triarc font-semibold">Zum hochladen klicken</span> oder Files ziehen
+                      <span class="text-blue-triarc font-semibold">Zum Hochladen klicken</span> oder Files ziehen
                     </p>
                     <p class="text-xs text-gray-500 dark:text-gray-400">PDF (Max. 10Mb)</p>
                   </Dropzone>

@@ -16,7 +16,7 @@
   let content: FeaturedContent = {
     quote: {
       content:
-        'Der Mensch digitalisiert für die Menschen - wir stellen den User in den Mittelpunkt damit der Wandel von allen getragen und gelebt wird. Nur dann ist die Digitalisierung nachhaltig. ',
+        'Der Mensch digitalisiert für die Menschen - wir stellen den User in den Mittelpunkt, damit der Wandel von allen getragen und gelebt wird. Nur dann ist die Digitalisierung nachhaltig. ',
       person: 'Iris Zenegaglia',
       image: iris,
       personTitle: 'Digitalisierungs/Organisationsberaterin <br> ' + 'Coach (bso i. A.) <br> Partnerin',
@@ -73,8 +73,8 @@
             source: 'Patric Masar von Helvetas',
             content:
               '«Dank der effizienten und zielorientierten Methodik konnten wir in nur zwei von Triarc moderierten halbtägigen Workshops ' +
-              'ein umfassendes Konzept für eine Zeiterfassungs- und Spesenapp mit dem Erweiterungspotential für eine Vielzahl weiterer ' +
-              'Anwendung erarbeiten. Neben dem Definieren der Kernanforderungen haben wir in Brainstormingsessions auch Ideen für zukünftige ' +
+              'ein umfassendes Konzept für eine Zeiterfassungs- und Spesen-App mit dem Erweiterungspotential für eine Vielzahl weiterer ' +
+              'Anwendungen erarbeiten. Neben dem Definieren der Kernanforderungen haben wir in Brainstormingsessions auch Ideen für zukünftige ' +
               'Anwendungsgebiete der App erarbeitet. Es ist erstaunlich welche Vielzahl an guten und realisierbaren Ideen daraus resultierten.»',
           },
         },
@@ -87,7 +87,7 @@
             content:
               '«Dank der Organisationsanalyse der Firma Triarc konnten wir die komplexe Struktur unserer ICT-Organisation besser verstehen und in der Folge die Effizienz unserer Abläufe verbessern sowie deren Innovation fördern.' +
               'Der didaktische Ansatz der Berater:innen einerseits Wissen zu vermitteln und andererseits unsere Fachkräfte persönlich zu coachen, wurde als besonders gewinnbringend eingeschätzt.' +
-              'Zusammenfassend beurteilt war der Einsatz der Firma Triarc für uns ein voller Erfolg.»',
+              'Zusammenfassend beurteilt, war der Einsatz der Firma Triarc für uns ein voller Erfolg.»',
           },
         },
       },

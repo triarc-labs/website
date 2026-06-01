@@ -98,7 +98,7 @@
 
 <Hero
   title="Jobs"
-  content="Erfahre mehr über unsere offene Stellen und was dich sonst noch dazu interessieren könnte."
+  content="Erfahre mehr über unsere offenen Stellen und was dich sonst noch dazu interessieren könnte."
   image={heroImage}
   imageAlt="Triarc Jobs Header"
 />

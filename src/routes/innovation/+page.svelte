@@ -49,14 +49,14 @@
     {
       title: 'μLink Data-hub',
       content:
-        'μLink ist eine Kommunikationsschnittstelle mit dem Fokus, Informationen schnell auffindbar und schnell lesbar zu machen. Es erlaubt fliessende Prozesse über Systemgrenzen hinweg und gewährleistet, dass Informationen auf allen verbundenen Systemen identisch und in Echtzeit verfügbar sind. Mit μLink lassen sich unbegrenzt Umsysteme in ein Software Ökosystem integrieren.',
+        'μLink ist eine Kommunikationsschnittstelle mit dem Fokus, Informationen schnell auffindbar und schnell lesbar zu machen. Es erlaubt fliessende Prozesse über Systemgrenzen hinweg und gewährleistet, dass Informationen auf allen verbundenen Systemen identisch und in Echtzeit verfügbar sind. Mit μLink lassen sich unbegrenzt Umsysteme in ein Software-Ökosystem integrieren.',
       image: { src: mlinkLogo, alt: 'mlink logo' },
       link: { href: '/mlink', text: 'Mehr dazu', target: '_blank' },
     },
     {
       title: 'Zimmerpflanzen.de',
       content:
-        'Ein Online-Shop für Zimmerpflanzen und Zubehör. Durch eine direkte Anbindung an die Schnittstellen der Züchter, ist die Zimmerpflanze in kürzester Zeit beim Kunden.',
+        'Ein Online-Shop für Zimmerpflanzen und Zubehör. Durch eine direkte Anbindung an die Schnittstellen der Züchter ist die Zimmerpflanze in kürzester Zeit beim Kunden.',
 
       image: { src: zimmerpflanzenIcon, width: 200, alt: 'zimmerpflanzen.de' },
       link: { href: 'https://zimmerpflanzen.de', text: 'Mehr dazu', target: '_blank' },
@@ -83,7 +83,7 @@
       title: 'Slothi',
       content:
         'Slothi soll deine Terminprobleme lösen. Eine smarte Lösung, welche dir den passenden Termin für alle\n' +
-        '              Teilnehmer findet. \n\nDamit du möglichst einfach einen Termin planen kannst, wählst du den Zeitraum in dem der Termin\n' +
+        '              Teilnehmer findet. \n\nDamit du möglichst einfach einen Termin planen kannst, wählst du den Zeitraum, in dem der Termin\n' +
         '              stattfinden soll. Die erforderliche Zeitdauer sowie die Teilnehmer, die daran teilnehmen sollen. Ab da\n' +
         '              übernimmt Slothi für dich und prüft die Verfügbarkeiten aller Teilnehmer. Du erhältst eine Auswahl an\n' +
         '              möglichen Terminvorschlägen und kannst einen fixen Termin einplanen.',

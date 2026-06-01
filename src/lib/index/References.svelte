@@ -94,7 +94,7 @@
       challenges:
         'Der gesamte Fahrzeugpark musste integriert werden. Der sehr komplexe analoge Prozess umfasste viele verschiedene Ausnahmen im Bereich der Anforderungen und Wünsche auf der Userseite.  Ausserdem wurde eine Schnittstelle zwischen ABACUS und der Applikation benötigt, um Daten wie Kundenstamm, Abrechnungsprozess, Auftragsverwaltungen in der Applikation anzubieten.',
       solutions:
-        'Verbesserte und transparentere Kommunikation zwischen Dispo und Chauffeuren. Auftragserteilung erfolgt nun direkt von CAL aus nach TomTom. Eine Echtzeit-Routenberechnung wurde ebenfalls integriert, dies hilft der Dispo die Planung effizienter zu gestalten und Leerfahrten zu vermeiden. Die automatische Rapportierung und Verrechnung erbrachten Leistungen, minimiert den Administrationsaufwand und beugt Missverständnissen vor.',
+        'Verbesserte und transparentere Kommunikation zwischen Dispo und Chauffeuren. Auftragserteilung erfolgt nun direkt von CAL aus nach TomTom. Eine Echtzeit-Routenberechnung wurde ebenfalls integriert, dies hilft der Dispo die Planung effizienter zu gestalten und Leerfahrten zu vermeiden. Die automatische Rapportierung und Verrechnung erbrachter Leistungen, minimiert den Administrationsaufwand und beugt Missverständnissen vor.',
       imageSource: CAL,
     },
     {
@@ -106,7 +106,7 @@
       challenges:
         'Die Vielfalt der Prozesse und Prozessvarianten in verschiedenen Bereichen wie Rollstühle, Schuhe, Orthesen, Prothesen, und in verschiedenen Regionen, ergab ein hohes Mass an Komplexität. Die Abstimmung der Auftragsabwicklung mit der Einreichung von Kostenvoranschlägen bei Krankenkassen oder der IV war ebenfalls herausfordernd.',
       solutions:
-        'OrthoClient deckt den gesamten Prozess von der Anamnese bis zur interdisziplinären Kommunikation ab. Diese App ermöglicht eine effiziente Auftragsabwicklung und gewährleistet exzellenten Kundenservice. Nach erfolgreicher Einführung wurden weitere Funktionen implementiert, darunter eine zentrale Ansicht aller Informationen und Kommunikation, ein Statusmodell in Abstimmung mit der ERP Lösung ABACUS, ein Chatmodul mit Mentions- und Notifikationen, ein Formulargenerator für die flexible Erstellung von Formularen, sowie die Integration von Trello für die Kommunikation mit der Produktion. Die Kundenerfassung ist direkt ins ERP integriert. Die Bestellung von Artikeln erfolgt nun direkt über die Order App. Diese Massnahmen führen zu verkürzten Durchlaufzeiten bei der Leistungsverrechnung und einer erheblichen Reduzierung des Aufwands in Backoffice und Administration',
+        'OrthoClient deckt den gesamten Prozess von der Anamnese bis zur interdisziplinären Kommunikation ab. Diese App ermöglicht eine effiziente Auftragsabwicklung und gewährleistet exzellenten Kundenservice. Nach erfolgreicher Einführung wurden weitere Funktionen implementiert, darunter eine zentrale Ansicht aller Informationen und Kommunikation, ein Statusmodell in Abstimmung mit der ERP Lösung ABACUS, ein Chatmodul mit Mentions- und Notifikationen, ein Formulargenerator für die flexible Erstellung von Formularen, sowie die Integration von Trello für die Kommunikation mit der Produktion. Die Kundenerfassung ist direkt ins ERP integriert. Die Bestellung von Artikeln erfolgt nun direkt über die Order App. Diese Massnahmen führen zu verkürzten Durchlaufzeiten bei der Leistungsverrechnung und einer erheblichen Reduzierung des Aufwands in Backoffice und Administration.',
       imageSource: OrthoClient,
     },
     {
@@ -144,7 +144,7 @@
       challenges:
         'Die Herausforderung bestand darin, den Aussendienst effizient zu leiten, um sicherzustellen, dass die richtigen Kunden zum optimalen Zeitpunkt besucht werden. Dies erforderte die Bereitstellung aktueller und relevanter Daten über Kunden sowie die Stärkung der Selbstorganisation der Mitarbeiter.',
       solutions:
-        'Die intergierte Kontakt- und Routenplanung schlägt dem Mitarbeiter automatisch Kunden vor, die sie lange nicht mehr besucht haben, in ihrem Bestellverhalten abweichen oder welche sich ebenfalls auf der jeweiligen Arbeitsroute befinden. Ausserdem können Bestellungen direkt via der App mittels integriertem Bestellwesen und Produktekatalog aufgenommen und ausgelöst werden. Alle benötigten Kundendaten (CRM) sind ebenfalls jederzeit verfügbar. Der Aussendienst setzt seine Zeit nun strategisch im Sinne der Unternehmung ein.',
+        'Die integrierte Kontakt- und Routenplanung schlägt dem Mitarbeiter automatisch Kunden vor, die sie lange nicht mehr besucht haben, in ihrem Bestellverhalten abweichen oder welche sich ebenfalls auf der jeweiligen Arbeitsroute befinden. Ausserdem können Bestellungen direkt via der App mittels integriertem Bestellwesen und Produktekatalog aufgenommen und ausgelöst werden. Alle benötigten Kundendaten (CRM) sind ebenfalls jederzeit verfügbar. Der Aussendienst setzt seine Zeit nun strategisch im Sinne der Unternehmung ein.',
       imageSource: Riwaxique,
     },
     {
@@ -167,7 +167,7 @@
         'Der Wunsch war die Immobilienbewirtschaftung ins digitale Zeitalter zu bewegen. Ihre Mieter sollen ganz unkompliziert ohne grosse administrative Hürden eine Wohnung, Lagerräume, Parkplatz, Hobbyraum mieten. Papierlos, schnell, unkompliziert und komplett digital.',
       challenges:
         'Auf Mieterseite: Einbindung in den neuen Prozess, die Zahlungsabwicklungen via  Stripe' +
-        ' (nur Zahlungen mit Kreditkarten sind möglich) dies führte zu Einschränken.\n' +
+        ' (nur Zahlungen mit Kreditkarten sind möglich) dies führte zu Einschränkungen.\n' +
         'Auf Verwaltungsseite: die gesamte Abwicklung (Mietprozess) digital zu lösen, Konzeptionell Prozesse darstellen' +
         ' ohne grosse Erfahrungswerte.',
       solutions:
@@ -243,7 +243,7 @@
       solutions:
         'Die modulare Work Management Plattform «MyBusiness» mit der integrierten digitalen Zeiterfassung «digiZeit» ermöglicht' +
         ' nun für über 900 Mitarbeitende aller Berufsgruppen, eine einfache und bedienerfreundliche Rapportierung,' +
-        ' reduziert damit erheblich den Administrativaufwand und schafft zeitnah aktuelle Projektdaten. Neu ' +
+        ' reduziert damit erheblich den Administrativaufwand und schafft zeitnah aktuelle Projektdaten. Neu können ' +
         ' sich alle Mitarbeitenden kontextspezifisch miteinander austauschen, alle nötigen Informationen sind' +
         ' an einem Ort für alle Mitglieder verfügbar. Zudem können alle Arbeiten digital dokumentiert und geplant werden.' +
         ' Es ist jederzeit ersichtlich, wer, was bis wann zu erledigen hat. In der zweiten Phase wurde die Kommunikationsplattform' +
@@ -297,7 +297,7 @@
       challenges:
         'Die Übermittlung der Eventdaten an die ERP-Lösung von ABACUS. Offlinenutzung in den Eventhallen mit unzureichender Netzverbindung.',
       solutions:
-        'Einfach, bedienbare, intuitive Event-App. Wichtige Teilnehmerdaten in Echtzeit verfügbar. Zb Notfallkontakt, Alter, Schulhaus, usw. Verbesserte Teilnehmer Eingangskontrolle. (Lange Warteschlange werden verhindert Teilnehmer müssen nur noch einmalig erfasst werden, Stammdaten sind hinterlegt und können für zukünftige Events schnell und einfach gesucht werden.',
+        'einfach bedienbare, intuitive Event-App. Wichtige Teilnehmerdaten in Echtzeit verfügbar. z. B. Notfallkontakt, Alter, Schulhaus, usw. Verbesserte Teilnehmer Eingangskontrolle. (Lange Warteschlange werden verhindert Teilnehmer müssen nur noch einmalig erfasst werden, Stammdaten sind hinterlegt und können für zukünftige Events schnell und einfach gesucht werden.',
       imageSources: [Bienvenu1, Bienvenu2, Bienvenu3, Bienvenu4, Bienvenu5, Bienvenu6, Bienvenu7],
     },
     {
@@ -316,8 +316,8 @@
         'Die Herausforderungen bestanden darin, Daten aus diversen Umsystemen zu kombinieren und dort verfügbar zu machen, wo sie gebraucht wurden.' +
         ' Zusätzlich sollte eine klare und kompakte Anzeige von Anlageinformationen im Mobileformat gewährleistet werden.',
       solutions:
-        'myWalo kann dank unserem Datahub „mLink“ verschiedene Prozesse digital im Feld anbieten und Daten aus diversen Systemen wie: ABACUS,' +
-        ' Digital Bauakte, Visual Planning, Baubit, Kyberna, BLP (Kreditorenworkflow), Sharepoint, DMS und Fleetmanagment' +
+        'myWalo kann dank unserem Datahub „µLink" verschiedene Prozesse digital im Feld anbieten und Daten aus diversen Systemen wie: ABACUS,' +
+        ' Digital Bauakte, Visual Planning, Baubit, Kyberna, BLP (Kreditorenworkflow), Sharepoint, DMS und Fleetmanagement' +
         ' zur Verfügung stellen. Die App-Funktionen umfassen die Suche und das Finden von Anlagen, Indexierung, Verfügbarkeit' +
         ' von Dokumenten und Bedienungsanleitungen in verschiedenen Sprachen, Angabe von Maschinenstunden und mehr. Baustellen' +
         ' können direkt eröffnet werden und die Mitarbeitenden haben Zugriff auf persönliche HR-Daten. Jeder Walo Mitarbeiter' +

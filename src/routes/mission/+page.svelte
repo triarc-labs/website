@@ -19,7 +19,7 @@
       quote: {
         image: serge,
         content:
-          'Für Ihren Erfolg zögern wir nicht Herausforderndes zu meistern, Kompliziertes zu vereinfachen, Effizienz zu steigern und Schwerfälliges zu beschleunigen.',
+          'Für Ihren Erfolg zögern wir nicht, Herausforderndes zu meistern, Kompliziertes zu vereinfachen, Effizienz zu steigern und Schwerfälliges zu beschleunigen.',
         person: 'Serge Müller',
         personTitle: 'CEO / Partner',
         email: 'serge@triarc-labs.com',
@@ -187,7 +187,7 @@
 <div class="bg-white">
   <Hero
     title="together you succeed"
-    content="Für Ihren Fortschritt. Wir sind fokussiert das nächste, höhere Level zu erreichen - vor allem für unsere Kunden, für Sie."
+    content="Für Ihren Fortschritt. Wir sind fokussiert, das nächste, höhere Level zu erreichen – vor allem für unsere Kunden, für Sie."
     image={heroImage}
     imageAlt="Triarc Mission Header"
   />

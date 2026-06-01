@@ -97,7 +97,7 @@
 
             <p class="mt-4 text-lg text-gray-700 italic">
               Fair Pizza bietet Restaurants eine einfache und günstige Alternative, ihr Angebot selbstständig online zu
-              verkaufen. Die Whitelabel Lösung bietet eine Vielzahl von Konfigurationsmöglichkeiten inklusive einem
+              verkaufen. Die Whitelabel-Lösung bietet eine Vielzahl von Konfigurationsmöglichkeiten inklusive einem
               Pizzabuilder. Mit Stripe lassen sich die Zahlungen bequem online abwickeln.
             </p>
             <p class="mt-4 text-lg text-gray-500">

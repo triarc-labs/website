@@ -29,7 +29,7 @@
     {
       title: 'Unser agiler Entwicklungsprozess',
       content:
-        'Wir führen unsere Projekte erfolgreich seit einem Jahrzehnt agil. Diese Methode hat sich sowohl für uns, wie auch für den Kunden immer bewährt. Unser agiler Entwicklungsprozess besteht aus vier Schritten, welche sich pro Sprint wiederholen.',
+        'Wir führen unsere Projekte erfolgreich seit einem Jahrzehnt agil. Diese Methode hat sich sowohl für uns als auch für den Kunden immer bewährt. Unser agiler Entwicklungsprozess besteht aus vier Schritten, welche sich pro Sprint wiederholen.',
       steps: [
         {
           title: 'Concept',
