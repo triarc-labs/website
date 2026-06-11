@@ -6,6 +6,8 @@
 
   export let appName: string
   export let images: Picture[]
+  /** Show exactly one slide at a time, e.g. next to the detail page header. */
+  export let single = false
 
   let emblaCarousel: EmblaCarouselType
   let options: EmblaOptionsType = { loop: true }
@@ -21,7 +23,7 @@
     <div class="embla__viewport" use:emblaCarouselSvelte={{ options, plugins }} on:emblaInit={onInit}>
       <div class="embla__container">
         {#each images as imageSource}
-          <div class="embla__slide">
+          <div class="embla__slide" class:embla__slide--single={single}>
             <div class="embla__slide__inner">
               <EnhancedImage
                 imgClass="embla__slide__img object-contain max-h-[450px] lg:max-h-[600px]"
@@ -122,6 +124,12 @@
       margin-right: 2.5vh;
       position: relative;
     }
+  }
+
+  /* One visible slide regardless of viewport, e.g. next to the header */
+  .embla__slide.embla__slide--single {
+    flex: 0 0 100%;
+    max-width: none;
   }
   .embla__slide__inner {
     display: flex;

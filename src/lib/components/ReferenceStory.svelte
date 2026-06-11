@@ -12,7 +12,7 @@
   const solutionsIcon =
     'M125.1 0H144c88.4 0 160 71.6 160 160v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V176H242.9C161.8 176 96 110.2 96 29.1C96 13 109 0 125.1 0zM144 32H128c1.5 62.1 52.4 112 114.9 112H271C263.1 80.9 209.3 32 144 32zM336 176V160c0-5.4-.2-10.7-.7-16C396.8 142.8 446.4 93.4 448 32H432c-45.7 0-85.8 23.9-108.4 59.9c-4.3-11.4-9.7-22.3-16-32.5C336.9 23.2 381.7 0 432 0h18.9C467 0 480 13 480 29.1c0 80.2-64.2 145.3-144 146.9zM151 317.4c13.1-8.8 28.6-13.4 44.4-13.4H344c30.9 0 56 25.1 56 56c0 8.6-1.9 16.7-5.4 24h5.6l94.7-56.4c8.3-4.9 17.8-7.6 27.5-7.6h1.3c28.9 0 52.3 23.4 52.3 52.3c0 17.7-9 34.2-23.8 43.8L432.6 493.9c-18.2 11.8-39.4 18.1-61 18.1H16c-8.8 0-16-7.2-16-16s7.2-16 16-16H371.5c15.5 0 30.6-4.5 43.6-12.9l119.6-77.8c5.8-3.7 9.2-10.2 9.2-17c0-11.2-9.1-20.3-20.3-20.3h-1.3c-3.9 0-7.7 1.1-11.1 3l-98.5 58.7c-2.5 1.5-5.3 2.3-8.2 2.3H344 320 256c-8.8 0-16-7.2-16-16s7.2-16 16-16h64 24c13.3 0 24-10.7 24-24s-10.7-24-24-24H195.4c-9.5 0-18.7 2.8-26.6 8.1L88.9 397.3c-2.6 1.8-5.7 2.7-8.9 2.7H16c-8.8 0-16-7.2-16-16s7.2-16 16-16H75.2L151 317.4z'
 
-  $: cards = [
+  $: chapters = [
     {
       label: 'Ausgangslage',
       text: situation,
@@ -20,7 +20,6 @@
       viewBox: '0 0 576 512',
       chip: 'bg-blue-triarc bg-opacity-10',
       fill: 'fill-blue-triarc',
-      bar: 'bg-blue-triarc',
     },
     ...(challenges !== ''
       ? [
@@ -31,7 +30,6 @@
             viewBox: '0 0 512 512',
             chip: 'bg-red-triarc bg-opacity-10',
             fill: 'fill-red-triarc',
-            bar: 'bg-red-triarc',
           },
         ]
       : []),
@@ -42,27 +40,28 @@
       viewBox: '0 0 576 512',
       chip: 'bg-green-triarc bg-opacity-10',
       fill: 'fill-green-triarc',
-      bar: 'bg-green-triarc',
     },
   ]
 </script>
 
-<dl class="grid items-start gap-6 md:grid-cols-2 {cards.length === 3 ? 'xl:grid-cols-3' : ''}">
-  {#each cards as card}
-    <div class="flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm">
-      <div class="h-1.5 {card.bar}" aria-hidden="true"></div>
-      <div class="p-7">
-        <dt class="flex items-center gap-x-3">
-          <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full {card.chip}">
-            <svg class="h-5 w-5 {card.fill}" xmlns="http://www.w3.org/2000/svg" viewBox={card.viewBox}>
-              <path d={card.icon} />
-            </svg>
-          </span>
-          <span class="text-lg font-bold text-gray-900">{card.label}</span>
-        </dt>
-        <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->
-        <dd class="mt-4 whitespace-pre-line text-base leading-relaxed text-gray-600">{@html card.text}</dd>
+<ol class="flex list-none flex-col p-0">
+  {#each chapters as chapter, index}
+    <li class="relative flex gap-x-6">
+      <div class="flex flex-col items-center">
+        <span class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full {chapter.chip}">
+          <svg class="h-5 w-5 {chapter.fill}" xmlns="http://www.w3.org/2000/svg" viewBox={chapter.viewBox}>
+            <path d={chapter.icon} />
+          </svg>
+        </span>
+        {#if index < chapters.length - 1}
+          <span class="my-2 w-px flex-grow bg-gray-200" aria-hidden="true"></span>
+        {/if}
       </div>
-    </div>
+      <div class="max-w-3xl {index < chapters.length - 1 ? 'pb-12' : ''}">
+        <h3 class="pt-2.5 text-2xl font-bold text-gray-900">{chapter.label}</h3>
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->
+        <p class="mt-4 whitespace-pre-line text-lg leading-relaxed text-gray-600">{@html chapter.text}</p>
+      </div>
+    </li>
   {/each}
-</dl>
+</ol>

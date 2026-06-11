@@ -3,7 +3,7 @@
   import Footer from '$lib/components/Footer.svelte'
   import Reveal from '$lib/components/Reveal.svelte'
   import EnhancedImage from '$lib/index/EnhancedImage.svelte'
-  import ReferenceStoryCards from '$lib/components/ReferenceStoryCards.svelte'
+  import ReferenceStory from '$lib/components/ReferenceStory.svelte'
   import ReferenceCarousel from '$lib/components/ReferenceCarousel.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
   import type { TriarcPageMetadata } from '$lib/components/TypeDefinitions'
@@ -24,35 +24,40 @@
   <!-- Header -->
   <header class="border-b border-gray-100 bg-gray-50">
     <Container>
-      <div class="py-16 md:py-20">
-        <a
-          href="/references"
-          class="inline-flex items-center gap-x-2 text-base font-bold text-gray-500 transition hover:text-blue-triarc"
-        >
-          <span aria-hidden="true">←</span> Alle Referenzen
-        </a>
-        <div class="mt-8 flex flex-wrap items-center gap-3">
-          <span class="text-sm font-bold uppercase tracking-widest text-gray-400">Referenz</span>
-          {#each project.tags as tag}
-            <span class="rounded-full border border-gray-300 px-3 py-0.5 text-sm text-gray-600">{tag}</span>
-          {/each}
+      <div class="grid items-center gap-x-16 gap-y-12 py-16 md:py-20 {project.images ? 'lg:grid-cols-2' : ''}">
+        <div>
+          <a
+            href="/references"
+            class="inline-flex items-center gap-x-2 text-base font-bold text-gray-500 transition hover:text-blue-triarc"
+          >
+            <span aria-hidden="true">←</span> Alle Referenzen
+          </a>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <span class="text-sm font-bold uppercase tracking-widest text-gray-400">Referenz</span>
+            {#each project.tags as tag}
+              <span class="rounded-full border border-gray-300 px-3 py-0.5 text-sm text-gray-600">{tag}</span>
+            {/each}
+          </div>
+          <h1 class="mt-3 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">{project.appName}</h1>
+          <p class="mt-4 max-w-3xl text-xl text-gray-700">{project.teaser}</p>
+          <p class="mt-6 max-w-3xl text-lg text-gray-600">
+            <span class="font-bold text-gray-900">{project.customer}</span> · {project.companyDescription}
+          </p>
         </div>
-        <h1 class="mt-3 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">{project.appName}</h1>
-        <p class="mt-4 max-w-3xl text-xl text-gray-700">{project.teaser}</p>
-        <p class="mt-6 max-w-3xl text-lg text-gray-600">
-          <span class="font-bold text-gray-900">{project.customer}</span> · {project.companyDescription}
-        </p>
+        {#if project.images}
+          <Reveal>
+            <ReferenceCarousel appName={project.appName} images={project.images} single />
+          </Reveal>
+        {/if}
       </div>
     </Container>
   </header>
 
-  <!-- Screenshots -->
-  <section class="py-16 md:py-20">
-    <Container>
-      <Reveal>
-        {#if project.images}
-          <ReferenceCarousel appName={project.appName} images={project.images} />
-        {:else}
+  <!-- Screenshot (web projects) -->
+  {#if !project.images}
+    <section class="border-b border-gray-100 py-16 md:py-20">
+      <Container>
+        <Reveal>
           <div class="flex items-center justify-center">
             <EnhancedImage
               image={project.image}
@@ -60,29 +65,25 @@
               imgClass="w-auto rounded-2xl shadow-xl ring-1 ring-gray-900/10 lg:max-h-[600px]"
             />
           </div>
-        {/if}
-      </Reveal>
-    </Container>
-  </section>
+        </Reveal>
+      </Container>
+    </section>
+  {/if}
 
   <!-- Story -->
-  <section class="bg-gray-50 py-16 md:py-24">
+  <section class="py-16 md:py-24">
     <Container>
       <Reveal>
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Das Projekt im Detail</h2>
         <div class="mt-12">
-          <ReferenceStoryCards
-            situation={project.situation}
-            challenges={project.challenges}
-            solutions={project.solutions}
-          />
+          <ReferenceStory situation={project.situation} challenges={project.challenges} solutions={project.solutions} />
         </div>
       </Reveal>
     </Container>
   </section>
 
   <!-- Next project + CTA -->
-  <section class="py-16 md:py-24">
+  <section class="bg-gray-50 py-16 md:py-24">
     <Container>
       <Reveal>
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Weitere Referenzen</h2>
