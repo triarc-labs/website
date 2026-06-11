@@ -61,24 +61,6 @@
           path: '/future',
           description: '',
         },
-        {
-          type: 'link',
-          title: 'Strategie',
-          path: '/strategy',
-          description: 'Strategie in die Praxis',
-        },
-        {
-          type: 'link',
-          title: 'Operationen',
-          path: '/operations',
-          description: 'Operativen Reibungsverlust reduzieren',
-        },
-        {
-          type: 'link',
-          title: 'Zukunft',
-          path: '/future',
-          description: 'Wettbewerbsfähigkeit sichern',
-        },
       ],
     },
     {
