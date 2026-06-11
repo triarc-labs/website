@@ -8,6 +8,7 @@
   import EnhancedImage from '$lib/index/EnhancedImage.svelte'
   import NavJump from '$lib/components/NavJump.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
+  import LinkedInLink from '$lib/components/LinkedInLink.svelte'
   import serge from '$lib/assets/team/serge.jpg?w=768&format=webp;png&enhanced'
   import { referencesMetadata } from '$lib/content/triarc-page-metadata'
   import { referenceProjects } from '$lib/content/reference-projects'
@@ -122,14 +123,7 @@
               >
                 Projekt besprechen
               </a>
-              <a
-                href="https://www.linkedin.com/in/serge-m%C3%BCller-568a0a134/"
-                target="_blank"
-                rel="noreferrer"
-                class="text-base font-bold text-gray-600 hover:text-blue-triarc"
-              >
-                LinkedIn
-              </a>
+              <LinkedInLink href="https://www.linkedin.com/in/serge-m%C3%BCller-568a0a134/" person="Serge Müller" />
               <a href="mailto:serge@triarc-labs.com" class="text-base font-bold text-gray-600 hover:text-blue-triarc">
                 serge@triarc-labs.com
               </a>

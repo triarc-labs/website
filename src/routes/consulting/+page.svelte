@@ -6,6 +6,7 @@
   import ContactForm from '$lib/components/ContactForm.svelte'
   import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
+  import LinkedInLink from '$lib/components/LinkedInLink.svelte'
   import iris from '$lib/assets/team/iris.jpg?w=768&format=webp;png&metadata&enhanced'
   import bsoLogo from '$lib/assets/img/partners/bso_logo_desktop.svg'
   import helvetas from '$lib/assets/img/customer/helvetas.gif'
@@ -130,14 +131,7 @@
               >
                 Kontaktiere mich
               </a>
-              <a
-                href="https://www.linkedin.com/in/iriszenegagliagloor/"
-                target="_blank"
-                rel="noreferrer"
-                class="text-base font-bold text-gray-600 hover:text-blue-triarc"
-              >
-                LinkedIn
-              </a>
+              <LinkedInLink href="https://www.linkedin.com/in/iriszenegagliagloor/" person="Iris Zenegaglia" />
               <a href="mailto:iris@triarc-labs.com" class="text-base font-bold text-gray-600 hover:text-blue-triarc">
                 iris@triarc-labs.com
               </a>

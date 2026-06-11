@@ -6,6 +6,7 @@
   import Video from '$lib/components/Video.svelte'
   import EnhancedImage from '$lib/index/EnhancedImage.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
+  import LinkedInLink from '$lib/components/LinkedInLink.svelte'
   import pascal from '$lib/assets/team/pascal.jpg?w=768&format=webp;png&metadata&enhanced'
   import mlinkLogo from '$lib/assets/img/mlink/tree.svg'
   import m3expressIcon from '$lib/assets/img/lab/m3express-icon.svg'
@@ -121,14 +122,7 @@
               >
                 Kontaktiere mich
               </a>
-              <a
-                href="https://www.linkedin.com/in/pascal-bertschi-9b00b480/"
-                target="_blank"
-                rel="noreferrer"
-                class="text-base font-bold text-gray-600 hover:text-blue-triarc"
-              >
-                LinkedIn
-              </a>
+              <LinkedInLink href="https://www.linkedin.com/in/pascal-bertschi-9b00b480/" person="Pascal Bertschi" />
               <a href="mailto:pascal@triarc-labs.com" class="text-base font-bold text-gray-600 hover:text-blue-triarc">
                 pascal@triarc-labs.com
               </a>

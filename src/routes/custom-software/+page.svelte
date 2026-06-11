@@ -6,6 +6,7 @@
   import ProcessCycle from '$lib/components/ProcessCycle.svelte'
   import EnhancedImage from '$lib/index/EnhancedImage.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
+  import LinkedInLink from '$lib/components/LinkedInLink.svelte'
   import elke from '$lib/assets/team/elke.jpg?w=768&format=webp;png&metadata&enhanced'
   import maintenance from '$lib/assets/img/custom-software/maintenance.svg'
   import heroImage from '$lib/assets/hero/CustomSoftware.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
@@ -138,14 +139,7 @@
               >
                 Kontaktiere mich
               </a>
-              <a
-                href="https://www.linkedin.com/in/elke-engel-6761998/"
-                target="_blank"
-                rel="noreferrer"
-                class="text-base font-bold text-gray-600 hover:text-blue-triarc"
-              >
-                LinkedIn
-              </a>
+              <LinkedInLink href="https://www.linkedin.com/in/elke-engel-6761998/" person="Elke Engel" />
               <a href="mailto:elke@triarc-labs.com" class="text-base font-bold text-gray-600 hover:text-blue-triarc">
                 elke@triarc-labs.com
               </a>

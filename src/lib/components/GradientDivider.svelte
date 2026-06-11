@@ -5,9 +5,7 @@
   export let gradientContent: TriarcGradientDivider
 </script>
 
-<div
-  class={`flex justify-center text-center text-white py-[90px] min-h-80 lg:mb-24 xl:mb-48 w-full gradient-${gradientContent.color}`}
->
+<div class={`flex justify-center text-center text-white py-[90px] min-h-80 w-full gradient-${gradientContent.color}`}>
   <Container>
     <div>
       <div class="text-2xl font-bold pb-4">{gradientContent.title}</div>
