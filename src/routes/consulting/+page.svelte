@@ -127,7 +127,7 @@
             <div class="mt-8 flex flex-wrap items-center gap-6">
               <a
                 href="#contactform"
-                class="rounded-full bg-green-triarc px-7 py-3 text-base font-bold text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                class="rounded-full bg-green-triarc-deep px-7 py-3 text-base font-bold text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Kontaktiere mich
               </a>

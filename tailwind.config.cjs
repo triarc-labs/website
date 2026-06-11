@@ -10,6 +10,8 @@ module.exports = {
       colors: {
         'red-triarc': '#C8102E',
         'green-triarc': '#009639',
+        // Darkest green that keeps WCAG AA contrast (4.9:1) under white body text
+        'green-triarc-deep': '#00832f',
         'blue-triarc': '#0077c8',
         'white-triarc': '#FFFFFF',
         'blue-triarc-light': '#3392d3',

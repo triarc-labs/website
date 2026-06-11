@@ -41,7 +41,7 @@
 
 <style>
   .green {
-    @apply bg-green-triarc;
+    @apply bg-green-triarc-deep;
   }
   .blue {
     @apply bg-blue-triarc;

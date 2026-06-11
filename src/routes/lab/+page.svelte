@@ -192,7 +192,7 @@
               {/if}
               <button
                 type="submit"
-                class="rounded-full bg-green-triarc px-7 py-3 text-base font-bold text-white shadow transition duration-300 hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-lg"
+                class="rounded-full bg-green-triarc-deep px-7 py-3 text-base font-bold text-white shadow transition duration-300 hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-lg"
               >
                 {submitted ? 'Besten Dank!' : 'Newsletter abonnieren'}
               </button>
