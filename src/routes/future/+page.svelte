@@ -4,10 +4,8 @@
   import MetaHead from '$lib/components/MetaHead.svelte'
   import Hero from '$lib/components/Hero.svelte'
   import Footer from '$lib/components/Footer.svelte'
-  import PillarTopicLinks from '$lib/components/PillarTopicLinks.svelte'
   import { futureSectionContent } from '$lib/content/future-section'
   import { futureMetadata } from '$lib/content/triarc-page-metadata'
-  import { futurePillarTeasers } from '$lib/content/pillar-teasers'
   import heroImage from '$lib/assets/hero/InnovationLab.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
 
   export let data: PageData
@@ -26,7 +24,6 @@
     image={heroImage}
     imageAlt="Innovation und Zukunft – triarc laboratories"
   />
-  <PillarTopicLinks block={futurePillarTeasers} accent="blue" />
 </div>
 
 <ThemedSection sectionContent={subsection} sectionGradientColor="red-blue" sectionColor="blue" showFooter={false} />
