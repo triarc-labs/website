@@ -475,11 +475,11 @@
   }
 
   #page.content .navbar {
-    @apply flex items-center;
+    @apply hidden md:flex items-center;
   }
 
   #page .navbar .nav-links {
-    @apply flex flex-col md:flex-row w-full;
+    @apply flex md:flex-row w-full;
   }
 
   #page.content .navbar .nav-links {
