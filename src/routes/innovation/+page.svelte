@@ -105,14 +105,35 @@
               imgClass="aspect-[3/4] w-full rounded-2xl object-cover shadow-xl"
             />
           </div>
-          <figure class="max-w-2xl">
-            <blockquote class="text-2xl font-bold leading-relaxed text-gray-900 md:text-3xl">
-              «{quote.content}»
-            </blockquote>
-            <figcaption class="mt-6 text-lg text-gray-600">
-              <span class="font-bold text-gray-900">{quote.person}</span> · {quote.personTitle}
-            </figcaption>
-          </figure>
+          <div class="max-w-2xl">
+            <figure>
+              <blockquote class="text-2xl font-bold leading-relaxed text-gray-900 md:text-3xl">
+                «{quote.content}»
+              </blockquote>
+              <figcaption class="mt-6 text-lg text-gray-600">
+                <span class="font-bold text-gray-900">{quote.person}</span> · {quote.personTitle}
+              </figcaption>
+            </figure>
+            <div class="mt-8 flex flex-wrap items-center gap-6">
+              <a
+                href="/contact"
+                class="rounded-full bg-green-triarc px-7 py-3 text-base font-bold text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                Kontaktiere mich
+              </a>
+              <a
+                href="https://www.linkedin.com/in/pascal-bertschi-9b00b480/"
+                target="_blank"
+                rel="noreferrer"
+                class="text-base font-bold text-gray-600 hover:text-blue-triarc"
+              >
+                LinkedIn
+              </a>
+              <a href="mailto:pascal@triarc-labs.com" class="text-base font-bold text-gray-600 hover:text-blue-triarc">
+                pascal@triarc-labs.com
+              </a>
+            </div>
+          </div>
         </div>
       </Reveal>
     </Container>
