@@ -74,14 +74,16 @@
     return { r, cx: width * focusX, cy: height * focusY }
   }
 
-  // Particles glow along the top arch (the rainbow) and ghost around the rest of the loop.
+  // Particles are only visible along the top arch (the rainbow); below the horizon they
+  // keep moving invisibly until they re-enter on the other side.
   function archVisibility(angle: number) {
-    return 0.12 + 0.88 * Math.pow(Math.max(0, -Math.sin(angle)), 0.7)
+    return Math.pow(Math.max(0, -Math.sin(angle)), 0.65)
   }
 
   function createFamilies() {
     const area = width * height
-    const count = Math.round(Math.min(70, Math.max(22, area / 16000)) * density)
+    // Only the top half of each ring is visible, so density is roughly doubled
+    const count = Math.round(Math.min(110, Math.max(36, area / 10000)) * density)
     families = (['red', 'green', 'blue'] as TriarcColor[]).map((key, ring) => ({
       key,
       color: FAMILY_COLORS[key],
