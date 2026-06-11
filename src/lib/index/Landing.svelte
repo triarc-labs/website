@@ -4,7 +4,6 @@
   import Reveal from '$lib/components/Reveal.svelte'
   import TriarcOrbits from '$lib/components/TriarcOrbits.svelte'
   import { landingPageCards } from '$lib/content/landing-page'
-  import triarcLogo from '$lib/assets/triarc-logo-negativ-ohneTM.svg'
   import type { TriarcColor, TriarcSectionDefinition } from '$lib/components/TypeDefinitions'
 
   const landingContent = landingPageCards
@@ -50,9 +49,9 @@
           </span>
         </Reveal>
         <Reveal y={16} delay={100}>
-          <span class="block py-6">
-            <img class="h-14 md:h-20" src={triarcLogo} alt="triarc laboratories ltd" height="72" />
-          </span>
+          <h1 class="py-6 text-5xl font-bold tracking-tight md:text-7xl">
+            {landingContent.content.title}
+          </h1>
         </Reveal>
         <Reveal y={16} delay={200}>
           <p class="max-w-2xl text-lg md:text-xl text-white/90">
