@@ -1,6 +1,8 @@
 <script lang="ts">
   import TeamMembers from '$lib/index/TeamMembers.svelte'
   import Footer from '$lib/components/Footer.svelte'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { teamMetadata } from '$lib/content/triarc-page-metadata'
   import Hero from '$lib/components/Hero.svelte'
   import Block from '$lib/components/Block.svelte'
   import joinTheTeam from '$lib/assets/img/intro/content_team.svg'
@@ -16,9 +18,7 @@
   }
 </script>
 
-<svelte:head>
-  <title>Team - triarc-labs</title>
-</svelte:head>
+<MetaHead pageMetadata={teamMetadata} />
 <Hero
   title="Unser Team"
   content="Wir lieben was wir tun, und dass wir das gemeinsam tun.

@@ -1,7 +1,11 @@
 <script lang="ts">
   import Hero from '$lib/components/Hero.svelte'
-  import Block from '$lib/components/Block.svelte'
+  import Container from '$lib/components/Container.svelte'
   import Footer from '$lib/components/Footer.svelte'
+  import Reveal from '$lib/components/Reveal.svelte'
+  import Video from '$lib/components/Video.svelte'
+  import EnhancedImage from '$lib/index/EnhancedImage.svelte'
+  import MetaHead from '$lib/components/MetaHead.svelte'
   import pascal from '$lib/assets/team/pascal.jpg?w=768&format=webp;png&metadata&enhanced'
   import mlinkLogo from '$lib/assets/img/mlink/tree.svg'
   import m3expressIcon from '$lib/assets/img/lab/m3express-icon.svg'
@@ -10,105 +14,193 @@
   import aiPoc from '$lib/assets/img/thumbnail/ai-poc-poster.png'
   import slothiIcon from '$lib/assets/img/lab/slothi.svg'
   import heroImage from '$lib/assets/hero/InnovationLab.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
-  import type { BlockContent } from '$lib/components/TypeDefinitions'
+  import type { VideoContent } from '$lib/components/TypeDefinitions'
+  import { innovationMetadata } from '$lib/content/triarc-page-metadata'
 
-  let contents: BlockContent[] = [
-    {
-      quote: {
-        image: pascal,
-        content:
-          'Wir investieren gezielt in Innovation, um sicherzustellen, dass wir unseren Kunden Zugang zu den neuesten und besten Technologien bieten können. In unserer Kernkompetenz als technologischer Partner beteiligen wir uns an Startups und bringen Produkte zur Marktreife.',
-        person: 'Pascal Bertschi',
-        personTitle: 'CCO / Partner',
-        email: 'pascal@triarc-labs.com',
-        highlight: 'green',
-        linkedin: 'https://www.linkedin.com/in/pascal-bertschi-9b00b480/',
+  const quote = {
+    image: pascal,
+    content:
+      'Wir investieren gezielt in Innovation, um sicherzustellen, dass wir unseren Kunden Zugang zu den neuesten und besten Technologien bieten können. In unserer Kernkompetenz als technologischer Partner beteiligen wir uns an Startups und bringen Produkte zur Marktreife.',
+    person: 'Pascal Bertschi',
+    personTitle: 'CCO / Partner',
+  }
+
+  const voiceReportingVideo: VideoContent = {
+    videoTitle: 'AI Proof of Concept',
+    videoId: 'ai',
+    poster: aiPoc,
+    embedded: true,
+    sources: [
+      {
+        src: 'https://storage.googleapis.com/triarc-website/ai-poc-1080p_h264.webm',
+        type: 'video/webm',
       },
-    },
-    {
-      title: 'Voice Reporting',
-      content:
-        'Das AI-unterstützte Voice Reporting lässt Menschen mit Arbeitsgeräten sprechen. Das Rapportieren von Zeit, Aufwänden, Leistungen, Materialien, usw. kann vor Ort, sei es auf der Baustelle, im Sportzentrum, in der Produktionshalle, bei Kunden, usw. durch Spracheingabe erfasst werden. Ein AI-Assistenz stellt sicher, dass alle benötigten Informationen abgefragt werden, um den Rapport abzuschliessen. Danach übermittelt das Voice Reporting Tool die Spracheingaben mittels Text an die Schnittstelle ins ERP und/oder in die Reporting-Applikation, je nach Bedürfnis. Der Verwendungszweck des Voice Reporting Tool kann individuell vom Kunden definiert und entsprechend angepasst werden.',
-      video: {
-        videoTitle: 'AI Proof of Concept',
-        videoId: 'ai',
-        poster: aiPoc,
-        embedded: true,
-        sources: [
-          {
-            src: 'https://storage.googleapis.com/triarc-website/ai-poc-1080p_h264.webm',
-            type: 'video/webm',
-          },
-          {
-            src: 'https://storage.googleapis.com/triarc-website/ai-poc-1080p.mp4',
-            type: 'video/mp4',
-          },
-        ],
+      {
+        src: 'https://storage.googleapis.com/triarc-website/ai-poc-1080p.mp4',
+        type: 'video/mp4',
       },
-    },
+    ],
+  }
+
+  const labProducts = [
     {
       title: 'μLink Data-hub',
       content:
-        'μLink ist eine Kommunikationsschnittstelle mit dem Fokus, Informationen schnell auffindbar und schnell lesbar zu machen. Es erlaubt fliessende Prozesse über Systemgrenzen hinweg und gewährleistet, dass Informationen auf allen verbundenen Systemen identisch und in Echtzeit verfügbar sind. Mit μLink lassen sich unbegrenzt Umsysteme in ein Software Ökosystem integrieren.',
-      image: { src: mlinkLogo, alt: 'mlink logo' },
-      link: { href: '/mlink', text: 'Mehr dazu', target: '_blank' },
+        'μLink ist eine Kommunikationsschnittstelle mit dem Fokus, Informationen schnell auffindbar und schnell lesbar zu machen. Es erlaubt fliessende Prozesse über Systemgrenzen hinweg und gewährleistet, dass Informationen auf allen verbundenen Systemen identisch und in Echtzeit verfügbar sind.',
+      icon: mlinkLogo,
+      iconAlt: 'mlink logo',
+      accent: 'bg-red-triarc',
+      link: { href: '/mlink', text: 'Mehr dazu', target: '_self' },
     },
     {
       title: 'Zimmerpflanzen.de',
       content:
         'Ein Online-Shop für Zimmerpflanzen und Zubehör. Durch eine direkte Anbindung an die Schnittstellen der Züchter, ist die Zimmerpflanze in kürzester Zeit beim Kunden.',
-
-      image: { src: zimmerpflanzenIcon, width: 200, alt: 'zimmerpflanzen.de' },
+      icon: zimmerpflanzenIcon,
+      iconAlt: 'zimmerpflanzen.de',
+      accent: 'bg-green-triarc',
       link: { href: 'https://zimmerpflanzen.de', text: 'Mehr dazu', target: '_blank' },
     },
     {
       title: 'M3Express',
       content:
         'Die digitale Verbindung von der Baustelle bis zum Lieferanten. Erlaube deinen Kunden bequem Mulde, Kies oder Transport über die M3Express-App zu bestellen. Behalte als Lieferant jederzeit den Überblick und optimiere die Kommunikation zwischen Fahrer, Kunde und dir.',
-
-      image: { src: m3expressIcon, width: 200, alt: 'm3express' },
+      icon: m3expressIcon,
+      iconAlt: 'm3express',
+      accent: 'bg-blue-triarc',
       link: { href: 'https://m3express.ch', text: 'Mehr dazu', target: '_blank' },
     },
     {
       title: 'Fair Pizza',
       content:
-        'Fair Pizza bietet Restaurants eine einfache und günstige Alternative Angebot selbständig Online zu\n' +
-        '              verkaufen. Die Whitelabel Lösung bietet eine Vielzahl von Konfigurationsmöglichkeiten inklusive einem\n' +
-        '              Pizzabuilder. Mit Stripe lassen sich die Zahlungen bequem online abwickeln.',
-
-      image: { src: fairpizzaIcon, width: 220, alt: 'slothi' },
+        'Fair Pizza bietet Restaurants eine einfache und günstige Alternative ihr Angebot selbständig online zu verkaufen. Die Whitelabel Lösung bietet eine Vielzahl von Konfigurationsmöglichkeiten inklusive einem Pizzabuilder.',
+      icon: fairpizzaIcon,
+      iconAlt: 'fair pizza',
+      accent: 'bg-red-triarc',
       link: { href: 'https://fairpizza.ch', text: 'Mehr dazu', target: '_blank' },
     },
     {
       title: 'Slothi',
       content:
-        'Slothi soll deine Terminprobleme lösen. Eine smarte Lösung, welche dir den passenden Termin für alle\n' +
-        '              Teilnehmer findet. \n\nDamit du möglichst einfach einen Termin planen kannst, wählst du den Zeitraum in welchem der Termin\n' +
-        '              stattfinden soll. Die erforderliche Zeitdauer und die Teilnehmer welche daran teilnehmen sollen. Ab da\n' +
-        '              übernimmt Slothi für dich und prüft die Verfügbarkeiten aller Teilnehmer. Du erhältst eine Auswahl an\n' +
-        '              möglichen Terminvorschlägen und kannst einen fixen Termin einplanen.',
-
-      image: { src: slothiIcon, width: 200, alt: 'slothi' },
+        'Slothi soll deine Terminprobleme lösen. Eine smarte Lösung, welche dir den passenden Termin für alle Teilnehmer findet und die Verfügbarkeiten aller Teilnehmer automatisch prüft.',
+      icon: slothiIcon,
+      iconAlt: 'slothi',
+      accent: 'bg-green-triarc',
       link: { href: 'https://slothi.ch', text: 'Mehr dazu', target: '_blank' },
     },
   ]
 </script>
 
-<svelte:head>
-  <title>Innovation Lab - triarc-labs</title>
-</svelte:head>
+<MetaHead pageMetadata={innovationMetadata} />
 
-<Hero
-  title="Innovation Lab"
-  content="Innovationen sind der Schlüssel zu Wachstum und Erfolg. In unserem Lab fördern wir innovative und wettbewerbsfähige Businessideen, erstellen Machbarkeitsanalysen und entwickeln MVPs (Minimal Viable Products). "
-  image={heroImage}
-  imageAlt="Triarc InnovationLab Header"
-/>
+<div class="bg-white">
+  <Hero
+    title="Innovation Lab"
+    content="Innovationen sind der Schlüssel zu Wachstum und Erfolg. In unserem Lab fördern wir innovative und wettbewerbsfähige Businessideen, erstellen Machbarkeitsanalysen und entwickeln MVPs (Minimal Viable Products). "
+    image={heroImage}
+    imageAlt="Triarc InnovationLab Header"
+  />
 
-<div class="bg-white min-h-screen">
-  {#each contents as content}
-    <Block bind:content />
-  {/each}
+  <!-- Quote spotlight -->
+  <section class="border-b border-gray-100 bg-green-triarc bg-opacity-5">
+    <Container>
+      <Reveal>
+        <div class="flex flex-col items-center gap-10 py-16 md:py-24 lg:flex-row lg:items-start">
+          <div class="w-56 flex-shrink-0 lg:w-64">
+            <EnhancedImage
+              alt={quote.person}
+              image={quote.image}
+              imgClass="aspect-[3/4] w-full rounded-2xl object-cover shadow-xl"
+            />
+          </div>
+          <figure class="max-w-2xl">
+            <blockquote class="text-2xl font-bold leading-relaxed text-gray-900 md:text-3xl">
+              «{quote.content}»
+            </blockquote>
+            <figcaption class="mt-6 text-lg text-gray-600">
+              <span class="font-bold text-gray-900">{quote.person}</span> · {quote.personTitle}
+            </figcaption>
+          </figure>
+        </div>
+      </Reveal>
+    </Container>
+  </section>
+
+  <!-- Voice Reporting -->
+  <section class="py-16 md:py-24">
+    <Container>
+      <Reveal>
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <span class="text-sm font-bold uppercase tracking-widest text-gray-400">Aktuelles Experiment</span>
+            <h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Voice Reporting</h2>
+            <p class="mt-4 text-lg text-gray-600">
+              Das AI-unterstützte Voice Reporting lässt Menschen mit Arbeitsgeräten sprechen. Das Rapportieren von Zeit,
+              Aufwänden, Leistungen, Materialien, usw. kann vor Ort, sei es auf der Baustelle, im Sportzentrum, in der
+              Produktionshalle, bei Kunden, usw. durch Spracheingabe erfasst werden.
+            </p>
+            <p class="mt-4 text-lg text-gray-600">
+              Ein AI-Assistenz stellt sicher, dass alle benötigten Informationen abgefragt werden, um den Rapport
+              abzuschliessen. Danach übermittelt das Voice Reporting Tool die Spracheingaben mittels Text an die
+              Schnittstelle ins ERP und/oder in die Reporting-Applikation, je nach Bedürfnis. Der Verwendungszweck kann
+              individuell vom Kunden definiert und entsprechend angepasst werden.
+            </p>
+          </div>
+          <div class="overflow-hidden rounded-3xl shadow-xl ring-1 ring-gray-200">
+            <Video content={voiceReportingVideo} />
+          </div>
+        </div>
+      </Reveal>
+    </Container>
+  </section>
+
+  <!-- Lab products -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <Container>
+      <Reveal>
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Aus dem Lab</h2>
+        <p class="mt-4 max-w-3xl text-lg text-gray-600">
+          Produkte und Spin-offs, die in unserem Innovation Lab entstanden sind – von der Idee bis zur Marktreife.
+        </p>
+      </Reveal>
+      <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {#each labProducts as product, index}
+          <Reveal delay={(index % 3) * 100} class="h-full">
+            <div
+              class="flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div class="h-1.5 {product.accent}" aria-hidden="true"></div>
+              <div class="flex flex-grow flex-col p-7">
+                <img src={product.icon} alt={product.iconAlt} class="h-14 w-14 self-start object-contain" />
+                <h3 class="mt-5 text-xl font-bold text-gray-900">{product.title}</h3>
+                <p class="mt-3 flex-grow text-base text-gray-600">{product.content}</p>
+                <a
+                  href={product.link.href}
+                  target={product.link.target}
+                  rel={product.link.target === '_blank' ? 'noreferrer' : undefined}
+                  class="mt-6 text-base font-bold text-blue-triarc hover:underline"
+                >
+                  {product.link.text} →
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        {/each}
+        <Reveal delay={200} class="h-full">
+          <a
+            href="/lab"
+            class="flex h-full flex-col justify-between rounded-3xl bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended p-7 text-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+          >
+            <h3 class="text-xl font-bold">Mehr aus dem Lab</h3>
+            <p class="mt-3 text-base text-white/90">
+              Einblicke in unsere laufenden Experimente – und was als Nächstes kommt.
+            </p>
+            <span class="mt-6 font-bold">Zum triarc Lab →</span>
+          </a>
+        </Reveal>
+      </div>
+    </Container>
+  </section>
 
   <Footer />
 </div>

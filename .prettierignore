@@ -27,3 +27,6 @@ yarn.lock
 .github
 
 
+
+# Local Claude Code session files
+.claude/settings.local.json

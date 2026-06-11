@@ -10,6 +10,8 @@
   import heroImage from '$lib/assets/hero/Stories.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { MappedPost } from '../consulting/+page'
   import { MasonryInfiniteGrid } from '@egjs/svelte-infinitegrid'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { storiesMetadata } from '$lib/content/triarc-page-metadata'
 
   export let data: PageData
   let pageNumber = 2 //
@@ -60,9 +62,7 @@
   }
 </script>
 
-<svelte:head>
-  <title>Stories - triarc-labs</title>
-</svelte:head>
+<MetaHead pageMetadata={storiesMetadata} />
 
 <Hero
   title="Stories"
@@ -170,9 +170,12 @@
       >
         {#each visibleItems as item}
           <div class="item max-w-full md:max-w-md">
-            <a href="/stories/{item.data.slug}" class=" break-inside-avoid shadow flex flex-col group rounded-md">
+            <a
+              href="/stories/{item.data.slug}"
+              class="break-inside-avoid flex flex-col group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
               {#if item.data.image.src !== ''}
-                <div class="relative rounded-md shadow">
+                <div class="relative overflow-hidden">
                   <img
                     src={item.data.image.src}
                     srcset={item.data.image.srcset}
@@ -181,15 +184,14 @@
                     alt={item.data.image.alt}
                     data-width={item.data.image.width}
                     data-height={item.data.image.height}
-                    class="object-cover rounded-md rounded-b-none overflow-hidden block h-auto max-w-auto w-full object-center group-hover:opacity-75"
+                    class="object-cover block h-auto max-w-auto w-full object-center transition duration-500 group-hover:scale-105"
                   />
-                  <div class="absolute bg-opacity-20 top-0 left-0 w-full h-full rounded-md" />
                 </div>
               {/if}
-              <div class="px-4 py-3 bg-white rounded-md">
-                <h3 class="font-bold text-xl">{item.data.title}</h3>
-                <p class="line-clamp-3 mb-1 text-gray-500">{item.data.content}</p>
-                <p class="text-sm text-gray-500">{item.data.footer}</p>
+              <div class="px-6 py-5 bg-white">
+                <h3 class="font-bold text-xl group-hover:text-blue-triarc">{item.data.title}</h3>
+                <p class="line-clamp-3 mb-1 text-gray-600">{item.data.content}</p>
+                <p class="text-sm text-gray-400">{item.data.footer}</p>
               </div>
             </a>
           </div>

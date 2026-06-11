@@ -1,5 +1,6 @@
 import { DOMParser as XmldomParser } from '@xmldom/xmldom'
 import type { RequestHandler } from '@sveltejs/kit'
+import { referenceProjects } from '$lib/content/reference-projects'
 
 declare const __BUILD_TIME__: string
 const LAST_MODIFIED = typeof __BUILD_TIME__ !== 'undefined' ? __BUILD_TIME__ : new Date().toISOString()
@@ -19,6 +20,7 @@ const VIDEO_NS = 'http://www.google.com/schemas/sitemap-video/1.1'
 
 const pages = import.meta.glob('/src/routes/**/+page.svelte', { eager: true })
 const stories = await fetchGhostLocs()
+const referencePages = referenceProjects.map((project) => `/references/${project.slug}`)
 
 type ParsedUrl = {
   loc: string
@@ -45,7 +47,7 @@ const pageDirectories = [
 ]
 
 export const GET: RequestHandler = async () => {
-  const body = sitemap(pageDirectories, stories)
+  const body = sitemap([...pageDirectories, ...referencePages], stories)
   const response = new Response(body)
   response.headers.set('Cache-Control', 'max-age=0, s-maxage=3600')
   response.headers.set('Content-Type', 'application/xml')

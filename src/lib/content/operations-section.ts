@@ -1,5 +1,7 @@
 import type { TriarcSubsectionDefinition } from '$lib/components/TypeDefinitions'
-import teamwerk from '$lib/assets/img/strategy/TeamWerkExample.png?w=768&format=webp;png&metadata&enhanced'
+import cal from '$lib/assets/references/cal.png?w=768&format=webp;png&metadata&enhanced'
+import orthoOrder from '$lib/assets/references/ortho-order.png?w=768&format=webp;png&metadata&enhanced'
+import chauffeur from '$lib/assets/references/chauffeur.png?w=768&format=webp;png&metadata&enhanced'
 import gear from '$lib/assets/icons/gear-light-full.svg'
 
 export const operationSectionContent: TriarcSubsectionDefinition = {
@@ -11,33 +13,33 @@ export const operationSectionContent: TriarcSubsectionDefinition = {
   },
   projects: [
     {
-      image: teamwerk,
+      image: cal,
       content: {
-        prefix: 'TeamWerk',
-        title: 'Modulare Work Management Plattform.',
+        prefix: 'Referenz',
+        title: 'CAL – Logistik und Dispo digital verzahnt.',
         description:
-          'Um die Zusammenarbeit in Projekten und zwischen Teams optimal zu unterstützen, braucht es eine digitale Lösung, die flexibel mitwächst. Eine modulare Work Management Plattform bietet genau das: Sie vereint Arbeitsaufträge, Projektkoordination, Protokollierung, interne Kommunikation und ein zentrales Wiki in einem System – für effiziente Abläufe und transparente Zusammenarbeit.',
-        sectionLink: '/operations/teamwerk',
+          'End-to-end vom Fahrzeugpark bis zum Chauffeur: Aufträge, TomTom-Anbindung, Echtzeit-Routen und automatische Rapportierung – mit ABACUS-Integration für Stammdaten und Verrechnung.',
+        sectionLink: '/references',
       },
     },
     {
-      image: teamwerk,
+      image: orthoOrder,
       content: {
-        prefix: 'TeamWerk',
-        title: 'Modulare Work Management Plattform.',
+        prefix: 'Referenz',
+        title: 'Ortho-Order – Einkauf und Bestellungen im Griff.',
         description:
-          'Um die Zusammenarbeit in Projekten und zwischen Teams optimal zu unterstützen, braucht es eine digitale Lösung, die flexibel mitwächst. Eine modulare Work Management Plattform bietet genau das: Sie vereint Arbeitsaufträge, Projektkoordination, Protokollierung, interne Kommunikation und ein zentrales Wiki in einem System – für effiziente Abläufe und transparente Zusammenarbeit.',
-        sectionLink: '/operations/teamwerk',
+          'Standortübergreifendes Bestellwesen: Lieferanten splitten, Wareneingang dokumentieren, Rechnungsabgleich – ohne Excel-Chaos und mit klaren Freigaben.',
+        sectionLink: '/references',
       },
     },
     {
-      image: teamwerk,
+      image: chauffeur,
       content: {
-        prefix: 'TeamWerk',
-        title: 'Modulare Work Management Plattform.',
+        prefix: 'Referenz',
+        title: 'Chauffeur-App – Gefahrgut, Touren, ERP in einer Hand.',
         description:
-          'Um die Zusammenarbeit in Projekten und zwischen Teams optimal zu unterstützen, braucht es eine digitale Lösung, die flexibel mitwächst. Eine modulare Work Management Plattform bietet genau das: Sie vereint Arbeitsaufträge, Projektkoordination, Protokollierung, interne Kommunikation und ein zentrales Wiki in einem System – für effiziente Abläufe und transparente Zusammenarbeit.',
-        sectionLink: '/operations/teamwerk',
+          'Digitale Ladelisten, Tourenoptimierung und sofortige Rückmeldung ins ERP – inklusive ADR-Papieren. Weniger Papier, weniger Fehler, schnellere Einarbeitung in Dispo und Fahrer-Team.',
+        sectionLink: '/references',
       },
     },
   ],

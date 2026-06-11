@@ -32,9 +32,10 @@
   {buttonSize === 'Standard' ? 'md:px-6 md:py-3' : 'md:px-3 md:py-1'}
   {colorClass}
   {buttonGraphicStyle === 'primary' ? 'primary' : buttonGraphicStyle === 'secondary' ? 'secondary' : 'tertiary'}
-  text-base font-medium
+  text-base font-bold
   border md:border-0 border-transparent rounded-full
-  shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2
+  shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg
+  focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2
   disabled:bg-gray-500
   {clazz}"
 >

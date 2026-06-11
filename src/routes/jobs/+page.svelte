@@ -1,6 +1,8 @@
 <script lang="ts">
   import Hero from '$lib/components/Hero.svelte'
   import JobIntro from './job-intro.svelte'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { jobsMetadata } from '$lib/content/triarc-page-metadata'
   import Block from '$lib/components/Block.svelte'
   import heroImage from '$lib/assets/hero/Jobs.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { DetailedJobListing, JobPosting } from '$lib/components/TypeDefinitions'
@@ -87,9 +89,7 @@
   let listings: DetailedJobListing[] = DetailedJobListings
 </script>
 
-<svelte:head>
-  <title>Jobs - triarc-labs</title>
-</svelte:head>
+<MetaHead pageMetadata={jobsMetadata} />
 
 {#each jobPostings as jobPosting}
   <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->

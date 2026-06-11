@@ -8,6 +8,8 @@
   export let sectionContent: TriarcSubsectionDefinition
   export let sectionColor: TriarcColor
   export let sectionGradientColor: GradientColor
+  /** When false, omit the site footer so the parent can add e.g. a contact CTA footer after this block. */
+  export let showFooter = true
 </script>
 
 <div class="relative h-full {`gradient-${sectionGradientColor}`} bg-fixed">
@@ -27,7 +29,9 @@
     </div>
   </Container>
 </div>
-<FooterNoContact />
+{#if showFooter}
+  <FooterNoContact />
+{/if}
 
 <style>
   .gradient-green-blue {

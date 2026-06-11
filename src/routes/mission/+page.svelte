@@ -2,6 +2,8 @@
   import Block from '$lib/components/Block.svelte'
   import Hero from '$lib/components/Hero.svelte'
   import Footer from '$lib/components/Footer.svelte'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { missionMetadata } from '$lib/content/triarc-page-metadata'
   import serge from '$lib/assets/team/serge.jpg?w=768&format=webp;png&metadata&enhanced'
   import marco from '$lib/assets/team/marco.jpg?w=768&format=webp;png&metadata&enhanced'
   import elke from '$lib/assets/team/elke.jpg?w=768&format=webp;png&metadata&enhanced'
@@ -180,9 +182,7 @@
   ]
 </script>
 
-<svelte:head>
-  <title>together you succeed - triarc-labs</title>
-</svelte:head>
+<MetaHead pageMetadata={missionMetadata} />
 
 <div class="bg-white">
   <Hero

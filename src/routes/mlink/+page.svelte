@@ -1,7 +1,11 @@
 <script lang="ts">
   import Block from '$lib/components/Block.svelte'
+  import Container from '$lib/components/Container.svelte'
   import Footer from '$lib/components/Footer.svelte'
+  import Reveal from '$lib/components/Reveal.svelte'
   import type { BlockContent } from '$lib/components/TypeDefinitions'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { mlinkMetadata } from '$lib/content/triarc-page-metadata'
 
   import mLinkTree from '$lib/assets/img/mlink/mLink_tree.svg'
   import mLinkPoster from '$lib/assets/img/thumbnail/mlink-1080-poster.png'
@@ -29,6 +33,7 @@
         videoTitle: 'μLink der Kommunikationshub',
         videoId: 'mlink',
         poster: mLinkPoster,
+        embedded: false,
         sources: [
           {
             src: 'https://storage.googleapis.com/triarc-website/mlink-1080-v2.webm',
@@ -103,124 +108,89 @@
     },
   ]
 
-  let quotes: { left: BlockContent; right: BlockContent }[] = [
+  const customerQuotes = [
     {
-      left: {
-        quote: {
-          image: eblLogo,
-          imageCss: 'h-24',
-          content:
-            'μLink ist die Datendrehscheibe, welche Microsoft Dynamics AX und das Data Warehouse mit unseren Applikationen in Echtzeit vernetzt',
-          person: 'Philippe Kienner',
-          personTitle: 'CIO',
-        },
-      },
-      right: {
-        quote: {
-          image: glbLogo,
-          imageCss: 'h-24',
-          content: 'Mit μLink erweitern wir ABACUS nach Belieben',
-          person: 'Ueli Grossen',
-          personTitle: 'CIO',
-        },
-      },
+      logo: eblLogo,
+      logoAlt: 'EBL',
+      logoCss: 'h-16',
+      content:
+        'μLink ist die Datendrehscheibe, welche Microsoft Dynamics AX und das Data Warehouse mit unseren Applikationen in Echtzeit vernetzt',
+      person: 'Philippe Kienner',
+      personTitle: 'CIO',
     },
     {
-      left: {
-        quote: {
-          image: riwaxLogo,
-          imageCss: 'h-12',
-          content: 'μLink bindet unseren Aussendienst eng in unseren Betrieb ein',
-          person: 'Michel Scherz',
-          personTitle: 'Purchasing Manager',
-        },
-      },
-      right: {
-        quote: {
-          image: orthoTeamLogo,
-          imageCss: 'h-12',
-          content: 'μLink verbindet unsere Mitarbeiter von der Kundenberatung ohne Zeitverlust direkt zum Techniker',
-          person: 'Patrick Rohrer',
-          personTitle: 'CFO',
-        },
-      },
+      logo: glbLogo,
+      logoAlt: 'GLB',
+      logoCss: 'h-16',
+      content: 'Mit μLink erweitern wir ABACUS nach Belieben',
+      person: 'Ueli Grossen',
+      personTitle: 'CIO',
     },
     {
-      left: {
-        quote: {
-          image: kibagLogo,
-          imageCss: 'h-24 w-24',
-          content: 'μLink liefert uns die Grundlage für die digitale Bauakte',
-          person: 'Yves Stucki',
-          personTitle: 'CIO',
-        },
-      },
-      right: {
-        quote: {
-          image: waloLogo,
-          imageCss: 'h-24',
-          content: 'μLink ist die zentrale Datendrehscheibe in unserem Ökosystem',
-          person: 'Roger Bühlmann',
-          personTitle: 'Group CIO',
-        },
-      },
+      logo: riwaxLogo,
+      logoAlt: 'Riwax',
+      logoCss: 'h-10',
+      content: 'μLink bindet unseren Aussendienst eng in unseren Betrieb ein',
+      person: 'Michel Scherz',
+      personTitle: 'Purchasing Manager',
+    },
+    {
+      logo: orthoTeamLogo,
+      logoAlt: 'Ortho-Team',
+      logoCss: 'h-10',
+      content: 'μLink verbindet unsere Mitarbeiter von der Kundenberatung ohne Zeitverlust direkt zum Techniker',
+      person: 'Patrick Rohrer',
+      personTitle: 'CFO',
+    },
+    {
+      logo: kibagLogo,
+      logoAlt: 'KIBAG',
+      logoCss: 'h-16',
+      content: 'μLink liefert uns die Grundlage für die digitale Bauakte',
+      person: 'Yves Stucki',
+      personTitle: 'CIO',
+    },
+    {
+      logo: waloLogo,
+      logoAlt: 'WALO',
+      logoCss: 'h-16',
+      content: 'μLink ist die zentrale Datendrehscheibe in unserem Ökosystem',
+      person: 'Roger Bühlmann',
+      personTitle: 'Group CIO',
     },
   ]
 </script>
 
-<svelte:head>
-  <title>mLink Data Broker - triarc-labs</title>
-</svelte:head>
+<MetaHead pageMetadata={mlinkMetadata} />
 
 <div class="bg-white">
   {#each contents as content}
     <Block bind:content />
   {/each}
 
-  {#each quotes as quote}
-    <section class="alternating">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-16">
-        <div class="mx-auto grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-          <div class="flex flex-col pb-10 sm:pb-16 lg:pb-0 lg:pr-8 xl:pr-20">
-            <!-- TODO: When reworking page do a proper fix instead of a stopgap fix -->
-            {#if typeof quote.left.quote?.image === 'string'}
-              <img class="{quote.left.quote?.imageCss} self-start" src={quote.left.quote?.image} alt="" />
-              <figure class="mt-10 flex flex-auto flex-col justify-between">
-                <blockquote class="text-lg leading-8 text-gray-900">
-                  <p>“{quote.left.quote?.content}”</p>
-                </blockquote>
-                <figcaption class="mt-10 flex items-center gap-x-6">
-                  <div class="text-base">
-                    <div class="font-semibold text-gray-900">{quote.left.quote?.person}</div>
-                    <div class="mt-1 text-gray-500">{quote.left.quote?.personTitle}</div>
-                  </div>
-                </figcaption>
-              </figure>
-            {/if}
-          </div>
-          <div
-            class="flex flex-col border-t border-gray-900/10 pt-10 sm:pt-16 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0 xl:pl-20"
-          >
-            {#if typeof quote.right.quote?.image === 'string'}
-              <img class="{quote.right.quote?.imageCss} self-start" src={quote.right.quote?.image} alt="" />
-              <figure class="mt-10 flex flex-auto flex-col justify-between">
-                <blockquote class="text-lg leading-8 text-gray-900">
-                  <p>“{quote.right.quote?.content}”</p>
-                </blockquote>
-                <figcaption class="mt-10 flex items-center gap-x-6">
-                  <div class="text-base">
-                    <div class="font-semibold text-gray-900">{quote.right.quote?.person}</div>
-                    <div class="mt-1 text-gray-500">{quote.right.quote?.personTitle}</div>
-                  </div>
-                </figcaption>
-              </figure>
-            {/if}
-          </div>
-        </div>
+  <section class="bg-gray-50 py-16 md:py-24">
+    <Container>
+      <Reveal>
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Das sagen unsere Kunden</h2>
+      </Reveal>
+      <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {#each customerQuotes as quote, index}
+          <Reveal delay={(index % 3) * 100} class="h-full">
+            <figure class="flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-8 shadow-sm">
+              <img src={quote.logo} alt={quote.logoAlt} class="{quote.logoCss} self-start object-contain" />
+              <blockquote class="mt-6 flex-grow text-base leading-relaxed text-gray-600">
+                «{quote.content}»
+              </blockquote>
+              <figcaption class="mt-6 text-base">
+                <span class="font-bold text-gray-900">{quote.person}</span>
+                <span class="text-gray-500"> · {quote.personTitle}</span>
+              </figcaption>
+            </figure>
+          </Reveal>
+        {/each}
       </div>
-      <hr />
-    </section>
-  {/each}
+    </Container>
+  </section>
 
   <Footer />
 </div>

@@ -1,6 +1,8 @@
 <script lang="ts">
   import Hero from '$lib/components/Hero.svelte'
   import Container from '$lib/components/Container.svelte'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { contactMetadata } from '$lib/content/triarc-page-metadata'
   import heroImage from '$lib/assets/hero/Contact.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import iris from '$lib/assets/team/iris.jpg?format=webp;png&w=500&enhanced'
   import serge from '$lib/assets/team/serge.jpg?format=webp;png&w=1024&enhanced'
@@ -33,9 +35,7 @@
   }
 </script>
 
-<svelte:head>
-  <title>Kontakt - triarc-labs</title>
-</svelte:head>
+<MetaHead pageMetadata={contactMetadata} />
 
 <div class="min-h-screen flex flex-col">
   <Hero title="Kontaktinfos" content="" image={heroImage} imageAlt="Triarc Contact Header" />

@@ -4,10 +4,10 @@
   export let content: VideoContent
 
   import { onMount } from 'svelte'
-  import Plyr from 'plyr'
   import type { VideoContent } from '$lib/components/TypeDefinitions'
 
   onMount(async () => {
+    const Plyr = await import('plyr')
     new Plyr(`#${content.videoId}-player`, {
       controls: ['play-large', 'play', 'progress', 'mute', 'volume', 'fullscreen'],
     })
