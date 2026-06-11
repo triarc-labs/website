@@ -9,7 +9,6 @@
   import pascal from '$lib/assets/team/pascal.jpg?w=768&format=webp;png&metadata&enhanced'
   import mlinkLogo from '$lib/assets/img/mlink/tree.svg'
   import m3expressIcon from '$lib/assets/img/lab/m3express-icon.svg'
-  import zimmerpflanzenIcon from '$lib/assets/img/lab/zimmerpflanzen-icon.svg'
   import fairpizzaIcon from '$lib/assets/img/lab/fairpizza-icon-512.png'
   import aiPoc from '$lib/assets/img/thumbnail/ai-poc-poster.png'
   import slothiIcon from '$lib/assets/img/lab/slothi.svg'
@@ -24,6 +23,8 @@
     person: 'Pascal Bertschi',
     personTitle: 'CCO / Partner',
   }
+
+  const aiFields = ['Vertragsanalyse', 'Protokollerstellung', 'Assistenzen', 'Wissensmanagement']
 
   const voiceReportingVideo: VideoContent = {
     videoTitle: 'AI Proof of Concept',
@@ -53,21 +54,12 @@
       link: { href: '/mlink', text: 'Mehr dazu', target: '_self' },
     },
     {
-      title: 'Zimmerpflanzen.de',
-      content:
-        'Ein Online-Shop für Zimmerpflanzen und Zubehör. Durch eine direkte Anbindung an die Schnittstellen der Züchter ist die Zimmerpflanze in kürzester Zeit beim Kunden.',
-      icon: zimmerpflanzenIcon,
-      iconAlt: 'zimmerpflanzen.de',
-      accent: 'bg-green-triarc',
-      link: { href: 'https://zimmerpflanzen.de', text: 'Mehr dazu', target: '_blank' },
-    },
-    {
       title: 'M3Express',
       content:
         'Die digitale Verbindung von der Baustelle bis zum Lieferanten. Erlaube deinen Kunden bequem Mulde, Kies oder Transport über die M3Express-App zu bestellen. Behalte als Lieferant jederzeit den Überblick und optimiere die Kommunikation zwischen Fahrer, Kunde und dir.',
       icon: m3expressIcon,
       iconAlt: 'm3express',
-      accent: 'bg-blue-triarc',
+      accent: 'bg-green-triarc',
       link: { href: 'https://m3express.ch', text: 'Mehr dazu', target: '_blank' },
     },
     {
@@ -76,7 +68,7 @@
         'Fair Pizza bietet Restaurants eine einfache und günstige Alternative, ihr Angebot selbstständig online zu verkaufen. Die Whitelabel-Lösung bietet eine Vielzahl von Konfigurationsmöglichkeiten inklusive einem Pizzabuilder.',
       icon: fairpizzaIcon,
       iconAlt: 'fair pizza',
-      accent: 'bg-red-triarc',
+      accent: 'bg-blue-triarc',
       link: { href: 'https://fairpizza.ch', text: 'Mehr dazu', target: '_blank' },
     },
     {
@@ -85,7 +77,7 @@
         'Slothi soll deine Terminprobleme lösen. Eine smarte Lösung, welche dir den passenden Termin für alle Teilnehmer findet und die Verfügbarkeiten aller Teilnehmer automatisch prüft.',
       icon: slothiIcon,
       iconAlt: 'slothi',
-      accent: 'bg-green-triarc',
+      accent: 'bg-red-triarc',
       link: { href: 'https://slothi.ch', text: 'Mehr dazu', target: '_blank' },
     },
   ]
@@ -126,24 +118,29 @@
     </Container>
   </section>
 
-  <!-- Voice Reporting -->
+  <!-- Aktuelles Experiment: AI in Custom Software -->
   <section class="py-16 md:py-24">
     <Container>
       <Reveal>
         <div class="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <span class="text-sm font-bold uppercase tracking-widest text-gray-400">Aktuelles Experiment</span>
-            <h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Voice Reporting</h2>
+            <h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Integration von AI in die Welt der Custom Software
+            </h2>
             <p class="mt-4 text-lg text-gray-600">
-              Das AI-unterstützte Voice Reporting lässt Menschen mit Arbeitsgeräten sprechen. Das Rapportieren von Zeit,
-              Aufwänden, Leistungen, Materialien, usw. kann vor Ort, sei es auf der Baustelle, im Sportzentrum, in der
-              Produktionshalle, bei Kunden, usw. durch Spracheingabe erfasst werden.
+              Wir erproben, wie AI massgeschneiderte Software noch wertvoller macht – nicht als isoliertes Tool, sondern
+              direkt eingebettet in Ihre Geschäftsprozesse und Systemlandschaft.
             </p>
-            <p class="mt-4 text-lg text-gray-600">
-              Ein AI-Assistenz stellt sicher, dass alle benötigten Informationen abgefragt werden, um den Rapport
-              abzuschliessen. Danach übermittelt das Voice Reporting Tool die Spracheingaben mittels Text an die
-              Schnittstelle ins ERP und/oder in die Reporting-Applikation, je nach Bedürfnis. Der Verwendungszweck kann
-              individuell vom Kunden definiert und entsprechend angepasst werden.
+            <ul class="mt-6 flex flex-wrap gap-3">
+              {#each aiFields as field}
+                <li class="rounded-full border border-gray-300 px-4 py-1.5 text-base text-gray-700">{field}</li>
+              {/each}
+            </ul>
+            <p class="mt-6 text-lg text-gray-600">
+              Ein Beispiel aus dem Lab: das AI-unterstützte Voice Reporting. Zeit, Leistungen und Materialien werden vor
+              Ort per Spracheingabe erfasst, eine AI-Assistenz fragt fehlende Angaben nach und übermittelt den Rapport
+              direkt ins ERP oder in die Reporting-Applikation.
             </p>
           </div>
           <div class="overflow-hidden rounded-3xl shadow-xl ring-1 ring-gray-200">
