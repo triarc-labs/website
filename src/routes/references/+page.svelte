@@ -14,11 +14,17 @@
   import { referenceProjects } from '$lib/content/reference-projects'
 
   const accents = ['bg-red-triarc', 'bg-green-triarc', 'bg-blue-triarc']
-  const lastIndex = referenceProjects.length - 1
 
-  function isFeatured(index: number) {
-    return index === 0 || index === lastIndex
-  }
+  // First tag of each project is its primary category
+  const categories = [...new Set(referenceProjects.map((project) => project.tags[0]))]
+  let activeCategory: string | null = null
+
+  $: filteredProjects = activeCategory
+    ? referenceProjects.filter((project) => project.tags[0] === activeCategory)
+    : referenceProjects
+
+  // Only the very first card of the unfiltered gallery spans two columns
+  $: featuredSlug = activeCategory === null ? referenceProjects[0].slug : null
 </script>
 
 <MetaHead pageMetadata={referencesMetadata} />
@@ -52,16 +58,41 @@
   <!-- Project gallery -->
   <section class="bg-gray-50 py-16 md:py-24" id="projects">
     <Container>
+      <div class="mb-10 flex flex-wrap gap-3" role="group" aria-label="Referenzen nach Kategorie filtern">
+        <button
+          type="button"
+          aria-pressed={activeCategory === null}
+          class="rounded-full border px-4 py-1.5 text-base font-bold transition duration-300 {activeCategory === null
+            ? 'border-transparent bg-blue-triarc text-white shadow'
+            : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'}"
+          on:click={() => (activeCategory = null)}
+        >
+          Alle
+        </button>
+        {#each categories as category}
+          <button
+            type="button"
+            aria-pressed={activeCategory === category}
+            class="rounded-full border px-4 py-1.5 text-base font-bold transition duration-300 {activeCategory ===
+            category
+              ? 'border-transparent bg-blue-triarc text-white shadow'
+              : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'}"
+            on:click={() => (activeCategory = category)}
+          >
+            {category}
+          </button>
+        {/each}
+      </div>
       <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {#each referenceProjects as project, index}
-          <Reveal delay={(index % 3) * 100} class="h-full {isFeatured(index) ? 'md:col-span-2' : ''}">
+        {#each filteredProjects as project, index (project.slug)}
+          <Reveal delay={(index % 3) * 100} class="h-full {project.slug === featuredSlug ? 'md:col-span-2' : ''}">
             <a
               href="/references/{project.slug}"
               class="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <div class="h-1.5 {accents[index % accents.length]}" aria-hidden="true"></div>
               <div
-                class="flex items-center justify-center overflow-hidden bg-gray-50 p-6 {isFeatured(index)
+                class="flex items-center justify-center overflow-hidden bg-gray-50 p-6 {project.slug === featuredSlug
                   ? 'aspect-[16/7]'
                   : 'aspect-[16/9]'}"
               >
