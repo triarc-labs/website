@@ -368,7 +368,7 @@
                       /></svg
                     >
                     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                      <span class="text-blue-triarc font-semibold">Zum hochladen klicken</span> oder Files ziehen
+                      <span class="text-blue-triarc font-semibold">Zum Hochladen klicken</span> oder Files ziehen
                     </p>
                     <p class="text-xs text-gray-500 dark:text-gray-400">PDF (Max. 10Mb)</p>
                   </Dropzone>
@@ -471,7 +471,7 @@
                         for="condition-checkbox"
                         class="inline pl-4 text-wrap text-s font-medium text-gray-900 decoration-red-triarc"
                       >
-                        Wir akzeptieren keine Bewerbungen über Personalvermittlern oder Headhuntern. Ich bestätige, dass
+                        Wir akzeptieren keine Bewerbungen über Personalvermittler oder Headhunter. Ich bestätige, dass
                         ich mich direkt bewerbe.
                       </label>
                     </div>

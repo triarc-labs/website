@@ -45,15 +45,21 @@
       items: [
         {
           type: 'link',
-          title: 'Mission',
-          path: '/mission',
-          description: 'Was uns ausmacht',
+          title: 'Strategie in Praxis übersetzen',
+          path: '/strategy',
+          description: '',
         },
         {
           type: 'link',
-          title: 'Team',
-          path: '/team',
-          description: 'Wer wir sind',
+          title: 'Operativen Reibungsverlust reduzieren',
+          path: '/operations',
+          description: '',
+        },
+        {
+          type: 'link',
+          title: 'Wettbewerbsfähigkeit garantieren',
+          path: '/future',
+          description: '',
         },
         {
           type: 'link',
@@ -81,7 +87,13 @@
       items: [
         {
           type: 'link',
-          title: 'μLink',
+          title: 'Stories',
+          description: 'Neustes von uns und unserem Umfeld',
+          path: '/stories',
+        },
+        {
+          type: 'link',
+          title: 'Produkte',
           description: 'Real time data hub',
           path: '/mlink',
         },
@@ -91,17 +103,11 @@
           description: 'Erfahrungen und Referenzen',
           path: '/references',
         },
-        {
-          type: 'link',
-          title: 'Stories',
-          description: 'Neustes von uns und unserem Umfeld',
-          path: '/stories',
-        },
       ],
     },
     {
       type: 'heading',
-      title: 'Dienstleistung',
+      title: 'Dienstleistungen',
       items: [
         {
           type: 'link',
@@ -125,13 +131,19 @@
     },
     {
       type: 'heading',
-      title: 'Kontakt',
+      title: 'Über uns',
       items: [
         {
           type: 'link',
-          title: 'Kontaktinfos',
+          title: 'Kontakt',
           description: 'Sprich mit uns über deine Anliegen',
           path: '/contact',
+        },
+        {
+          type: 'link',
+          title: 'Team',
+          description: 'Wer wir sind',
+          path: '/team',
         },
         {
           type: 'link',
@@ -139,6 +151,13 @@
           description: 'Für Begeisterte und Motivierte',
           path: '/jobs',
         },
+        // ToDo enable when Page exists
+        // {
+        //   type: 'link',
+        //   title: 'Partner',
+        //   description: '',
+        //   path: '/jobs',
+        // },
       ],
     },
   ]
@@ -182,7 +201,7 @@
       en: "%c We're hiring! Checkout https://triarc-labs.com/jobs",
       de: '%c Wir suchen dich! https://triarc-labs.com/jobs',
       'de-DE': '%c Wir suchen dich! https://triarc-labs.com/jobs',
-      'de-CH': '%c Mir suched dich! https://triarc-labs.com/job s',
+      'de-CH': '%c Mir suched dich! https://triarc-labs.com/jobs',
     }
     const message = messages[navigator.language] || messages['en']
     console.log(
@@ -209,7 +228,55 @@
       video.play()
     }
   })
+
+  // BreadcrumbList JSON-LD – erzeugt Breadcrumbs aus dem aktuellen Pfad
+  $: breadcrumbSegments = getBreadcrumbSegments(data.pathname)
+
+  function getBreadcrumbSegments(pathname: string) {
+    if (pathname === '/') return []
+    const segments = pathname.split('/').filter(Boolean)
+    const items: { name: string; url: string }[] = []
+    let cumulativePath = ''
+    for (const segment of segments) {
+      cumulativePath += '/' + segment
+      const linkInfo = linkMetaInfo[cumulativePath]
+      items.push({
+        name: linkInfo?.title ?? segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
+        url: `https://triarc-labs.com${cumulativePath}`,
+      })
+    }
+    return items
+  }
+
+  $: breadcrumbJsonLd =
+    breadcrumbSegments.length > 0
+      ? JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: 'https://triarc-labs.com',
+            },
+            ...breadcrumbSegments.map((seg, i) => ({
+              '@type': 'ListItem',
+              position: i + 2,
+              name: seg.name,
+              item: seg.url,
+            })),
+          ],
+        })
+      : ''
 </script>
+
+<svelte:head>
+  {#if breadcrumbJsonLd}
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -- Static JSON-LD -->
+    {@html `<script type="application/ld+json">${breadcrumbJsonLd}</script` + '>'}
+  {/if}
+</svelte:head>
 
 <ContactButton></ContactButton>
 <div id="page" class="content {menuOpen ? 'open' : 'closed'}">

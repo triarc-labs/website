@@ -55,7 +55,7 @@
     {
       title: 'Zimmerpflanzen.de',
       content:
-        'Ein Online-Shop für Zimmerpflanzen und Zubehör. Durch eine direkte Anbindung an die Schnittstellen der Züchter, ist die Zimmerpflanze in kürzester Zeit beim Kunden.',
+        'Ein Online-Shop für Zimmerpflanzen und Zubehör. Durch eine direkte Anbindung an die Schnittstellen der Züchter ist die Zimmerpflanze in kürzester Zeit beim Kunden.',
       icon: zimmerpflanzenIcon,
       iconAlt: 'zimmerpflanzen.de',
       accent: 'bg-green-triarc',
@@ -73,7 +73,7 @@
     {
       title: 'Fair Pizza',
       content:
-        'Fair Pizza bietet Restaurants eine einfache und günstige Alternative ihr Angebot selbständig online zu verkaufen. Die Whitelabel Lösung bietet eine Vielzahl von Konfigurationsmöglichkeiten inklusive einem Pizzabuilder.',
+        'Fair Pizza bietet Restaurants eine einfache und günstige Alternative, ihr Angebot selbstständig online zu verkaufen. Die Whitelabel-Lösung bietet eine Vielzahl von Konfigurationsmöglichkeiten inklusive einem Pizzabuilder.',
       icon: fairpizzaIcon,
       iconAlt: 'fair pizza',
       accent: 'bg-red-triarc',

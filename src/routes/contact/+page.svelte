@@ -1,11 +1,11 @@
 <script lang="ts">
   import Hero from '$lib/components/Hero.svelte'
   import Container from '$lib/components/Container.svelte'
-  import MetaHead from '$lib/components/MetaHead.svelte'
-  import { contactMetadata } from '$lib/content/triarc-page-metadata'
   import heroImage from '$lib/assets/hero/Contact.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import iris from '$lib/assets/team/iris.jpg?format=webp;png&w=500&enhanced'
   import serge from '$lib/assets/team/serge.jpg?format=webp;png&w=1024&enhanced'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { contactMetadata } from '$lib/content/triarc-page-metadata'
 
   let firstName = '',
     lastName = '',
@@ -35,7 +35,7 @@
   }
 </script>
 
-<MetaHead pageMetadata={contactMetadata} />
+<MetaHead pageMetadata={contactMetadata}></MetaHead>
 
 <div class="min-h-screen flex flex-col">
   <Hero title="Kontaktinfos" content="" image={heroImage} imageAlt="Triarc Contact Header" />
@@ -258,7 +258,7 @@
       <div class="py-16">
         <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">Kontaktformular</h2>
         <h3 class="text-lg mt-3 font-medium text-gray-500">
-          Interessiert? Trete in Kontakt, damit wir gemeinsam Lösungen schaffen
+          Interessiert? Tritt in Kontakt, damit wir gemeinsam Lösungen schaffen
         </h3>
         <form action="#" method="POST" class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
           <div>

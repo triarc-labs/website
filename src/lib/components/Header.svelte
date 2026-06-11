@@ -5,7 +5,7 @@
         <h1 class="text-xl">
           <slot />
         </h1>
-        <p class="text-sm">Hautpseite</p>
+        <p class="text-sm">Hauptseite</p>
       </div>
       <img src="/icons/triarc-logo.svg" class="h-10" alt="triarc logo" />
     </a>

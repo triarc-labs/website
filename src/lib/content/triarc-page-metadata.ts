@@ -1,92 +1,102 @@
 import type { TriarcPageMetadata } from '$lib/components/TypeDefinitions'
 
 export const consultingMetadata: TriarcPageMetadata = {
-  title: 'Beratung – triarc laboratories',
-  metaTitle: 'Digitalisierungsberatung, Strategie & Change Management | triarc labs',
+  title: 'Digitalisierungsberatung – triarc laboratories',
+  metaTitle: 'Beratung für Ihre digitale Transformation',
   description:
-    'Digitalisierungsberatung aus einer Hand: Potenzialanalyse, Vision und Strategie, Change Management, Prozesse und Coaching. Mensch, Kultur und Software – mit Referenzen wie Helvetas und Analytica.',
+    'Erfolgreiche Digitalisierung braucht das Miteinander. Wir begleiten Ihre digitale Transformation mit Strategie, Change Management und Prozessoptimierung – ganzheitlich und nachhaltig.',
 }
 
 export const contactMetadata: TriarcPageMetadata = {
   title: 'Kontakt – triarc laboratories',
-  metaTitle: 'Kontakt triarc labs | Custom Software Schweiz',
+  metaTitle: 'Kontaktieren Sie triarc laboratories in Zürich',
   description:
-    'Kontaktieren Sie triarc laboratories für Custom Software, Beratung und Innovation. Wir freuen uns auf Ihr Projekt.',
+    'Sie haben eine Idee oder ein Projekt? Sprechen Sie mit uns. triarc laboratories – Custom Software, Beratung und Innovation aus Zürich.',
 }
 
 export const customSoftwareMetadata: TriarcPageMetadata = {
-  title: 'Custom Software – triarc laboratories',
-  metaTitle: 'Custom Software Schweiz | Agile Entwicklung inhouse | triarc labs',
+  title: 'Custom Software Entwicklung – triarc laboratories',
+  metaTitle: 'Massgeschneiderte Softwareentwicklung aus Zürich',
   description:
-    'Massgeschneiderte Web-, Mobile- und Backend-Software, inhouse und agil entwickelt. ERP-Anbindungen, Logistik, Field Apps, Hosting und Wartung – für Schweizer KMU und Konzerne.',
+    'Wir entwickeln Custom Software, die exakt zu Ihren Bedürfnissen passt. Agile Entwicklung, Wartung und Hosting aus einer Hand – seit über 10 Jahren.',
 }
 
 export const futureMetadata: TriarcPageMetadata = {
-  title: 'Zukunft – triarc laboratories',
-  metaTitle: 'Digitale Zukunft & Wettbewerbsfähigkeit | triarc labs',
+  title: 'Wettbewerbsfähigkeit – triarc laboratories',
+  metaTitle: 'Zukünftige Wettbewerbsfähigkeit sichern',
   description:
-    'Skalierbare Software, agile Architekturen und Innovation: Wir sichern Ihre Wettbewerbsfähigkeit – von datengetriebenem Aussendienst bis zu digitalen Plattformen und System-Ökosystemen.',
+    'Skalierbare Lösungen, agile Strukturen und gezielte Innovation stärken Ihre Wettbewerbsfähigkeit und ermöglichen eine klare Positionierung mit einem einzigartigen USP.',
 }
 
 export const innovationMetadata: TriarcPageMetadata = {
   title: 'Innovation Lab – triarc laboratories',
-  metaTitle: 'Innovation Lab: MVPs, KI & Prototyping | triarc labs',
+  metaTitle: 'Innovation Lab: Produkte und MVPs entwickeln',
   description:
-    'Voice Reporting mit KI, μLink Data-Hub und Spin-offs wie M3Express: Wir erproben Technologien, bauen MVPs und bringen Ideen zur Marktreife.',
+    'In unserem Innovation Lab fördern wir wettbewerbsfähige Businessideen, erstellen Machbarkeitsanalysen und entwickeln MVPs. Von Voice Reporting bis Terminfindung.',
 }
 
 export const jobsMetadata: TriarcPageMetadata = {
   title: 'Jobs – triarc laboratories',
-  metaTitle: 'Karriere bei triarc labs | Jobs in der Softwareentwicklung',
+  metaTitle: 'Karriere bei triarc laboratories in Zürich',
   description:
-    'Offene Stellen bei triarc laboratories: Softwareentwicklung, Projektleitung und mehr. Agile Teams in der Schweiz.',
+    'Werde Teil unseres Teams. Wir suchen motivierte Softwareentwickler:innen und Talente für Custom Software, Innovation und Beratung in Zürich.',
 }
 
 export const labMetadata: TriarcPageMetadata = {
-  title: 'Lab – triarc laboratories',
-  metaTitle: 'triarc Lab | Experimente und Produkte',
-  description: 'Einblicke in Experimente, Produkte und Prototypen aus dem triarc Lab.',
+  title: 'Innovation Lab Projekte – triarc laboratories',
+  metaTitle: 'Innovation Lab: Slothi, Fair Pizza & mehr',
+  description:
+    'Entdecken Sie unsere Lab-Projekte: Slothi Terminfindung, Fair Pizza Whitelabel-Shop und weitere innovative Produkte aus dem Hause triarc.',
 }
 
 export const missionMetadata: TriarcPageMetadata = {
-  title: 'Mission – triarc laboratories',
-  metaTitle: 'Mission & Werte | triarc laboratories',
+  title: 'Together you succeed – triarc laboratories',
+  metaTitle: 'Unsere Mission: Together you succeed',
   description:
-    'Was triarc laboratories ausmacht: massgeschneiderte Software, ganzheitliche Digitalisierung und partnerschaftliche Zusammenarbeit von der Vision bis in den Betrieb.',
+    'Für Ihren Fortschritt. Wir entwickeln massgeschneiderte Software, begleiten Ihre digitale Transformation und fördern Innovation – alles aus einer Hand in Zürich.',
 }
 
 export const mlinkMetadata: TriarcPageMetadata = {
   title: 'μLink Datahub – triarc laboratories',
-  metaTitle: 'μLink Datahub | Echtzeit-Daten zwischen ERP & Apps | triarc labs',
+  metaTitle: 'μLink: Echtzeit-Datenhub für Ihr Software-Ökosystem',
   description:
-    'μLink vernetzt ERP, CRM, Zeiterfassung und Fachsoftware in Echtzeit. Weniger manuelle Schnittstellen, konsistente Daten über alle Systeme.',
+    'μLink vernetzt ERP, CRM, Disposition und mehr in Echtzeit. Die Schnittstellenlösung für ein integriertes Software-Ökosystem ohne Medienbrüche.',
 }
 
 export const operationsMetadata: TriarcPageMetadata = {
-  title: 'Operationen – triarc laboratories',
-  metaTitle: 'Operative Exzellenz: Prozesse digitalisieren | triarc labs',
+  title: 'Operations – triarc laboratories',
+  metaTitle: 'Operativen Reibungsverlust reduzieren',
   description:
-    'Weniger Reibung im Tagesgeschäft: mobile Logistik, Bestellwesen, Rapportierung und ERP-Integration. Individuelle Software für Dispo, Lager und Außendienst.',
+    'Automatisierte Abläufe, intuitive Bedienung und gezielter Wissenstransfer sorgen für reibungslose Zusammenarbeit und eine starke operative Performance.',
 }
 
 export const storiesMetadata: TriarcPageMetadata = {
   title: 'Stories – triarc laboratories',
-  metaTitle: 'Blog & Stories | triarc laboratories',
+  metaTitle: 'Neues von triarc laboratories',
   description:
-    'News, Tech-Myths, Einblicke ins Team und Fachartikel zu Digitalisierung, Softwareentwicklung und Innovation von triarc laboratories.',
+    'Erfahren Sie mehr über unsere Projekte, Erfolgsgeschichten und was uns bewegt. Stories aus dem triarc-Universum rund um Custom Software und digitale Transformation.',
 }
 
 export const strategyMetadata: TriarcPageMetadata = {
   title: 'Strategie – triarc laboratories',
-  metaTitle: 'IT-Strategie umsetzen: Von Vision zu Software | triarc labs',
+  metaTitle: 'Strategie in die Praxis übersetzen',
   description:
-    'Strategie in die Praxis übersetzen: klare Digitalisierungsziele, Work-Management und branchenspezifische Lösungen – von Gesundheitswesen bis Bau.',
+    'Mit klaren Entscheidungsgrundlagen und einem ganzheitlichen Ansatz schaffen wir die Basis, damit Veränderungen zielgerichtet, effizient und nachhaltig wirken.',
 }
 
 export const teamMetadata: TriarcPageMetadata = {
   title: 'Team – triarc laboratories',
-  metaTitle: 'Team triarc laboratories | Ihre Ansprechpartner',
-  description: 'Lernen Sie die Partner und das Team von triarc laboratories kennen.',
+  metaTitle: 'Unser Team: Erfahrene Spezialisten in Zürich',
+  description:
+    'Lernen Sie das triarc-Team kennen. Erfahrene, engagierte Spezialisten für Custom Software, Beratung und digitale Innovation in Zürich.',
+}
+
+export const landingMetadata: TriarcPageMetadata = {
+  title: 'triarc laboratories – Custom Softwareentwicklung & digitale Transformation',
+  metaTitle: 'triarc laboratories – Ihr Partner für Custom Softwareentwicklung',
+  description:
+    'Ihre Digitalisierung – strukturiert, effizient, erfolgreich. Wir unterstützen Sie von der Idee bis zur Umsetzung mit massgeschneiderter Software, Beratung und Innovation aus Zürich.',
+  ogImage: 'https://triarc-labs.com/triarc-og-default.png',
 }
 
 export const referencesMetadata: TriarcPageMetadata = {
@@ -94,13 +104,6 @@ export const referencesMetadata: TriarcPageMetadata = {
   metaTitle: 'Referenzen & Projekte | Custom Software Schweiz | triarc labs',
   description:
     'Ausgewählte Projekte: Logistik, Orthopädie/Reha, Aussendienst, Immobilien, Bau und mehr – individuelle Software mit messbarem Nutzen.',
-}
-
-export const landingMetadata: TriarcPageMetadata = {
-  title: 'triarc laboratories – Custom Software & Digitalisierung Schweiz',
-  metaTitle: 'triarc labs | Custom Software, Beratung & Innovation',
-  description:
-    'triarc laboratories: Custom Software, Beratung und Innovation aus der Schweiz. Strategie, Operationen und Zukunft aus einer Hand – agil, inhouse, mit starken Referenzen.',
 }
 
 export const strategyDigitaleRoadmapMetadata: TriarcPageMetadata = {

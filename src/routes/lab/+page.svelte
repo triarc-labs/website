@@ -35,7 +35,7 @@
       accentBg: 'bg-indigo-500',
       lead: 'Slothi soll deine Terminprobleme lösen. Eine smarte Lösung, welche dir den passenden Termin für alle Teilnehmer findet.',
       description:
-        'Damit du möglichst einfach einen Termin planen kannst, wählst du den Zeitraum in welchem der Termin stattfinden soll. Die erforderliche Zeitdauer und die Teilnehmer welche daran teilnehmen sollen. Ab da übernimmt Slothi für dich und prüft die Verfügbarkeiten aller Teilnehmer. Du erhältst eine Auswahl an möglichen Terminvorschlägen und kannst einen fixen Termin einplanen.',
+        'Damit du möglichst einfach einen Termin planen kannst, wählst du den Zeitraum, in dem der Termin stattfinden soll. Die erforderliche Zeitdauer sowie die Teilnehmer, die daran teilnehmen sollen. Ab da übernimmt Slothi für dich und prüft die Verfügbarkeiten aller Teilnehmer. Du erhältst eine Auswahl an möglichen Terminvorschlägen und kannst einen fixen Termin einplanen.',
       image: Slothi,
       imageAlt: 'slothi',
       links: [{ href: 'https://slothi.ch', text: 'Mehr erfahren', primary: true }],
@@ -46,7 +46,7 @@
       status: 'Live',
       accentText: 'text-red-400',
       accentBg: 'bg-red-500',
-      lead: 'Fair Pizza bietet Restaurants eine einfache und günstige Alternative ihr Angebot selbständig online zu verkaufen. Die Whitelabel Lösung bietet eine Vielzahl von Konfigurationsmöglichkeiten inklusive einem Pizzabuilder. Mit Stripe lassen sich die Zahlungen bequem online abwickeln.',
+      lead: 'Fair Pizza bietet Restaurants eine einfache und günstige Alternative, ihr Angebot selbstständig online zu verkaufen. Die Whitelabel-Lösung bietet eine Vielzahl von Konfigurationsmöglichkeiten inklusive einem Pizzabuilder. Mit Stripe lassen sich die Zahlungen bequem online abwickeln.',
       description:
         'Die Auslieferung erfolgt über eigene Wege oder über einen unserer lokalen <a target="_blank" class="underline" href="https://www.ultrakurier.ch/" rel="noreferrer">Partner</a>.',
       image: FairPizza,
@@ -82,8 +82,8 @@
           </Reveal>
           <Reveal y={16} delay={200}>
             <p class="mt-6 text-xl text-gray-300">
-              Willkommen im Lab von triarc. Hier erfährst du mehr zu den entstandenen Produkten, welche wir im Rahmen
-              des Labs entwickeln.
+              Willkommen im Lab von triarc. Hier erfährst du mehr über die entstandenen Produkte, die wir im Rahmen des
+              Labs entwickeln.
             </p>
           </Reveal>
         </div>

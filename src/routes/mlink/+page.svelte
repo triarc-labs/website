@@ -23,8 +23,8 @@
     {
       title: 'μLink Datahub',
       content:
-        'Die Schnittstellenlösung, welche ihre komplette Software-Infrastruktur unter einen Hut bringt! ERP, CRM, Disposition, Zeiterfassung, Projektsoftware, HR Suite, Lagerbewirtschaftung usw. sind mit µLink in einem einzigen digitalen Ökosystem vereint. <br/><br/>' +
-        'Unternehmen, die konsequent auf digitale Lösungen setzen, haben einen klaren Wettbewerbsvorteil. Dabei wird mithilfe unterschiedlicher Softwarelösungen ein Prozess nach dem anderen digitalisiert. Durch diese stetig wachsende und sich verändernde Ökosystem entsteht das Bedürfnis die Datenflüsse zu managen. <br/><br/>' +
+        'Die Schnittstellenlösung, welche Ihre komplette Software-Infrastruktur unter einen Hut bringt! ERP, CRM, Disposition, Zeiterfassung, Projektsoftware, HR Suite, Lagerbewirtschaftung usw. sind mit µLink in einem einzigen digitalen Ökosystem vereint. <br/><br/>' +
+        'Unternehmen, die konsequent auf digitale Lösungen setzen, haben einen klaren Wettbewerbsvorteil. Dabei wird mithilfe unterschiedlicher Softwarelösungen ein Prozess nach dem anderen digitalisiert. Durch dieses stetig wachsende und sich verändernde Ökosystem entsteht das Bedürfnis die Datenflüsse zu managen. <br/><br/>' +
         'Essenziell sind dabei Bedürfnisse wie das Verhindern manueller Arbeitsschritte, die direkte Zusammenarbeit von Mitarbeitern über Systemgrenzen hinweg, sowie das schnelle Finden aller massgebenden Informationen in den angebundenen Softwarelösungen. µLink liefert dafür die hochmoderne und effiziente Lösung mit dem Fokus auf Echtzeitkommunikation und Sicherheit.',
       image: { src: mLinkTree, alt: 'mlink logo' },
     },
@@ -50,14 +50,14 @@
       title: 'Softwareökosystem',
       image: { src: mLinkDatenfluss, alt: 'mlink ecosystem' },
       content:
-        'Schritt um Schritt zur perfekten Schnittstelle. Bei der Digitalisierung von Geschäftsprozessen kommen meist mehrere Software Systeme zum Einsatz. Die Schnittstellen zwischen den verschiedenen Systemen mit unterschiedlichen Technologien stellt Unternehmen vor grosse Herausforderungen. µLink vereinfacht als zentrale Instanz die Schnittstellenproblematik, vernetzt die verschiedenen Systeme und ermöglicht damit die ' +
+        'Schritt für Schritt zur perfekten Schnittstelle. Bei der Digitalisierung von Geschäftsprozessen kommen meist mehrere Softwaresysteme zum Einsatz. Die Schnittstellen zwischen den verschiedenen Systemen mit unterschiedlichen Technologien stellt Unternehmen vor grosse Herausforderungen. µLink vereinfacht als zentrale Instanz die Schnittstellenproblematik, vernetzt die verschiedenen Systeme und ermöglicht damit die ' +
         'zentrale Bewirtschaftung der Schnittstellen. So kann mit minimalem Aufwand neue ' +
         'Software ins Ökosystem integriert oder bestehende abgelöst werden.',
     },
     {
       title: 'Monitoring',
       content:
-        'Mit µLink lassen sich die Datenflüsse zwischen Softwaresystemen zentral observieren. Bei einem Ausfall, einer Abnahme der Leistung oder weiterer konfigurierbarer Parameter kann proaktiv alarmiert werden. Über das Grafana-Dashboard lassen sich alle systemrelevanten Komponenten in Echtzeit über-wachen und visualisieren.',
+        'Mit µLink lassen sich die Datenflüsse zwischen Softwaresystemen zentral observieren. Bei einem Ausfall, einer Abnahme der Leistung oder weiterer konfigurierbarer Parameter kann proaktiv alarmiert werden. Über das Grafana-Dashboard lassen sich alle systemrelevanten Komponenten in Echtzeit überwachen und visualisieren.',
       image: { src: monitoring, alt: 'borders' },
     },
     {
@@ -68,7 +68,7 @@
       image: { src: businessIntelligence, alt: 'scale' },
     },
     {
-      title: 'Die Vorteile von µlink im Überblick',
+      title: 'Die Vorteile von µLink im Überblick',
       cards: [
         {
           title: 'Klare Grenzen',
@@ -100,9 +100,9 @@
         {
           title: 'Kosteneffizienz',
           content:
-            'Integratoren bewegen sich immer nur im Umfeld ihrer Applikation, somit fällt der grösste Teil der Einarbeitungskosten und Koordinationsaufwand weg. Wird ein angebotenes System ausgetauscht, muss nur die Schnittstelle zu µLInk entwickelt werden. \n' +
+            'Integratoren bewegen sich immer nur im Umfeld ihrer Applikation, somit fällt der grösste Teil der Einarbeitungskosten und Koordinationsaufwand weg. Wird ein angebotenes System ausgetauscht, muss nur die Schnittstelle zu µLink entwickelt werden. \n' +
             'Für diverse Applikationen bieten wir Standardmodule an und sind gewillt auf Kundenwunsch weitere zu erarbeiten. \n' +
-            'Das Lizenzmodel von µLink könnte nicht simpler sein. Module werden einmalig erworben, danach verwenden sie mLink so oft und mit so vielen Usern wie sie wollen.\n',
+            'Das Lizenzmodell von µLink könnte nicht simpler sein. Module werden einmalig erworben, danach verwenden Sie µLink so oft und mit so vielen Usern wie Sie wollen.\n',
         },
       ],
     },

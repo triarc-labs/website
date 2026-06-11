@@ -20,7 +20,7 @@
   }
 
   const solutionParagraphs = [
-    'Dank unserer jahrelangen Erfahrung und Knowhow sind wir in der Lage, einzigartige Lösungen zu entwickeln, die den Kunden helfen, ihre Ziele effizient und kosteneffektiv zu erreichen. Wir verstehen, dass jedes Unternehmen einzigartig ist und dass es keine "One-Size-Fits-All"-Lösungen gibt.',
+    'Dank unserer jahrelangen Erfahrung und unserem Know-how sind wir in der Lage, einzigartige Lösungen zu entwickeln, die den Kunden helfen, ihre Ziele effizient und kosteneffektiv zu erreichen. Wir verstehen, dass jedes Unternehmen einzigartig ist und dass es keine "One-Size-Fits-All"-Lösungen gibt.',
     'Unser Ziel ist es, unseren Kunden die besten und innovativsten Lösungen zu bieten, die ihnen dabei helfen, ihr Geschäft zu verbessern und ihre Wettbewerbsfähigkeit zu erhöhen.',
   ]
 
@@ -51,12 +51,12 @@
     {
       title: 'Concept',
       content:
-        'Zusammen erarbeiten wir Ziele sowie Anforderungen, welche erfüllt werden sollen. Gemeinsam erarbeitet durch Management, Mitarbeitern sowie unserer Projektleitung.',
+        'Zusammen erarbeiten wir Ziele sowie Anforderungen, welche erfüllt werden sollen. Gemeinsam erarbeitet durch das Management, die Mitarbeitenden sowie unsere Projektleitung.',
     },
     {
       title: 'Planning',
       content:
-        'Nach einer Aufarbeitung der Anforderungen und Einschätzung des Aufwands, werden Anforderungen zusammen mit dem Aufwand priorisiert, verschoben oder angepasst. Das Resultat ist ein Sprint mit Anforderungen von 100-180 Stunden Entwicklungsaufwand.',
+        'Nach einer Aufarbeitung der Anforderungen und Einschätzung des Aufwands werden Anforderungen zusammen mit dem Aufwand priorisiert, verschoben oder angepasst. Das Resultat ist ein Sprint mit Anforderungen von 100-180 Stunden Entwicklungsaufwand.',
     },
     {
       title: 'Entwicklung',
@@ -65,7 +65,7 @@
     {
       title: 'Review',
       content:
-        'Die Entwicklung ist abgeschlossen und das Resultat kann vom Kunden getestet werden. Sobald abgenommen, gehts direkt in den produktiven Betrieb und die Anwender dürfen sich über die neusten Änderungen freuen.',
+        'Die Entwicklung ist abgeschlossen und das Resultat kann vom Kunden getestet werden. Sobald abgenommen, geht es direkt in den produktiven Betrieb und die Anwender dürfen sich über die neuesten Änderungen freuen.',
     },
   ]
 
@@ -83,7 +83,7 @@
     {
       title: 'Effizienzsteigerung',
       content:
-        'Durch die schrittweise Entwicklung und kontinuierlichem Testen werden Fehler und Fehlentwicklungen früh entdeckt und können sofort eliminiert werden.',
+        'Durch die schrittweise Entwicklung und kontinuierliches Testen werden Fehler und Fehlentwicklungen früh entdeckt und können sofort eliminiert werden.',
     },
     {
       title: 'Geringeres Risiko',
@@ -201,7 +201,7 @@
       <Reveal>
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Unser agiler Entwicklungsprozess</h2>
         <p class="mt-4 max-w-3xl text-lg text-gray-600">
-          Wir führen unsere Projekte erfolgreich seit einem Jahrzehnt agil. Diese Methode hat sich sowohl für uns, wie
+          Wir führen unsere Projekte erfolgreich seit einem Jahrzehnt agil. Diese Methode hat sich sowohl für uns als
           auch für den Kunden immer bewährt. Unser agiler Entwicklungsprozess besteht aus vier Schritten, welche sich
           pro Sprint wiederholen.
         </p>
@@ -267,7 +267,7 @@
             </p>
             <p class="mt-4 text-lg text-gray-600">
               Regelmässige Wartung der Software sowie das Einspielen von sicherheitsrelevanten Patches ist für uns ein
-              Routine-Job und lässt uns Nachts besser schlafen.
+              Routine-Job und lässt uns nachts besser schlafen.
             </p>
             <ul class="mt-8 flex flex-wrap gap-3">
               {#each hostingFeatures as feature}

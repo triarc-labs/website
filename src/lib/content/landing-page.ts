@@ -14,7 +14,7 @@ export const landingPageCards: TriarcLandingPageText = {
     prefix: 'Wir sind',
     title: 'triarc laboratories.',
     description:
-      'Von der Vision bis zur Andwendung können Sie sich auf unsere Kompetenz und Konstanz verlassen. Wir sind erfahrene, engagierte Spezialisten, die Sie persönlich und individuell begleiten.',
+      'Ihre Digitalisierung - strukturiert, effizient, erfolgreich. Wir unterstützen Sie von der Idee bis zur Umsetzung und sorgen daür, dass digitale Lösungen echten Mehrwert schaffen. Wir sind erfahrene, engagierte Spezialisten, die Sie persönlich und individuell begleiten',
   },
   strategy: {
     prefix: 'Wir übersetzen',

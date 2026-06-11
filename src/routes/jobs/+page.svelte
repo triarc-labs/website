@@ -1,8 +1,6 @@
 <script lang="ts">
   import Hero from '$lib/components/Hero.svelte'
   import JobIntro from './job-intro.svelte'
-  import MetaHead from '$lib/components/MetaHead.svelte'
-  import { jobsMetadata } from '$lib/content/triarc-page-metadata'
   import Block from '$lib/components/Block.svelte'
   import heroImage from '$lib/assets/hero/Jobs.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { DetailedJobListing, JobPosting } from '$lib/components/TypeDefinitions'
@@ -12,6 +10,8 @@
   import CompanyAbout from '$lib/components/CompanyAbout.svelte'
   import { Initiativbewerbung, JobPostings } from '$lib/content/job-listings'
   import { DetailedJobListings } from '$lib/content/job-listings.js'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { jobsMetadata } from '$lib/content/triarc-page-metadata'
   const listedJob = 'Initiativbewerbung'
 
   function serializeSchema(jobPosting: JobPosting) {
@@ -41,7 +41,7 @@
             },
           },
           jobBenefits:
-            'Junges dynamisches Team. Modernste Technologien. Spannende Abwechslungsreiche Projekte. Soziokratie. Erfolgsbeteiligung. Grünes Open-Space Office mit Bar und Gym zentral in Zürich. Flexible Arbeitszeiten, Homeoffice und Remote. Innovation Lab, Agile Entwicklung',
+            'Junges dynamisches Team. Modernste Technologien. Spannende, abwechslungsreiche Projekte. Soziokratie. Erfolgsbeteiligung. Grünes Open-Space Office mit Bar und Gym zentral in Zürich. Flexible Arbeitszeiten, Homeoffice und Remote. Innovation Lab, Agile Entwicklung',
           datePosted: '2022-05-13',
           description: `Beschreibung: Triarc Labs sucht ${jobPosting.claim} 60 - 100%`,
           educationRequirements:
@@ -89,7 +89,7 @@
   let listings: DetailedJobListing[] = DetailedJobListings
 </script>
 
-<MetaHead pageMetadata={jobsMetadata} />
+<MetaHead pageMetadata={jobsMetadata}></MetaHead>
 
 {#each jobPostings as jobPosting}
   <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->
@@ -98,7 +98,7 @@
 
 <Hero
   title="Jobs"
-  content="Erfahre mehr über unsere offene Stellen und was dich sonst noch dazu interessieren könnte."
+  content="Erfahre mehr über unsere offenen Stellen und was dich sonst noch dazu interessieren könnte."
   image={heroImage}
   imageAlt="Triarc Jobs Header"
 />
@@ -111,7 +111,7 @@
         <span class="block">Unsere Stellen</span>
       </h2>
       <p class="mt-4 text-lg leading-6">
-        Wir bieten unterschiedliche Stufen, in welcher du deine Karriere bei uns starten kannst.
+        Wir bieten unterschiedliche Stufen, auf denen du deine Karriere bei uns starten kannst.
       </p>
     </div>
   </div>

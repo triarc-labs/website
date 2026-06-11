@@ -4,8 +4,8 @@
   import Footer from '$lib/components/Footer.svelte'
   import type { PageData } from './$types'
   import { page } from '$app/stores'
-  import { getSizes, getSource, getSourceSet } from './utils'
-  import type { GhostPost } from './utils'
+  import { getSizes, getSource, getSourceSet } from '$lib/util/ghost-helpers'
+  import type { GhostPost } from '$lib/util/ghost-helpers'
   import { onMount } from 'svelte'
   import heroImage from '$lib/assets/hero/Stories.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { MappedPost } from '../consulting/+page'
@@ -66,7 +66,7 @@
 
 <Hero
   title="Stories"
-  content="Erfahre mehr über uns, lese was uns beschäftigt und wir gerade tun!"
+  content="Erfahre mehr über uns, lies, was uns beschäftigt und was wir gerade tun!"
   image={heroImage}
   imageAlt="Triarc Stories Header"
 />

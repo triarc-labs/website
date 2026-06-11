@@ -7,7 +7,7 @@
   import type { VideoContent } from '$lib/components/TypeDefinitions'
 
   onMount(async () => {
-    const Plyr = await import('plyr')
+    const { default: Plyr } = await import('plyr')
     new Plyr(`#${content.videoId}-player`, {
       controls: ['play-large', 'play', 'progress', 'mute', 'volume', 'fullscreen'],
     })

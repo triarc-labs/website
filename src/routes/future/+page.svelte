@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { PageData } from './$types'
   import ThemedSection from '$lib/index/ThemedSection.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
   import Hero from '$lib/components/Hero.svelte'
@@ -9,7 +10,11 @@
   import { futurePillarTeasers } from '$lib/content/pillar-teasers'
   import heroImage from '$lib/assets/hero/InnovationLab.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
 
-  const subsection = futureSectionContent
+  export let data: PageData
+  const subsection = {
+    ...futureSectionContent,
+    projects: data.pages,
+  }
 </script>
 
 <MetaHead pageMetadata={futureMetadata} />

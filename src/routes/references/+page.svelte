@@ -39,8 +39,8 @@
           </Reveal>
           <Reveal y={16} delay={200}>
             <p class="mt-6 text-xl text-white/90">
-              Was haben wir vollbracht und woraus ist es entstanden? {referenceProjects.length} Projekte aus Logistik, Bau,
-              MedTech, Immobilien und mehr – jedes mit seiner eigenen Geschichte.
+              Was wir vollbracht haben – und woraus es entstanden ist: {referenceProjects.length} Projekte aus Logistik,
+              Bau, MedTech, Immobilien und mehr – jedes mit seiner eigenen Geschichte.
             </p>
           </Reveal>
         </div>

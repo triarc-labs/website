@@ -50,7 +50,6 @@
           ? 'text-gray-900'
           : 'text-gray-600'} sm:text-2xl sm:leading-9"
       >
-        <!-- ToDo Ask about quote size -->
         <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->
         <p><span class="">&laquo;</span> {@html quote.content} <span class="">&raquo;</span></p>
       </blockquote>
@@ -123,7 +122,6 @@
           ? 'text-gray-900'
           : 'text-gray-600'} sm:text-2xl sm:leading-9"
       >
-        <!-- ToDo Ask about quote size -->
         <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->
         <p><span class="">&laquo;</span> {@html quote.content} <span class="">&raquo;</span></p>
       </blockquote>

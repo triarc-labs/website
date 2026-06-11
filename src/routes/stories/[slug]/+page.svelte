@@ -6,9 +6,10 @@
   import Container from '$lib/components/Container.svelte'
   import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import { goto, afterNavigate } from '$app/navigation'
-  import { browser } from '$app/environment'
   import { base } from '$app/paths'
   import { page } from '$app/stores'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { storiesMetadata } from '$lib/content/triarc-page-metadata'
 
   let previousPage: string = base
 
@@ -40,8 +41,12 @@
     mainEntityOfPage: $page.url.href,
   }
 
-  $: schemaJson = JSON.stringify(schema)
-  $: schemaScript = `<script type="application/ld+json">${schemaJson}</scr` + `ipt>`
+  $: schemaTag =
+    '<script type="application/ld+json">' +
+    JSON.stringify(schema, null, 2) +
+    // prettier-ignore
+    // eslint-disable-next-line
+    '<\/script>'
 
   afterNavigate(({ from }) => {
     previousPage = from?.url.pathname || previousPage
@@ -57,16 +62,16 @@
   }
 </script>
 
+<MetaHead pageMetadata={storiesMetadata}></MetaHead>
+
 <svelte:head>
   <title>{data.title} - triarc-labs</title>
   <meta property="title" content={data.meta_title ?? data.title} />
   <meta property="og:title" content={data.meta_title ?? data.title} />
   <meta name="description" content={data.meta_description ?? data.excerpt ?? ''} />
   <meta property="og:description" content={data.meta_description ?? data.excerpt ?? ''} />
-  {#if !browser}
-    <!-- eslint-disable-next-line svelte/no-at-html-tags -- JSON-LD schema is trusted server-rendered content -->
-    {@html schemaScript}
-  {/if}
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is from trusted source -->
+  {@html schemaTag}
 </svelte:head>
 
 <div class="bg-white min-h-screen pt-16 md:pt-24 w-full">

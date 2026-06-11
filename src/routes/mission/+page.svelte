@@ -2,8 +2,6 @@
   import Block from '$lib/components/Block.svelte'
   import Hero from '$lib/components/Hero.svelte'
   import Footer from '$lib/components/Footer.svelte'
-  import MetaHead from '$lib/components/MetaHead.svelte'
-  import { missionMetadata } from '$lib/content/triarc-page-metadata'
   import serge from '$lib/assets/team/serge.jpg?w=768&format=webp;png&metadata&enhanced'
   import marco from '$lib/assets/team/marco.jpg?w=768&format=webp;png&metadata&enhanced'
   import elke from '$lib/assets/team/elke.jpg?w=768&format=webp;png&metadata&enhanced'
@@ -15,13 +13,15 @@
   import teardown from '$lib/assets/img/custom-software/product_teardown.svg'
   import goals from '$lib/assets/img/intro/shared_goals.svg'
   import baustelle from '$lib/assets/img/thumbnail/baustelle-poster.png'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { missionMetadata } from '$lib/content/triarc-page-metadata'
 
   let contents: BlockContent[] = [
     {
       quote: {
         image: serge,
         content:
-          'Für Ihren Erfolg zögern wir nicht Herausforderndes zu meistern, Kompliziertes zu vereinfachen, Effizienz zu steigern und Schwerfälliges zu beschleunigen.',
+          'Für Ihren Erfolg zögern wir nicht, Herausforderndes zu meistern, Kompliziertes zu vereinfachen, Effizienz zu steigern und Schwerfälliges zu beschleunigen.',
         person: 'Serge Müller',
         personTitle: 'CEO / Partner',
         email: 'serge@triarc-labs.com',
@@ -32,7 +32,7 @@
     {
       title: 'Erfolgreich digitalisieren',
       content:
-        'Wir sind Ihr Partner für erfolgreiche Digitalisierungsprojekte. Software nach Mass, inklusive Strategieberatung und Change Management Begleitung; alles aus einem Haus.',
+        'Wir sind Ihr Partner für erfolgreiche Digitalisierungsprojekte. Software nach Mass, inklusive Strategieberatung und Change-Management-Begleitung – alles aus einem Haus.',
       video: {
         videoTitle: 'Triarc auf der Baustelle',
         videoId: 'baustelle',
@@ -73,7 +73,7 @@
     {
       title: 'Digitale Transformation ist menschlich ',
       content:
-        'Technologie ist nur ein Teil der digitalen Transformation. Wir betrachten den Prozess ganzheitlich und verbinden die Technologie mit den Menschen, der Unternehmenskultur, den Prozessen und Strategie Ihrer Organisation.',
+        'Technologie ist nur ein Teil der digitalen Transformation. Wir betrachten den Prozess ganzheitlich und verbinden die Technologie mit den Menschen, der Unternehmenskultur, den Prozessen und der Strategie Ihrer Organisation.',
       image: { src: goals, height: 271, alt: 'Gemeinsame Ziele' },
       link: { href: '/consulting', text: 'Beratung' },
     },
@@ -105,7 +105,7 @@
         highlight: 'blue',
         linkedin: 'https://www.linkedin.com/in/elke-engel-6761998/',
         content:
-          'Unsere Form der co-kreativen, agilen und ja, manchmal auch intensiven, direkten Zusammenarbeit ist ein grundlegender Erfolgsfaktor für digitale Resultate, die Sie weiterbringen. ',
+          'Unsere Form der co-kreativen, agilen und ja, manchmal auch intensiven und direkten Zusammenarbeit ist ein grundlegender Erfolgsfaktor für digitale Resultate, die Sie weiterbringen. ',
       },
     },
     {
@@ -124,7 +124,7 @@
         highlight: 'red',
         linkedin: 'https://www.linkedin.com/company/triarc-laboratories-ltd/',
         content:
-          'Denn wir lieben was wir tun, und dass wir das gemeinsam tun. So kommen Spass und Freude in der Zusammenarbeit mit triarc-labs garantiert nicht zu kurz.',
+          'Denn wir lieben, was wir tun, und dass wir das gemeinsam tun. So kommen Spass und Freude in der Zusammenarbeit mit triarc-labs garantiert nicht zu kurz.',
       },
     },
 
@@ -182,12 +182,12 @@
   ]
 </script>
 
-<MetaHead pageMetadata={missionMetadata} />
+<MetaHead pageMetadata={missionMetadata}></MetaHead>
 
 <div class="bg-white">
   <Hero
     title="together you succeed"
-    content="Für Ihren Fortschritt. Wir sind fokussiert das nächste, höhere Level zu erreichen - vor allem für unsere Kunden, für Sie."
+    content="Für Ihren Fortschritt. Wir sind fokussiert, das nächste, höhere Level zu erreichen – vor allem für unsere Kunden, für Sie."
     image={heroImage}
     imageAlt="Triarc Mission Header"
   />

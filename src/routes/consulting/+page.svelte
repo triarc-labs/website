@@ -78,14 +78,14 @@
       logoAlt: 'Helvetas',
       source: 'Patric Masar von Helvetas',
       content:
-        'Dank der effizienten und zielorientierten Methodik konnten wir in nur zwei von Triarc moderierten halbtägigen Workshops ein umfassendes Konzept für eine Zeiterfassunges und Spesenapp mit dem Erweiterungspotential für eine vielzahl weiterer Anwendung erarbeiten. Neben dem definieren der Kernanforderungen haben wir in Brainstormingsessions auch Ideen für zukünftige Anwendungsgebiete der App erarbeitet. Es ist erstaunlich welche Vielzahl an guten und realisierbaren Ideen daraus resultierten.',
+        'Dank der effizienten und zielorientierten Methodik konnten wir in nur zwei von Triarc moderierten halbtägigen Workshops ein umfassendes Konzept für eine Zeiterfassungs- und Spesen-App mit dem Erweiterungspotential für eine Vielzahl weiterer Anwendungen erarbeiten. Neben dem Definieren der Kernanforderungen haben wir in Brainstormingsessions auch Ideen für zukünftige Anwendungsgebiete der App erarbeitet. Es ist erstaunlich welche Vielzahl an guten und realisierbaren Ideen daraus resultierten.',
     },
     {
       logo: analytica,
       logoAlt: 'Analytica',
       source: 'Andrea Isler von Analytica',
       content:
-        'Dank der Organisationsanalyse der Firma Triarc konnten wir die komplexe Struktur unserer ICT-Organisation besser verstehen und in der Folge die Effizienz unserer Abläufe verbessern sowie deren Innovation fördern. Der didaktische Ansatz der Berater:innen einerseits Wissen zu vermitteln und andererseits unsere Fachkräfte persönlich zu coachen wurde als besonders gewinnbringend eingeschätzt. Zusammenfassend beurteilt war der Einsatz der Firma Triarc für uns ein voller Erfolg.',
+        'Dank der Organisationsanalyse der Firma Triarc konnten wir die komplexe Struktur unserer ICT-Organisation besser verstehen und in der Folge die Effizienz unserer Abläufe verbessern sowie deren Innovation fördern. Der didaktische Ansatz der Berater:innen einerseits Wissen zu vermitteln und andererseits unsere Fachkräfte persönlich zu coachen, wurde als besonders gewinnbringend eingeschätzt. Zusammenfassend beurteilt, war der Einsatz der Firma Triarc für uns ein voller Erfolg.',
     },
   ]
 </script>
@@ -201,7 +201,7 @@
               </blockquote>
               <figcaption class="mt-6 text-lg text-gray-600">
                 <span class="font-bold text-gray-900">Iris Zenegaglia</span> · Digitalisierungs-/Organisationsberaterin,
-                Coach (bso i.A), Partnerin
+                Coach (bso i. A.), Partnerin
               </figcaption>
             </figure>
             <div class="mt-8 flex flex-wrap items-center gap-6">
