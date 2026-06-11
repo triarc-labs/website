@@ -3,6 +3,7 @@
 
   import { beforeUpdate, onMount } from 'svelte'
   import logo from '../lib/assets/triarc-labs-black.svg'
+  import logoNegative from '$lib/assets/triarc-logo-negativ-ohneTM.svg'
   import NavDropDown from '$lib/components/NavDropDown.svelte'
   import NavDropDownItem from '$lib/components/NavDropDownItem.svelte'
   import type { MetaInfo, NavItem } from '$lib/components/TypeDefinitions'
@@ -15,7 +16,6 @@
   export let mobileSubTitle = ''
 
   export let data: { pathname: string }
-  let lastScrollPosition = 0
   let closeOnNavigate = false
 
   // Experimental to wait for page to be loaded before hiding the Nav Menu
@@ -23,9 +23,19 @@
     if (closeOnNavigate) {
       menuOpen = false
       closeOnNavigate = false
-      console.log('hideMenu after navigate', menuOpen)
     }
   })
+
+  // Lock body scroll while the mobile menu overlay is open
+  $: if (typeof document !== 'undefined') {
+    document.body.classList.toggle('overflow-hidden', menuOpen)
+  }
+
+  function onWindowKeydown(event: KeyboardEvent) {
+    if (event.key === 'Escape' && menuOpen) {
+      menuOpen = false
+    }
+  }
 
   beforeUpdate(() => {
     const navItem = linkMetaInfo[data.pathname]
@@ -45,21 +55,33 @@
       items: [
         {
           type: 'link',
-          title: 'Strategie in Praxis übersetzen',
+          title: 'Mission',
+          path: '/mission',
+          description: 'Was uns ausmacht',
+        },
+        {
+          type: 'link',
+          title: 'Team',
+          path: '/team',
+          description: 'Wer wir sind',
+        },
+        {
+          type: 'link',
+          title: 'Strategie',
           path: '/strategy',
-          description: '',
+          description: 'Strategie in die Praxis',
         },
         {
           type: 'link',
-          title: 'Operativen Reibungsverlust reduzieren',
+          title: 'Operationen',
           path: '/operations',
-          description: '',
+          description: 'Operativen Reibungsverlust reduzieren',
         },
         {
           type: 'link',
-          title: 'Wettbewerbsfähigkeit garantieren',
+          title: 'Zukunft',
           path: '/future',
-          description: '',
+          description: 'Wettbewerbsfähigkeit sichern',
         },
       ],
     },
@@ -155,27 +177,12 @@
     return map
   }, {})
 
-  async function toggle() {
-    if (!menuOpen) {
-      lastScrollPosition = window.scrollY
-    }
+  function toggle() {
     menuOpen = !menuOpen
-    if (!menuOpen) {
-      setTimeout(() => {
-        window.scrollTo(0, lastScrollPosition)
-      }, 0)
-    }
-    console.log('menuOpen', menuOpen)
   }
 
-  // function toggle() {
-  //   menuOpen = !menuOpen
-  //   console.log('menuOpen', menuOpen)
-  //   lastScrollY = window.scrollY;
-  // }
   function hideMenu() {
     menuOpen = false
-    console.log('hideMenu', menuOpen)
   }
 
   onMount(() => {
@@ -260,6 +267,8 @@
   {/if}
 </svelte:head>
 
+<svelte:window on:keydown={onWindowKeydown} />
+
 <ContactButton></ContactButton>
 <div id="page" class="content {menuOpen ? 'open' : 'closed'}">
   <nav class="navbar" id="nav-menu">
@@ -314,6 +323,90 @@
     </div>
   </nav>
 
+  <!-- Mobile fullscreen menu -->
+  <div
+    class="mobile-menu md:hidden"
+    class:mobile-menu--open={menuOpen}
+    role="dialog"
+    aria-modal="true"
+    aria-label="Navigation"
+    aria-hidden={!menuOpen}
+  >
+    <div
+      class="mobile-menu__panel bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended"
+    >
+      <div class="flex flex-shrink-0 items-center justify-between px-8 pb-2 pt-5">
+        <a href="/" on:click={hideMenu} aria-label="Zur Startseite">
+          <img src={logoNegative} alt="triarc laboratories ltd" class="h-8" height="32" />
+        </a>
+        <button
+          class="rounded-full p-2 text-white transition hover:bg-white/10"
+          on:click={hideMenu}
+          aria-label="Menü schliessen"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            class="h-7 w-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          >
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+      <nav class="flex-grow overflow-y-auto px-8 pb-12 pt-2">
+        {#each navItems as navItem, groupIndex}
+          <div class="mobile-menu__group" style="--stagger: {groupIndex}">
+            {#if navItem.type === 'link'}
+              <a class="block py-2 text-2xl font-bold text-white" href={navItem.path} on:click={hideMenu}>
+                {navItem.title}
+              </a>
+            {:else}
+              <div class="mb-2 mt-7 flex items-center gap-x-3">
+                <span class="flex gap-x-1" aria-hidden="true">
+                  <span class="h-1.5 w-1.5 rounded-full bg-red-triarc"></span>
+                  <span class="h-1.5 w-1.5 rounded-full bg-green-triarc"></span>
+                  <span class="h-1.5 w-1.5 rounded-full bg-blue-triarc"></span>
+                </span>
+                <span class="text-sm font-bold uppercase tracking-widest text-white/60">{navItem.title}</span>
+              </div>
+              <ul class="flex list-none flex-col p-0">
+                {#each navItem.items as subItem}
+                  <li>
+                    <a
+                      class="block rounded-xl px-3 py-2 -mx-3 transition hover:bg-white/10 {subItem.path ===
+                      data.pathname
+                        ? 'bg-white/10'
+                        : ''}"
+                      href={subItem.path}
+                      on:click={hideMenu}
+                    >
+                      <span class="text-xl font-bold text-white">{subItem.title}</span>
+                      {#if subItem.description}
+                        <span class="block text-sm text-white/60">{subItem.description}</span>
+                      {/if}
+                    </a>
+                  </li>
+                {/each}
+              </ul>
+            {/if}
+          </div>
+        {/each}
+        <div class="mobile-menu__group pt-8" style="--stagger: {navItems.length}">
+          <a
+            href="/contact"
+            on:click={hideMenu}
+            class="inline-block rounded-full bg-white px-7 py-3 text-base font-bold text-blue-triarc-blended shadow-lg"
+          >
+            Kontaktieren Sie uns →
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
   <div class="main-container w-full content">
     <div class="shadow-xl mobile-bar z-20 bg-white w-full py-2 px-8 flex items-center md:hidden" id="mobile-bar">
       <button class="py-2 px-2 rounded-md" on:click={toggle} aria-label="Navigation Menu">
@@ -352,8 +445,8 @@
   }
 
   #page .navbar {
-    @apply text-[323F33] bg-white min-h-0 flex flex-shrink-0 z-20 shadow-2xl w-full relative flex-col md:flex-row h-auto md:h-16
-      group-odd:xl:flex-row group-even:xl:flex-row-reverse transition-all flex-grow md:fixed md:top-0;
+    @apply text-[323F33] bg-white min-h-0 hidden md:flex flex-shrink-0 z-20 shadow-2xl w-full relative md:flex-row md:h-16
+      group-odd:xl:flex-row group-even:xl:flex-row-reverse flex-grow md:fixed md:top-0;
   }
 
   /*#page.landing .navbar {*/
@@ -368,24 +461,7 @@
     @apply h-16;
   }
 
-  #page.content.closed .navbar {
-    @apply max-h-0 overflow-hidden md:max-h-max md:overflow-visible;
-  }
-
-  #page.content.open .mobile-bar {
-    @apply bottom-0;
-  }
-  #page.content.open .main-container {
-    @apply h-16 overflow-hidden sticky bottom-0 z-20 md:h-auto md:relative md:overflow-visible md:z-auto;
-  }
-  /*noinspection CssUnusedSymbol*/
-  #page.content.open .page-content {
-    @apply max-h-0 md:max-h-max;
-  }
-  #page.content.open .navbar-container {
-    @apply pt-2 md:pt-0;
-  }
-  #page.content.closed .mobile-bar {
+  #page .mobile-bar {
     @apply sticky top-0;
   }
 
@@ -393,11 +469,7 @@
     @apply max-w-screen-xl mx-auto flex w-full flex-col md:flex-row md:h-16 min-h-0;
   }
 
-  #page .main-container {
-    @apply transition-transform;
-  }
   /*noinspection CssUnusedSymbol*/
-  #page .navbar.open,
   #page.landing .navbar {
     @apply h-screen;
   }
@@ -434,8 +506,59 @@
     @apply md:pl-96;
   }
 
-  #nav-menu {
-    transition: max-height 200ms;
+  /* === Mobile fullscreen menu === */
+  .mobile-menu {
+    @apply fixed inset-0 z-50;
+    visibility: hidden;
+    transition: visibility 0s linear 450ms;
+  }
+  .mobile-menu--open {
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .mobile-menu__panel {
+    @apply absolute inset-0 flex flex-col text-white;
+    clip-path: circle(0px at 44px 32px);
+    transition: clip-path 450ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .mobile-menu--open .mobile-menu__panel {
+    clip-path: circle(150% at 44px 32px);
+  }
+
+  .mobile-menu__group {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 350ms ease,
+      transform 350ms ease;
+  }
+  .mobile-menu--open .mobile-menu__group {
+    opacity: 1;
+    transform: none;
+    transition-delay: calc(140ms + var(--stagger) * 60ms);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-menu,
+    .mobile-menu__panel,
+    .mobile-menu__group {
+      transition: none;
+    }
+    .mobile-menu__panel {
+      clip-path: none;
+      opacity: 0;
+    }
+    .mobile-menu--open .mobile-menu__panel {
+      opacity: 1;
+    }
+    .mobile-menu__group {
+      opacity: 1;
+      transform: none;
+    }
+    .mobile-menu:not(.mobile-menu--open) .mobile-menu__panel {
+      opacity: 0;
+    }
   }
 
   /* Styles für die alternierenden Contentblöcke um nicht jedes mal eine Spezifische Implementation notwendig zu machen. */
