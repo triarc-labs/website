@@ -34,7 +34,7 @@
   <section
     class="relative overflow-hidden bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended text-white"
   >
-    <TriarcOrbits focusX={0.75} focusY={0.4} opacity={0.9} />
+    <TriarcOrbits focusX={0.78} focusY={0.95} opacity={0.9} scale={1.6} />
     <div class="relative">
       <Container>
         <div class="flex flex-col items-start py-24 md:py-36 lg:max-w-2xl">

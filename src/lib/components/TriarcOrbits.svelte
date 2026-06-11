@@ -11,6 +11,8 @@
   export let focusY = 0.5
   /** Overall brightness, e.g. for use behind text-heavy sections. */
   export let opacity = 1
+  /** Arch size multiplier, for short and wide hero sections. */
+  export let scale = 1
 
   interface Particle {
     t: number
@@ -26,7 +28,8 @@
   interface Family {
     key: TriarcColor
     color: string
-    phi: number
+    /** 0 = outer arc (red), 2 = inner arc (blue) – matches the logo rainbow. */
+    ring: number
     particles: Particle[]
     alphaMult: number
     speedMult: number
@@ -62,35 +65,36 @@
   let pointerX = 0
   let pointerY = 0
   let pointerActive = false
-  let baseRotation = 0
 
   $: activeTarget = activeColor
 
+  // Concentric rings around a shared centre, nested like the arcs of the triarc rainbow.
   function orbitGeometry(family: Family) {
-    const base = Math.min(width, height) * 0.34
-    const rx = base * 1.25
-    const ry = base * 0.62
-    const cx = width * focusX + Math.cos(family.phi + Math.PI / 2) * base * 0.16
-    const cy = height * focusY + Math.sin(family.phi + Math.PI / 2) * base * 0.16
-    return { rx, ry, cx, cy }
+    const r = Math.min(width, height) * 0.52 * scale * (1 - family.ring * 0.19)
+    return { r, cx: width * focusX, cy: height * focusY }
+  }
+
+  // Particles glow along the top arch (the rainbow) and ghost around the rest of the loop.
+  function archVisibility(angle: number) {
+    return 0.12 + 0.88 * Math.pow(Math.max(0, -Math.sin(angle)), 0.7)
   }
 
   function createFamilies() {
     const area = width * height
     const count = Math.round(Math.min(70, Math.max(22, area / 16000)) * density)
-    families = (['red', 'green', 'blue'] as TriarcColor[]).map((key, index) => ({
+    families = (['red', 'green', 'blue'] as TriarcColor[]).map((key, ring) => ({
       key,
       color: FAMILY_COLORS[key],
-      phi: baseRotation + (index * Math.PI * 2) / 3,
+      ring,
       alphaMult: 1,
       speedMult: 1,
-      particles: Array.from({ length: count }, () => ({
+      particles: Array.from({ length: Math.round(count * (1 - ring * 0.15)) }, () => ({
         t: Math.random() * Math.PI * 2,
         speed: 0.12 + Math.random() * 0.16,
         size: 0.9 + Math.random() * 1.5,
         alpha: 0.35 + Math.random() * 0.55,
         wobblePhase: Math.random() * Math.PI * 2,
-        wobbleAmp: 0.02 + Math.random() * 0.06,
+        wobbleAmp: 0.01 + Math.random() * 0.03,
         dx: 0,
         dy: 0,
       })),
@@ -98,23 +102,20 @@
   }
 
   function particlePosition(family: Family, p: Particle, angle: number) {
-    const { rx, ry, cx, cy } = orbitGeometry(family)
+    const { r, cx, cy } = orbitGeometry(family)
     const wobble = 1 + Math.sin(angle * 2.3 + p.wobblePhase) * p.wobbleAmp
-    const ex = Math.cos(angle) * rx * wobble
-    const ey = Math.sin(angle) * ry * wobble
-    const cos = Math.cos(family.phi)
-    const sin = Math.sin(family.phi)
-    return { x: cx + ex * cos - ey * sin, y: cy + ex * sin + ey * cos }
+    return { x: cx + Math.cos(angle) * r * wobble, y: cy + Math.sin(angle) * r * wobble }
   }
 
   function drawComet(ctx: CanvasRenderingContext2D, family: Family, p: Particle) {
+    const visibility = archVisibility(p.t)
     const tailStep = 0.045 + p.speed * 0.09
     const points = [0, 1, 2, 3].map((k) => {
       const pos = particlePosition(family, p, p.t - k * tailStep)
       return { x: pos.x + p.dx, y: pos.y + p.dy }
     })
     ctx.strokeStyle = family.color
-    ctx.globalAlpha = p.alpha * family.alphaMult * 0.12 * opacity
+    ctx.globalAlpha = p.alpha * family.alphaMult * 0.12 * visibility * opacity
     ctx.lineWidth = p.size * 3
     ctx.beginPath()
     ctx.moveTo(points[0].x, points[0].y)
@@ -123,28 +124,29 @@
     }
     ctx.stroke()
     for (let k = 0; k < points.length - 1; k++) {
-      ctx.globalAlpha = Math.min(1, p.alpha * family.alphaMult) * (1 - k / 3) * opacity
+      ctx.globalAlpha = Math.min(1, p.alpha * family.alphaMult) * (1 - k / 3) * visibility * opacity
       ctx.lineWidth = Math.max(0.4, p.size * (1.5 - k * 0.35))
       ctx.beginPath()
       ctx.moveTo(points[k].x, points[k].y)
       ctx.lineTo(points[k + 1].x, points[k + 1].y)
       ctx.stroke()
     }
-    ctx.globalAlpha = Math.min(1, p.alpha * family.alphaMult * 1.2) * opacity
+    ctx.globalAlpha = Math.min(1, p.alpha * family.alphaMult * 1.2) * visibility * opacity
     ctx.fillStyle = family.color
     ctx.beginPath()
     ctx.arc(points[0].x, points[0].y, p.size * 0.9, 0, Math.PI * 2)
     ctx.fill()
   }
 
+  // Faint full arcs tracing the rainbow arch of the logo
   function drawGuides(ctx: CanvasRenderingContext2D) {
     for (const family of families) {
-      const { rx, ry, cx, cy } = orbitGeometry(family)
+      const { r, cx, cy } = orbitGeometry(family)
       ctx.beginPath()
-      ctx.ellipse(cx, cy, rx, ry, family.phi, 0, Math.PI * 2)
+      ctx.arc(cx, cy, r, Math.PI * 1.02, Math.PI * 1.98)
       ctx.strokeStyle = family.color
-      ctx.globalAlpha = 0.07 * family.alphaMult * opacity
-      ctx.lineWidth = 1
+      ctx.globalAlpha = 0.1 * family.alphaMult * opacity
+      ctx.lineWidth = 1.5
       ctx.stroke()
     }
   }
@@ -265,7 +267,6 @@
 
   onMount(() => {
     reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    baseRotation = Math.PI / 7
     resize()
 
     const resizeObserver = new ResizeObserver(() => resize())

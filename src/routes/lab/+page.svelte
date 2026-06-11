@@ -64,7 +64,7 @@
 <div class="bg-gray-950 text-white">
   <!-- Hero -->
   <section class="relative overflow-hidden border-b border-white/10">
-    <TriarcOrbits focusX={0.75} focusY={0.5} opacity={0.8} />
+    <TriarcOrbits focusX={0.75} focusY={0.95} opacity={0.8} scale={1.7} />
     <div class="relative">
       <Container>
         <div class="flex flex-col items-start py-32 md:py-44 lg:max-w-2xl">
