@@ -13,6 +13,8 @@
   export let opacity = 1
   /** Arch size multiplier, for short and wide hero sections. */
   export let scale = 1
+  /** Where the arch crest sits in portrait sections, as a fraction of the section height. */
+  export let portraitCrest = 0.04
 
   interface Particle {
     t: number
@@ -76,7 +78,7 @@
     const outer = portrait ? width * 0.66 : Math.min(width, height) * 0.52 * scale
     const r = outer * (1 - family.ring * 0.19)
     if (portrait) {
-      return { r, cx: width * 0.58, cy: height * 0.04 + outer }
+      return { r, cx: width * 0.58, cy: height * portraitCrest + outer }
     }
     return { r, cx: width * focusX, cy: height * focusY }
   }

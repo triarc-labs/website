@@ -34,7 +34,7 @@
 </script>
 
 <section class="triarc-gradient relative overflow-hidden text-white">
-  <TriarcOrbits {activeColor} focusX={0.72} focusY={0.6} />
+  <TriarcOrbits {activeColor} focusX={0.72} focusY={0.6} portraitCrest={0.22} />
   <div class="relative">
     <Container>
       <div class="flex flex-col pt-16 lg:pt-28">
