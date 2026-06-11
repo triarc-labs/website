@@ -100,6 +100,59 @@
     imageAlt="Triarc Consulting Header"
   />
 
+  <!-- Iris quote spotlight -->
+  <section class="border-b border-gray-100 bg-green-triarc bg-opacity-5">
+    <Container>
+      <Reveal>
+        <div class="flex flex-col items-center gap-10 py-16 md:py-24 lg:flex-row lg:items-start">
+          <div class="w-56 flex-shrink-0 lg:w-64">
+            <EnhancedImage
+              alt={'Iris Zenegaglia'}
+              image={iris}
+              imgClass="aspect-[3/4] w-full rounded-2xl object-cover shadow-xl"
+            />
+          </div>
+          <div class="max-w-2xl">
+            <figure>
+              <blockquote class="text-2xl font-bold leading-relaxed text-gray-900 md:text-3xl">
+                «Der Mensch digitalisiert für die Menschen – wir stellen den User in den Mittelpunkt, damit der Wandel
+                von allen getragen und gelebt wird. Nur dann ist die Digitalisierung nachhaltig.»
+              </blockquote>
+              <figcaption class="mt-6 text-lg text-gray-600">
+                <span class="font-bold text-gray-900">Iris Zenegaglia</span> · Digitalisierungs-/Organisationsberaterin,
+                Coach (bso i. A.), Partnerin
+              </figcaption>
+            </figure>
+            <div class="mt-8 flex flex-wrap items-center gap-6">
+              <a
+                href="#contactform"
+                class="rounded-full bg-green-triarc px-7 py-3 text-base font-bold text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                Kontaktiere mich
+              </a>
+              <a
+                href="https://www.linkedin.com/in/iriszenegagliagloor/"
+                target="_blank"
+                rel="noreferrer"
+                class="text-base font-bold text-gray-600 hover:text-blue-triarc"
+              >
+                LinkedIn
+              </a>
+              <a href="mailto:iris@triarc-labs.com" class="text-base font-bold text-gray-600 hover:text-blue-triarc">
+                iris@triarc-labs.com
+              </a>
+            </div>
+            <img
+              src={bsoLogo}
+              alt="bso – Berufsverband für Coaching, Supervision und Organisationsberatung"
+              class="mt-8 h-12"
+            />
+          </div>
+        </div>
+      </Reveal>
+    </Container>
+  </section>
+
   <!-- Intro -->
   <section class="py-16 md:py-24">
     <Container>
@@ -178,59 +231,6 @@
           </a>
         </Reveal>
       </div>
-    </Container>
-  </section>
-
-  <!-- Iris quote spotlight -->
-  <section class="border-y border-gray-100 bg-green-triarc bg-opacity-5">
-    <Container>
-      <Reveal>
-        <div class="flex flex-col items-center gap-10 py-16 md:py-24 lg:flex-row lg:items-start">
-          <div class="w-56 flex-shrink-0 lg:w-64">
-            <EnhancedImage
-              alt={'Iris Zenegaglia'}
-              image={iris}
-              imgClass="aspect-[3/4] w-full rounded-2xl object-cover shadow-xl"
-            />
-          </div>
-          <div class="max-w-2xl">
-            <figure>
-              <blockquote class="text-2xl font-bold leading-relaxed text-gray-900 md:text-3xl">
-                «Der Mensch digitalisiert für die Menschen – wir stellen den User in den Mittelpunkt, damit der Wandel
-                von allen getragen und gelebt wird. Nur dann ist die Digitalisierung nachhaltig.»
-              </blockquote>
-              <figcaption class="mt-6 text-lg text-gray-600">
-                <span class="font-bold text-gray-900">Iris Zenegaglia</span> · Digitalisierungs-/Organisationsberaterin,
-                Coach (bso i. A.), Partnerin
-              </figcaption>
-            </figure>
-            <div class="mt-8 flex flex-wrap items-center gap-6">
-              <a
-                href="#contactform"
-                class="rounded-full bg-green-triarc px-7 py-3 text-base font-bold text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-              >
-                Kontaktiere mich
-              </a>
-              <a
-                href="https://www.linkedin.com/in/iriszenegagliagloor/"
-                target="_blank"
-                rel="noreferrer"
-                class="text-base font-bold text-gray-600 hover:text-blue-triarc"
-              >
-                LinkedIn
-              </a>
-              <a href="mailto:iris@triarc-labs.com" class="text-base font-bold text-gray-600 hover:text-blue-triarc">
-                iris@triarc-labs.com
-              </a>
-            </div>
-            <img
-              src={bsoLogo}
-              alt="bso – Berufsverband für Coaching, Supervision und Organisationsberatung"
-              class="mt-8 h-12"
-            />
-          </div>
-        </div>
-      </Reveal>
     </Container>
   </section>
 
