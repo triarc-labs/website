@@ -49,9 +49,11 @@
 <div>
   <!-- only here to trigger the alternating image to begin right side -->
   <div></div>
-  {#each contents as contentBlock}
+  {#each contents as contentBlock, index}
     <div class="group">
-      <Block content={contentBlock.content} />
+      <div class="border-t border-gray-100 py-10 md:py-16 {index % 2 === 1 ? 'bg-gray-50' : 'bg-white'}">
+        <Block content={contentBlock.content} />
+      </div>
       {#if contentBlock.divider}
         <GradientDivider gradientContent={contentBlock.divider} />
       {/if}
