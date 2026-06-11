@@ -33,7 +33,7 @@
             <span aria-hidden="true">←</span> Alle Referenzen
           </a>
           <div class="mt-8 flex flex-wrap items-center gap-3">
-            <span class="text-sm font-bold uppercase tracking-widest text-gray-400">Referenz</span>
+            <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Referenz</span>
             {#each project.tags as tag}
               <span class="rounded-full border border-gray-300 px-3 py-0.5 text-sm text-gray-600">{tag}</span>
             {/each}
@@ -103,7 +103,7 @@
                 />
               </div>
               <div class="flex flex-grow flex-col border-t border-gray-100 p-7">
-                <span class="text-sm font-bold uppercase tracking-widest text-gray-400">{neighbour.customer}</span>
+                <span class="text-sm font-bold uppercase tracking-widest text-gray-500">{neighbour.customer}</span>
                 <h3 class="mt-2 text-xl font-bold text-gray-900 group-hover:text-blue-triarc">
                   {neighbour.appName}
                 </h3>

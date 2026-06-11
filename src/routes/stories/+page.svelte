@@ -191,7 +191,7 @@
               <div class="px-6 py-5 bg-white">
                 <h3 class="font-bold text-xl group-hover:text-blue-triarc">{item.data.title}</h3>
                 <p class="line-clamp-3 mb-1 text-gray-600">{item.data.content}</p>
-                <p class="text-sm text-gray-400">{item.data.footer}</p>
+                <p class="text-sm text-gray-500">{item.data.footer}</p>
               </div>
             </a>
           </div>

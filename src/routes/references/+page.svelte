@@ -68,11 +68,13 @@
                 <EnhancedImage
                   image={project.image}
                   alt="{project.appName} Screenshot"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  sizes="(min-width: 1280px) 700px, (min-width: 768px) 50vw, 100vw"
                   imgClass="max-h-full w-auto object-contain transition duration-500 group-hover:scale-105"
                 />
               </div>
               <div class="flex flex-grow flex-col border-t border-gray-100 p-7">
-                <span class="text-sm font-bold uppercase tracking-widest text-gray-400">{project.customer}</span>
+                <span class="text-sm font-bold uppercase tracking-widest text-gray-500">{project.customer}</span>
                 <h2 class="mt-2 text-2xl font-bold text-gray-900 group-hover:text-blue-triarc">
                   {project.appName}
                 </h2>

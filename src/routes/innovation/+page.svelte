@@ -139,7 +139,7 @@
       <Reveal>
         <div class="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <span class="text-sm font-bold uppercase tracking-widest text-gray-400">Aktuelles Experiment</span>
+            <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Aktuelles Experiment</span>
             <h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Integration von AI in die Welt der Custom Software
             </h2>

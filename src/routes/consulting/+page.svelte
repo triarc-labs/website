@@ -179,7 +179,7 @@
             >
               <div class="h-1.5 {service.accent}" aria-hidden="true"></div>
               <div class="flex flex-grow flex-col p-7">
-                <span class="text-sm font-bold tracking-widest text-gray-400">0{index + 1}</span>
+                <span class="text-sm font-bold tracking-widest text-gray-500">0{index + 1}</span>
                 <h3 class="mt-2 text-xl font-bold text-gray-900">{service.title}</h3>
                 <p class="mt-3 flex-grow text-base text-gray-600">{service.content}</p>
                 {#if service.link}
@@ -282,7 +282,7 @@
                 <div class="flex flex-grow flex-col p-7">
                   <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-triarc">{post.title}</h3>
                   <p class="mt-3 flex-grow text-base text-gray-600 line-clamp-3">{post.content}</p>
-                  <span class="mt-5 text-sm text-gray-400">{post.footer}</span>
+                  <span class="mt-5 text-sm text-gray-500">{post.footer}</span>
                 </div>
               </a>
             </Reveal>

@@ -4,6 +4,7 @@
   export let alt = 'No alt available'
   export let image: Picture
   export let loading: 'eager' | 'lazy' = 'lazy'
+  export let sizes: string | undefined = undefined
 </script>
 
-<enhanced:img src={image} {alt} class={imgClass} {loading} />
+<enhanced:img src={image} {alt} class={imgClass} {loading} {sizes} />
