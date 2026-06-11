@@ -69,8 +69,15 @@
   $: activeTarget = activeColor
 
   // Concentric rings around a shared centre, nested like the arcs of the triarc rainbow.
+  // Portrait sections (e.g. mobile heroes with stacked content) ignore the focus point:
+  // the arch sizes to the viewport width and rises near the top, behind the headline.
   function orbitGeometry(family: Family) {
-    const r = Math.min(width, height) * 0.52 * scale * (1 - family.ring * 0.19)
+    const portrait = height > width * 1.2
+    const outer = portrait ? width * 0.66 : Math.min(width, height) * 0.52 * scale
+    const r = outer * (1 - family.ring * 0.19)
+    if (portrait) {
+      return { r, cx: width * 0.58, cy: height * 0.04 + outer }
+    }
     return { r, cx: width * focusX, cy: height * focusY }
   }
 
