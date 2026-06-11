@@ -20,7 +20,7 @@
       iconColor={sectionColor}
     />
     <div id="projects">
-      <div class="text-lg text-white md:ml-[3.75rem] pb-20">
+      <div class="max-w-3xl pb-20 text-lg text-white">
         {sectionContent.main.description}
       </div>
       {#each sectionContent.projects as project}

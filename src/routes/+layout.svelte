@@ -282,7 +282,7 @@
           }
           hideMenu()
         }}
-        class="flex items-center px-8 lg:pl-0 py-2"
+        class="flex items-center py-2"
       >
         <img src={logo} alt="triarc laboratories ltd" width="172" height="29" />
         <!--        <img  src={logoNoText} alt="triarc laboratories ltd" width="172" height="29" />-->
@@ -465,8 +465,9 @@
     @apply sticky top-0;
   }
 
+  /* Horizontal padding mirrors Container so the nav aligns with the page content edges */
   .navbar-container {
-    @apply max-w-screen-xl mx-auto flex w-full flex-col md:flex-row md:h-16 min-h-0;
+    @apply max-w-screen-xl mx-auto flex w-full flex-col md:flex-row md:h-16 min-h-0 px-8 lg:px-16;
   }
 
   /*noinspection CssUnusedSymbol*/
@@ -483,7 +484,7 @@
   }
 
   #page.content .navbar .nav-links {
-    @apply min-h-0 px-8 md:pl-0;
+    @apply min-h-0;
   }
 
   /*#page.landing .navbar {*/
