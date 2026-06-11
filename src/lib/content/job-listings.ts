@@ -17,17 +17,18 @@ export const JobPostings: JobPosting[] = [
       'Als Senior begleitest du Projekte vom Requirements-Engineering bis in den Betrieb. Du bist der Vermittler zwischen dem Kunden und deinen Entwickler-KollegInnen. Und du machst das nicht zum ersten Mal. ',
     claim: 'Senior Software Engineer',
     img: jobListingImage,
-    open: false,
+    open: true,
     responsibilities:
       'sind so breit gefächert und abwechslungsreich wie die Arbeit, die dich bei uns erwartet: vom Design bis zur Lösungsfindung ist alles dabei, individuell angepasst auf unsere branchenübergreifenden Kunden. In unserem Team aus den qualifiziertesten Entwicklern profitierst du von unserer jahrelangen Erfahrung, und wir von deiner. Durch die agile Entwicklung nach SCRUM arbeiten wir effizient und motiviert. Du arbeitest an Web- und Mobile-Anwendungen (inkl. Backend) und wendest dabei Clean Code an. Du bist vertraut mit unserem aktuell eingesetzten <a class="underline" href="/#technology">Stack</a>.',
     skills: [
       'Leidenschaft für die Software Entwicklung',
       'Hochschulabschluss in Informatik (ETH/FH/vergleichbarer Leistungsnachweis)',
       'Hohe Methodenkompetenz und logisches, vernetztes Denken',
+      'Freude am aktiven Kundenkontakt und die Fähigkeit, zwischen Kunde und Technologie zu übersetzen',
       'Spass an der Arbeit im Team',
       'Lösungsorientiertes Denken und Handeln',
       'Lernfähigkeit und kontinuierliche Weiterentwicklung',
-      'Gute Deutsch- sowie Englisch- Kenntnisse in Wort und Schrift',
+      'Sehr gute Deutsch- sowie gute Englisch-Kenntnisse in Wort und Schrift',
       '5 Jahre Erfahrung mit Angular, dotnet, Postgres, Docker und Kubernetes',
     ],
     experienceRequirements: '5 Jahre Erfahrung mit Angular, dotnet, Postgres, Docker und Kubernetes',
@@ -115,10 +116,10 @@ export const DetailedJobListings: {
     slug: 'professional',
     hasTechnologySection: true,
     BasicJobInfo: {
-      jobDetails: { currentlyHiring: false, jobName: 'Professional Software Engineer', jobPensum: '80-100%' },
+      jobDetails: { currentlyHiring: true, jobName: 'Professional Software Engineer', jobPensum: '80-100%' },
       title: 'Professional Software Engineer',
       content:
-        'Als Professional hast du bereits mehrjährige Erfahrung in Softwareentwicklungsprojekten. Dir fehlen jedoch noch das Know-How zu einigen Technologien in unserem Stack. Du bist selbstständig und übernimmst Verantwortung für deine Aufgaben.',
+        'Als Professional hast du bereits mehrjährige Erfahrung in Softwareentwicklungsprojekten. Dir fehlen jedoch noch das Know-How zu einigen Technologien in unserem Stack. Du bist selbstständig, übernimmst Verantwortung für deine Aufgaben und schätzt den direkten Austausch mit unseren Kunden.',
       image: { src: beHero, alt: 'Professional Software Engineer' },
       bulletPoints: [
         "Erfahrungen mit C# in der Entwicklung von API's",
@@ -140,6 +141,9 @@ export const DetailedJobListings: {
         'Eigenständige Priorisierung der zugeteilten Aufgaben',
         'Zugeteilte Aufgaben verstehen und möglichst termingerecht erledigen – oder über Verspätung informieren',
         'FullStack Entwicklung mit C#, Typescript sowie Angular',
+        'Aktiver Kundenkontakt: Anforderungen aufnehmen, Lösungen verständlich erklären und Feedback einholen',
+        'In der neuen Welt von KI und Vibecoding zwischen Kunde und Technologie übersetzen können',
+        'Sehr gute Deutschkenntnisse in Wort und Schrift – unsere Kunden arbeiten auf Deutsch',
       ],
     },
   },
@@ -147,7 +151,7 @@ export const DetailedJobListings: {
     slug: 'senior',
     hasTechnologySection: true,
     BasicJobInfo: {
-      jobDetails: { currentlyHiring: false, jobName: 'Senior Software Engineer', jobPensum: '80-100%' },
+      jobDetails: { currentlyHiring: true, jobName: 'Senior Software Engineer', jobPensum: '80-100%' },
       title: 'Senior Software Engineer',
       content:
         'Als Senior begleitest du Projekte vom Requirements-Engineering bis in den Betrieb. Du bist der Vermittler zwischen dem Kunden und deinen Entwickler-KollegInnen. Und du machst das nicht zum ersten Mal. Du kannst im Team unterstützen, wo es an was fehlt.',
@@ -173,6 +177,9 @@ export const DetailedJobListings: {
         'Neue Technologien evaluieren und einbinden',
         'Verschiedene Programmierstrategien verstehen und passend einsetzen können',
         'Als gleichwertiges Teammitglied wahrgenommen werden',
+        'Aktiver Kundenkontakt: Du begleitest Kunden vom Requirements-Engineering bis in den Betrieb',
+        'In der neuen Welt von KI und Vibecoding zwischen Kunde und Technologie übersetzen können',
+        'Sehr gute Deutschkenntnisse in Wort und Schrift – unsere Kunden arbeiten auf Deutsch',
       ],
     },
   },
@@ -359,10 +366,10 @@ export const DetailedJobListings: {
 //     bulletPoints: ['Erste Erfahrungen mit C# oder Java', 'Erste Erfahrungen im Bereich Web / Single Page Applications'],
 //   },
 //   {
-//     jobDetails: { currentlyHiring: false, slug: 'professional', jobName: 'Professional Software Engineer' },
+//     jobDetails: { currentlyHiring: true, slug: 'professional', jobName: 'Professional Software Engineer' },
 //     title: 'Professional Software Engineer',
 //     content:
-//       'Als Professional hast du bereits mehrjährige Erfahrung in Softwareentwicklungsprojekten. Dir fehlen jedoch noch das Know-How zu einigen Technologien in unserem Stack. Du bist selbstständig und übernimmst Verantwortung für deine Aufgaben.',
+//       'Als Professional hast du bereits mehrjährige Erfahrung in Softwareentwicklungsprojekten. Dir fehlen jedoch noch das Know-How zu einigen Technologien in unserem Stack. Du bist selbstständig, übernimmst Verantwortung für deine Aufgaben.',
 //     image: { src: beHero, alt: 'Professional Software Engineer' },
 //     bulletPoints: [
 //       "Erfahrungen mit C# in der Entwicklung von API's",

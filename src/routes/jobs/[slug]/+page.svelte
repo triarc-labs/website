@@ -12,7 +12,6 @@
   import { ourApplicationProcess } from '$lib/content/application-process'
   import Container from '$lib/components/Container.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
-  import { jobsMetadata } from '$lib/content/triarc-page-metadata'
   export let data: PageData
 
   let benefits = ourBenefits
@@ -25,11 +24,13 @@
   let jobTitle = jobListingBase.jobDetails!.jobName
 </script>
 
-<MetaHead pageMetadata={jobsMetadata}></MetaHead>
-
-<svelte:head>
-  <title>Developer Job - triarc-labs</title>
-</svelte:head>
+<MetaHead
+  pageMetadata={{
+    title: `${jobTitle} – Jobs – triarc laboratories`,
+    metaTitle: `${jobTitle} (m/w/d) | Jobs | triarc labs`,
+    description: jobListingBase.content ?? '',
+  }}
+></MetaHead>
 <Hero
   title="{jobHero} ({jobListingBase.jobDetails?.jobPensum})"
   content={jobListingBase.content}
