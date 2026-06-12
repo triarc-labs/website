@@ -15,5 +15,14 @@
 
 <MetaHead pageMetadata={futureMetadata} />
 
-<ThemedSection sectionContent={subsection} sectionGradientColor="red-blue" sectionColor="blue" showFooter={false} />
+<ThemedSection
+  sectionContent={subsection}
+  sectionGradientColor="red-blue"
+  sectionColor="blue"
+  showFooter={false}
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'Zukunft', href: '/future' },
+  ]}
+/>
 <Footer />

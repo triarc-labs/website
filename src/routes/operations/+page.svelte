@@ -15,5 +15,14 @@
 
 <MetaHead pageMetadata={operationsMetadata} />
 
-<ThemedSection sectionContent={subsection} sectionGradientColor="green-blue" sectionColor="green" showFooter={false} />
+<ThemedSection
+  sectionContent={subsection}
+  sectionGradientColor="green-blue"
+  sectionColor="green"
+  showFooter={false}
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'Operationen', href: '/operations' },
+  ]}
+/>
 <Footer />

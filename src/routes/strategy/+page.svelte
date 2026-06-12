@@ -15,5 +15,14 @@
 
 <MetaHead pageMetadata={strategyMetadata} />
 
-<ThemedSection sectionContent={subsection} sectionGradientColor="red-green" sectionColor="red" showFooter={false} />
+<ThemedSection
+  sectionContent={subsection}
+  sectionGradientColor="red-green"
+  sectionColor="red"
+  showFooter={false}
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'Strategie', href: '/strategy' },
+  ]}
+/>
 <Footer />

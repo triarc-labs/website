@@ -7,7 +7,9 @@
   const siteName = 'triarc laboratories Ltd.'
   const fallbackOgImage = 'https://triarc-labs.com/triarc-og-default.png'
 
-  $: canonicalUrl = pageMetadata.canonicalUrl ?? $page.url.href
+  // Query strings (tracking, filters) must not produce separate canonical URLs
+  $: canonicalUrl =
+    pageMetadata.canonicalUrl ?? `https://triarc-labs.com${$page.url.pathname === '/' ? '' : $page.url.pathname}`
   $: pageTitle = pageMetadata.metaTitle ?? pageMetadata.title
   $: pageDescription = pageMetadata.description
   $: ogImage = pageMetadata.ogImage ?? fallbackOgImage

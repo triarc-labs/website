@@ -217,6 +217,9 @@
 
   function getBreadcrumbSegments(pathname: string) {
     if (pathname === '/') return []
+    // Ghost project pages emit their own canonical trail (pillar parent from the first tag);
+    // the path-based trail would invent a non-existent "Projects" page.
+    if (pathname.startsWith('/projects/')) return []
     const segments = pathname.split('/').filter(Boolean)
     const items: { name: string; url: string }[] = []
     let cumulativePath = ''

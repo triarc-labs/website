@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { PageData } from './$types'
+  import { page } from '$app/stores'
   import TriarcProject from '$lib/index/TriarcProject.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
   import type { TriarcPageMetadata } from '$lib/components/TypeDefinitions'
@@ -15,4 +16,11 @@
 
 <MetaHead pageMetadata={metadata}></MetaHead>
 
-<TriarcProject project={data.project}></TriarcProject>
+<TriarcProject
+  project={data.project}
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    ...(data.pillar ? [data.pillar] : []),
+    { name: data.project.title, href: `/projects/${$page.params.slug}` },
+  ]}
+></TriarcProject>
