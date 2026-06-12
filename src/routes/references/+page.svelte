@@ -15,12 +15,12 @@
 
   const accents = ['bg-red-triarc', 'bg-green-triarc', 'bg-blue-triarc']
 
-  // First tag of each project is its primary category
-  const categories = [...new Set(referenceProjects.map((project) => project.tags[0]))]
+  // Curated filter categories; a project matches when any of its tags equals the category
+  const categories = ['Logistik & Dispo', 'MedTech', 'Digital Work', 'Aussendienst', 'Immobilien', 'Bau', 'Soziales']
   let activeCategory: string | null = null
 
   $: filteredProjects = activeCategory
-    ? referenceProjects.filter((project) => project.tags[0] === activeCategory)
+    ? referenceProjects.filter((project) => project.tags.includes(activeCategory as string))
     : referenceProjects
 
   // Only the very first card of the unfiltered gallery spans two columns
@@ -96,13 +96,22 @@
                   ? 'aspect-[16/7]'
                   : 'aspect-[16/9]'}"
               >
-                <EnhancedImage
-                  image={project.image}
-                  alt="{project.appName} Screenshot"
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  sizes="(min-width: 1280px) 700px, (min-width: 768px) 50vw, 100vw"
-                  imgClass="max-h-full w-auto object-contain transition duration-500 group-hover:scale-105"
-                />
+                {#if project.logo}
+                  <img
+                    src={project.logo}
+                    alt="{project.customer} Logo"
+                    loading="lazy"
+                    class="max-h-16 w-auto max-w-[70%] object-contain transition duration-500 group-hover:scale-105"
+                  />
+                {:else}
+                  <EnhancedImage
+                    image={project.image}
+                    alt="{project.appName} Screenshot"
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                    sizes="(min-width: 1280px) 700px, (min-width: 768px) 50vw, 100vw"
+                    imgClass="max-h-full w-auto object-contain transition duration-500 group-hover:scale-105"
+                  />
+                {/if}
               </div>
               <div class="flex flex-grow flex-col border-t border-gray-100 p-7">
                 <span class="text-sm font-bold uppercase tracking-widest text-gray-500">{project.customer}</span>

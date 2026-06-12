@@ -96,11 +96,20 @@
               class="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <div class="flex aspect-[16/9] items-center justify-center overflow-hidden bg-gray-50 p-6">
-                <EnhancedImage
-                  image={neighbour.image}
-                  alt="{neighbour.appName} Screenshot"
-                  imgClass="max-h-full w-auto object-contain transition duration-500 group-hover:scale-105"
-                />
+                {#if neighbour.logo}
+                  <img
+                    src={neighbour.logo}
+                    alt="{neighbour.customer} Logo"
+                    loading="lazy"
+                    class="max-h-16 w-auto max-w-[70%] object-contain transition duration-500 group-hover:scale-105"
+                  />
+                {:else}
+                  <EnhancedImage
+                    image={neighbour.image}
+                    alt="{neighbour.appName} Screenshot"
+                    imgClass="max-h-full w-auto object-contain transition duration-500 group-hover:scale-105"
+                  />
+                {/if}
               </div>
               <div class="flex flex-grow flex-col border-t border-gray-100 p-7">
                 <span class="text-sm font-bold uppercase tracking-widest text-gray-500">{neighbour.customer}</span>

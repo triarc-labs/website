@@ -65,6 +65,12 @@ import Vademecum9 from '$lib/assets/references/vademecum9.png?format=webp;png&en
 import Vademecum10 from '$lib/assets/references/vademecum10.png?format=webp;png&enhanced'
 import Vademecum11 from '$lib/assets/references/vademecum11.png?format=webp;png&enhanced'
 
+import sutterLogo from '$lib/assets/img/customer/sutter.svg'
+import glbLogo from '$lib/assets/img/customer/glb-logo.svg'
+import tanneLogo from '$lib/assets/img/customer/tanne-logo.webp'
+import ideeSportLogo from '$lib/assets/img/customer/idee-sport-logo.webp'
+import waloLogo from '$lib/assets/img/customer/walo-logo.svg'
+
 export interface ReferenceProject {
   /** URL slug under /references/ */
   slug: string
@@ -81,6 +87,8 @@ export interface ReferenceProject {
   image: Picture
   /** Screenshot gallery; rendered as carousel on the detail page when present. */
   images?: Picture[]
+  /** Customer logo, shown instead of the (portrait) screenshot on overview cards. */
+  logo?: string
 }
 
 export const referenceProjects: ReferenceProject[] = [
@@ -107,7 +115,7 @@ export const referenceProjects: ReferenceProject[] = [
     customer: 'ORTHO-TEAM Gruppe',
     teaser:
       'Work-Management-Plattform, die den papierbasierten Kernprozess von der Anamnese bis zur Produktion ersetzt.',
-    tags: ['MedTech', 'Work Management'],
+    tags: ['MedTech', 'Digital Work'],
     companyDescription:
       'Die ORTHO-TEAM Gruppe ist ein Schweizer Unternehmen, welches ein ganzheitliches Versorgungskonzept in der Orthopädie- und Rehatechnik bietet. Hochspezialisiert auf der ganzen Bandbreite der Branche entwickelt der Technologiedienstleister höchst innovative Produkte, um Menschen zu mehr Unabhängigkeit und Lebensqualität zu verhelfen. 23 Standorte in der Schweiz.',
     situation:
@@ -123,7 +131,7 @@ export const referenceProjects: ReferenceProject[] = [
     appName: 'Ortho-Order',
     customer: 'ORTHO-TEAM Gruppe',
     teaser: 'Mobile App für ein preis- und zeitoptimiertes Bestellwesen über 23 Standorte.',
-    tags: ['MedTech', 'Bestellwesen'],
+    tags: ['MedTech', 'Digital Work'],
     companyDescription:
       'Die ORTHO-TEAM Gruppe ist ein national tätiges Schweizer Unternehmen, welches ein ganzheitliches Versorgungskonzept in der Orthopädie- und Rehatechnik bietet.' +
       ' Hochspezialisiert auf der ganzen Bandbreite der Branche entwickeln der Technologiedienstleister höchst innovative Produkte,' +
@@ -204,7 +212,7 @@ export const referenceProjects: ReferenceProject[] = [
     appName: 'M3 Express',
     customer: 'Liver IT AG',
     teaser: 'Transparenter Zugang zu Schüttgut, Transport und Mulden – von der Baustelle bis zum Lieferanten.',
-    tags: ['Bau', 'Plattform'],
+    tags: ['Bau', 'Logistik & Dispo', 'Plattform'],
     companyDescription:
       'Liver IT AG – möchte die Digitalisierung im Bauwesen vorantreiben. Transparent und' +
       ' zugänglich Schüttgut, Transport und Mulden anbieten.',
@@ -239,6 +247,7 @@ export const referenceProjects: ReferenceProject[] = [
     solutions:
       'Die Erfassung von Tagesrapporten auf den Baustellen wurde durch die gemeinsam entwickelte Applikation «SutterApp» um ein Vielfaches übersichtlicher und effizienter. Mitarbeiter werden im Rapportierungsprozess unterstützt, da die SutterApp Plandaten aus dem ERP-System ABACUS für Rollen, Inventar, Material und Fremdleistungen vorschlägt. Zusätzlich können Schnellbausteine und die Historie-Funktion genutzt werden.',
     image: Sutter1,
+    logo: sutterLogo,
     images: [Sutter1, Sutter2, Sutter3],
   },
   {
@@ -246,7 +255,7 @@ export const referenceProjects: ReferenceProject[] = [
     appName: 'My Business',
     customer: 'GLB',
     teaser: 'Modulare Work-Management-Plattform mit digitaler Zeiterfassung für über 900 Mitarbeitende.',
-    tags: ['Bau', 'Work Management'],
+    tags: ['Bau', 'Digital Work'],
     companyDescription:
       'Planen, Bauen, Einrichten - das Portfolio der GLB ist vielfältig.' +
       ' Mit Standorten in den Kantonen Bern und Zürich und den rund 900 Mitarbeitenden ist die GLB seit über' +
@@ -271,6 +280,7 @@ export const referenceProjects: ReferenceProject[] = [
       ' Es ist jederzeit ersichtlich, wer, was bis wann zu erledigen hat. In der zweiten Phase wurde die Kommunikationsplattform' +
       ' um Funktionen wie Kontexträume, Todos und den Ressourcenplaner erweitert.',
     image: GLB1,
+    logo: glbLogo,
     images: [GLB1, GLB2, GLB3, GLB4, GLB5, GLB6, GLB7],
   },
   {
@@ -289,6 +299,7 @@ export const referenceProjects: ReferenceProject[] = [
     solutions:
       'Die PORTA App wurde als umfangreiche Lernsoftware konzipiert, die nicht nur das Erlernen der Portagebärden ermöglicht, sondern auch das Erfassen und Teilen bedürfnisspezifischer Gebärden, benutzerdefinierter Kataloge und Arbeitsblätter. Die App bietet eine einfache Navigation im Gebärdenkatalog, die Möglichkeit zur Erfassung eigener Gebärden mit Video und die Zusammenstellung eigener Kataloge, die mit anderen geteilt werden können. Spielerisch kann das erworbene Wissen mit einem Lernspiel getestet und vertieft werden, und die Gamifikation trägt dazu bei, dass das Lernen Spass macht. Das Ziel war eine kostenbewusste Lösung mit einer intuitiven App, die von jeder Person, idealerweise auch von Menschen mit leichten Behinderungen, bedient werden kann. Die Applikation findet weiter Verbreitung in betreuenden Institutionen, wie auch in heilpädagogischen Schulen.',
     image: Porta1,
+    logo: tanneLogo,
     images: [Porta1, Porta2, Porta3, Porta4, Porta5, Porta6, Porta7],
   },
   {
@@ -306,6 +317,7 @@ export const referenceProjects: ReferenceProject[] = [
     solutions:
       'Die App bietet eine Vielzahl von Lernvideos zum Thema Verhaltenskodex und Risikosituationen für Coaches (Jugendliche) die mit Kindern arbeiten. Nach der Wissensvermittlung gibt es Kontrollfragen. Um das Ganze spielerischer zu gestalten, stehen verschiedene Level zur Verfügung, ein persönlicher Avatar kann erstellt werden, und ein Buddy steht mit hilfreichen Tipps und Tricks zur Seite.',
     image: CondAct1,
+    logo: ideeSportLogo,
     images: [
       CondAct1,
       CondAct2,
@@ -326,7 +338,7 @@ export const referenceProjects: ReferenceProject[] = [
     appName: 'Bienvenu',
     customer: 'Stiftung IdéeSport',
     teaser: 'Event-App mit Teilnehmerdaten in Echtzeit und schneller Eingangskontrolle – auch offline.',
-    tags: ['Events', 'Mobile App'],
+    tags: ['Soziales', 'NPO'],
     companyDescription:
       'Die Stiftung IdéeSport engagiert sich im Bereich der Kinder- und Jugendförderung. Sie nutzt Sport als Mittel der Suchtprävention, der Gesundheitsförderung und der gesellschaftlichen Integration.',
     situation:
@@ -336,6 +348,7 @@ export const referenceProjects: ReferenceProject[] = [
     solutions:
       'Einfach, bedienbare, intuitive Event-App. Wichtige Teilnehmerdaten in Echtzeit verfügbar. Zb Notfallkontakt, Alter, Schulhaus, usw. Verbesserte Teilnehmer Eingangskontrolle. (Lange Warteschlange werden verhindert Teilnehmer müssen nur noch einmalig erfasst werden, Stammdaten sind hinterlegt und können für zukünftige Events schnell und einfach gesucht werden.',
     image: Bienvenu1,
+    logo: ideeSportLogo,
     images: [Bienvenu1, Bienvenu2, Bienvenu3, Bienvenu4, Bienvenu5, Bienvenu6],
   },
   {
@@ -366,6 +379,7 @@ export const referenceProjects: ReferenceProject[] = [
       ' kann den gesamten Inventarstamm der Walo Bertschinger AG einsehen, wichtige Dokumente jeder Anlage sind jederzeit verfügbar,' +
       ' und bei Anlagen mit Kyburz GPS kann die aktuelle Position sowie die Nutzung bestimmt werden.',
     image: MyWalo1,
+    logo: waloLogo,
     images: [MyWalo1, MyWalo2, MyWalo3, MyWalo4],
   },
   {
@@ -373,7 +387,7 @@ export const referenceProjects: ReferenceProject[] = [
     appName: 'Vademecum',
     customer: 'Dr. Ines Schlienger',
     teaser: 'Digitale Entwicklungsbegleitung, die Eltern und Fachpersonen verbindet – in über 40 Sprachen.',
-    tags: ['Gesundheit', 'Mobile & Web'],
+    tags: ['Soziales', 'Mobile & Web'],
     companyDescription: 'Dr. Ines Schlienger, Psychologin und Sonderpädagogin, Zürich',
     situation:
       'Die Digitalisierung des VADEMECUM, finanziert durch ein Crowdfunding, war die Antwort auf die wachsende Nachfrage nach einer modernen Anwendung. Ursprünglich als Papier-Version bekannt und beliebt, bestand der Wunsch, VADEMECUM zu digitalisieren, um die Erfassung von Beobachtungen durch Eltern zu vereinfachen. Dies ermöglichte eine direkte Erfassung von Handlungen inklusive Bildmaterial. Die VADEMECUM App und Webapplikation hat das Ziel, das Zusammenwirken von Fachpersonen und Eltern im Bereich der frühen Diagnostik oder Entwicklungsbegleitung bis zu einem Alter von vier Jahren zu unterstützen und zu vereinfachen.',
