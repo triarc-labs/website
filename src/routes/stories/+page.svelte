@@ -99,7 +99,7 @@
   </Container>
 
   <div class="flex-grow">
-    <div class="px-8 lg:px-16 py-4">
+    <div class="mx-auto w-full max-w-screen-xl px-8 py-4 lg:px-16">
       <MasonryInfiniteGrid
         gap={40}
         align="center"
@@ -118,7 +118,7 @@
         let:visibleItems
       >
         {#each visibleItems as item}
-          <div class="item max-w-full md:max-w-md">
+          <div class="item w-full md:w-[calc(50%-20px)] xl:w-[calc(33.33%-27px)]">
             <a
               href="/stories/{item.data.slug}"
               class="break-inside-avoid flex flex-col group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
