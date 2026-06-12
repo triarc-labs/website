@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Container from '$lib/components/Container.svelte'
   import Footer from '$lib/components/Footer.svelte'
   import type { PageData } from './$types'
@@ -7,7 +7,6 @@
   import { getSizes, getSource, getSourceSet } from '$lib/util/ghost-helpers'
   import type { GhostPost } from '$lib/util/ghost-helpers'
   import { onMount } from 'svelte'
-  import heroImage from '$lib/assets/hero/Stories.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { MappedPost } from '../consulting/+page'
   import { MasonryInfiniteGrid } from '@egjs/svelte-infinitegrid'
   import MetaHead from '$lib/components/MetaHead.svelte'
@@ -62,11 +61,10 @@
 
 <MetaHead pageMetadata={storiesMetadata} />
 
-<Hero
+<GradientHero
+  kicker="Lösungen"
   title="Stories"
   content="Erfahre mehr über uns, lies, was uns beschäftigt und was wir gerade tun!"
-  image={heroImage}
-  imageAlt="Triarc Stories Header"
 />
 
 <div class="bg-gray-50 min-h-[calc(100vh_-_432px)] flex-grow flex flex-col">

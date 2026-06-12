@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Container from '$lib/components/Container.svelte'
   import Footer from '$lib/components/Footer.svelte'
   import Reveal from '$lib/components/Reveal.svelte'
@@ -13,7 +13,6 @@
   import fairpizzaIcon from '$lib/assets/img/lab/fairpizza-icon-512.png'
   import aiPoc from '$lib/assets/img/thumbnail/ai-poc-poster.png'
   import slothiIcon from '$lib/assets/img/lab/slothi.svg'
-  import heroImage from '$lib/assets/hero/InnovationLab.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { VideoContent } from '$lib/components/TypeDefinitions'
   import { innovationMetadata } from '$lib/content/triarc-page-metadata'
 
@@ -87,11 +86,10 @@
 <MetaHead pageMetadata={innovationMetadata} />
 
 <div class="bg-white">
-  <Hero
+  <GradientHero
+    kicker="Dienstleistungen"
     title="Innovation Lab"
     content="Innovationen sind der Schlüssel zu Wachstum und Erfolg. In unserem Lab fördern wir innovative und wettbewerbsfähige Businessideen, erstellen Machbarkeitsanalysen und entwickeln MVPs (Minimal Viable Products). "
-    image={heroImage}
-    imageAlt="Triarc InnovationLab Header"
   />
 
   <!-- Quote spotlight -->

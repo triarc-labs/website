@@ -3,8 +3,7 @@
   import Technology from '$lib/index/Technology.svelte'
   import ApplicationForm from '$lib/components/ApplicationForm.svelte'
   import FooterNoContact from '$lib/components/FooterNoContact.svelte'
-  import heroImage from '$lib/assets/hero/Jobs.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Button from '$lib/components/Button.svelte'
 
   import type { PageData } from './$types'
@@ -31,11 +30,10 @@
     description: jobListingBase.content ?? '',
   }}
 ></MetaHead>
-<Hero
+<GradientHero
+  kicker="Jobs"
   title="{jobHero} ({jobListingBase.jobDetails?.jobPensum})"
   content={jobListingBase.content}
-  image={heroImage}
-  imageAlt="Triarc Jobs Header"
 />
 
 <div>

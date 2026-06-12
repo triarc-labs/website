@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Container from '$lib/components/Container.svelte'
   import Footer from '$lib/components/Footer.svelte'
   import Reveal from '$lib/components/Reveal.svelte'
@@ -9,7 +9,6 @@
   import LinkedInLink from '$lib/components/LinkedInLink.svelte'
   import elke from '$lib/assets/team/elke.jpg?w=768&format=webp;png&metadata&enhanced'
   import maintenance from '$lib/assets/img/custom-software/maintenance.svg'
-  import heroImage from '$lib/assets/hero/CustomSoftware.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import { customSoftwareMetadata } from '$lib/content/triarc-page-metadata'
 
   const quote = {
@@ -104,11 +103,10 @@
 <MetaHead pageMetadata={customSoftwareMetadata} />
 
 <div class="bg-white">
-  <Hero
+  <GradientHero
+    kicker="Dienstleistungen"
     title="Custom Software"
     content="Als Custom Software Firma sind wir der ideale Partner für Unternehmen, die nach individuellen Softwarelösungen suchen. Wir arbeiten eng mit unseren Kunden zusammen und entwickeln massgeschneiderte Lösungen, die genau auf ihre Bedürfnisse zugeschnitten sind."
-    image={heroImage}
-    imageAlt="Triarc Custom Software Header"
   />
 
   <!-- Quote spotlight -->

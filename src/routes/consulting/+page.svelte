@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Container from '$lib/components/Container.svelte'
   import Reveal from '$lib/components/Reveal.svelte'
   import EnhancedImage from '$lib/index/EnhancedImage.svelte'
@@ -11,7 +11,6 @@
   import bsoLogo from '$lib/assets/img/partners/bso_logo_desktop.svg'
   import helvetas from '$lib/assets/img/customer/helvetas.gif'
   import analytica from '$lib/assets/img/customer/analytica-logo-main.svg'
-  import heroImage from '$lib/assets/hero/Beratung.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import { consultingMetadata } from '$lib/content/triarc-page-metadata'
   import type { MappedPost } from './+page'
 
@@ -94,11 +93,10 @@
 <MetaHead pageMetadata={consultingMetadata} />
 
 <div class="bg-white">
-  <Hero
+  <GradientHero
+    kicker="Dienstleistungen"
     title="Beratung"
     content="Erfolgreiche Digitalisierung braucht das Miteinander. Wir bauen Brücken zwischen Strategie, Betrieb und Software – mit Beratung, Change Management und massgeschneiderter Entwicklung aus einer Organisation."
-    image={heroImage}
-    imageAlt="Triarc Consulting Header"
   />
 
   <!-- Iris quote spotlight -->

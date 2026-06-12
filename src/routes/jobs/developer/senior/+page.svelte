@@ -3,10 +3,9 @@
   import Technology from '$lib/index/Technology.svelte'
   import ApplicationForm from '$lib/components/ApplicationForm.svelte'
   import FooterNoContact from '$lib/components/FooterNoContact.svelte'
-  import heroImage from '$lib/assets/hero/Jobs.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import CompanyAbout from '$lib/components/CompanyAbout.svelte'
   import seniorDev from '$lib/assets/img/jobs/super_woman.svg'
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Button from '$lib/components/Button.svelte'
 
   let listedJob = 'Senior Software Engineer'
@@ -28,11 +27,10 @@
 <svelte:head>
   <title>Developer Job - triarc-labs</title>
 </svelte:head>
-<Hero
+<GradientHero
+  kicker="Jobs"
   title={listedJob}
   content="Erfahre mehr über die Stelle als {listedJob} und das Arbeitsumfeld bei Triarc."
-  image={heroImage}
-  imageAlt="Triarc Jobs Header"
 />
 
 <Block bind:content={block}>
@@ -41,7 +39,7 @@
   </div>
 </Block>
 <Technology />
-<!--<Hero-->
+<!--<GradientHero kicker="Jobs"-->
 <!--  title="Developer Job"-->
 <!--  content="Erfahre mehr über unsere offene Entwickler Stelle und was dich sonst noch dazu interessieren könnte."-->
 <!--/>-->

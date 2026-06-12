@@ -1,13 +1,12 @@
 <script lang="ts">
   import Block from '$lib/components/Block.svelte'
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Footer from '$lib/components/Footer.svelte'
   import serge from '$lib/assets/team/serge.jpg?w=768&format=webp;png&metadata&enhanced'
   import marco from '$lib/assets/team/marco.jpg?w=768&format=webp;png&metadata&enhanced'
   import elke from '$lib/assets/team/elke.jpg?w=768&format=webp;png&metadata&enhanced'
   import iris from '$lib/assets/team/iris.jpg?w=768&format=webp;png&metadata&enhanced'
   import bammbamm from '$lib/assets/team/bambam.jpg?w=768&format=webp;png&metadata&enhanced'
-  import heroImage from '$lib/assets/hero/Mission.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { BlockContent } from '$lib/components/TypeDefinitions'
 
   import teardown from '$lib/assets/img/custom-software/product_teardown.svg'
@@ -185,11 +184,10 @@
 <MetaHead pageMetadata={missionMetadata}></MetaHead>
 
 <div class="bg-white">
-  <Hero
+  <GradientHero
+    kicker="Über uns"
     title="together you succeed"
     content="Für Ihren Fortschritt. Wir sind fokussiert, das nächste, höhere Level zu erreichen – vor allem für unsere Kunden, für Sie."
-    image={heroImage}
-    imageAlt="Triarc Mission Header"
   />
 
   {#each contents as content}

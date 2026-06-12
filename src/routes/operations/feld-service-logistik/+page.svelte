@@ -1,9 +1,8 @@
 <script lang="ts">
   import Block from '$lib/components/Block.svelte'
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Footer from '$lib/components/Footer.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
-  import heroImage from '$lib/assets/hero/Projekte.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { BlockContent } from '$lib/components/TypeDefinitions'
   import { operationsFeldLogistikMetadata } from '$lib/content/triarc-page-metadata'
 
@@ -35,11 +34,10 @@
 <MetaHead pageMetadata={operationsFeldLogistikMetadata} />
 
 <div class="bg-white">
-  <Hero
+  <GradientHero
+    kicker="Operationen"
     title="Feld, Service & Logistik digital"
     content="Mobile Abläufe, die im Ernstfall funktionieren – mit Daten, die Ihr ERP und Ihre Kundinnen verlassen können."
-    image={heroImage}
-    imageAlt="Feld und Logistik – triarc laboratories"
   />
   {#each contents as content}
     <Block bind:content />

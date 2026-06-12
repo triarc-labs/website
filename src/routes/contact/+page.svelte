@@ -1,7 +1,6 @@
 <script lang="ts">
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Container from '$lib/components/Container.svelte'
-  import heroImage from '$lib/assets/hero/Contact.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import iris from '$lib/assets/team/iris.jpg?format=webp;png&w=500&enhanced'
   import serge from '$lib/assets/team/serge.jpg?format=webp;png&w=1024&enhanced'
   import MetaHead from '$lib/components/MetaHead.svelte'
@@ -38,7 +37,11 @@
 <MetaHead pageMetadata={contactMetadata}></MetaHead>
 
 <div class="min-h-screen flex flex-col">
-  <Hero title="Kontaktinfos" content="" image={heroImage} imageAlt="Triarc Contact Header" />
+  <GradientHero
+    kicker="Über uns"
+    title="Kontakt"
+    content="Sprechen Sie mit uns über Ihre Ideen – wir freuen uns auf Ihr Projekt."
+  />
 
   <div class="bg-white flex-shrink-0">
     <Container>

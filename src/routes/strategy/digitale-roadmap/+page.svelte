@@ -1,9 +1,8 @@
 <script lang="ts">
   import Block from '$lib/components/Block.svelte'
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Footer from '$lib/components/Footer.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
-  import heroImage from '$lib/assets/hero/Beratung.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { BlockContent } from '$lib/components/TypeDefinitions'
   import { strategyDigitaleRoadmapMetadata } from '$lib/content/triarc-page-metadata'
 
@@ -35,11 +34,10 @@
 <MetaHead pageMetadata={strategyDigitaleRoadmapMetadata} />
 
 <div class="bg-white">
-  <Hero
+  <GradientHero
+    kicker="Strategie"
     title="Digitale Roadmap & Priorisierung"
     content="Von der IST-Situation zum Plan, den Ihre Organisation tragen kann – mit klaren Etappen statt endloser Wunschlisten."
-    image={heroImage}
-    imageAlt="Digitale Roadmap – triarc laboratories"
   />
   {#each contents as content}
     <Block bind:content />

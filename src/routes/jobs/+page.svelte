@@ -1,8 +1,7 @@
 <script lang="ts">
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import JobIntro from './job-intro.svelte'
   import Block from '$lib/components/Block.svelte'
-  import heroImage from '$lib/assets/hero/Jobs.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { DetailedJobListing, JobPosting } from '$lib/components/TypeDefinitions'
   import ApplicationForm from '$lib/components/ApplicationForm.svelte'
   import Button from '$lib/components/Button.svelte'
@@ -96,11 +95,10 @@
   {@html serializeSchema(jobPosting)}
 {/each}
 
-<Hero
+<GradientHero
+  kicker="Über uns"
   title="Jobs"
   content="Erfahre mehr über unsere offenen Stellen und was dich sonst noch dazu interessieren könnte."
-  image={heroImage}
-  imageAlt="Triarc Jobs Header"
 />
 <JobIntro />
 

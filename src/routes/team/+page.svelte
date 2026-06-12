@@ -1,12 +1,11 @@
 <script lang="ts">
   import TeamMembers from '$lib/index/TeamMembers.svelte'
   import Footer from '$lib/components/Footer.svelte'
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Block from '$lib/components/Block.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
   import { teamMetadata } from '$lib/content/triarc-page-metadata'
   import joinTheTeam from '$lib/assets/img/intro/content_team.svg'
-  import heroImage from '$lib/assets/hero/Team.jpg?width=300;600;1000;2000&format=webp&enhanced'
 
   let content = {
     title: 'Werde Teil des Teams!',
@@ -20,13 +19,12 @@
 
 <MetaHead pageMetadata={teamMetadata}></MetaHead>
 
-<Hero
+<GradientHero
+  kicker="Über uns"
   title="Unser Team"
   content="Wir lieben, was wir tun, und dass wir das gemeinsam tun.
         Von der Vision bis zur Anwendung können Sie sich auf unsere Kompetenz und Konstanz verlassen.
         Sie werden von erfahrenen, engagierten Spezialisten persönlich begleitet."
-  image={heroImage}
-  imageAlt="triarc-Team Header Image"
 />
 
 <TeamMembers />

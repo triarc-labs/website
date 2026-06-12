@@ -1,9 +1,8 @@
 <script lang="ts">
   import Block from '$lib/components/Block.svelte'
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Footer from '$lib/components/Footer.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
-  import heroImage from '$lib/assets/hero/InnovationLab.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
   import type { BlockContent } from '$lib/components/TypeDefinitions'
   import { futureInnovationDaueraufgabeMetadata } from '$lib/content/triarc-page-metadata'
 
@@ -35,11 +34,10 @@
 <MetaHead pageMetadata={futureInnovationDaueraufgabeMetadata} />
 
 <div class="bg-white">
-  <Hero
+  <GradientHero
+    kicker="Zukunft"
     title="Innovation als Daueraufgabe"
     content="Neue Technologien strukturiert in den Betrieb bringen – ohne Stabilität und Lieferfähigkeit zu opfern."
-    image={heroImage}
-    imageAlt="Innovation – triarc laboratories"
   />
   {#each contents as content}
     <Block bind:content />
