@@ -16,15 +16,7 @@
   const accents = ['bg-red-triarc', 'bg-green-triarc', 'bg-blue-triarc']
 
   // Curated filter categories; a project matches when any of its tags equals the category
-  const categories = [
-    'Logistik & Dispo',
-    'Gesundheitswesen',
-    'Digital Work',
-    'Aussendienst',
-    'Immobilien',
-    'Bau',
-    'Soziales',
-  ]
+  const categories = ['Logistik & Dispo', 'Digital Work', 'Aussendienst', 'Immobilien', 'Bau', 'Soziales']
   let activeCategory: string | null = null
 
   $: filteredProjects = activeCategory

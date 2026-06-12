@@ -115,7 +115,7 @@ export const referenceProjects: ReferenceProject[] = [
     customer: 'ORTHO-TEAM Gruppe',
     teaser:
       'Work-Management-Plattform, die den papierbasierten Kernprozess von der Anamnese bis zur Produktion ersetzt.',
-    tags: ['Gesundheitswesen', 'Digital Work'],
+    tags: ['Digital Work'],
     companyDescription:
       'Die ORTHO-TEAM Gruppe ist ein Schweizer Unternehmen, welches ein ganzheitliches Versorgungskonzept in der Orthopädie- und Rehatechnik bietet. Hochspezialisiert auf der ganzen Bandbreite der Branche entwickelt der Technologiedienstleister höchst innovative Produkte, um Menschen zu mehr Unabhängigkeit und Lebensqualität zu verhelfen. 23 Standorte in der Schweiz.',
     situation:
@@ -131,7 +131,7 @@ export const referenceProjects: ReferenceProject[] = [
     appName: 'Ortho-Order',
     customer: 'ORTHO-TEAM Gruppe',
     teaser: 'Mobile App für ein preis- und zeitoptimiertes Bestellwesen über 23 Standorte.',
-    tags: ['Gesundheitswesen', 'Digital Work'],
+    tags: ['Digital Work', 'Logistik & Dispo'],
     companyDescription:
       'Die ORTHO-TEAM Gruppe ist ein national tätiges Schweizer Unternehmen, welches ein ganzheitliches Versorgungskonzept in der Orthopädie- und Rehatechnik bietet.' +
       ' Hochspezialisiert auf der ganzen Bandbreite der Branche entwickeln der Technologiedienstleister höchst innovative Produkte,' +
