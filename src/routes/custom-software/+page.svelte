@@ -174,9 +174,10 @@
           Wo Custom Software in der Praxis wirkt
         </h2>
         <p class="mt-4 max-w-3xl text-lg text-gray-600">
-          Unsere Projekte reichen von Logistik und Baustellenrapporten über MedTech und Handwerk bis zu Immobilien und
-          B2B-Plattformen. Typisch sind tiefe ERP- und Prozessintegration (z.&nbsp;B. ABACUS), Mobile Apps für das Feld
-          und vernetzte Systemlandschaften mit μLink.
+          Custom Software setzt überall dort an, wo Standardsoftware an ihre Grenzen stösst. Oft gilt: 80&nbsp;%
+          Standard, 20&nbsp;% Custom – genau dort, wo Sie es für Ihr Geschäft brauchen. Diese 20&nbsp;% sind der
+          Gamechanger, der die Hürden im Alltag reduziert. Typisch sind tiefe ERP- und Prozessintegration (z.&nbsp;B.
+          ABACUS), Mobile Apps für das Feld und vernetzte Systemlandschaften mit μLink.
         </p>
       </Reveal>
       <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
