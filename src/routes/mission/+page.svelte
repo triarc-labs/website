@@ -1,7 +1,7 @@
 <script lang="ts">
   import Block from '$lib/components/Block.svelte'
   import GradientHero from '$lib/components/GradientHero.svelte'
-  import Footer from '$lib/components/Footer.svelte'
+  import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import serge from '$lib/assets/team/serge.jpg?w=768&format=webp;png&metadata&enhanced'
   import marco from '$lib/assets/team/marco.jpg?w=768&format=webp;png&metadata&enhanced'
   import elke from '$lib/assets/team/elke.jpg?w=768&format=webp;png&metadata&enhanced'
@@ -197,5 +197,5 @@
   <!--  <Manifest />-->
   <!--  <TeamMembers />-->
 
-  <Footer />
+  <FooterNoContact />
 </div>

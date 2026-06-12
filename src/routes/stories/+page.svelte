@@ -1,7 +1,7 @@
 <script lang="ts">
   import GradientHero from '$lib/components/GradientHero.svelte'
   import Container from '$lib/components/Container.svelte'
-  import Footer from '$lib/components/Footer.svelte'
+  import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import type { PageData } from './$types'
   import { page } from '$app/stores'
   import { getSizes, getSource, getSourceSet } from '$lib/util/ghost-helpers'
@@ -165,7 +165,7 @@
     </Container>
   </div>
 
-  <Footer />
+  <FooterNoContact />
 </div>
 
 <style lang="postcss">

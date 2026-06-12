@@ -1,7 +1,8 @@
 <script lang="ts">
   import Block from '$lib/components/Block.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Container from '$lib/components/Container.svelte'
-  import Footer from '$lib/components/Footer.svelte'
+  import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import Reveal from '$lib/components/Reveal.svelte'
   import type { BlockContent } from '$lib/components/TypeDefinitions'
   import MetaHead from '$lib/components/MetaHead.svelte'
@@ -21,9 +22,9 @@
 
   let contents: BlockContent[] = [
     {
-      title: 'μLink Datahub',
+      title: 'Ein digitales Ökosystem',
       content:
-        'Die Schnittstellenlösung, welche Ihre komplette Software-Infrastruktur unter einen Hut bringt! ERP, CRM, Disposition, Zeiterfassung, Projektsoftware, HR Suite, Lagerbewirtschaftung usw. sind mit µLink in einem einzigen digitalen Ökosystem vereint. <br/><br/>' +
+        'ERP, CRM, Disposition, Zeiterfassung, Projektsoftware, HR Suite, Lagerbewirtschaftung usw. sind mit µLink in einem einzigen digitalen Ökosystem vereint. <br/><br/>' +
         'Unternehmen, die konsequent auf digitale Lösungen setzen, haben einen klaren Wettbewerbsvorteil. Dabei wird mithilfe unterschiedlicher Softwarelösungen ein Prozess nach dem anderen digitalisiert. Durch dieses stetig wachsende und sich verändernde Ökosystem entsteht das Bedürfnis die Datenflüsse zu managen. <br/><br/>' +
         'Essenziell sind dabei Bedürfnisse wie das Verhindern manueller Arbeitsschritte, die direkte Zusammenarbeit von Mitarbeitern über Systemgrenzen hinweg, sowie das schnelle Finden aller massgebenden Informationen in den angebundenen Softwarelösungen. µLink liefert dafür die hochmoderne und effiziente Lösung mit dem Fokus auf Echtzeitkommunikation und Sicherheit.',
       image: { src: mLinkTree, alt: 'mlink logo' },
@@ -164,6 +165,12 @@
 <MetaHead pageMetadata={mlinkMetadata} />
 
 <div class="bg-white">
+  <GradientHero
+    kicker="Lösungen"
+    title="μLink Datahub"
+    content="Die Schnittstellenlösung, welche Ihre komplette Software-Infrastruktur unter einen Hut bringt – hochmodern, effizient und mit Fokus auf Echtzeitkommunikation und Sicherheit."
+  />
+
   {#each contents as content}
     <Block bind:content />
   {/each}
@@ -192,5 +199,5 @@
     </Container>
   </section>
 
-  <Footer />
+  <FooterNoContact />
 </div>

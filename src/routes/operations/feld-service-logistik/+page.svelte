@@ -1,7 +1,7 @@
 <script lang="ts">
   import Block from '$lib/components/Block.svelte'
   import GradientHero from '$lib/components/GradientHero.svelte'
-  import Footer from '$lib/components/Footer.svelte'
+  import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
   import type { BlockContent } from '$lib/components/TypeDefinitions'
   import { operationsFeldLogistikMetadata } from '$lib/content/triarc-page-metadata'
@@ -42,5 +42,5 @@
   {#each contents as content}
     <Block bind:content />
   {/each}
-  <Footer />
+  <FooterNoContact />
 </div>

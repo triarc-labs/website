@@ -2,7 +2,7 @@
   import type { PageData } from './$types'
   import ThemedSection from '$lib/index/ThemedSection.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
-  import Footer from '$lib/components/Footer.svelte'
+  import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import { operationSectionContent } from '$lib/content/operations-section'
   import { operationsMetadata } from '$lib/content/triarc-page-metadata'
 
@@ -25,4 +25,4 @@
     { name: 'Operationen', href: '/operations' },
   ]}
 />
-<Footer />
+<FooterNoContact />

@@ -2,7 +2,7 @@
   import Customers from '$lib/index/Customers.svelte'
   import Partners from '$lib/index/Partners.svelte'
   import Container from '$lib/components/Container.svelte'
-  import Footer from '$lib/components/Footer.svelte'
+  import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import Reveal from '$lib/components/Reveal.svelte'
   import TriarcOrbits from '$lib/components/TriarcOrbits.svelte'
   import EnhancedImage from '$lib/index/EnhancedImage.svelte'
@@ -47,7 +47,7 @@
           <Reveal y={16} delay={200}>
             <p class="mt-6 text-xl text-white/90">
               Was wir vollbracht haben – und woraus es entstanden ist: {referenceProjects.length} Projekte aus Logistik,
-              Bau, Gesundheitswesen, Immobilien und mehr – jedes mit seiner eigenen Geschichte.
+              Bau, Immobilien und mehr – jedes mit seiner eigenen Geschichte.
             </p>
           </Reveal>
         </div>
@@ -179,5 +179,5 @@
   <Customers />
   <Partners />
   <NavJump />
-  <Footer />
+  <FooterNoContact />
 </div>

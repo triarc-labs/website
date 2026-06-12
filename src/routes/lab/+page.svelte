@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Footer from '$lib/components/Footer.svelte'
+  import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import Container from '$lib/components/Container.svelte'
   import Reveal from '$lib/components/Reveal.svelte'
   import TriarcOrbits from '$lib/components/TriarcOrbits.svelte'
@@ -204,4 +204,4 @@
   </section>
 </div>
 
-<Footer />
+<FooterNoContact />

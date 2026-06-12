@@ -1,6 +1,6 @@
 <script lang="ts">
   import TeamMembers from '$lib/index/TeamMembers.svelte'
-  import Footer from '$lib/components/Footer.svelte'
+  import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import GradientHero from '$lib/components/GradientHero.svelte'
   import Block from '$lib/components/Block.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
@@ -31,4 +31,4 @@
 
 <Block bind:content />
 
-<Footer />
+<FooterNoContact />

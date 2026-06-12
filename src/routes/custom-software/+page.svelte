@@ -1,7 +1,7 @@
 <script lang="ts">
   import GradientHero from '$lib/components/GradientHero.svelte'
   import Container from '$lib/components/Container.svelte'
-  import Footer from '$lib/components/Footer.svelte'
+  import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import Reveal from '$lib/components/Reveal.svelte'
   import ProcessCycle from '$lib/components/ProcessCycle.svelte'
   import EnhancedImage from '$lib/index/EnhancedImage.svelte'
@@ -295,5 +295,5 @@
     </Container>
   </section>
 
-  <Footer />
+  <FooterNoContact />
 </div>

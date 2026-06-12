@@ -1,6 +1,6 @@
 <script lang="ts">
   import Container from '$lib/components/Container.svelte'
-  import Footer from '$lib/components/Footer.svelte'
+  import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import Reveal from '$lib/components/Reveal.svelte'
   import EnhancedImage from '$lib/index/EnhancedImage.svelte'
   import ReferenceStory from '$lib/components/ReferenceStory.svelte'
@@ -140,5 +140,5 @@
     </Container>
   </section>
 
-  <Footer />
+  <FooterNoContact />
 </div>
