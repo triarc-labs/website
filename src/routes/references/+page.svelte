@@ -16,7 +16,15 @@
   const accents = ['bg-red-triarc', 'bg-green-triarc', 'bg-blue-triarc']
 
   // Curated filter categories; a project matches when any of its tags equals the category
-  const categories = ['Logistik & Dispo', 'MedTech', 'Digital Work', 'Aussendienst', 'Immobilien', 'Bau', 'Soziales']
+  const categories = [
+    'Logistik & Dispo',
+    'Gesundheitswesen',
+    'Digital Work',
+    'Aussendienst',
+    'Immobilien',
+    'Bau',
+    'Soziales',
+  ]
   let activeCategory: string | null = null
 
   $: filteredProjects = activeCategory
@@ -47,7 +55,7 @@
           <Reveal y={16} delay={200}>
             <p class="mt-6 text-xl text-white/90">
               Was wir vollbracht haben – und woraus es entstanden ist: {referenceProjects.length} Projekte aus Logistik,
-              Bau, MedTech, Immobilien und mehr – jedes mit seiner eigenen Geschichte.
+              Bau, Gesundheitswesen, Immobilien und mehr – jedes mit seiner eigenen Geschichte.
             </p>
           </Reveal>
         </div>
