@@ -17,11 +17,9 @@
   let pageNumber = 2 //
   let reachedEnd = false
   let loading = false
-  let filter!: HTMLDialogElement
   let items: MappedPost[] = []
 
   onMount(() => {
-    filter = document.getElementById('filter') as HTMLDialogElement
     items = [...data.posts]
   })
 
@@ -72,82 +70,33 @@
 />
 
 <div class="bg-gray-50 min-h-[calc(100vh_-_432px)] flex-grow flex flex-col">
-  <dialog id="filter" class="modal rounded-md w-full bg-gray-100 shadow-xl">
-    <div class="modal-box p-4">
-      <div class="flex mb-6 flex-col gap-3">
-        <p class="font-bold text-gray-700">Posts auswählen</p>
+  <Container>
+    <div class="my-8 flex flex-wrap gap-3" role="group" aria-label="Stories nach Thema filtern">
+      <a
+        href="/stories"
+        target="_self"
+        aria-current={data.selectedTag === '' ? 'page' : undefined}
+        class="rounded-full border px-4 py-1.5 text-base font-bold transition duration-300 {data.selectedTag === ''
+          ? 'border-transparent bg-blue-triarc text-white shadow'
+          : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'}"
+      >
+        Alle <span class="font-normal opacity-70">({data.totalPosts})</span>
+      </a>
+      {#each data.tags as tag}
         <a
-          href="/stories"
+          href="/stories?tag={tag.slug}"
           target="_self"
-          class="bg-white rounded-md border border-gray-300 h-10 flex {data.selectedTag === '' ? 'active' : ''} "
+          aria-current={data.selectedTag === tag.slug ? 'page' : undefined}
+          class="rounded-full border px-4 py-1.5 text-base font-bold transition duration-300 {data.selectedTag ===
+          tag.slug
+            ? 'border-transparent bg-blue-triarc text-white shadow'
+            : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'}"
         >
-          <div class="badge">{data.totalPosts}</div>
-          <div class="px-4 py-2">Alle</div>
+          {tag.name} <span class="font-normal opacity-70">({tag.count.posts})</span>
         </a>
-        {#each data.tags as tag}
-          <a
-            href="/stories?tag={tag.slug}"
-            target="_self"
-            class="bg-white border border-gray-300 h-10 rounded-md flex {data.selectedTag === tag.slug ? 'active' : ''}"
-          >
-            <div class="badge">{tag.count.posts}</div>
-            <div class="px-4 py-2">{tag.name}</div>
-          </a>
-        {/each}
-      </div>
-      <div class="modal-action">
-        <form class="flex" method="dialog">
-          <button class="btn bg-white rounded-md h-10 border-gray-300 border flex-grow px-4 py-2">Abbrechen</button>
-        </form>
-      </div>
+      {/each}
     </div>
-  </dialog>
-
-  <div
-    class="filter-bar bg-[#E5E7EB] shadow border-t border-b border-gray-200 sticky md:relative top-16 md:top-0 will-change-transform z-50"
-  >
-    <Container>
-      <div class="flex items-start md:flex-row my-6 gap-3">
-        <button
-          class="btn flex flex-grow bg-white items-center rounded-md h-10 shadow md:hidden px-0 py-2 {data.selectedTag ===
-          ''
-            ? ''
-            : 'active'}"
-          on:click={() => filter.showModal()}
-        >
-          <span class="badge flex-shrink">Filter</span>
-          {#if data.selectedTag.startsWith('beratung')}
-            <span class="flex-grow inline-flex justify-center items-center px-4 py-2">Beratung</span>
-          {:else if data.selectedTag.startsWith('custom')}
-            <span class="flex-grow inline-flex justify-center items-center px-4 py-2">Custom Software</span>
-          {:else if data.selectedTag.startsWith('triarc')}
-            <span class="flex-grow inline-flex justify-center items-center px-4 py-2">Triarc</span>
-          {:else}
-            <span class="flex-grow inline-flex justify-center px-4 py-2">Alle</span>
-          {/if}
-        </button>
-        <a
-          href="/stories"
-          target="_self"
-          class="bg-white rounded-md h-10 hidden md:flex {data.selectedTag === '' ? 'active' : ''} "
-        >
-          <div class="badge">{data.totalPosts}</div>
-          <div class="px-4 py-2">Alle</div>
-        </a>
-        {#each data.tags as tag}
-          <a
-            href="/stories?tag={tag.slug}"
-            target="_self"
-            class="bg-white h-10 rounded-md md:flex hidden {data.selectedTag === tag.slug ? 'active' : ''}"
-          >
-            <div class="badge">{tag.count.posts}</div>
-            <div class="px-4 py-2 rounded-md">{tag.name}</div>
-          </a>
-        {/each}
-      </div>
-    </Container>
-  </div>
-  <hr />
+  </Container>
 
   <div class="flex-grow">
     <div class="px-8 lg:px-16 py-4">
@@ -222,16 +171,6 @@
 </div>
 
 <style lang="postcss">
-  .badge {
-    @apply bg-white border-r-2 border-gray-100 rounded rounded-r-none  px-4 py-2;
-  }
-  /*noinspection CssUnusedSymbol*/
-  .active {
-    @apply bg-white;
-  }
-  .active .badge {
-    @apply bg-blue-triarc text-white z-10;
-  }
   .item {
     transition: all ease 0.2s;
   }
