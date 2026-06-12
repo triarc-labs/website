@@ -7,12 +7,16 @@
   export let content: string | undefined = undefined
   /** Small uppercase section label above the title. */
   export let kicker: string | undefined = undefined
+  /** The rainbow arch animation is reserved for selected special pages. */
+  export let orbits = false
 </script>
 
 <section
   class="relative overflow-hidden bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended text-white"
 >
-  <TriarcOrbits focusX={0.78} focusY={0.95} opacity={0.9} scale={1.6} />
+  {#if orbits}
+    <TriarcOrbits focusX={0.78} focusY={0.95} opacity={0.9} scale={1.6} />
+  {/if}
   <div class="relative">
     <Container>
       <div class="flex flex-col items-start py-24 md:py-32 lg:max-w-3xl">
