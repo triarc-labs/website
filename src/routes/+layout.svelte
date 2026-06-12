@@ -61,12 +61,6 @@
         },
         {
           type: 'link',
-          title: 'Team',
-          path: '/team',
-          description: 'Wer wir sind',
-        },
-        {
-          type: 'link',
           title: 'Strategie',
           path: '/strategy',
           description: 'Strategie in die Praxis',
