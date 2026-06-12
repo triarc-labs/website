@@ -18,7 +18,7 @@
 <div class="relative h-full {`gradient-${sectionGradientColor}`} bg-fixed">
   <Container>
     {#if breadcrumbs}
-      <div class="-mb-6 pt-10 md:-mb-10 md:pt-12">
+      <div class="relative z-20 -mb-6 pt-10 md:-mb-10 md:pt-12">
         <Breadcrumbs items={breadcrumbs} />
       </div>
     {/if}

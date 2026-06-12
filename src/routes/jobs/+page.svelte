@@ -96,6 +96,7 @@
 {/each}
 
 <GradientHero
+  orbits
   kicker="Über uns"
   title="Jobs"
   content="Erfahre mehr über unsere offenen Stellen und was dich sonst noch dazu interessieren könnte."

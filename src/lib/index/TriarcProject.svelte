@@ -13,7 +13,7 @@
 <div class="relative h-full {`gradient-${project.gradient}`} ">
   <Container>
     {#if breadcrumbs}
-      <div class="-mb-4 pt-10 md:pt-12 lg:-mb-24">
+      <div class="relative z-20 -mb-4 pt-10 md:pt-12 lg:-mb-24">
         <Breadcrumbs items={breadcrumbs} emitJsonLd />
       </div>
     {/if}
