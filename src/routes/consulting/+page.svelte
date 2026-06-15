@@ -175,7 +175,6 @@
             <div
               class="flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div class="h-1.5 {service.accent}" aria-hidden="true"></div>
               <div class="flex flex-grow flex-col p-7">
                 <span class="text-sm font-bold tracking-widest text-gray-500">0{index + 1}</span>
                 <h3 class="mt-2 text-xl font-bold text-gray-900">{service.title}</h3>
