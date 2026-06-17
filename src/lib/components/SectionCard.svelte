@@ -18,7 +18,7 @@
         <span class="text-lg w-full max-w-full pb-2">
           {content.prefix}
         </span>
-        <span class="text-4xl w-full max-w-full whitespace-pre-line pb-5">
+        <span class="text-4xl font-medium w-full max-w-full whitespace-pre-line pb-5">
           {content.title}
         </span>
       </div>

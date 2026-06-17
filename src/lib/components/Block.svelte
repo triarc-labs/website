@@ -19,10 +19,12 @@
   import Testimonials from '$lib/index/Testimonials.svelte'
   export let content: BlockContent
   export let inline: boolean = false
+  // Lets the quote image overlap the following section (see QuoteBlock).
+  export let quoteOverlap: boolean = false
 </script>
 
 {#if content.quote}
-  <QuoteBlock bind:quote={content.quote} />
+  <QuoteBlock bind:quote={content.quote} overlap={quoteOverlap} />
 {/if}
 
 {#if content.title}

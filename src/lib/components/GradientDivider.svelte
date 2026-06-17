@@ -5,11 +5,11 @@
   export let gradientContent: TriarcGradientDivider
 </script>
 
-<div class={`flex justify-center text-center text-white py-[90px] min-h-80 w-full gradient-${gradientContent.color}`}>
+<div class={`flex justify-center text-center text-white py-[110px] min-h-80 w-full gradient-${gradientContent.color}`}>
   <Container>
     <div>
-      <div class="text-2xl font-bold pb-4">{gradientContent.title}</div>
-      <div class="text-base max-w-prose pb-2">{gradientContent.content}</div>
+      <div class="text-4xl font-bold pb-6">{gradientContent.title}</div>
+      <div class="text-lg max-w-prose pb-5">{gradientContent.content}</div>
       <Button
         buttonGraphicStyle="secondary"
         buttonColor="white"

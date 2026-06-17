@@ -6,6 +6,9 @@
   import linkedIn from '$lib/assets/icons/square-linkedin-brands-solid-full.svg'
   import Container from '$lib/components/Container.svelte'
   export let quote: Quote
+  // When true, the (desktop) image is pushed down so it overlaps the following
+  // section by ~40px. Disabled e.g. for the last landing quote above the footer.
+  export let overlap = false
 </script>
 
 <div
@@ -20,7 +23,9 @@
     class="max-w-4xl items-center gap-y-10 gap-x-8 sm:gap-y-8 md:items-stretch group-odd:md:flex-row-reverse group-even:md:flex-row md:px-8"
   >
     <div
-      class="hidden md:block mx-auto -mt-8 md:-mx-4 lg:-mx-8 w-full max-w-[337.5px] lg:max-w-[375px] xl:max-w-[412.5px] md:-mb-8 md:w-full md:flex-none xl:h-[550px] lg:h-[500px] h-[450px] md:place-self-end"
+      class="hidden md:block mx-auto -mt-8 md:-mx-4 lg:-mx-8 w-full max-w-[337.5px] lg:max-w-[375px] xl:max-w-[412.5px] md:-mb-8 md:w-full md:flex-none xl:h-[550px] lg:h-[500px] h-[450px] md:place-self-end {overlap
+        ? 'relative z-10 md:translate-y-[72px]'
+        : ''}"
     >
       <div class="relative aspect-[3/4] h-full md:aspect-auto flex w-auto justify-center items-center">
         <!-- Needed as safeguard if images in use are svgs -->
@@ -43,18 +48,18 @@
         {/if}
       </div>
     </div>
-    <div class="w-full md:flex-auto mt-8 md:pt-24 md:pb-12 group-even:lg:pr-8 group-odd:lg:pl-8 lg:px-8">
+    <div class="w-full md:flex-auto mt-8 md:pt-24 md:pb-12 group-even:lg:pl-20 group-even:lg:pr-8 group-odd:lg:pr-20 group-odd:lg:pl-8">
       <!--      <figure class="relative isolate pt-6 sm:pt-12">-->
       <blockquote
-        class="hidden md:block text-xl font-semibold leading-8 {quote.highlight
+        class="hidden md:block text-xl font-semibold leading-7 {quote.highlight
           ? 'text-gray-900'
-          : 'text-gray-600'} sm:text-2xl sm:leading-9"
+          : 'text-gray-600'} sm:text-2xl sm:leading-8"
       >
         <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->
-        <p><span class="">&laquo;</span> {@html quote.content} <span class="">&raquo;</span></p>
+        <p><span class="">&laquo;</span>{@html quote.content}<span class="">&raquo;</span></p>
       </blockquote>
       <div
-        class="mt-8 flex flex-col-reverse items-center gap-6 md:flex-row md:items-end md:justify-between md:gap-0 group-odd:md:flex-row-reverse group-even:md:flex-row"
+        class="mt-8 flex flex-col-reverse items-center gap-6 md:flex-row md:items-end md:justify-start md:gap-0"
       >
         <div
           class="text-base {quote.highlight
@@ -118,12 +123,12 @@
         </div>
       </div>
       <blockquote
-        class="pt-8 md:hidden text-xl font-semibold leading-8 {quote.highlight
+        class="pt-8 md:hidden text-xl font-semibold leading-7 {quote.highlight
           ? 'text-gray-900'
-          : 'text-gray-600'} sm:text-2xl sm:leading-9"
+          : 'text-gray-600'} sm:text-2xl sm:leading-8"
       >
         <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->
-        <p><span class="">&laquo;</span> {@html quote.content} <span class="">&raquo;</span></p>
+        <p><span class="">&laquo;</span>{@html quote.content}<span class="">&raquo;</span></p>
       </blockquote>
       <!--      </figure>-->
     </div>

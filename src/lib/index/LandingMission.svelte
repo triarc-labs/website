@@ -18,7 +18,7 @@
       succeed.
     </span>
     <span class="text-lg text-center font-bold pb-2"> Warum triarc laboratories? </span>
-    <span class="text-lg max-w-prose lg:pb-12">
+    <span class="text-lg max-w-prose">
       Wir verstehen die Herausforderungen von KMU und entwickeln seit über einem Jahrzehnt massgeschneiderte Lösungen.
       Unser bewährter Ansatz kombiniert strategisches Denken mit praktischer Umsetzung - für messbare Ergebnisse und
       nachhaltigen Geschäftserfolg.
@@ -30,8 +30,10 @@
   <div></div>
   {#each contents as contentBlock, index}
     <div class="group">
-      <div class="py-10 md:py-16 {index % 2 === 1 ? 'bg-gray-50' : 'bg-white'}">
-        <Block content={contentBlock.content} />
+      <div
+        class="{index === 0 ? 'pb-10 md:pb-16' : 'py-10 md:py-16'} {index % 2 === 1 ? 'bg-gray-50' : 'bg-white'}"
+      >
+        <Block content={contentBlock.content} quoteOverlap={index !== contents.length - 1} />
       </div>
       {#if contentBlock.divider}
         <GradientDivider gradientContent={contentBlock.divider} />
