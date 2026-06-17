@@ -4,6 +4,7 @@
   import Reveal from '$lib/components/Reveal.svelte'
   import TriarcOrbits from '$lib/components/TriarcOrbits.svelte'
   import { landingPageCards } from '$lib/content/landing-page'
+  import triarcLogo from '$lib/assets/triarc-logo-claim-quer-negativ.png'
   import type { TriarcColor, TriarcSectionDefinition } from '$lib/components/TypeDefinitions'
 
   const landingContent = landingPageCards
@@ -39,18 +40,13 @@
     <Container>
       <div class="flex flex-col pt-16 lg:pt-28">
         <Reveal y={16}>
-          <span class="flex items-center gap-x-3 text-lg">
-            <span class="flex gap-x-1.5" aria-hidden="true">
-              <span class="h-2 w-2 rounded-full bg-red-triarc"></span>
-              <span class="h-2 w-2 rounded-full bg-green-triarc"></span>
-              <span class="h-2 w-2 rounded-full bg-blue-triarc"></span>
-            </span>
+          <span class="flex items-center text-lg">
             {landingContent.content.prefix}
           </span>
         </Reveal>
         <Reveal y={16} delay={100}>
-          <h1 class="py-6 text-5xl font-bold tracking-tight md:text-7xl">
-            {landingContent.content.title}
+          <h1 class="py-6">
+            <img src={triarcLogo} alt={landingContent.content.title} class="h-12 md:h-[72px] w-auto" />
           </h1>
         </Reveal>
         <Reveal y={16} delay={200}>
@@ -62,13 +58,13 @@
           <div class="flex flex-wrap gap-4 pb-16 pt-10 lg:pb-24">
             <a
               href="/contact"
-              class="rounded-full bg-white px-7 py-3 text-base font-bold text-blue-triarc-blended shadow-lg transition duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+              class="rounded-full bg-white px-2 py-2 md:px-4 text-base font-medium text-black shadow-lg transition duration-300 hover:-translate-y-0.5 hover:shadow-xl"
             >
               Projekt besprechen
             </a>
             <a
               href="/references"
-              class="rounded-full border border-white/40 px-7 py-3 text-base text-white transition duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white/10"
+              class="rounded-full border border-white/40 px-2 py-2 md:px-4 text-base text-white transition duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white/10"
             >
               Referenzen entdecken
             </a>

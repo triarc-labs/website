@@ -1,5 +1,4 @@
 <script lang="ts">
-  import underline from '$lib/assets/img/landing/rainbow-underline.svg'
   import Container from '$lib/components/Container.svelte'
   import Block from '$lib/components/Block.svelte'
   import GradientDivider from '$lib/components/GradientDivider.svelte'
@@ -11,32 +10,12 @@
 
 <div class="flex flex-col pb-16 lg:pb-32">
   <Container class="justify-center items-center text-center">
-    <span
-      class="pt-20 pb-28 font-semibold font-sans text-7xl bg-gradient-to-r from-red-triarc via-green-triarc to-blue-triarc bg-clip-text text-transparent"
-    >
+    <span class="pt-16 lg:pt-32 pb-10 font-semibold font-sans text-7xl text-black">
       Together
-      <span class="inline-flex flex-col mx-2">
-        <span>you</span>
-        <span class="relative h-0 w-full">
-          <img
-            src={underline}
-            alt="fancy underline"
-            class="absolute left-1/2 -translate-x-1/2 top-full mt-0 pointer-events-none block max-w-none"
-          />
-        </span>
-
-        <!--        <img src={underline} alt="fancy underline" class="absolute block mt-2 pointer-events-none max-w-none" />-->
+      <span class="mx-2 bg-gradient-to-r from-red-triarc via-green-triarc to-blue-triarc bg-clip-text text-transparent">
+        you
       </span>
-      succeed
-      <!--      <span class="inline-block overflow-visible mx-2 underline-triarc">-->
-      <!--      you-->
-      <!--        <img-->
-      <!--          src={underline}-->
-      <!--          alt="fancy underline"-->
-      <!--          class="absolute left-1/2 -translate-x-1/2 top-full mt-2 pointer-events-none block max-w-none"-->
-      <!--        />-->
-      <!--        <img src={underline} alt="fancy underline" class="absolute block mt-2 pointer-events-none max-w-none" />-->
-      <!--      </span> succeed-->
+      succeed.
     </span>
     <span class="text-lg text-center font-bold pb-2"> Warum triarc laboratories? </span>
     <span class="text-lg max-w-prose lg:pb-12">
@@ -51,7 +30,7 @@
   <div></div>
   {#each contents as contentBlock, index}
     <div class="group">
-      <div class="border-t border-gray-100 py-10 md:py-16 {index % 2 === 1 ? 'bg-gray-50' : 'bg-white'}">
+      <div class="py-10 md:py-16 {index % 2 === 1 ? 'bg-gray-50' : 'bg-white'}">
         <Block content={contentBlock.content} />
       </div>
       {#if contentBlock.divider}
