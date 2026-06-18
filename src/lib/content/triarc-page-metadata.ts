@@ -44,9 +44,9 @@ export const jobsMetadata: TriarcPageMetadata = {
 
 export const labMetadata: TriarcPageMetadata = {
   title: 'Innovation Lab Projekte – triarc laboratories',
-  metaTitle: 'Innovation Lab: Slothi, Fair Pizza & mehr',
+  metaTitle: 'Innovation Lab – triarc laboratories',
   description:
-    'Entdecken Sie unsere Lab-Projekte: Slothi Terminfindung, Fair Pizza Whitelabel-Shop und weitere innovative Produkte aus dem Hause triarc.',
+    'Entdecken Sie unsere Lab-Projekte: innovative Produkte und Experimente aus dem Hause triarc laboratories.',
 }
 
 export const missionMetadata: TriarcPageMetadata = {

@@ -88,7 +88,7 @@
         role="tabpanel"
         aria-labelledby="process-tab-{active}"
         in:fly={{ y: 12, duration: 300 }}
-        class="rounded-3xl bg-gray-50 p-8"
+        class="rounded-3xl bg-gray-100 p-8"
       >
         <p class="max-w-3xl text-lg text-gray-700">{steps[active].content}</p>
       </div>

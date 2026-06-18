@@ -171,7 +171,7 @@
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Wo Custom Software in der Praxis wirkt
         </h2>
-        <p class="mt-4 max-w-3xl text-lg text-gray-600">
+        <p class="mt-4 text-lg text-gray-600">
           Custom Software setzt überall dort an, wo Standardsoftware an ihre Grenzen stösst. Oft gilt: 80&nbsp;%
           Standard, 20&nbsp;% Custom – genau dort, wo Sie es für Ihr Geschäft brauchen. Diese 20&nbsp;% sind der
           Gamechanger, der die Hürden im Alltag reduziert. Typisch sind tiefe ERP- und Prozessintegration (z.&nbsp;B.
@@ -184,7 +184,6 @@
             <div
               class="flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div class="h-1.5 {useCase.accent}" aria-hidden="true"></div>
               <div class="flex flex-grow flex-col p-7">
                 <h3 class="text-xl font-bold text-gray-900">{useCase.title}</h3>
                 <p class="mt-3 text-base text-gray-600">{useCase.content}</p>
@@ -201,7 +200,7 @@
           >
             Zu den Referenzen
           </a>
-          <a href="/stories" class="self-center text-base font-bold text-blue-triarc hover:underline">
+          <a href="/stories?tag=custom-software" class="self-center text-base font-bold text-blue-triarc hover:underline">
             Aktuelle Einblicke im Story-Blog →
           </a>
         </div>
@@ -214,7 +213,7 @@
     <Container>
       <Reveal>
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Unser agiler Entwicklungsprozess</h2>
-        <p class="mt-4 max-w-3xl text-lg text-gray-600">
+        <p class="mt-4 text-lg text-gray-600">
           Wir führen unsere Projekte erfolgreich seit einem Jahrzehnt agil. Diese Methode hat sich sowohl für uns als
           auch für den Kunden immer bewährt. Unser agiler Entwicklungsprozess besteht aus vier Schritten, welche sich
           pro Sprint wiederholen.

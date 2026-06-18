@@ -191,7 +191,7 @@
                 {/if}
                 {#if service.posts.length > 0}
                   <ul class="mt-5 flex flex-col gap-y-2 border-t border-gray-100 pt-4">
-                    {#each service.posts.slice(0, 2) as post}
+                    {#each service.posts.slice(0, 1) as post}
                       <li>
                         <a
                           href={post.link.href}
@@ -254,7 +254,7 @@
         <Reveal>
           <div class="flex flex-wrap items-baseline justify-between gap-4">
             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Einblicke aus unserem Blog</h2>
-            <a href="/stories" class="text-base font-bold text-blue-triarc hover:underline">Alle Stories →</a>
+            <a href="/stories?tag=beratung" class="text-base font-bold text-blue-triarc hover:underline">Alle Stories →</a>
           </div>
         </Reveal>
         <div class="mt-12 grid gap-6 md:grid-cols-3">

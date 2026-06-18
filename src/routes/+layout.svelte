@@ -442,7 +442,7 @@
   }
 
   #page .navbar {
-    @apply text-[323F33] bg-white min-h-0 hidden md:flex flex-shrink-0 z-20 shadow-2xl w-full relative md:flex-row md:h-16
+    @apply text-[323F33] bg-white min-h-0 hidden md:flex flex-shrink-0 z-[60] shadow-2xl w-full relative md:flex-row md:h-16
       group-odd:xl:flex-row group-even:xl:flex-row-reverse flex-grow md:fixed md:top-0;
   }
 

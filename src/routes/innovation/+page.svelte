@@ -10,9 +10,7 @@
   import pascal from '$lib/assets/team/pascal.jpg?w=768&format=webp;png&metadata&enhanced'
   import mlinkLogo from '$lib/assets/img/mlink/tree.svg'
   import m3expressIcon from '$lib/assets/img/lab/m3express-icon.svg'
-  import fairpizzaIcon from '$lib/assets/img/lab/fairpizza-icon-512.png'
   import aiPoc from '$lib/assets/img/thumbnail/ai-poc-poster.png'
-  import slothiIcon from '$lib/assets/img/lab/slothi.svg'
   import type { VideoContent } from '$lib/components/TypeDefinitions'
   import { innovationMetadata } from '$lib/content/triarc-page-metadata'
 
@@ -24,7 +22,7 @@
     personTitle: 'CCO / Partner',
   }
 
-  const aiFields = ['Vertragsanalyse', 'Protokollerstellung', 'Assistenzen', 'Wissensmanagement']
+  const aiFields = ['Vertragsanalyse', 'Protokollerstellung', 'Assistenzen', 'Wissensmanagement', 'Sprachbarrieren überwinden']
 
   const voiceReportingVideo: VideoContent = {
     videoTitle: 'AI Proof of Concept',
@@ -61,24 +59,6 @@
       iconAlt: 'm3express',
       accent: 'bg-green-triarc',
       link: { href: 'https://m3express.ch', text: 'Mehr dazu', target: '_blank' },
-    },
-    {
-      title: 'Fair Pizza',
-      content:
-        'Fair Pizza bietet Restaurants eine einfache und günstige Alternative, ihr Angebot selbstständig online zu verkaufen. Die Whitelabel-Lösung bietet eine Vielzahl von Konfigurationsmöglichkeiten inklusive einem Pizzabuilder.',
-      icon: fairpizzaIcon,
-      iconAlt: 'fair pizza',
-      accent: 'bg-blue-triarc',
-      link: { href: 'https://fairpizza.ch', text: 'Mehr dazu', target: '_blank' },
-    },
-    {
-      title: 'Slothi',
-      content:
-        'Slothi soll deine Terminprobleme lösen. Eine smarte Lösung, welche dir den passenden Termin für alle Teilnehmer findet und die Verfügbarkeiten aller Teilnehmer automatisch prüft.',
-      icon: slothiIcon,
-      iconAlt: 'slothi',
-      accent: 'bg-red-triarc',
-      link: { href: 'https://slothi.ch', text: 'Mehr dazu', target: '_blank' },
     },
   ]
 </script>
@@ -137,13 +117,14 @@
       <Reveal>
         <div class="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Aktuelles Experiment</span>
+            <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Unser Fokus</span>
             <h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Integration von AI in die Welt der Custom Software
+              AI Transformation in der Software
             </h2>
             <p class="mt-4 text-lg text-gray-600">
-              Wir erproben, wie AI massgeschneiderte Software noch wertvoller macht – nicht als isoliertes Tool, sondern
-              direkt eingebettet in Ihre Geschäftsprozesse und Systemlandschaft.
+              AI ermöglicht neue Wege in der Benutzung und Gestaltung von Software. Der Weg ist jedoch steinig in der
+              Praxis – wir bieten dazu die technische Unterstützung und Expertise, um in Zusammenarbeit die richtigen
+              Schritte vorzunehmen und der Zukunft gewappnet zu sein.
             </p>
             <ul class="mt-6 flex flex-wrap gap-3">
               {#each aiFields as field}
@@ -151,9 +132,9 @@
               {/each}
             </ul>
             <p class="mt-6 text-lg text-gray-600">
-              Ein Beispiel aus dem Lab: das AI-unterstützte Voice Reporting. Zeit, Leistungen und Materialien werden vor
-              Ort per Spracheingabe erfasst, eine AI-Assistenz fragt fehlende Angaben nach und übermittelt den Rapport
-              direkt ins ERP oder in die Reporting-Applikation.
+              Ein Beispiel aus dem Lab: das AI-unterstützte Voice Reporting. Zeit, Leistung und Materialien werden vor
+              Ort per Spracheingabe rapportiert. Das entlastet den Polier von mühsamer Datenerfassung und schafft Raum
+              für das Wesentliche.
             </p>
           </div>
           <div class="overflow-hidden rounded-3xl shadow-xl ring-1 ring-gray-200">
