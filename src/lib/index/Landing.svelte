@@ -58,13 +58,13 @@
           <div class="flex flex-wrap gap-4 pb-16 pt-10 lg:pb-24">
             <a
               href="/contact"
-              class="rounded-full bg-white px-2 py-2 md:px-4 text-base font-medium text-black shadow-lg transition duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+              class="rounded-full bg-white px-4 py-2 md:px-6 text-base font-medium text-black shadow-lg transition duration-300 hover:-translate-y-0.5 hover:shadow-xl"
             >
               Projekt besprechen
             </a>
             <a
               href="/references"
-              class="rounded-full border border-white/40 px-2 py-2 md:px-4 text-base text-white transition duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white/10"
+              class="rounded-full border border-white/40 px-4 py-2 md:px-6 text-base text-white transition duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white/10"
             >
               Referenzen entdecken
             </a>

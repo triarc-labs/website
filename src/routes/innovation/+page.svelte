@@ -169,7 +169,7 @@
                   href={product.link.href}
                   target={product.link.target}
                   rel={product.link.target === '_blank' ? 'noreferrer' : undefined}
-                  class="mt-6 text-base font-bold text-blue-triarc hover:underline"
+                  class="mt-6 text-base font-medium text-blue-triarc hover:underline"
                 >
                   {product.link.text} →
                 </a>

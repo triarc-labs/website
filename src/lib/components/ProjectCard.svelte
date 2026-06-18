@@ -11,7 +11,7 @@
   class="project-card grid grid-cols-1 lg:grid-cols-2 bg-white place-items-center items-center rounded-3xl lg:h-[476px] mb-16"
 >
   <div class="p-5 md:p-10 w-full hyphens-auto">
-    <div class="lg:hidden project-card-image w-full overflow-hidden">
+    <div class="lg:hidden project-card-image w-full overflow-hidden mb-6">
       <img
         src={card.image.src}
         srcset={card.image.srcset}

@@ -59,17 +59,17 @@
         <p><span class="">&laquo;</span>{@html quote.content}<span class="">&raquo;</span></p>
       </blockquote>
       <div
-        class="mt-8 flex flex-col-reverse items-center gap-6 md:flex-row md:items-end md:justify-start md:gap-0"
+        class="mt-8 flex flex-col items-start gap-6 min-[480px]:flex-row min-[480px]:items-end md:flex-row md:items-end md:justify-start md:gap-0"
       >
         <div
           class="text-base {quote.highlight
             ? 'text-gray-900'
-            : 'text-gray-600'} self-stretch text-center md:self-end md:text-left"
+            : 'text-gray-600'} self-start text-left min-[480px]:self-end md:self-end md:text-left"
         >
           <div class="font-semibold">{quote.person}</div>
           <div class="mt-1">{quote.personTitle}</div>
           <div
-            class="mt-2 flex justify-center space-x-2 md:justify-start {quote.highlight
+            class="mt-2 flex justify-start space-x-2 md:justify-start {quote.highlight
               ? 'fill-gray-900'
               : 'fill-gray-600'}"
           >
@@ -99,7 +99,7 @@
             {/if}
           </div>
         </div>
-        <div class="md:hidden h-[260px] w-[195px] shrink-0">
+        <div class="md:hidden order-first h-[260px] w-[195px] shrink-0">
           <div class="relative aspect-[3/4] h-full flex w-auto justify-center items-center">
             <!-- Needed as safeguard if images in use are svgs -->
             {#if typeof quote.image === 'string'}

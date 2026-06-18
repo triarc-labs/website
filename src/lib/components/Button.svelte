@@ -30,13 +30,13 @@
   class="inline-flex justify-center items-center w-full sm:w-auto pointer-events-auto
   {buttonMargin === 'Standard' ? 'my-4' : 'my-0'}
   {buttonGraphicStyle === 'secondary'
-    ? 'px-2 py-2 md:px-4'
+    ? 'px-4 py-2 md:px-6'
     : buttonSize === 'Standard'
       ? 'px-6 py-3 md:px-6 md:py-3'
       : 'px-6 py-3 md:px-3 md:py-1'}
   {colorClass}
   {buttonGraphicStyle === 'primary' ? 'primary' : buttonGraphicStyle === 'secondary' ? 'secondary' : 'tertiary'}
-  text-base {buttonGraphicStyle === 'secondary' ? 'font-medium' : 'font-bold'}
+  text-base {buttonGraphicStyle === 'primary' ? 'font-bold' : 'font-medium'}
   border md:border-0 border-transparent rounded-full
   shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg
   focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2

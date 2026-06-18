@@ -28,7 +28,8 @@
       iconColor={sectionColor}
     />
     <div id="projects">
-      <div class="max-w-3xl pb-20 text-lg text-white">
+      <!-- lg:ml matches the title's left offset (icon w-11 + gap-x-6) so the text aligns under the title -->
+      <div class="max-w-3xl pb-20 text-lg text-white lg:ml-[68px]">
         {sectionContent.main.description}
       </div>
       {#each sectionContent.projects as project}

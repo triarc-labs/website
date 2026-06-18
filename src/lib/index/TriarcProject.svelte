@@ -17,21 +17,25 @@
         <Breadcrumbs items={breadcrumbs} emitJsonLd />
       </div>
     {/if}
-    <div class="flex flex-col lg:flex-row gap-y-2 gap-x-10 bg-transparent py-8 mt-12 lg:mt-32 mb-36">
+    <div class="flex flex-col lg:flex-row gap-y-2 gap-x-6 bg-transparent py-8 mt-12 lg:mt-32 mb-36">
       <div
-        class="w-[112px] icon-grid grid grid-cols-3 max-w-fit gap-2 lg:grid-cols-2 h-full flex-grow-0 lg:flex-shrink-0 lg:mt-1"
+        class="w-[112px] max-w-fit flex flex-wrap content-start justify-start gap-2 flex-grow-0 lg:w-24 lg:max-w-none lg:flex-shrink-0 lg:justify-end lg:mt-1"
       >
         {#each project.icons as icon}
           <Icon
-            size="large"
+            size="medium"
             color={icon.iconColor}
             src={icon.iconSource}
-            class="odd:col-start-2 even:col-start-1 category-icon"
+            class="lg:w-11 lg:h-11 category-icon"
           />
         {/each}
       </div>
       <div class="flex flex-col w-full">
-        <div class="max-w-prose text-5xl leading-tight text-white font-bold text-balance pb-4">{project.title}</div>
+        <div
+          class="max-w-prose text-4xl leading-tight md:text-5xl md:leading-tight text-white font-bold text-balance pb-4"
+        >
+          {project.title}
+        </div>
         <div class="max-w-prose text-lg text-white pb-4">
           {project.description}
         </div>

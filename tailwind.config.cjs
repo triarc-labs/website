@@ -57,13 +57,11 @@ module.exports = {
               lineHeight: theme('lineHeight.7'),
               marginTop: 0,
               marginBottom: 0,
-              marginLeft: 136,
             },
             p: {
               fontSize: theme('fontSize.base'),
               fontWeight: theme('fontWeight.normal'),
               maxWidth: theme('maxWidth.prose'),
-              marginLeft: 136,
             },
             ul: {
               listStyleType: 'disc',
@@ -71,7 +69,6 @@ module.exports = {
               marginTop: theme('spacing.4'),
               marginBottom: theme('spacing.4'),
               maxWidth: theme('maxWidth.prose'),
-              marginLeft: 136,
             },
             ol: {
               listStyleType: 'decimal',
@@ -79,7 +76,6 @@ module.exports = {
               marginTop: theme('spacing.4'),
               marginBottom: theme('spacing.4'),
               maxWidth: theme('maxWidth.prose'),
-              marginLeft: 136,
             },
             li: {
               marginTop: theme('spacing.2'),
