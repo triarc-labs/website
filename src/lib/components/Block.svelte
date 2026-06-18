@@ -28,13 +28,19 @@
 {/if}
 
 {#if content.title}
-  <div class="alternating md:min-h-0 group">
+  <div
+    class="alternating md:min-h-0 group {content.gradientBackground
+      ? 'bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended'
+      : ''}"
+  >
     <Container size={inline ? 'small' : 'wide'} class={inline ? 'ml-0' : ''}>
       <div
         class="
-          {!content.collapsed ? 'pb-16 pt-8 md:py-32 items-center' : 'py-6'} flex-col
+          {!content.collapsed
+          ? `${content.noPaddingY ? '' : 'pb-16 pt-8 md:py-32'} items-center`
+          : 'py-6'} flex-col
           {content.collapsible ? 'md:flex-row' : 'group-odd:md:flex-row group-even:md:flex-row-reverse'}
-          {!content.collapsed && inline ? 'md:py-8' : ''} flex relative transition-all"
+          {!content.collapsed && inline && !content.noPaddingY ? 'md:py-8' : ''} flex relative transition-all"
       >
         <div
           role={content.collapsible ? 'button' : ''}
@@ -48,7 +54,7 @@
           {/if}
           <div>
             {#if !content.jobDetails}
-              <TitleBlock bind:title={content.title} />
+              <TitleBlock bind:title={content.title} large={content.largeTitle} light={content.gradientBackground} />
             {/if}
             {#if content.jobDetails}
               <JobDetailsBlock bind:jobDetails={content.jobDetails} bind:title={content.title} />
@@ -122,7 +128,7 @@
 {/if}
 
 {#if content.video && !content.video.embedded}
-  <div class="bg-blue-triarc py-8">
+  <div class="bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended py-[92px]">
     <Container>
       <VideoBlock bind:content={content.video} />
     </Container>

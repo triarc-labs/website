@@ -57,6 +57,7 @@
     },
     {
       title: 'Monitoring',
+      noPaddingY: true,
       content:
         'Mit µLink lassen sich die Datenflüsse zwischen Softwaresystemen zentral observieren. Bei einem Ausfall, einer Abnahme der Leistung oder weiterer konfigurierbarer Parameter kann proaktiv alarmiert werden. Über das Grafana-Dashboard lassen sich alle systemrelevanten Komponenten in Echtzeit überwachen und visualisieren.',
       image: { src: monitoring, alt: 'borders' },
@@ -70,6 +71,8 @@
     },
     {
       title: 'Die Vorteile von µLink im Überblick',
+      largeTitle: true,
+      gradientBackground: true,
       cards: [
         {
           title: 'Klare Grenzen',
@@ -164,7 +167,7 @@
 
 <MetaHead pageMetadata={mlinkMetadata} />
 
-<div class="bg-white">
+<div class="bg-white sections-white">
   <GradientHero
     kicker="Lösungen"
     title="μLink Datahub"
@@ -175,7 +178,7 @@
     <Block bind:content />
   {/each}
 
-  <section class="bg-gray-50 py-16 md:py-24">
+  <section class="bg-white py-16 md:py-24">
     <Container>
       <Reveal>
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Das sagen unsere Kunden</h2>
@@ -201,3 +204,10 @@
 
   <FooterNoContact />
 </div>
+
+<style lang="postcss">
+  /* This page uses a uniform white background instead of the global alternating gray/white sections. */
+  .sections-white :global(:nth-child(even of .alternating)) {
+    @apply bg-white;
+  }
+</style>

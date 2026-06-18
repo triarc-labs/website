@@ -9,11 +9,11 @@
   import NavJump from '$lib/components/NavJump.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
   import LinkedInLink from '$lib/components/LinkedInLink.svelte'
+  import Icon from '$lib/components/Icon.svelte'
+  import { Arrow } from '$lib/content/icons'
   import serge from '$lib/assets/team/serge.jpg?w=768&format=webp;png&enhanced'
   import { referencesMetadata } from '$lib/content/triarc-page-metadata'
   import { referenceProjects } from '$lib/content/reference-projects'
-
-  const accents = ['bg-red-triarc', 'bg-green-triarc', 'bg-blue-triarc']
 
   // Curated filter categories; a project matches when any of its tags equals the category
   const categories = ['Logistik & Dispo', 'Digital Work', 'Aussendienst', 'Immobilien', 'Bau', 'Soziales']
@@ -29,11 +29,9 @@
 
 <MetaHead pageMetadata={referencesMetadata} />
 
-<div class="bg-white">
+<div class="bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended">
   <!-- Hero -->
-  <section
-    class="relative overflow-hidden bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended text-white"
-  >
+  <section class="relative overflow-hidden text-white">
     <TriarcOrbits focusX={0.78} focusY={0.95} opacity={0.9} scale={1.6} />
     <div class="relative">
       <Container>
@@ -42,10 +40,12 @@
             <span class="text-sm font-bold uppercase tracking-widest text-white/70">Referenzen</span>
           </Reveal>
           <Reveal y={16} delay={100}>
-            <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-6xl">Lösungen, die im Alltag wirken.</h1>
+            <h1 class="mt-3 text-4xl font-bold leading-tight tracking-tight md:text-5xl md:leading-tight">
+              Lösungen, die im Alltag wirken.
+            </h1>
           </Reveal>
           <Reveal y={16} delay={200}>
-            <p class="mt-6 text-xl text-white/90">
+            <p class="mt-6 text-lg text-white">
               Was wir vollbracht haben – und woraus es entstanden ist: {referenceProjects.length} Projekte aus Logistik,
               Bau, Immobilien und mehr – jedes mit seiner eigenen Geschichte.
             </p>
@@ -56,15 +56,15 @@
   </section>
 
   <!-- Project gallery -->
-  <section class="bg-gray-50 py-16 md:py-24" id="projects">
+  <section class="pb-16 md:pb-24" id="projects">
     <Container>
       <div class="mb-10 flex flex-wrap gap-3" role="group" aria-label="Referenzen nach Kategorie filtern">
         <button
           type="button"
           aria-pressed={activeCategory === null}
-          class="rounded-full border px-4 py-1.5 text-base font-bold transition duration-300 {activeCategory === null
-            ? 'border-transparent bg-blue-triarc text-white shadow'
-            : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'}"
+          class="rounded-full border px-4 py-1.5 text-base transition duration-300 {activeCategory === null
+            ? 'border-transparent bg-blue-triarc text-white shadow font-bold'
+            : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400 font-medium'}"
           on:click={() => (activeCategory = null)}
         >
           Alle
@@ -73,10 +73,10 @@
           <button
             type="button"
             aria-pressed={activeCategory === category}
-            class="rounded-full border px-4 py-1.5 text-base font-bold transition duration-300 {activeCategory ===
+            class="rounded-full border px-4 py-1.5 text-base transition duration-300 {activeCategory ===
             category
-              ? 'border-transparent bg-blue-triarc text-white shadow'
-              : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'}"
+              ? 'border-transparent bg-blue-triarc text-white shadow font-bold'
+              : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400 font-medium'}"
             on:click={() => (activeCategory = category)}
           >
             {category}
@@ -90,9 +90,8 @@
               href="/references/{project.slug}"
               class="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div class="h-1.5 {accents[index % accents.length]}" aria-hidden="true"></div>
               <div
-                class="flex items-center justify-center overflow-hidden bg-gray-50 p-6 {project.slug === featuredSlug
+                class="flex items-center justify-center overflow-hidden bg-white p-6 {project.slug === featuredSlug
                   ? 'aspect-[16/7]'
                   : 'aspect-[16/9]'}"
               >
@@ -118,15 +117,15 @@
                 <h2 class="mt-2 text-2xl font-bold text-gray-900 group-hover:text-blue-triarc">
                   {project.appName}
                 </h2>
-                <p class="mt-3 flex-grow text-base text-gray-600">{project.teaser}</p>
+                <p class="mt-3 flex-grow text-base text-black">{project.teaser}</p>
                 <div class="mt-5 flex flex-wrap items-center gap-3">
                   {#each project.tags as tag}
                     <span class="rounded-full border border-gray-300 px-3 py-0.5 text-sm text-gray-600">{tag}</span>
                   {/each}
-                  <span class="ml-auto text-base font-bold text-blue-triarc">
-                    Zur Referenz <span class="inline-block transition group-hover:translate-x-0.5" aria-hidden="true"
-                      >→</span
-                    >
+                  <span
+                    class="ml-auto inline-flex items-center gap-x-3 rounded-full bg-black px-6 py-3 text-base font-medium text-white md:px-3 md:py-1"
+                  >
+                    Mehr dazu <span class="inline-block transition group-hover:translate-x-0.5"><Icon src={Arrow} size="small" /></span>
                   </span>
                 </div>
               </div>
@@ -138,7 +137,7 @@
   </section>
 
   <!-- Quote spotlight -->
-  <section class="border-y border-gray-100 bg-green-triarc bg-opacity-5">
+  <section class="bg-white">
     <Container>
       <Reveal>
         <div class="flex flex-col items-center gap-10 py-16 md:py-24 lg:flex-row lg:items-start">
@@ -151,17 +150,18 @@
           </div>
           <div class="max-w-2xl">
             <figure>
-              <blockquote class="text-2xl font-bold leading-relaxed text-gray-900 md:text-3xl">
+              <blockquote class="text-2xl font-bold leading-relaxed text-black md:text-3xl">
                 «Gewinnen Sie durch massgeschneiderte Software einen entscheidenden Wettbewerbsvorteil!»
               </blockquote>
               <figcaption class="mt-6 text-lg text-gray-600">
-                <span class="font-bold text-gray-900">Serge Müller</span> · CEO Triarc Laboratories
+                <span class="block font-bold text-black">Serge Müller</span>
+                <span class="block">CEO Triarc Laboratories</span>
               </figcaption>
             </figure>
             <div class="mt-8 flex flex-wrap items-center gap-6">
               <a
                 href="/contact"
-                class="rounded-full bg-green-triarc-deep px-7 py-3 text-base font-bold text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                class="rounded-full bg-green-triarc-deep px-2 py-2 text-base font-medium text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg md:px-4"
               >
                 Projekt besprechen
               </a>

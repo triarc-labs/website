@@ -27,12 +27,12 @@
         {/if}
         <Reveal y={16} delay={100}>
           <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->
-          <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">{@html title}</h1>
+          <h1 class="mt-3 text-4xl font-bold leading-tight tracking-tight md:text-5xl md:leading-tight">{@html title}</h1>
         </Reveal>
         {#if content}
           <Reveal y={16} delay={200}>
             <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->
-            <p class="mt-6 max-w-3xl text-xl text-white/90">{@html content}</p>
+            <p class="mt-6 max-w-3xl text-lg text-white">{@html content}</p>
           </Reveal>
         {/if}
       </div>

@@ -9,6 +9,12 @@ export interface GhostImage {
 
 export interface BlockContent {
   title?: string
+  /** Render the title as a large section heading (see TitleBlock). */
+  largeTitle?: boolean
+  /** Drop the block's top/bottom padding (see Block). */
+  noPaddingY?: boolean
+  /** Give the section the header gradient background (see Block). */
+  gradientBackground?: boolean
   content?: string
   formReference?: string
   footer?: string
