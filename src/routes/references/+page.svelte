@@ -8,9 +8,10 @@
   import EnhancedImage from '$lib/index/EnhancedImage.svelte'
   import NavJump from '$lib/components/NavJump.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
-  import LinkedInLink from '$lib/components/LinkedInLink.svelte'
   import Icon from '$lib/components/Icon.svelte'
   import { Arrow } from '$lib/content/icons'
+  import envelope from '$lib/assets/icons/envelope-solid-full.svg'
+  import linkedIn from '$lib/assets/icons/square-linkedin-brands-solid-full.svg'
   import serge from '$lib/assets/team/serge.jpg?w=768&format=webp;png&enhanced'
   import { referencesMetadata } from '$lib/content/triarc-page-metadata'
   import { referenceProjects } from '$lib/content/reference-projects'
@@ -73,8 +74,7 @@
           <button
             type="button"
             aria-pressed={activeCategory === category}
-            class="rounded-full border px-4 py-1.5 text-base transition duration-300 {activeCategory ===
-            category
+            class="rounded-full border px-4 py-1.5 text-base transition duration-300 {activeCategory === category
               ? 'border-transparent bg-blue-triarc text-white shadow font-bold'
               : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400 font-medium'}"
             on:click={() => (activeCategory = category)}
@@ -125,7 +125,9 @@
                   <span
                     class="ml-auto inline-flex items-center gap-x-3 rounded-full bg-black px-6 py-3 text-base font-medium text-white md:px-3 md:py-1"
                   >
-                    Mehr dazu <span class="inline-block transition group-hover:translate-x-0.5"><Icon src={Arrow} size="small" /></span>
+                    Mehr dazu <span class="inline-block transition group-hover:translate-x-0.5"
+                      ><Icon src={Arrow} size="small" /></span
+                    >
                   </span>
                 </div>
               </div>
@@ -140,8 +142,9 @@
   <section class="bg-white">
     <Container>
       <Reveal>
-        <div class="flex flex-col items-center gap-10 py-16 md:py-24 lg:flex-row lg:items-start">
-          <div class="w-56 flex-shrink-0 lg:w-64">
+        <div class="flex flex-col gap-10 py-16 md:flex-row md:items-center md:py-24">
+          <!-- Image as its own column once there is room for a side-by-side layout -->
+          <div class="hidden w-56 flex-shrink-0 md:block lg:w-64">
             <EnhancedImage
               alt="Serge Müller"
               image={serge}
@@ -149,25 +152,49 @@
             />
           </div>
           <div class="max-w-2xl">
-            <figure>
-              <blockquote class="text-2xl font-bold leading-relaxed text-black md:text-3xl">
-                «Gewinnen Sie durch massgeschneiderte Software einen entscheidenden Wettbewerbsvorteil!»
-              </blockquote>
-              <figcaption class="mt-6 text-lg text-gray-600">
-                <span class="block font-bold text-black">Serge Müller</span>
-                <span class="block">CEO Triarc Laboratories</span>
-              </figcaption>
-            </figure>
-            <div class="mt-8 flex flex-wrap items-center gap-6">
+            <!-- Quote on top for the side-by-side (md+) layout -->
+            <blockquote class="hidden text-xl font-semibold leading-7 text-gray-900 sm:text-2xl sm:leading-8 md:block">
+              «Gewinnen Sie durch massgeschneiderte Software einen entscheidenden Wettbewerbsvorteil!»
+            </blockquote>
+            <!-- Name / role / contact links, with the image beside them while stacked -->
+            <div class="flex flex-col items-start gap-6 min-[480px]:flex-row min-[480px]:items-end md:mt-8">
+              <div class="text-base text-gray-900">
+                <div class="font-semibold">Serge Müller</div>
+                <div class="mt-1">CEO Triarc Laboratories</div>
+                <div class="mt-2 flex space-x-2 fill-gray-900">
+                  <a href="mailto:serge@triarc-labs.com" aria-label="Email">
+                    <Icon size="small" src={envelope}></Icon>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/serge-m%C3%BCller-568a0a134/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Linkedin"
+                  >
+                    <Icon size="small" src={linkedIn}></Icon>
+                  </a>
+                </div>
+              </div>
+              <!-- Image beside the name while stacked; hidden once it moves to its own column -->
+              <div class="order-first w-48 flex-shrink-0 sm:w-56 md:hidden">
+                <EnhancedImage
+                  alt="Serge Müller"
+                  image={serge}
+                  imgClass="aspect-[3/4] w-full rounded-2xl object-cover shadow-xl"
+                />
+              </div>
+            </div>
+            <!-- Quote below for the stacked layout -->
+            <blockquote class="pt-8 text-xl font-semibold leading-7 text-gray-900 sm:text-2xl sm:leading-8 md:hidden">
+              «Gewinnen Sie durch massgeschneiderte Software einen entscheidenden Wettbewerbsvorteil!»
+            </blockquote>
+            <!-- CTA below the text -->
+            <div class="mt-8">
               <a
                 href="/contact"
-                class="rounded-full bg-green-triarc-deep px-2 py-2 text-base font-medium text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg md:px-4"
+                class="inline-block rounded-full bg-green-triarc-deep px-2 py-2 text-base font-medium text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg md:px-4"
               >
                 Projekt besprechen
-              </a>
-              <LinkedInLink href="https://www.linkedin.com/in/serge-m%C3%BCller-568a0a134/" person="Serge Müller" />
-              <a href="mailto:serge@triarc-labs.com" class="text-base font-bold text-gray-600 hover:text-blue-triarc">
-                serge@triarc-labs.com
               </a>
             </div>
           </div>
