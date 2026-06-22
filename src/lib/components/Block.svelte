@@ -7,6 +7,7 @@
   import StepsBlock from '$lib/components/BlockContentBlocks/StepsBlock.svelte'
   import CardsBlock from '$lib/components/BlockContentBlocks/CardsBlock.svelte'
   import BulletPointsBlock from '$lib/components/BlockContentBlocks/BulletPointsBlock.svelte'
+  import BulletGroupsBlock from '$lib/components/BlockContentBlocks/BulletGroupsBlock.svelte'
   import LinkBlock from '$lib/components/BlockContentBlocks/LinkBlock.svelte'
   import FooterBlock from '$lib/components/BlockContentBlocks/FooterBlock.svelte'
   import TextContentBlock from '$lib/components/BlockContentBlocks/TextContentBlock.svelte'
@@ -37,9 +38,19 @@
       <div
         class="
           {!content.collapsed
-          ? `${content.collapsible ? 'py-6' : content.noPaddingY ? '' : 'pb-16 pt-8 md:py-32'} items-center`
+          ? `${
+              content.collapsible
+                ? 'py-6'
+                : content.noPaddingY
+                  ? ''
+                  : content.compactPaddingY
+                    ? 'py-8 md:py-12'
+                    : 'pb-16 pt-8 md:py-32'
+            } items-center`
           : 'py-6'} flex-col
-          {content.collapsible ? 'md:flex-row' : 'group-odd:md:flex-row group-even:md:flex-row-reverse'}
+          {content.collapsible || content.imageRight
+          ? 'md:flex-row'
+          : 'group-odd:md:flex-row group-even:md:flex-row-reverse'}
           {!content.collapsed && inline && !content.noPaddingY ? 'md:py-8' : ''} flex relative transition-all"
       >
         <div
@@ -85,6 +96,10 @@
 
               {#if content.bulletPoints}
                 <BulletPointsBlock bind:bulletPoints={content.bulletPoints} />
+              {/if}
+
+              {#if content.bulletGroups}
+                <BulletGroupsBlock bind:bulletGroups={content.bulletGroups} light={content.light} />
               {/if}
 
               {#if content.cards}

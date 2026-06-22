@@ -16,7 +16,7 @@ export const ourBenefits: BlockContent = {
     {
       title: 'Erfolgsbeteiligung',
       content:
-        'Du trägst massgeblich zum Erfolg bei und sollst dafür auch belohnt werden. Ein grosser Teil des Gewinns wird quartalsweise an die Mitarbeiter ausgeschüttet',
+        'Du trägst massgeblich zum Erfolg bei und sollst dafür auch belohnt werden. Ein grosser Teil des Gewinns wird jährlich an die Mitarbeiter ausgeschüttet',
     },
     {
       title: 'Coaching',

@@ -4,7 +4,6 @@ import juniorDev from '$lib/assets/img/jobs/junior-dev.svg'
 import beHero from '$lib/assets/img/jobs/be_the_hero.svg'
 // import cloud from '$lib/assets/img/jobs/cloud_hosting.svg'
 import initiative from '$lib/assets/img/jobs/exploring.svg'
-import checklist from '$lib/assets/img/jobs/list.svg'
 // import sales from '$lib/assets/img/jobs/sales.svg'
 // import design from '$lib/assets/img/jobs/design.svg'
 // import office from '$lib/assets/img/jobs/office.svg'
@@ -85,30 +84,46 @@ export const DetailedJobListings: {
     slug: 'junior',
     hasTechnologySection: true,
     BasicJobInfo: {
-      jobDetails: { currentlyHiring: false, jobName: 'Junior Software Engineer', jobPensum: '80-100%' },
+      jobDetails: { currentlyHiring: false, jobName: 'Junior Software Engineer', jobPensum: '60-100%' },
       title: 'Junior Software Engineer',
       content:
         'Als Junior bist hast du bereits erste Erfahrungen in der Softwareentwicklung gesammelt. Du verstehst die Basics, kannst jedoch noch nicht viel praktische Erfahrung vorweisen. Du bist motiviert und begeistert dies zu ändern.',
       image: { src: juniorDev, alt: 'Junior Software Engineer' },
-      bulletPoints: [
-        'Erste Erfahrungen mit C# oder Java',
-        'Erste Erfahrungen im Bereich Web / Single Page Applications',
-      ],
-      collapsible: true,
-      collapsed: true,
+      compactPaddingY: true,
     },
     ExtendedJobInfo: {
-      title: 'Anforderungen',
+      title: 'Das bringst du mit',
       content: 'Was erwarten wir konkret von dir?',
-      image: { src: checklist, alt: 'Requirements' },
-      bulletPoints: [
-        'Selbstständig in neue Technologien einarbeiten können',
-        'Einfache Features selbstständig umsetzen können',
-        'Entwicklungsworkflow befolgen',
-        'Verständnis für sinnvolles Testing',
-        'Verständnis für Objektorientierte Programmierung',
-        '"Sauberen“ Code schreiben können',
-        'In Meetings aktiv teilnehmen und Probleme ansprechen',
+      bulletGroups: [
+        {
+          title: 'Technik & Arbeitsweise',
+          bulletPoints: [
+            'Du arbeitest dich selbstständig in neue Technologien ein',
+            'Du setzt einfache Features eigenständig um',
+            'Du befolgst unseren Entwicklungsworkflow',
+            'Du verstehst objektorientierte Programmierung',
+            'Du bringst ein Verständnis für sinnvolles Testing mit',
+            'Du schreibst sauberen, verständlichen Code',
+          ],
+        },
+        {
+          title: 'Interesse',
+          bulletPoints: [
+            'Du bist interessiert und offen für Neues und hinterfragst bestehende Prozesse',
+            'Du siehst KI nicht als Bedrohung, sondern als spannende Herausforderung, die es zu meistern gilt',
+            'Du hast keine Angst vor dem Kundenkontakt und bringst dich im Austausch mit dem Kunden ein',
+          ],
+        },
+        {
+          title: 'Zusammenarbeit',
+          bulletPoints: ['Du nimmst in Meetings aktiv teil und sprichst Probleme an'],
+        },
+        {
+          title: 'Kommunikation',
+          bulletPoints: [
+            'Sehr gute Deutschkenntnisse in Wort und Schrift – unsere Kunden sind lokal und sprechen Schweizerdeutsch',
+          ],
+        },
       ],
     },
   },
@@ -116,34 +131,50 @@ export const DetailedJobListings: {
     slug: 'professional',
     hasTechnologySection: true,
     BasicJobInfo: {
-      jobDetails: { currentlyHiring: true, jobName: 'Professional Software Engineer', jobPensum: '80-100%' },
+      jobDetails: { currentlyHiring: true, jobName: 'Professional Software Engineer', jobPensum: '60-100%' },
       title: 'Professional Software Engineer',
       content:
         'Als Professional hast du bereits mehrjährige Erfahrung in Softwareentwicklungsprojekten. Dir fehlen jedoch noch das Know-How zu einigen Technologien in unserem Stack. Du bist selbstständig, übernimmst Verantwortung für deine Aufgaben und schätzt den direkten Austausch mit unseren Kunden.',
       image: { src: beHero, alt: 'Professional Software Engineer' },
-      bulletPoints: [
-        "Erfahrungen mit C# in der Entwicklung von API's",
-        'Erfahrungen im Bereich Web und Angular',
-        'Kenntnisse von Elasticsearch / Postgres / MongoDB von Vorteil',
-      ],
-      collapsible: true,
-      collapsed: true,
+      compactPaddingY: true,
     },
     ExtendedJobInfo: {
-      title: 'Anforderungen',
+      title: 'Das bringst du mit',
       content: 'Was erwarten wir konkret von dir?',
-      image: { src: checklist, alt: 'Requirements' },
-      bulletPoints: [
-        'Architektonische Entscheidungen Nachvollziehen und Verstehen können',
-        'Probleme und Bugs in bekannten Projekten identifizieren und beheben können',
-        'Längerfristiges selbstständiges Arbeiten an komplizierteren Features',
-        'Verständnis für Datenmodellierung',
-        'Eigenständige Priorisierung der zugeteilten Aufgaben',
-        'Zugeteilte Aufgaben verstehen und möglichst termingerecht erledigen – oder über Verspätung informieren',
-        'FullStack Entwicklung mit C#, Typescript sowie Angular',
-        'Aktiver Kundenkontakt: Anforderungen aufnehmen, Lösungen verständlich erklären und Feedback einholen',
-        'In der neuen Welt von KI und Vibecoding zwischen Kunde und Technologie übersetzen können',
-        'Sehr gute Deutschkenntnisse in Wort und Schrift – unsere Kunden sind lokal und sprechen Schweizerdeutsch',
+      bulletGroups: [
+        {
+          title: 'Technik & Architektur',
+          bulletPoints: [
+            'Du verstehst architektonische Entscheidungen und kannst sie nachvollziehen',
+            'Du identifizierst Probleme und Bugs in bestehenden Projekten und behebst sie',
+            'Du arbeitest längerfristig und selbstständig an komplexeren Features',
+            'Du verstehst Datenmodellierung',
+            'Du entwickelst Full-Stack mit C#, TypeScript und Angular',
+          ],
+        },
+        {
+          title: 'Interesse',
+          bulletPoints: [
+            'Du bist interessiert und offen für Neues und hinterfragst bestehende Prozesse',
+            'Du siehst KI nicht als Bedrohung, sondern als spannende Herausforderung, die es zu meistern gilt',
+            'Du hast keine Angst vor dem Kundenkontakt und agierst als technischer Vermittler',
+          ],
+        },
+        {
+          title: 'Zusammenarbeit & Arbeitsweise',
+          bulletPoints: [
+            'Du priorisierst deine zugeteilten Aufgaben eigenständig',
+            'Du erledigst Aufgaben termingerecht – oder informierst frühzeitig über Verzögerungen',
+            'Du pflegst aktiven Kundenkontakt: Anforderungen aufnehmen, Lösungen verständlich erklären und Feedback einholen',
+            'Du übersetzt in der neuen Welt von KI und Vibecoding zwischen Kunde und Technologie',
+          ],
+        },
+        {
+          title: 'Kommunikation',
+          bulletPoints: [
+            'Sehr gute Deutschkenntnisse in Wort und Schrift – unsere Kunden sind lokal und sprechen Schweizerdeutsch',
+          ],
+        },
       ],
     },
   },
@@ -151,35 +182,72 @@ export const DetailedJobListings: {
     slug: 'senior',
     hasTechnologySection: true,
     BasicJobInfo: {
-      jobDetails: { currentlyHiring: true, jobName: 'Senior Software Engineer', jobPensum: '80-100%' },
+      jobDetails: { currentlyHiring: true, jobName: 'Senior Software Engineer', jobPensum: '60-100%' },
       title: 'Senior Software Engineer',
       content:
         'Als Senior begleitest du Projekte vom Requirements-Engineering bis in den Betrieb. Du bist der Vermittler zwischen dem Kunden und deinen Entwickler-KollegInnen. Und du machst das nicht zum ersten Mal. Du kannst im Team unterstützen, wo es an was fehlt.',
       image: { src: jobListingImage, alt: 'Senior Software Engineer' },
-      bulletPoints: [
-        "Erfahrungen mit C# in der Entwicklung von API's",
-        'Erfahrungen im Bereich Web und Angular',
-        'Erfahrungen mit Elasticsearch / Postgres / MongoDB',
-        'Erfahrungen Docker / Kubernetes / Gitlab CI',
-      ],
-      collapsible: true,
-      collapsed: true,
+      compactPaddingY: true,
     },
     ExtendedJobInfo: {
-      title: 'Anforderungen',
+      title: 'Das bringst du mit',
       content: 'Was erwarten wir konkret von dir?',
-      image: { src: checklist, alt: 'Requirements' },
+      bulletGroups: [
+        {
+          title: 'Technik & Architektur',
+          bulletPoints: [
+            'Du verstehst komplexe Anforderungen und konzipierst die passenden Softwarelösungen dazu',
+            'Du evaluierst neue Technologien und bindest sie ein',
+            'Du verstehst verschiedene Programmierstrategien und setzt sie passend ein',
+            'Du bringst mehrjahrige Erfahrung aus der Software Entwicklung mit',
+            'Du kennst dich im eingesetzten oder ähnlichen Techstack aus und kannst darin Full-Stack entwickeln',
+          ],
+        },
+        {
+          title: 'Interesse',
+          bulletPoints: [
+            'Du bist interessiert und offen für Neues und hinterfragst bestehende Prozesse',
+            'Du siehst KI nicht als Bedrohung, sondern als spannende Herausforderung, die es zu meistern gilt',
+            'Du hast keine Angst vor dem Kundenkontakt und agierst als technischer Vermittler',
+          ],
+        },
+        {
+          title: 'Zusammenarbeit & Kunde',
+          bulletPoints: [
+            'Du übernimmst die technische Verantwortung und kannst diese kommunizieren',
+            'Du begleitest Kunden vom Requirements-Engineering bis in den Betrieb',
+            'Du übersetzt in der neuen Welt von KI und Vibecoding zwischen Kunde und Technologie',
+          ],
+        },
+        {
+          title: 'Kommunikation',
+          bulletPoints: [
+            'Sehr gute Deutschkenntnisse in Wort und Schrift – unsere Kunden sind lokal und sprechen Schweizerdeutsch',
+          ],
+        },
+      ],
+    },
+  },
+  {
+    slug: 'initiativ',
+    hasTechnologySection: false,
+    BasicJobInfo: {
+      jobDetails: { currentlyHiring: true, jobName: 'Initiativbewerbung', hideMeta: true },
+      title: 'Initiativ bewerben',
+      content:
+        'Auch wenn wir derzeit keine offenen Stellen ausgeschrieben haben oder keine der derzeitigen Stellen deine Fähigkeiten passend abbildet, sind wir stets an talentierten und motivierten Bewerbern interessiert. Wenn du der Meinung bist, dass deine Fähigkeiten und Erfahrungen gut zu uns passen, freuen wir uns auf deine Initiativbewerbung.',
+      image: { src: initiative, alt: 'Initiativbewerbung' },
+      compactPaddingY: true,
+    },
+    ExtendedJobInfo: {
+      title: 'Das bringst du mit',
+      content: 'Was erwarten wir konkret von dir?',
       bulletPoints: [
-        'Komplexe Anforderungen verstehen und entsprechende Softwarelösungen konzipieren und umsetzen können',
-        'Gutes Verständnis für die eingesetzte Toolchain entwickeln und diese erweitern können',
-        'Aktive Teilnahme bei der Planung von neuen Projekten',
-        'Gutes Verständnis für verteilte Systemarchitekturen',
-        'Neue Technologien evaluieren und einbinden',
-        'Verschiedene Programmierstrategien verstehen und passend einsetzen können',
-        'Als gleichwertiges Teammitglied wahrgenommen werden',
-        'Aktiver Kundenkontakt: Du begleitest Kunden vom Requirements-Engineering bis in den Betrieb',
-        'In der neuen Welt von KI und Vibecoding zwischen Kunde und Technologie übersetzen können',
-        'Sehr gute Deutschkenntnisse in Wort und Schrift – unsere Kunden sind lokal und sprechen Schweizerdeutsch',
+        'Du bringst Leidenschaft für die Softwareentwicklung mit',
+        'Du hast Spass an der Arbeit im Team',
+        'Du bist lernfähig und entwickelst dich kontinuierlich weiter',
+        'Du siehst KI nicht als Bedrohung, sondern als spannende Herausforderung, die es zu meistern gilt',
+        'Du hast gute Deutsch- sowie Englischkenntnisse in Wort und Schrift',
       ],
     },
   },
@@ -358,7 +426,7 @@ export const DetailedJobListings: {
 // //TODO: Add Initiativbewerbung, PL, Sales
 // export const JobListings: BlockContent[] = [
 //   {
-//     jobDetails: { currentlyHiring: false, jobName: 'Junior Software Engineer', jobPensum: '80-100%' },
+//     jobDetails: { currentlyHiring: false, jobName: 'Junior Software Engineer', jobPensum: '60-100%' },
 //     title: 'Junior Software Engineer',
 //     content:
 //       'Als Junior bist hast du bereits erste Erfahrungen in der Softwareentwicklung gesammelt. Du verstehst die Basics, kannst jedoch noch nicht viel praktische Erfahrung vorweisen. Du bist motiviert und begeistert dies zu ändern.',
@@ -408,17 +476,3 @@ export const DetailedJobListings: {
 //     ],
 //   },
 // ]
-
-export const Initiativbewerbung: BlockContent = {
-  title: 'Initiativ bewerben',
-  content:
-    'Auch wenn wir derzeit keine offenen Stellen ausgeschrieben haben oder keine der derzeitigen Stellen deine Fähigkeiten passend abbildet, sind wir stets an talentierten und motivierten Bewerbern interessiert. Wenn du der Meinung bist, dass deine Fähigkeiten und Erfahrungen gut zu uns passen, freuen wir uns auf deine Initiativbewerbung.',
-
-  image: { src: initiative, alt: 'Initiativbewerbung' },
-  bulletPoints: [
-    'Spass an der Arbeit im Team',
-    'Lernfähigkeit und kontinuierliche Weiterentwicklung',
-    'Gute Deutsch- sowie Englisch- Kenntnisse in Wort und Schrift',
-    'Leidenschaft für die Software Entwicklung',
-  ],
-}

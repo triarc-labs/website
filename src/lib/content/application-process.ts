@@ -4,7 +4,8 @@ export const ourApplicationProcess: BlockContent = {
   background: 'bg-gradient-to-tr from-green-triarc-blended to-blue-triarc-blended',
   light: true,
   title: 'Wie läuft unser Bewerbungsverfahren',
-  content: 'Unser Interviewprozess verläuft in vier Schritten.',
+  content:
+    'Unser Interviewprozess verläuft in drei Schritten – mit einem optionalen Probe-Halbtag oder -Tag als Abschluss.',
   steps: [
     {
       title: 'Bewerbung einreichen',
@@ -21,9 +22,9 @@ export const ourApplicationProcess: BlockContent = {
         'Damit wir dich initial in unser Trackeesystem einstufen können, bekommst du die Gelegenheit dich mit einem Entwickler austauschen.',
     },
     {
-      title: 'Team Interview',
+      title: 'Probe-Halbtag oder -Tag (optional)',
       content:
-        'Das Team hat bei uns das letzte Wort. Lerne den Rest von uns kennen und sprich über deine Passion und warum du Teil vom Team werden willst.',
+        'Lerne das Team kennen und arbeite an einer effektiven Projektchallenge, damit du einen guten Eindruck von uns bekommst und wir von dir.',
     },
   ],
 }

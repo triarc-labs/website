@@ -13,6 +13,10 @@ export interface BlockContent {
   largeTitle?: boolean
   /** Drop the block's top/bottom padding (see Block). */
   noPaddingY?: boolean
+  /** Use reduced vertical padding (e.g. compact listing cards) instead of the large default (see Block). */
+  compactPaddingY?: boolean
+  /** Force the image to the right on desktop, overriding the alternating odd/even layout (see Block). */
+  imageRight?: boolean
   /** Give the section the header gradient background (see Block). */
   gradientBackground?: boolean
   /** Custom background utility classes for the section wrapper (see Block). */
@@ -25,6 +29,8 @@ export interface BlockContent {
   link?: LinkContent
   image?: ImageContent
   bulletPoints?: string[]
+  /** Thematically grouped bullet points, each with its own sub-heading. */
+  bulletGroups?: BulletGroup[]
   cards?: Card[]
   steps?: Step[]
   items?: Item[]
@@ -99,6 +105,11 @@ export interface Item {
   content: string
 }
 
+export interface BulletGroup {
+  title: string
+  bulletPoints: string[]
+}
+
 export interface Card {
   title: string
   content: string
@@ -113,7 +124,10 @@ export interface LinkContent {
 export interface JobDetails {
   currentlyHiring: boolean
   jobName: string
-  jobPensum: string
+  /** Optional — listings without a fixed workload (e.g. unsolicited applications) omit this. */
+  jobPensum?: string
+  /** Hide the "(m/w/d) …" subtitle and the hiring badge on the listing card (e.g. unsolicited applications). */
+  hideMeta?: boolean
 }
 
 export interface VideoContent {

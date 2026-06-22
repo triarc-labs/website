@@ -3,16 +3,13 @@
   import JobIntro from './job-intro.svelte'
   import Block from '$lib/components/Block.svelte'
   import type { DetailedJobListing, JobPosting } from '$lib/components/TypeDefinitions'
-  import ApplicationForm from '$lib/components/ApplicationForm.svelte'
   import Icon from '$lib/components/Icon.svelte'
   import { Arrow } from '$lib/content/icons'
   import FooterNoContact from '$lib/components/FooterNoContact.svelte'
-  import CompanyAbout from '$lib/components/CompanyAbout.svelte'
-  import { Initiativbewerbung, JobPostings } from '$lib/content/job-listings'
+  import { JobPostings } from '$lib/content/job-listings'
   import { DetailedJobListings } from '$lib/content/job-listings.js'
   import MetaHead from '$lib/components/MetaHead.svelte'
   import { jobsMetadata } from '$lib/content/triarc-page-metadata'
-  const listedJob = 'Initiativbewerbung'
 
   function serializeSchema(jobPosting: JobPosting) {
     return (
@@ -85,8 +82,9 @@
 
   const jobPostings = JobPostings
 
-  let initiativbewerbung = { ...Initiativbewerbung, collapsible: true, collapsed: true }
-  let listings: DetailedJobListing[] = DetailedJobListings
+  let listings: DetailedJobListing[] = DetailedJobListings.filter(
+    (listing) => listing.BasicJobInfo.jobDetails?.currentlyHiring
+  )
 </script>
 
 <MetaHead pageMetadata={jobsMetadata}></MetaHead>
@@ -132,24 +130,8 @@
         </Block>
       </div>
     {/each}
-
-    <div class="overflow-hidden rounded-3xl shadow-lg">
-      <Block bind:content={initiativbewerbung}>
-        <div slot="columnCta" class="mt-8">
-          <a
-            href="#applicationForm"
-            class="inline-flex items-center gap-x-1 rounded-full bg-black px-4 py-2 text-base font-medium text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-          >
-            Jetzt bewerben
-            <Icon src={Arrow} size="small" />
-          </a>
-        </div>
-      </Block>
-    </div>
   </div>
 </section>
-<CompanyAbout />
-<ApplicationForm availableJobs={[listedJob]} jobString={listedJob} isDefinedListing={true} />
 
 <!--<div class="bg-[#0D1214] min-h-[calc(100vh-64px)] flex flex-col lg:min-h-screen">-->
 <!--  <div class="text-white bg-opacity-20">-->

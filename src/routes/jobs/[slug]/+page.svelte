@@ -4,9 +4,10 @@
   import ApplicationForm from '$lib/components/ApplicationForm.svelte'
   import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import GradientHero from '$lib/components/GradientHero.svelte'
-  import Button from '$lib/components/Button.svelte'
+  import CollaborationSection from '$lib/components/CollaborationSection.svelte'
 
   import type { PageData } from './$types'
+  import { page } from '$app/stores'
   import { ourBenefits } from '$lib/content/benefits'
   import { ourApplicationProcess } from '$lib/content/application-process'
   import Container from '$lib/components/Container.svelte'
@@ -21,6 +22,9 @@
   let hiring = jobListingBase.jobDetails?.currentlyHiring
   let jobHero = jobListingBase.title!
   let jobTitle = jobListingBase.jobDetails!.jobName
+
+  // The collaboration section is only relevant for the senior listing.
+  $: isSenior = $page.params.slug === 'senior'
 </script>
 
 <MetaHead
@@ -31,40 +35,36 @@
   }}
 ></MetaHead>
 <GradientHero
-  kicker="Jobs"
-  title="{jobHero} ({jobListingBase.jobDetails?.jobPensum})"
+  kicker={jobListingBase.jobDetails?.jobPensum ? `Jobs · ${jobListingBase.jobDetails.jobPensum}` : 'Jobs'}
+  title={jobHero}
   content={jobListingBase.content}
+  breadcrumbs={[
+    { name: 'Home', href: '/' },
+    { name: 'Jobs', href: '/jobs' },
+    { name: jobTitle, href: `/jobs/${$page.params.slug}` },
+  ]}
 />
 
-<div>
-  <div
-    class="font-bold text-lg py-8 text-center {hiring
-      ? 'bg-blue-triarc/20 text-blue-triarc'
-      : 'bg-red-triarc/10 text-red-triarc'}"
-  >
-    <Container>
-      {#if jobListingBase.jobDetails?.currentlyHiring}
-        <span>Wir nehmen zurzeit Bewerbungen als {jobHero} an </span>
-      {:else}
+{#if !hiring}
+  <div>
+    <div class="font-bold text-lg py-8 text-center bg-red-triarc/10 text-red-triarc">
+      <Container>
         <span>
           Zurzeit nehmen wir keine Bewerbungen als {jobHero} an
         </span>
-      {/if}
-    </Container>
+      </Container>
+    </div>
   </div>
-</div>
+{/if}
 {#if jobListingExtended}
-  <Block bind:content={jobListingExtended}>
-    {#if hiring}
-      <div class="flex items-center justify-center mb-8">
-        <Button buttonSize="Standard" buttonMargin="None" reference="#applicationForm" label="Jetzt bewerben" />
-      </div>
-    {/if}
-  </Block>
+  <Block bind:content={jobListingExtended} />
 {/if}
 
 {#if data.jobListing.hasTechnologySection}
   <Technology />
+{/if}
+{#if isSenior}
+  <CollaborationSection />
 {/if}
 <Block bind:content={benefits} />
 {#if hiring}
