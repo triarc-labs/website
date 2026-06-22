@@ -11,7 +11,7 @@
       <h3 class="text-xl font-bold text-gray-900">
         {card.title}
       </h3>
-      <p class="mt-3 text-base text-gray-600">{card.content}</p>
+      <p class="mt-3 text-base text-black">{card.content}</p>
     </li>
   {/each}
 </ul>

@@ -8,6 +8,8 @@
   import NavDropDownItem from '$lib/components/NavDropDownItem.svelte'
   import type { MetaInfo, NavItem } from '$lib/components/TypeDefinitions'
   import ContactButton from '$lib/components/ContactButton.svelte'
+  import Icon from '$lib/components/Icon.svelte'
+  import { Arrow } from '$lib/content/icons'
   import { afterNavigate } from '$app/navigation'
 
   export let menuOpen = false
@@ -134,7 +136,7 @@
         {
           type: 'link',
           title: 'Kontakt',
-          description: 'Sprich mit uns über deine Anliegen',
+          description: 'Sprechen Sie mit uns über Ihre Anliegen',
           path: '/contact',
         },
         {
@@ -279,7 +281,7 @@
           }
           hideMenu()
         }}
-        class="flex items-center py-2"
+        class="flex items-center py-2 md:pr-8 lg:pr-16"
       >
         <img src={logo} alt="triarc laboratories ltd" width="172" height="29" />
         <!--        <img  src={logoNoText} alt="triarc laboratories ltd" width="172" height="29" />-->
@@ -361,12 +363,7 @@
                 {navItem.title}
               </a>
             {:else}
-              <div class="mb-2 mt-7 flex items-center gap-x-3">
-                <span class="flex gap-x-1" aria-hidden="true">
-                  <span class="h-1.5 w-1.5 rounded-full bg-red-triarc"></span>
-                  <span class="h-1.5 w-1.5 rounded-full bg-green-triarc"></span>
-                  <span class="h-1.5 w-1.5 rounded-full bg-blue-triarc"></span>
-                </span>
+              <div class="mb-2 mt-7 flex items-center">
                 <span class="text-sm font-bold uppercase tracking-widest text-white/60">{navItem.title}</span>
               </div>
               <ul class="flex list-none flex-col p-0">
@@ -395,9 +392,10 @@
           <a
             href="/contact"
             on:click={hideMenu}
-            class="inline-block rounded-full bg-white px-7 py-3 text-base font-bold text-blue-triarc-blended shadow-lg"
+            class="inline-flex items-center gap-x-1 rounded-full bg-white px-7 py-3 text-base font-medium text-black shadow-lg"
           >
-            Kontaktieren Sie uns →
+            Kontaktieren Sie uns
+            <Icon src={Arrow} size="small" class="brightness-0" />
           </a>
         </div>
       </nav>

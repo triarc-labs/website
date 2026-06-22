@@ -4,7 +4,8 @@
   import Block from '$lib/components/Block.svelte'
   import type { DetailedJobListing, JobPosting } from '$lib/components/TypeDefinitions'
   import ApplicationForm from '$lib/components/ApplicationForm.svelte'
-  import Button from '$lib/components/Button.svelte'
+  import Icon from '$lib/components/Icon.svelte'
+  import { Arrow } from '$lib/content/icons'
   import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import CompanyAbout from '$lib/components/CompanyAbout.svelte'
   import { Initiativbewerbung, JobPostings } from '$lib/content/job-listings'
@@ -84,7 +85,7 @@
 
   const jobPostings = JobPostings
 
-  let initiativbewerbung = Initiativbewerbung
+  let initiativbewerbung = { ...Initiativbewerbung, collapsible: true, collapsed: true }
   let listings: DetailedJobListing[] = DetailedJobListings
 </script>
 
@@ -103,8 +104,8 @@
 />
 <JobIntro />
 
-<div class="bg-blue-triarc flex flex-col">
-  <div class="text-white bg-opacity-20">
+<section class="bg-gradient-to-tr from-red-triarc-blended to-blue-triarc-blended">
+  <div class="text-white">
     <div class="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-extrabold sm:text-4xl">
         <span class="block">Unsere Stellen</span>
@@ -114,20 +115,39 @@
       </p>
     </div>
   </div>
-</div>
 
-{#each listings as listing}
-  <Block bind:content={listing.BasicJobInfo}>
-    <div class="flex items-center justify-center mb-8">
-      <Button buttonSize="Standard" buttonMargin="None" reference="jobs/{listing.slug}" label="Mehr erfahren" />
+  <div class="mx-auto flex max-w-screen-xl flex-col gap-6 px-4 pb-16 sm:px-6 md:pb-24 lg:px-8">
+    {#each listings as listing}
+      <div class="overflow-hidden rounded-3xl shadow-lg">
+        <Block bind:content={listing.BasicJobInfo}>
+          <div slot="columnCta" class="mt-8">
+            <a
+              href="jobs/{listing.slug}"
+              class="inline-flex items-center gap-x-1 rounded-full bg-black px-4 py-2 text-base font-medium text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              Mehr erfahren
+              <Icon src={Arrow} size="small" />
+            </a>
+          </div>
+        </Block>
+      </div>
+    {/each}
+
+    <div class="overflow-hidden rounded-3xl shadow-lg">
+      <Block bind:content={initiativbewerbung}>
+        <div slot="columnCta" class="mt-8">
+          <a
+            href="#applicationForm"
+            class="inline-flex items-center gap-x-1 rounded-full bg-black px-4 py-2 text-base font-medium text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            Jetzt bewerben
+            <Icon src={Arrow} size="small" />
+          </a>
+        </div>
+      </Block>
     </div>
-  </Block>
-{/each}
-<Block bind:content={initiativbewerbung}>
-  <div class="flex items-center justify-center mb-8">
-    <Button buttonSize="Standard" buttonMargin="None" reference="#applicationForm" label="Jetzt bewerben" />
   </div>
-</Block>
+</section>
 <CompanyAbout />
 <ApplicationForm availableJobs={[listedJob]} jobString={listedJob} isDefinedListing={true} />
 

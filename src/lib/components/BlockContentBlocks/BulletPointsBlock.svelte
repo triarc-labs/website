@@ -12,7 +12,7 @@
           /></svg
         >
         <div class="ml-3">
-          <span class="text-base text-gray-600">
+          <span class="text-base text-black">
             {bulletPoint}
           </span>
         </div>

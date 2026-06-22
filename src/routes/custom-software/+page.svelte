@@ -6,7 +6,10 @@
   import ProcessCycle from '$lib/components/ProcessCycle.svelte'
   import EnhancedImage from '$lib/index/EnhancedImage.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
-  import LinkedInLink from '$lib/components/LinkedInLink.svelte'
+  import Icon from '$lib/components/Icon.svelte'
+  import { Arrow } from '$lib/content/icons'
+  import envelope from '$lib/assets/icons/envelope-solid-full.svg'
+  import linkedIn from '$lib/assets/icons/square-linkedin-brands-solid-full.svg'
   import elke from '$lib/assets/team/elke.jpg?w=768&format=webp;png&metadata&enhanced'
   import maintenance from '$lib/assets/img/custom-software/maintenance.svg'
   import { customSoftwareMetadata } from '$lib/content/triarc-page-metadata'
@@ -17,6 +20,8 @@
       'Die Software muss zum Kunden passen. Nicht umgekehrt. Die Vorteile der Digitalisierung lassen sich nur dann voll ausschöpfen, wenn die Software-Lösung exakt den Bedürfnissen entspricht.',
     person: 'Elke Engel',
     personTitle: 'CFO / Partner',
+    email: 'elke@triarc-labs.com',
+    linkedin: 'https://www.linkedin.com/in/elke-engel-6761998/',
   }
 
   const solutionParagraphs = [
@@ -110,11 +115,12 @@
   />
 
   <!-- Quote spotlight -->
-  <section class="border-b border-gray-100 bg-blue-triarc bg-opacity-5">
+  <section class="bg-white">
     <Container>
       <Reveal>
-        <div class="flex flex-col items-center gap-10 py-16 md:py-24 lg:flex-row lg:items-start">
-          <div class="w-56 flex-shrink-0 lg:w-64">
+        <div class="flex flex-col gap-10 py-16 md:flex-row md:items-center md:py-24">
+          <!-- Image as its own column once there is room for a side-by-side layout -->
+          <div class="hidden w-56 flex-shrink-0 md:block lg:w-64">
             <EnhancedImage
               alt={quote.person}
               image={quote.image}
@@ -122,24 +128,45 @@
             />
           </div>
           <div class="max-w-2xl">
-            <figure>
-              <blockquote class="text-2xl font-bold leading-relaxed text-gray-900 md:text-3xl">
-                «{quote.content}»
-              </blockquote>
-              <figcaption class="mt-6 text-lg text-gray-600">
-                <span class="font-bold text-gray-900">{quote.person}</span> · {quote.personTitle}
-              </figcaption>
-            </figure>
-            <div class="mt-8 flex flex-wrap items-center gap-6">
+            <!-- Quote on top for the side-by-side (md+) layout -->
+            <blockquote class="hidden text-xl font-semibold leading-7 text-gray-900 sm:text-2xl sm:leading-8 md:block">
+              «{quote.content}»
+            </blockquote>
+            <!-- Name / role / contact links, with the image beside them while stacked -->
+            <div class="flex flex-col items-start gap-6 min-[480px]:flex-row min-[480px]:items-end md:mt-8">
+              <div class="text-base text-gray-900">
+                <div class="font-semibold">{quote.person}</div>
+                <div class="mt-1">{quote.personTitle}</div>
+                <div class="mt-2 flex space-x-2 fill-gray-900">
+                  <a href="mailto:{quote.email}" aria-label="Email">
+                    <Icon size="small" src={envelope}></Icon>
+                  </a>
+                  <a href={quote.linkedin} target="_blank" rel="noreferrer" aria-label="Linkedin">
+                    <Icon size="small" src={linkedIn}></Icon>
+                  </a>
+                </div>
+              </div>
+              <!-- Image beside the name while stacked; hidden once it moves to its own column -->
+              <div class="order-first w-48 flex-shrink-0 sm:w-56 md:hidden">
+                <EnhancedImage
+                  alt={quote.person}
+                  image={quote.image}
+                  imgClass="aspect-[3/4] w-full rounded-2xl object-cover shadow-xl"
+                />
+              </div>
+            </div>
+            <!-- Quote below for the stacked layout -->
+            <blockquote class="pt-8 text-xl font-semibold leading-7 text-gray-900 sm:text-2xl sm:leading-8 md:hidden">
+              «{quote.content}»
+            </blockquote>
+            <!-- CTA below the text -->
+            <div class="mt-8">
               <a
                 href="/contact"
-                class="rounded-full bg-blue-triarc px-7 py-3 text-base font-bold text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                class="inline-flex items-center gap-x-1 rounded-full bg-green-triarc-deep px-2 py-2 text-base font-medium text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg md:px-4"
               >
-                Kontaktiere mich
-              </a>
-              <LinkedInLink href="https://www.linkedin.com/in/elke-engel-6761998/" person="Elke Engel" />
-              <a href="mailto:elke@triarc-labs.com" class="text-base font-bold text-gray-600 hover:text-blue-triarc">
-                elke@triarc-labs.com
+                Kontaktieren Sie mich
+                <Icon src={Arrow} size="small" />
               </a>
             </div>
           </div>
@@ -154,7 +181,7 @@
       <Reveal>
         <div class="grid gap-10 lg:grid-cols-[1fr,2fr]">
           <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Lösungen entwickeln</h2>
-          <div class="flex flex-col gap-y-6 text-lg text-gray-600">
+          <div class="flex flex-col gap-y-6 text-lg text-black">
             {#each solutionParagraphs as paragraph}
               <p>{paragraph}</p>
             {/each}
@@ -165,13 +192,15 @@
   </section>
 
   <!-- Use cases -->
-  <section class="bg-gray-50 py-16 md:py-24">
+  <section
+    class="relative overflow-hidden bg-gradient-to-tr from-red-triarc-blended to-blue-triarc-blended py-16 text-white md:py-24"
+  >
     <Container>
       <Reveal>
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           Wo Custom Software in der Praxis wirkt
         </h2>
-        <p class="mt-4 text-lg text-gray-600">
+        <p class="mt-4 text-lg text-white">
           Custom Software setzt überall dort an, wo Standardsoftware an ihre Grenzen stösst. Oft gilt: 80&nbsp;%
           Standard, 20&nbsp;% Custom – genau dort, wo Sie es für Ihr Geschäft brauchen. Diese 20&nbsp;% sind der
           Gamechanger, der die Hürden im Alltag reduziert. Typisch sind tiefe ERP- und Prozessintegration (z.&nbsp;B.
@@ -186,7 +215,7 @@
             >
               <div class="flex flex-grow flex-col p-7">
                 <h3 class="text-xl font-bold text-gray-900">{useCase.title}</h3>
-                <p class="mt-3 text-base text-gray-600">{useCase.content}</p>
+                <p class="mt-3 text-base text-black">{useCase.content}</p>
               </div>
             </div>
           </Reveal>
@@ -196,12 +225,26 @@
         <div class="mt-10 flex flex-wrap gap-6">
           <a
             href="/references"
-            class="rounded-full bg-blue-triarc px-7 py-3 text-base font-bold text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+            class="group flex items-center gap-x-2 rounded-full bg-white px-7 py-3 text-base font-bold text-gray-900 shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
           >
             Zu den Referenzen
+            <svg
+              class="h-6 w-6 transition group-hover:translate-x-0.5"
+              viewBox="0 0 640 640"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M571.3 331.3C577.5 325.1 577.5 314.9 571.3 308.7L395.3 132.7C389.1 126.5 378.9 126.5 372.7 132.7C366.5 138.9 366.5 149.1 372.7 155.3L521.4 304L80 304C71.2 304 64 311.2 64 320C64 328.8 71.2 336 80 336L521.4 336L372.7 484.7C366.5 490.9 366.5 501.1 372.7 507.3C378.9 513.5 389.1 513.5 395.3 507.3L571.3 331.3z"
+              />
+            </svg>
           </a>
-          <a href="/stories?tag=custom-software" class="self-center text-base font-bold text-blue-triarc hover:underline">
-            Aktuelle Einblicke im Story-Blog →
+          <a
+            href="/stories?tag=custom-software"
+            class="flex items-center gap-x-1 self-center text-base font-bold text-white hover:underline"
+          >
+            Aktuelle Einblicke im Story-Blog
+            <Icon src={Arrow} size="small" />
           </a>
         </div>
       </Reveal>
@@ -213,7 +256,7 @@
     <Container>
       <Reveal>
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Unser agiler Entwicklungsprozess</h2>
-        <p class="mt-4 text-lg text-gray-600">
+        <p class="mt-4 text-lg text-black">
           Wir führen unsere Projekte erfolgreich seit einem Jahrzehnt agil. Diese Methode hat sich sowohl für uns als
           auch für den Kunden immer bewährt. Unser agiler Entwicklungsprozess besteht aus vier Schritten, welche sich
           pro Sprint wiederholen.
@@ -226,10 +269,12 @@
   </section>
 
   <!-- Benefits -->
-  <section class="bg-gray-50 py-16 md:py-24">
+  <section
+    class="relative overflow-hidden bg-gradient-to-tr from-green-triarc-blended to-blue-triarc-blended py-16 md:py-24"
+  >
     <Container>
       <Reveal>
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Vorteile der agilen Entwicklung</h2>
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Vorteile der agilen Entwicklung</h2>
       </Reveal>
       <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {#each benefits as benefit, index}
@@ -246,7 +291,7 @@
                 </svg>
               </span>
               <h3 class="mt-5 text-xl font-bold text-gray-900">{benefit.title}</h3>
-              <p class="mt-3 text-base text-gray-600">{benefit.content}</p>
+              <p class="mt-3 text-base text-black">{benefit.content}</p>
             </div>
           </Reveal>
         {/each}
@@ -260,7 +305,10 @@
               Erzählen Sie uns von Ihren Anforderungen – wir zeigen Ihnen, wie eine massgeschneiderte Lösung aussehen
               kann.
             </p>
-            <span class="mt-6 font-bold">Kontakt aufnehmen →</span>
+            <span class="mt-6 flex items-center gap-x-1 font-bold">
+              Kontakt aufnehmen
+              <Icon src={Arrow} size="small" />
+            </span>
           </a>
         </Reveal>
       </div>
@@ -274,17 +322,17 @@
         <div class="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Wartung / Hosting</h2>
-            <p class="mt-4 text-lg text-gray-600">
+            <p class="mt-4 text-lg text-black">
               Der Betrieb sowie die Wartung unserer Software ist uns ein wichtiges Anliegen. Wir betreiben unsere
               Software flexibel in unserem Cloud Angebot oder auf deinen vorhandenen Servern.
             </p>
-            <p class="mt-4 text-lg text-gray-600">
+            <p class="mt-4 text-lg text-black">
               Regelmässige Wartung der Software sowie das Einspielen von sicherheitsrelevanten Patches ist für uns ein
               Routine-Job und lässt uns nachts besser schlafen.
             </p>
             <ul class="mt-8 flex flex-wrap gap-3">
               {#each hostingFeatures as feature}
-                <li class="rounded-full border border-gray-300 px-4 py-1.5 text-base text-gray-700">{feature}</li>
+                <li class="rounded-full border border-gray-300 px-4 py-1.5 text-base text-black">{feature}</li>
               {/each}
             </ul>
           </div>

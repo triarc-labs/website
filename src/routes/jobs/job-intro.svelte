@@ -13,7 +13,7 @@
         person: 'Elke Engel',
         personTitle: 'CFO / Partner',
         email: 'elke@triarc-labs.com',
-        highlight: 'blue',
+        highlight: 'white',
         linkedin: 'https://www.linkedin.com/in/elke-engel-6761998/',
       },
     },

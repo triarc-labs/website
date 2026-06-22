@@ -52,7 +52,7 @@
       <!--      <figure class="relative isolate pt-6 sm:pt-12">-->
       <blockquote
         class="hidden md:block text-xl font-semibold leading-7 {quote.highlight
-          ? 'text-gray-900'
+          ? 'text-black'
           : 'text-gray-600'} sm:text-2xl sm:leading-8"
       >
         <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->
@@ -70,7 +70,7 @@
           <div class="mt-1">{quote.personTitle}</div>
           <div
             class="mt-2 flex justify-start space-x-2 md:justify-start {quote.highlight
-              ? 'fill-gray-900'
+              ? 'fill-black'
               : 'fill-gray-600'}"
           >
             {#if quote.email}
@@ -124,7 +124,7 @@
       </div>
       <blockquote
         class="pt-8 md:hidden text-xl font-semibold leading-7 {quote.highlight
-          ? 'text-gray-900'
+          ? 'text-black'
           : 'text-gray-600'} sm:text-2xl sm:leading-8"
       >
         <!-- eslint-disable-next-line svelte/no-at-html-tags -- HTML-Content is static -->

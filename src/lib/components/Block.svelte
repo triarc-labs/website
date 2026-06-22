@@ -30,14 +30,14 @@
 {#if content.title}
   <div
     class="alternating md:min-h-0 group {content.gradientBackground
-      ? 'bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended'
-      : ''}"
+      ? 'bg-gradient-to-tr from-red-triarc-blended to-blue-triarc-blended'
+      : ''} {content.background ?? ''}"
   >
-    <Container size={inline ? 'small' : 'wide'} class={inline ? 'ml-0' : ''}>
+    <Container size={inline ? 'small' : 'wide'} class={content.collapsible ? '!px-6' : inline ? 'ml-0' : ''}>
       <div
         class="
           {!content.collapsed
-          ? `${content.noPaddingY ? '' : 'pb-16 pt-8 md:py-32'} items-center`
+          ? `${content.collapsible ? 'py-6' : content.noPaddingY ? '' : 'pb-16 pt-8 md:py-32'} items-center`
           : 'py-6'} flex-col
           {content.collapsible ? 'md:flex-row' : 'group-odd:md:flex-row group-even:md:flex-row-reverse'}
           {!content.collapsed && inline && !content.noPaddingY ? 'md:py-8' : ''} flex relative transition-all"
@@ -52,16 +52,20 @@
           {#if content.collapsible}
             <CollapsibleCaret bind:collapsed={content.collapsed} />
           {/if}
-          <div>
+          <div class={content.jobDetails ? 'min-w-0 grow' : ''}>
             {#if !content.jobDetails}
-              <TitleBlock bind:title={content.title} large={content.largeTitle} light={content.gradientBackground} />
+              <TitleBlock
+                bind:title={content.title}
+                large={content.largeTitle}
+                light={content.gradientBackground || content.light}
+              />
             {/if}
             {#if content.jobDetails}
               <JobDetailsBlock bind:jobDetails={content.jobDetails} bind:title={content.title} />
             {/if}
             <div class="overflow-hidden {!content.collapsed ? 'max-h-infiniti' : 'max-h-0'}">
               {#if content.content}
-                <TextContentBlock bind:content={content.content} />
+                <TextContentBlock bind:content={content.content} light={content.light} />
               {/if}
               {#if content.blockquote}
                 <InlineQuoteBlock bind:quote={content.blockquote} />
@@ -88,12 +92,13 @@
               {/if}
 
               {#if content.steps}
-                <StepsBlock bind:steps={content.steps} />
+                <StepsBlock bind:steps={content.steps} light={content.light} />
               {/if}
 
               {#if content.items}
                 <ItemsBlock bind:items={content.items} />
               {/if}
+              <slot name="columnCta" />
             </div>
           </div>
         </div>
@@ -128,7 +133,7 @@
 {/if}
 
 {#if content.video && !content.video.embedded}
-  <div class="bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended py-[92px]">
+  <div class="bg-gradient-to-tr from-green-triarc-blended to-red-triarc-blended py-[92px]">
     <Container>
       <VideoBlock bind:content={content.video} />
     </Container>

@@ -1,6 +1,8 @@
 import type { BlockContent } from '$lib/components/TypeDefinitions'
 
 export const ourApplicationProcess: BlockContent = {
+  background: 'bg-gradient-to-tr from-green-triarc-blended to-blue-triarc-blended',
+  light: true,
   title: 'Wie läuft unser Bewerbungsverfahren',
   content: 'Unser Interviewprozess verläuft in vier Schritten.',
   steps: [

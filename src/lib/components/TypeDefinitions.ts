@@ -15,6 +15,10 @@ export interface BlockContent {
   noPaddingY?: boolean
   /** Give the section the header gradient background (see Block). */
   gradientBackground?: boolean
+  /** Custom background utility classes for the section wrapper (see Block). */
+  background?: string
+  /** Render title/text/steps in white (for dark/gradient backgrounds). */
+  light?: boolean
   content?: string
   formReference?: string
   footer?: string
