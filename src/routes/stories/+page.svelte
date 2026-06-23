@@ -61,22 +61,26 @@
 
 <MetaHead pageMetadata={storiesMetadata} />
 
-<GradientHero
-  kicker="Lösungen"
-  title="Stories"
-  content="Erfahre mehr über uns, lies, was uns beschäftigt und was wir gerade tun!"
-/>
+<div
+  class="bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended flex flex-grow flex-col"
+>
+  <GradientHero
+    transparent
+    kicker="Lösungen"
+    title="Stories"
+    content="Erfahre mehr über uns, was uns beschäftigt und was wir gerade tun!"
+  />
 
-<div class="bg-gray-50 min-h-[calc(100vh_-_432px)] flex-grow flex flex-col">
-  <Container>
+  <div class="min-h-[calc(100vh_-_432px)] flex-grow flex flex-col">
+  <Container class="w-full">
     <div class="my-8 flex flex-wrap gap-3" role="group" aria-label="Stories nach Thema filtern">
       <a
         href="/stories"
         target="_self"
         aria-current={data.selectedTag === '' ? 'page' : undefined}
-        class="rounded-full border px-4 py-1.5 text-base font-bold transition duration-300 {data.selectedTag === ''
-          ? 'border-transparent bg-blue-triarc text-white shadow'
-          : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'}"
+        class="rounded-full border px-4 py-1.5 text-base transition duration-300 {data.selectedTag === ''
+          ? 'border-transparent bg-blue-triarc text-white shadow font-bold'
+          : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400 font-medium'}"
       >
         Alle <span class="font-normal opacity-70">({data.totalPosts})</span>
       </a>
@@ -85,10 +89,10 @@
           href="/stories?tag={tag.slug}"
           target="_self"
           aria-current={data.selectedTag === tag.slug ? 'page' : undefined}
-          class="rounded-full border px-4 py-1.5 text-base font-bold transition duration-300 {data.selectedTag ===
+          class="rounded-full border px-4 py-1.5 text-base transition duration-300 {data.selectedTag ===
           tag.slug
-            ? 'border-transparent bg-blue-triarc text-white shadow'
-            : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'}"
+            ? 'border-transparent bg-blue-triarc text-white shadow font-bold'
+            : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400 font-medium'}"
         >
           {tag.name} <span class="font-normal opacity-70">({tag.count.posts})</span>
         </a>
@@ -119,7 +123,7 @@
           <div class="item w-full md:w-[calc(50%-20px)] xl:w-[calc(33.33%-27px)]">
             <a
               href="/stories/{item.data.slug}"
-              class="break-inside-avoid flex flex-col group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+              class="break-inside-avoid flex flex-col group overflow-hidden rounded-3xl bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               {#if item.data.image.src !== ''}
                 <div class="relative overflow-hidden">
@@ -165,7 +169,8 @@
     </Container>
   </div>
 
-  <FooterNoContact />
+    <FooterNoContact />
+  </div>
 </div>
 
 <style lang="postcss">

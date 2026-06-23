@@ -9,7 +9,6 @@
   import NavJump from '$lib/components/NavJump.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
   import Icon from '$lib/components/Icon.svelte'
-  import { Arrow } from '$lib/content/icons'
   import envelope from '$lib/assets/icons/envelope-solid-full.svg'
   import linkedIn from '$lib/assets/icons/square-linkedin-brands-solid-full.svg'
   import serge from '$lib/assets/team/serge.jpg?w=768&format=webp;png&enhanced'
@@ -122,12 +121,19 @@
                   {#each project.tags as tag}
                     <span class="rounded-full border border-gray-300 px-3 py-0.5 text-sm text-gray-600">{tag}</span>
                   {/each}
-                  <span
-                    class="ml-auto inline-flex items-center gap-x-3 rounded-full bg-black px-6 py-3 text-base font-medium text-white md:px-3 md:py-1"
-                  >
-                    Mehr dazu <span class="inline-block transition group-hover:translate-x-0.5"
-                      ><Icon src={Arrow} size="small" /></span
-                    >
+                  <span class="ml-auto inline-flex items-center text-black" aria-label="Mehr dazu">
+                    <span class="inline-block transition group-hover:translate-x-0.5">
+                      <svg
+                        class="h-6 w-6 fill-current"
+                        viewBox="0 0 640 640"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M571.3 331.3C577.5 325.1 577.5 314.9 571.3 308.7L395.3 132.7C389.1 126.5 378.9 126.5 372.7 132.7C366.5 138.9 366.5 149.1 372.7 155.3L521.4 304L80 304C71.2 304 64 311.2 64 320C64 328.8 71.2 336 80 336L521.4 336L372.7 484.7C366.5 490.9 366.5 501.1 372.7 507.3C378.9 513.5 389.1 513.5 395.3 507.3L571.3 331.3z"
+                        />
+                      </svg>
+                    </span>
                   </span>
                 </div>
               </div>

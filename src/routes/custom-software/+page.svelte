@@ -332,7 +332,7 @@
             </p>
             <ul class="mt-8 flex flex-wrap gap-3">
               {#each hostingFeatures as feature}
-                <li class="rounded-full border border-gray-300 px-4 py-1.5 text-base text-black">{feature}</li>
+                <li class="rounded-full border border-gray-700 px-4 py-1.5 text-sm text-gray-700">{feature}</li>
               {/each}
             </ul>
           </div>

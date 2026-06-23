@@ -155,7 +155,7 @@
             </p>
             <ul class="mt-6 flex flex-wrap gap-3">
               {#each aiFields as field}
-                <li class="rounded-full border border-gray-300 px-4 py-1.5 text-base text-black">{field}</li>
+                <li class="rounded-full border border-gray-700 px-4 py-1.5 text-sm text-gray-700">{field}</li>
               {/each}
             </ul>
             <p class="mt-6 text-base text-black">

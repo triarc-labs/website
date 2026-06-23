@@ -76,7 +76,7 @@
           {index + 1}
         </span>
         <span
-          class="text-base font-bold uppercase tracking-widest {active === index ? 'text-gray-900' : 'text-gray-500'}"
+          class="text-base font-bold {active === index ? 'text-gray-900' : 'text-gray-500'}"
         >
           {step.title}
         </span>

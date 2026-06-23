@@ -4,8 +4,6 @@
   import GradientHero from '$lib/components/GradientHero.svelte'
   import Container from '$lib/components/Container.svelte'
   import Reveal from '$lib/components/Reveal.svelte'
-  import Icon from '$lib/components/Icon.svelte'
-  import { Arrow } from '$lib/content/icons'
   import MetaHead from '$lib/components/MetaHead.svelte'
   import { teamMetadata } from '$lib/content/triarc-page-metadata'
   import joinTheTeam from '$lib/assets/img/intro/content_team.svg'
@@ -38,10 +36,19 @@
           </p>
           <a
             href="/jobs"
-            class="mt-6 inline-flex items-center gap-x-1 rounded-full bg-black px-4 py-2 text-base font-medium text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+            class="mt-6 inline-flex items-center gap-x-1 rounded-full bg-white px-4 py-2 text-base font-medium text-black shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
           >
             Unsere Jobs
-            <Icon src={Arrow} size="small" />
+            <svg
+              class="h-6 w-6 fill-current"
+              viewBox="0 0 640 640"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M571.3 331.3C577.5 325.1 577.5 314.9 571.3 308.7L395.3 132.7C389.1 126.5 378.9 126.5 372.7 132.7C366.5 138.9 366.5 149.1 372.7 155.3L521.4 304L80 304C71.2 304 64 311.2 64 320C64 328.8 71.2 336 80 336L521.4 336L372.7 484.7C366.5 490.9 366.5 501.1 372.7 507.3C378.9 513.5 389.1 513.5 395.3 507.3L571.3 331.3z"
+              />
+            </svg>
           </a>
         </div>
         <div class="flex flex-1 items-center justify-center">

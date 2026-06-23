@@ -6,7 +6,10 @@
   import ContactForm from '$lib/components/ContactForm.svelte'
   import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
-  import LinkedInLink from '$lib/components/LinkedInLink.svelte'
+  import Icon from '$lib/components/Icon.svelte'
+  import { Arrow } from '$lib/content/icons'
+  import envelope from '$lib/assets/icons/envelope-solid-full.svg'
+  import linkedIn from '$lib/assets/icons/square-linkedin-brands-solid-full.svg'
   import iris from '$lib/assets/team/iris.jpg?w=768&format=webp;png&metadata&enhanced'
   import bsoLogo from '$lib/assets/img/partners/bso_logo_desktop.svg'
   import helvetas from '$lib/assets/img/customer/helvetas.gif'
@@ -100,11 +103,12 @@
   />
 
   <!-- Iris quote spotlight -->
-  <section class="border-b border-gray-100 bg-green-triarc bg-opacity-5">
+  <section class="bg-white">
     <Container>
       <Reveal>
-        <div class="flex flex-col items-center gap-10 py-16 md:py-24 lg:flex-row lg:items-start">
-          <div class="w-56 flex-shrink-0 lg:w-64">
+        <div class="flex flex-col gap-10 py-16 md:flex-row md:items-center md:py-24">
+          <!-- Image as its own column once there is room for a side-by-side layout -->
+          <div class="hidden w-56 flex-shrink-0 md:block lg:w-64">
             <EnhancedImage
               alt={'Iris Zenegaglia'}
               image={iris}
@@ -112,26 +116,52 @@
             />
           </div>
           <div class="max-w-2xl">
-            <figure>
-              <blockquote class="text-2xl font-bold leading-relaxed text-gray-900 md:text-3xl">
-                «Der Mensch digitalisiert für die Menschen – wir stellen den User in den Mittelpunkt, damit der Wandel
-                von allen getragen und gelebt wird. Nur dann ist die Digitalisierung nachhaltig.»
-              </blockquote>
-              <figcaption class="mt-6 text-lg text-gray-600">
-                <span class="font-bold text-gray-900">Iris Zenegaglia</span> · Digitalisierungs-/Organisationsberaterin,
-                Coach (bso i. A.), Partnerin
-              </figcaption>
-            </figure>
-            <div class="mt-8 flex flex-wrap items-center gap-6">
+            <!-- Quote on top for the side-by-side (md+) layout -->
+            <blockquote class="hidden text-xl font-semibold leading-7 text-black sm:text-2xl sm:leading-8 md:block">
+              «Der Mensch digitalisiert für die Menschen – wir stellen den User in den Mittelpunkt, damit der Wandel von
+              allen getragen und gelebt wird. Nur dann ist die Digitalisierung nachhaltig.»
+            </blockquote>
+            <!-- Name / role / contact links, with the image beside them while stacked -->
+            <div class="flex flex-col items-start gap-6 min-[480px]:flex-row min-[480px]:items-end md:mt-8">
+              <div class="text-base text-black">
+                <div class="font-semibold">Iris Zenegaglia</div>
+                <div class="mt-1">Digitalisierungs-/Organisationsberaterin, Coach (bso i. A.), Partnerin</div>
+                <div class="mt-2 flex space-x-2 fill-gray-900">
+                  <a href="mailto:iris@triarc-labs.com" aria-label="Email">
+                    <Icon size="small" src={envelope}></Icon>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/iriszenegagliagloor/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Linkedin"
+                  >
+                    <Icon size="small" src={linkedIn}></Icon>
+                  </a>
+                </div>
+              </div>
+              <!-- Image beside the name while stacked; hidden once it moves to its own column -->
+              <div class="order-first w-48 flex-shrink-0 sm:w-56 md:hidden">
+                <EnhancedImage
+                  alt={'Iris Zenegaglia'}
+                  image={iris}
+                  imgClass="aspect-[3/4] w-full rounded-2xl object-cover shadow-xl"
+                />
+              </div>
+            </div>
+            <!-- Quote below for the stacked layout -->
+            <blockquote class="pt-8 text-xl font-semibold leading-7 text-black sm:text-2xl sm:leading-8 md:hidden">
+              «Der Mensch digitalisiert für die Menschen – wir stellen den User in den Mittelpunkt, damit der Wandel von
+              allen getragen und gelebt wird. Nur dann ist die Digitalisierung nachhaltig.»
+            </blockquote>
+            <!-- CTA below the text -->
+            <div class="mt-8">
               <a
                 href="#contactform"
-                class="rounded-full bg-green-triarc-deep px-7 py-3 text-base font-bold text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                class="inline-flex items-center gap-x-1 rounded-full bg-green-triarc-deep px-2 py-2 text-base font-medium text-white shadow transition duration-300 hover:-translate-y-0.5 hover:shadow-lg md:px-4"
               >
-                Kontaktiere mich
-              </a>
-              <LinkedInLink href="https://www.linkedin.com/in/iriszenegagliagloor/" person="Iris Zenegaglia" />
-              <a href="mailto:iris@triarc-labs.com" class="text-base font-bold text-gray-600 hover:text-blue-triarc">
-                iris@triarc-labs.com
+                Kontaktieren Sie mich
+                <Icon src={Arrow} size="small" />
               </a>
             </div>
             <img
@@ -150,10 +180,10 @@
     <Container>
       <Reveal>
         <div class="grid gap-10 lg:grid-cols-[1fr,2fr]">
-          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 class="text-3xl font-bold tracking-tight text-black sm:text-4xl">
             Digitalisierung, die getragen wird
           </h2>
-          <div class="flex flex-col gap-y-6 text-lg text-gray-600">
+          <div class="flex flex-col gap-y-6 text-lg text-black">
             {#each introParagraphs as paragraph}
               <p>{paragraph}</p>
             {/each}
@@ -164,10 +194,10 @@
   </section>
 
   <!-- Services -->
-  <section class="bg-gray-50 py-16 md:py-24">
+  <section class="bg-gradient-to-tr from-red-triarc-blended to-green-triarc-blended py-16 md:py-24">
     <Container>
       <Reveal>
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Unsere Beratungsleistungen</h2>
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Unsere Beratungsleistungen</h2>
       </Reveal>
       <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {#each services as service, index}
@@ -176,9 +206,8 @@
               class="flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               <div class="flex flex-grow flex-col p-7">
-                <span class="text-sm font-bold tracking-widest text-gray-500">0{index + 1}</span>
-                <h3 class="mt-2 text-xl font-bold text-gray-900">{service.title}</h3>
-                <p class="mt-3 flex-grow text-base text-gray-600">{service.content}</p>
+                <h3 class="text-xl font-bold text-black">{service.title}</h3>
+                <p class="mt-3 flex-grow text-base text-black">{service.content}</p>
                 {#if service.link}
                   <a
                     href={service.link.href}
@@ -186,7 +215,17 @@
                     rel="noreferrer"
                     class="mt-4 text-base font-bold text-blue-triarc hover:underline"
                   >
-                    {service.link.text} →
+                    {service.link.text}
+                    <svg
+                      class="ml-1 inline-block h-[1em] w-[1em] fill-current align-[-0.1em]"
+                      viewBox="0 0 640 640"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M571.3 331.3C577.5 325.1 577.5 314.9 571.3 308.7L395.3 132.7C389.1 126.5 378.9 126.5 372.7 132.7C366.5 138.9 366.5 149.1 372.7 155.3L521.4 304L80 304C71.2 304 64 311.2 64 320C64 328.8 71.2 336 80 336L521.4 336L372.7 484.7C366.5 490.9 366.5 501.1 372.7 507.3C378.9 513.5 389.1 513.5 395.3 507.3L571.3 331.3z"
+                      />
+                    </svg>
                   </a>
                 {/if}
                 {#if service.posts.length > 0}
@@ -197,9 +236,19 @@
                           href={post.link.href}
                           target="_blank"
                           rel="noreferrer"
-                          class="text-sm text-gray-500 transition hover:text-blue-triarc"
+                          class="text-sm text-black transition hover:text-blue-triarc"
                         >
-                          Artikel: {post.title} →
+                          Artikel: {post.title}
+                          <svg
+                            class="ml-1 inline-block h-[1em] w-[1em] fill-current align-[-0.1em]"
+                            viewBox="0 0 640 640"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M571.3 331.3C577.5 325.1 577.5 314.9 571.3 308.7L395.3 132.7C389.1 126.5 378.9 126.5 372.7 132.7C366.5 138.9 366.5 149.1 372.7 155.3L521.4 304L80 304C71.2 304 64 311.2 64 320C64 328.8 71.2 336 80 336L521.4 336L372.7 484.7C366.5 490.9 366.5 501.1 372.7 507.3C378.9 513.5 389.1 513.5 395.3 507.3L571.3 331.3z"
+                            />
+                          </svg>
                         </a>
                       </li>
                     {/each}
@@ -218,7 +267,19 @@
             <p class="mt-3 text-base text-white/90">
               Im unverbindlichen Erstgespräch finden wir heraus, wo Beratung Ihnen den grössten Mehrwert bringt.
             </p>
-            <span class="mt-6 font-bold">Gespräch vereinbaren →</span>
+            <span class="mt-6 inline-flex items-center gap-x-1 font-bold">
+              Gespräch vereinbaren
+              <svg
+                class="h-6 w-6 fill-current"
+                viewBox="0 0 640 640"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M571.3 331.3C577.5 325.1 577.5 314.9 571.3 308.7L395.3 132.7C389.1 126.5 378.9 126.5 372.7 132.7C366.5 138.9 366.5 149.1 372.7 155.3L521.4 304L80 304C71.2 304 64 311.2 64 320C64 328.8 71.2 336 80 336L521.4 336L372.7 484.7C366.5 490.9 366.5 501.1 372.7 507.3C378.9 513.5 389.1 513.5 395.3 507.3L571.3 331.3z"
+                />
+              </svg>
+            </span>
           </a>
         </Reveal>
       </div>
@@ -229,17 +290,17 @@
   <section class="py-16 md:py-24">
     <Container>
       <Reveal>
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Das sagen unsere Kunden</h2>
+        <h2 class="text-3xl font-bold tracking-tight text-black sm:text-4xl">Das sagen unsere Kunden</h2>
       </Reveal>
       <div class="mt-12 grid gap-6 lg:grid-cols-2">
         {#each testimonials as testimonial, index}
           <Reveal delay={index * 100} class="h-full">
             <figure class="flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-8 shadow-sm">
               <img src={testimonial.logo} alt={testimonial.logoAlt} class="h-10 self-start object-contain" />
-              <blockquote class="mt-6 flex-grow text-base leading-relaxed text-gray-600">
+              <blockquote class="mt-6 flex-grow text-base leading-relaxed text-black">
                 «{testimonial.content}»
               </blockquote>
-              <figcaption class="mt-6 font-bold text-gray-900">{testimonial.source}</figcaption>
+              <figcaption class="mt-6 font-bold text-black">{testimonial.source}</figcaption>
             </figure>
           </Reveal>
         {/each}
@@ -249,12 +310,27 @@
 
   <!-- Stories -->
   {#if stories.length > 0}
-    <section class="bg-gray-50 py-16 md:py-24">
+    <section class="bg-gradient-to-tr from-blue-triarc-blended to-green-triarc-blended py-16 md:py-24">
       <Container>
         <Reveal>
           <div class="flex flex-wrap items-baseline justify-between gap-4">
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Einblicke aus unserem Blog</h2>
-            <a href="/stories?tag=beratung" class="text-base font-bold text-blue-triarc hover:underline">Alle Stories →</a>
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Einblicke aus unserem Blog</h2>
+            <a
+              href="/stories?tag=beratung"
+              class="inline-flex items-center gap-x-1 rounded-full bg-white px-4 py-2 text-base font-medium text-black shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              Alle Stories
+              <svg
+                class="h-6 w-6 fill-current"
+                viewBox="0 0 640 640"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M571.3 331.3C577.5 325.1 577.5 314.9 571.3 308.7L395.3 132.7C389.1 126.5 378.9 126.5 372.7 132.7C366.5 138.9 366.5 149.1 372.7 155.3L521.4 304L80 304C71.2 304 64 311.2 64 320C64 328.8 71.2 336 80 336L521.4 336L372.7 484.7C366.5 490.9 366.5 501.1 372.7 507.3C378.9 513.5 389.1 513.5 395.3 507.3L571.3 331.3z"
+                />
+              </svg>
+            </a>
           </div>
         </Reveal>
         <div class="mt-12 grid gap-6 md:grid-cols-3">
@@ -264,7 +340,7 @@
                 href={post.link.href}
                 target="_blank"
                 rel="noreferrer"
-                class="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                class="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div class="aspect-[16/9] overflow-hidden">
                   <img
@@ -277,9 +353,9 @@
                   />
                 </div>
                 <div class="flex flex-grow flex-col p-7">
-                  <h3 class="text-lg font-bold text-gray-900 group-hover:text-blue-triarc">{post.title}</h3>
-                  <p class="mt-3 flex-grow text-base text-gray-600 line-clamp-3">{post.content}</p>
-                  <span class="mt-5 text-sm text-gray-500">{post.footer}</span>
+                  <h3 class="text-lg font-bold text-black group-hover:text-blue-triarc">{post.title}</h3>
+                  <p class="mt-3 flex-grow text-base text-black line-clamp-3">{post.content}</p>
+                  <span class="mt-5 text-sm text-black">{post.footer}</span>
                 </div>
               </a>
             </Reveal>

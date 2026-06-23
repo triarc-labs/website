@@ -10,12 +10,16 @@
   export let kicker: string | undefined = undefined
   /** The rainbow arch animation is reserved for selected special pages. */
   export let orbits = false
+  /** Render without its own gradient background, e.g. when nested inside a gradient page wrapper. */
+  export let transparent = false
   /** Canonical breadcrumb trail; emits the page's BreadcrumbList JSON-LD. */
   export let breadcrumbs: { name: string; href: string }[] | undefined = undefined
 </script>
 
 <section
-  class="relative overflow-hidden bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended text-white"
+  class="relative overflow-hidden text-white {transparent
+    ? ''
+    : 'bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended'}"
 >
   {#if orbits}
     <TriarcOrbits focusX={0.78} focusY={0.95} opacity={0.9} scale={1.6} />
