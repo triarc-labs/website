@@ -7,7 +7,7 @@
 <div class="mt-8 flex flex-col gap-y-8">
   {#each bulletGroups as group}
     <div>
-      <h3 class="font-semibold text-sm underline decoration-red-triarc {light ? 'text-white' : 'text-gray-700'}">
+      <h3 class="text-sm font-bold uppercase tracking-widest {light ? 'text-white' : 'text-gray-700'}">
         {group.title}
       </h3>
       <ul class="mt-3">

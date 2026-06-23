@@ -10,14 +10,14 @@
       <div class="relative pb-8">
         {#if i < steps.length - 1}
           <span
-            class="absolute top-8 left-4 -ml-px h-[calc(100%-2rem)] w-0.5 {light ? 'bg-white' : 'bg-gray-200'}"
+            class="absolute top-8 left-4 -ml-px h-[calc(100%-2rem)] w-px {light ? 'bg-white' : 'bg-gray-200'}"
             aria-hidden="true"
           />
         {/if}
         <div class="relative flex space-x-3">
           <div>
             <span
-              class="h-8 w-8 text-sm rounded-full flex items-center justify-center {light
+              class="h-8 w-8 text-sm font-bold rounded-full flex items-center justify-center {light
                 ? 'border border-white text-white'
                 : 'bg-gray-200'}"
             >

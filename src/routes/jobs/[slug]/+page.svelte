@@ -14,8 +14,16 @@
   import MetaHead from '$lib/components/MetaHead.svelte'
   export let data: PageData
 
-  let benefits = ourBenefits
-  let hiringProcess = ourApplicationProcess
+  // Gradient backgrounds only on the job detail page (the shared content keeps its defaults elsewhere).
+  let benefits = {
+    ...ourBenefits,
+    background: 'bg-gradient-to-tr from-blue-triarc-blended to-green-triarc-blended',
+    light: true,
+  }
+  let hiringProcess = {
+    ...ourApplicationProcess,
+    background: 'bg-gradient-to-tr from-red-triarc-blended to-blue-triarc-blended',
+  }
 
   let jobListingBase = data.jobListing.BasicJobInfo
   let jobListingExtended = data.jobListing.ExtendedJobInfo
@@ -60,13 +68,13 @@
   <Block bind:content={jobListingExtended} />
 {/if}
 
-{#if data.jobListing.hasTechnologySection}
-  <Technology />
-{/if}
 {#if isSenior}
   <CollaborationSection />
 {/if}
 <Block bind:content={benefits} />
+{#if data.jobListing.hasTechnologySection}
+  <Technology />
+{/if}
 {#if hiring}
   <Block bind:content={hiringProcess} />
   <ApplicationForm availableJobs={[jobTitle]} jobString={jobTitle} isDefinedListing={true} />

@@ -230,7 +230,7 @@ export const DetailedJobListings: {
   },
   {
     slug: 'initiativ',
-    hasTechnologySection: false,
+    hasTechnologySection: true,
     BasicJobInfo: {
       jobDetails: { currentlyHiring: true, jobName: 'Initiativbewerbung', hideMeta: true },
       title: 'Initiativ bewerben',
