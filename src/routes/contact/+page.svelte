@@ -50,7 +50,9 @@
         <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 xl:grid-cols-5">
           <div class="max-w-2xl xl:col-span-2">
             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Kontakt</h2>
-            <p class="mt-6 text-lg leading-8 text-black">Sprechen Sie mit uns über Ihre Ideen.</p>
+            <p class="mt-6 text-lg leading-8 text-black">
+              Kontaktieren Sie uns für ein Gespräch über Ihre Ideen, Visionen und Ziele.
+            </p>
             <div class="grid grid-cols-1 gap-y-6 gap-x-8 mt-9">
               <div class="flex">
                 <div class="flex-shrink-0">
@@ -264,7 +266,7 @@
       <div class="py-16">
         <h2 class="text-2xl font-bold text-white sm:text-3xl sm:tracking-tight">Kontaktformular</h2>
         <h3 class="text-lg mt-3 font-medium text-white">
-          Interessiert? Treten Sie mit uns in Kontakt, damit wir gemeinsam Lösungen schaffen
+          Interessiert? Lassen Sie uns ins Gespräch kommen und gemeinsam Lösungen entwickeln.
         </h3>
         <form action="#" method="POST" class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
           <div>

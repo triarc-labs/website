@@ -33,6 +33,28 @@
 
   // Only the very first card of the unfiltered gallery spans two columns
   $: featuredSlug = activeCategory === null && projects.length > 0 ? projects[0].slug : null
+
+  // Per-pillar colours for the filter buttons (active + hover share the same look)
+  const baseFilter = 'rounded-full border px-4 py-1.5 text-base transition duration-300'
+  const defaultFilter = 'border-transparent bg-black text-white font-normal'
+
+  const activeFilterStyles: Record<string, string> = {
+    Strategie: 'border-transparent bg-red-triarc text-white font-bold shadow',
+    Operationen: 'border-transparent bg-green-triarc-deep text-white font-bold shadow',
+    Zukunft: 'border-transparent bg-blue-triarc text-white font-bold shadow',
+  }
+  const hoverFilterStyles: Record<string, string> = {
+    Strategie: 'hover:border-transparent hover:bg-red-triarc hover:text-white hover:shadow',
+    Operationen: 'hover:border-transparent hover:bg-green-triarc-deep hover:text-white hover:shadow',
+    Zukunft: 'hover:border-transparent hover:bg-blue-triarc hover:text-white hover:shadow',
+  }
+
+  // Per-pillar colours for the tags shown on each project card
+  const pillarTagStyles: Record<string, string> = {
+    Strategie: 'border-red-triarc text-red-triarc',
+    Operationen: 'border-green-triarc-deep text-green-triarc-deep',
+    Zukunft: 'border-blue-triarc text-blue-triarc',
+  }
 </script>
 
 <MetaHead pageMetadata={referencesMetadata} />
@@ -54,7 +76,7 @@
           </Reveal>
           <Reveal y={16} delay={200}>
             <p class="mt-6 text-lg text-white">
-              Was wir vollbracht haben – und woraus es entstanden ist: {projects.length} Projekte aus Logistik, Bau, Immobilien
+              Was wir vollbracht haben und woraus es entstanden ist: {projects.length} Projekte aus Logistik, Bau, Immobilien
               und mehr – jedes mit seiner eigenen Geschichte.
             </p>
           </Reveal>
@@ -70,9 +92,9 @@
         <button
           type="button"
           aria-pressed={activeCategory === null}
-          class="rounded-full border px-4 py-1.5 text-base transition duration-300 {activeCategory === null
-            ? 'border-transparent bg-blue-triarc text-white shadow font-bold'
-            : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400 font-medium'}"
+          class="{baseFilter} {activeCategory === null
+            ? 'border-gray-300 bg-white text-black font-bold shadow'
+            : `${defaultFilter} hover:bg-white hover:text-black hover:shadow`}"
           on:click={() => (activeCategory = null)}
         >
           Alle
@@ -81,9 +103,9 @@
           <button
             type="button"
             aria-pressed={activeCategory === category}
-            class="rounded-full border px-4 py-1.5 text-base transition duration-300 {activeCategory === category
-              ? 'border-transparent bg-blue-triarc text-white shadow font-bold'
-              : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400 font-medium'}"
+            class="{baseFilter} {activeCategory === category
+              ? activeFilterStyles[category]
+              : `${defaultFilter} ${hoverFilterStyles[category]}`}"
             on:click={() => (activeCategory = category)}
           >
             {category}
@@ -104,18 +126,21 @@
                   sizes="(min-width: 1280px) 700px, (min-width: 768px) 50vw, 100vw"
                   alt={project.image.alt}
                   loading={index === 0 ? 'eager' : 'lazy'}
-                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  class="h-full w-full transition duration-500 group-hover:scale-105 {project.slug === featuredSlug
+                    ? 'object-contain p-4'
+                    : 'object-cover'}"
                 />
               </div>
               <div class="flex flex-grow flex-col border-t border-gray-100 p-7">
-                <h2 class="text-2xl font-bold text-gray-900 group-hover:text-blue-triarc">
+                <h2 class="text-xl font-bold text-gray-900 group-hover:text-blue-triarc">
                   {project.title}
                 </h2>
                 <p class="mt-3 flex-grow text-base text-black">{project.teaser}</p>
                 <div class="mt-5 flex flex-wrap items-center gap-3">
                   {#each project.pillars as pillar}
-                    <span class="rounded-full border border-gray-300 px-3 py-0.5 text-sm text-gray-600"
-                      >{pillar.name}</span
+                    <span
+                      class="rounded-full border px-3 py-0.5 text-sm {pillarTagStyles[pillar.name] ??
+                        'border-gray-300 text-gray-600'}">{pillar.name}</span
                     >
                   {/each}
                   <span class="ml-auto inline-flex items-center text-black" aria-label="Mehr dazu">

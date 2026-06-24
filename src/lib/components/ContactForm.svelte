@@ -40,7 +40,7 @@
   <Container>
     <div class="py-16">
       <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">Kontaktformular</h2>
-      <h3 class="text-lg mt-3 font-medium text-black">Interessiert? Schreib uns eine Nachricht</h3>
+      <h3 class="text-lg mt-3 font-medium text-black">Interessiert? Schreiben Sie uns eine Nachricht</h3>
       <form action="#" method="POST" class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
         <div class="sm:col-span-2">
           <label for="subject" class="block text-sm font-medium text-gray-900">Betreff</label>

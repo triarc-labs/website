@@ -6,19 +6,19 @@
 
   const linkGroups = [
     {
-      title: 'Dienstleistungen',
-      links: [
-        { title: 'Beratung', href: '/consulting' },
-        { title: 'Custom Software', href: '/custom-software' },
-        { title: 'Innovation Lab', href: '/innovation' },
-      ],
-    },
-    {
       title: 'Lösungen',
       links: [
         { title: 'Projekte', href: '/references' },
         { title: 'Produkte', href: '/mlink' },
         { title: 'Stories', href: '/stories' },
+      ],
+    },
+    {
+      title: 'Dienstleistungen',
+      links: [
+        { title: 'Beratung', href: '/consulting' },
+        { title: 'Custom Software', href: '/custom-software' },
+        { title: 'Innovation Lab', href: '/innovation' },
       ],
     },
     {

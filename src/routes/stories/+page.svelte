@@ -68,7 +68,7 @@
     transparent
     kicker="Lösungen"
     title="Stories"
-    content="Erfahre mehr über uns, was uns beschäftigt und was wir gerade tun!"
+    content="Erfahren Sie mehr über uns, was uns beschäftigt und was wir gerade tun!"
   />
 
   <div class="min-h-[calc(100vh_-_432px)] flex-grow flex flex-col">
@@ -79,8 +79,8 @@
         target="_self"
         aria-current={data.selectedTag === '' ? 'page' : undefined}
         class="rounded-full border px-4 py-1.5 text-base transition duration-300 {data.selectedTag === ''
-          ? 'border-transparent bg-blue-triarc text-white shadow font-bold'
-          : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400 font-medium'}"
+          ? 'border-gray-300 bg-white text-black shadow font-bold'
+          : 'border-transparent bg-black text-white font-normal hover:bg-white hover:text-black hover:shadow'}"
       >
         Alle <span class="font-normal opacity-70">({data.totalPosts})</span>
       </a>
@@ -91,8 +91,8 @@
           aria-current={data.selectedTag === tag.slug ? 'page' : undefined}
           class="rounded-full border px-4 py-1.5 text-base transition duration-300 {data.selectedTag ===
           tag.slug
-            ? 'border-transparent bg-blue-triarc text-white shadow font-bold'
-            : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400 font-medium'}"
+            ? 'border-gray-300 bg-white text-black shadow font-bold'
+            : 'border-transparent bg-black text-white font-normal hover:bg-white hover:text-black hover:shadow'}"
         >
           {tag.name} <span class="font-normal opacity-70">({tag.count.posts})</span>
         </a>
