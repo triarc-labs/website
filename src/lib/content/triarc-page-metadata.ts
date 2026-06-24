@@ -49,13 +49,6 @@ export const labMetadata: TriarcPageMetadata = {
     'Entdecken Sie unsere Lab-Projekte: innovative Produkte und Experimente aus dem Hause triarc laboratories.',
 }
 
-export const missionMetadata: TriarcPageMetadata = {
-  title: 'Together you succeed – triarc laboratories',
-  metaTitle: 'Unsere Mission: Together you succeed',
-  description:
-    'Für Ihren Fortschritt. Wir entwickeln massgeschneiderte Software, begleiten Ihre digitale Transformation und fördern Innovation – alles aus einer Hand in Zürich.',
-}
-
 export const mlinkMetadata: TriarcPageMetadata = {
   title: 'μLink Datahub – triarc laboratories',
   metaTitle: 'μLink: Echtzeit-Datenhub für Ihr Software-Ökosystem',

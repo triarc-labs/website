@@ -1,6 +1,6 @@
 import { DOMParser as XmldomParser } from '@xmldom/xmldom'
 import type { RequestHandler } from '@sveltejs/kit'
-import { referenceProjects } from '$lib/content/reference-projects'
+import { PROJECT_PILLAR_TAGS } from '$lib/util/ghost-helpers'
 
 declare const __BUILD_TIME__: string
 const LAST_MODIFIED = typeof __BUILD_TIME__ !== 'undefined' ? __BUILD_TIME__ : new Date().toISOString()
@@ -20,7 +20,7 @@ const VIDEO_NS = 'http://www.google.com/schemas/sitemap-video/1.1'
 
 const pages = import.meta.glob('/src/routes/**/+page.svelte', { eager: true })
 const stories = await fetchGhostLocs()
-const referencePages = referenceProjects.map((project) => `/references/${project.slug}`)
+const projectPages = await fetchGhostProjectLocs()
 
 type ParsedUrl = {
   loc: string
@@ -47,11 +47,27 @@ const pageDirectories = [
 ]
 
 export const GET: RequestHandler = async () => {
-  const body = sitemap([...pageDirectories, ...referencePages], stories)
+  const body = sitemap([...pageDirectories, ...projectPages], stories)
   const response = new Response(body)
   response.headers.set('Cache-Control', 'max-age=0, s-maxage=3600')
   response.headers.set('Content-Type', 'application/xml')
   return response
+}
+
+// Ghost project pages are dynamic (/projects/[slug]), so list them explicitly. Returns [] if Ghost is unavailable.
+async function fetchGhostProjectLocs(): Promise<string[]> {
+  try {
+    const filter = encodeURIComponent(`tag:[${PROJECT_PILLAR_TAGS.join(',')}]`)
+    const res = await fetch(
+      `https://blog.triarc-labs.com/ghost/api/content/pages/?key=93ed4aea5970c22ed269d4ec35&filter=${filter}&limit=all&fields=slug`
+    )
+    if (!res.ok) return []
+    const data = await res.json()
+    if (!data.pages) return []
+    return data.pages.map((page: { slug: string }) => `/projects/${page.slug}`)
+  } catch {
+    return []
+  }
 }
 
 async function fetchGhostLocs(): Promise<ParsedUrl[]> {

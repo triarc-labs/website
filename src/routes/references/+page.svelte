@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { PageData } from './$types'
   import Customers from '$lib/index/Customers.svelte'
   import Partners from '$lib/index/Partners.svelte'
   import Container from '$lib/components/Container.svelte'
@@ -13,18 +14,25 @@
   import linkedIn from '$lib/assets/icons/square-linkedin-brands-solid-full.svg'
   import serge from '$lib/assets/team/serge.jpg?w=768&format=webp;png&enhanced'
   import { referencesMetadata } from '$lib/content/triarc-page-metadata'
-  import { referenceProjects } from '$lib/content/reference-projects'
 
-  // Curated filter categories; a project matches when any of its tags equals the category
-  const categories = ['Logistik & Dispo', 'Digital Work', 'Aussendienst', 'Immobilien', 'Bau', 'Soziales']
+  export let data: PageData
+
+  $: projects = data.projects
+
+  // Filter by pillar; only show categories that actually have projects, in a fixed order
+  const pillarOrder = ['Strategie', 'Operationen', 'Zukunft']
   let activeCategory: string | null = null
 
+  $: categories = pillarOrder.filter((label) =>
+    projects.some((project) => project.pillars.some((p) => p.name === label))
+  )
+
   $: filteredProjects = activeCategory
-    ? referenceProjects.filter((project) => project.tags.includes(activeCategory as string))
-    : referenceProjects
+    ? projects.filter((project) => project.pillars.some((p) => p.name === activeCategory))
+    : projects
 
   // Only the very first card of the unfiltered gallery spans two columns
-  $: featuredSlug = activeCategory === null ? referenceProjects[0].slug : null
+  $: featuredSlug = activeCategory === null && projects.length > 0 ? projects[0].slug : null
 </script>
 
 <MetaHead pageMetadata={referencesMetadata} />
@@ -46,8 +54,8 @@
           </Reveal>
           <Reveal y={16} delay={200}>
             <p class="mt-6 text-lg text-white">
-              Was wir vollbracht haben – und woraus es entstanden ist: {referenceProjects.length} Projekte aus Logistik,
-              Bau, Immobilien und mehr – jedes mit seiner eigenen Geschichte.
+              Was wir vollbracht haben – und woraus es entstanden ist: {projects.length} Projekte aus Logistik, Bau, Immobilien
+              und mehr – jedes mit seiner eigenen Geschichte.
             </p>
           </Reveal>
         </div>
@@ -86,40 +94,29 @@
         {#each filteredProjects as project, index (project.slug)}
           <Reveal delay={(index % 3) * 100} class="h-full {project.slug === featuredSlug ? 'md:col-span-2' : ''}">
             <a
-              href="/references/{project.slug}"
+              href="/projects/{project.slug}"
               class="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div
-                class="flex items-center justify-center overflow-hidden bg-white p-6 {project.slug === featuredSlug
-                  ? 'aspect-[16/7]'
-                  : 'aspect-[16/9]'}"
-              >
-                {#if project.logo}
-                  <img
-                    src={project.logo}
-                    alt="{project.customer} Logo"
-                    loading="lazy"
-                    class="max-h-16 w-auto max-w-[70%] object-contain transition duration-500 group-hover:scale-105"
-                  />
-                {:else}
-                  <EnhancedImage
-                    image={project.image}
-                    alt="{project.appName} Screenshot"
-                    loading={index === 0 ? 'eager' : 'lazy'}
-                    sizes="(min-width: 1280px) 700px, (min-width: 768px) 50vw, 100vw"
-                    imgClass="max-h-full w-auto object-contain transition duration-500 group-hover:scale-105"
-                  />
-                {/if}
+              <div class="overflow-hidden bg-white {project.slug === featuredSlug ? 'aspect-[16/7]' : 'aspect-[16/9]'}">
+                <img
+                  src={project.image.src}
+                  srcset={project.image.srcset}
+                  sizes="(min-width: 1280px) 700px, (min-width: 768px) 50vw, 100vw"
+                  alt={project.image.alt}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
               </div>
               <div class="flex flex-grow flex-col border-t border-gray-100 p-7">
-                <span class="text-sm font-bold uppercase tracking-widest text-gray-500">{project.customer}</span>
-                <h2 class="mt-2 text-2xl font-bold text-gray-900 group-hover:text-blue-triarc">
-                  {project.appName}
+                <h2 class="text-2xl font-bold text-gray-900 group-hover:text-blue-triarc">
+                  {project.title}
                 </h2>
                 <p class="mt-3 flex-grow text-base text-black">{project.teaser}</p>
                 <div class="mt-5 flex flex-wrap items-center gap-3">
-                  {#each project.tags as tag}
-                    <span class="rounded-full border border-gray-300 px-3 py-0.5 text-sm text-gray-600">{tag}</span>
+                  {#each project.pillars as pillar}
+                    <span class="rounded-full border border-gray-300 px-3 py-0.5 text-sm text-gray-600"
+                      >{pillar.name}</span
+                    >
                   {/each}
                   <span class="ml-auto inline-flex items-center text-black" aria-label="Mehr dazu">
                     <span class="inline-block transition group-hover:translate-x-0.5">

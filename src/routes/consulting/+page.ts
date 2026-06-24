@@ -8,7 +8,7 @@ const GHOST_KEY = '93ed4aea5970c22ed269d4ec35'
 async function fetchPostsByTag(fetch: LoadEvent['fetch'], tag: string): Promise<MappedPost[]> {
   try {
     const response = await fetch(
-      `https://blog.triarc-labs.com/ghost/api/content/posts?include=tags,authors&filter=tag:${tag}&key=${GHOST_KEY}&limit=3&order=published_at%20desc`
+      `https://blog.triarc-labs.com/ghost/api/content/posts/?include=tags,authors&filter=tag:${tag}&key=${GHOST_KEY}&limit=3&order=published_at%20desc`
     )
 
     if (!response.ok) {

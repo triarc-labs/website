@@ -12,7 +12,7 @@ const PILLARS: Record<string, { name: string; href: string }> = {
 
 export const load: PageLoad = async ({ fetch, params }) => {
   const response = await fetch(
-    `https://blog.triarc-labs.com/ghost/api/content/pages/slug/${params.slug}?key=93ed4aea5970c22ed269d4ec35&include=authors,tags`
+    `https://blog.triarc-labs.com/ghost/api/content/pages/slug/${params.slug}/?key=93ed4aea5970c22ed269d4ec35&include=authors,tags`
   )
 
   if (!response.ok) {

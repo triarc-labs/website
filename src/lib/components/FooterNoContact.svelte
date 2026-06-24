@@ -24,7 +24,6 @@
     {
       title: 'Über uns',
       links: [
-        { title: 'Mission', href: '/mission' },
         { title: 'Team', href: '/team' },
         { title: 'Jobs', href: '/jobs' },
         { title: 'Kontakt', href: '/contact' },

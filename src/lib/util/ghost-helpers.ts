@@ -1,6 +1,7 @@
 import { Puzzle, Gear, Rocket } from '$lib/content/icons'
 import type {
   GradientColor,
+  ReferenceProjectCard,
   TriarcColor,
   TriarcProjectContent,
   TriarcProjectDetailContent,
@@ -188,7 +189,7 @@ export function getGradientFromTags(tags: { slug: string }[] = []): GradientColo
 export async function fetchGhostPages(fetch: LoadEvent['fetch'], tag: string): Promise<TriarcProjectContent[]> {
   try {
     const response = await fetch(
-      `https://blog.triarc-labs.com/ghost/api/content/pages?include=tags,authors&filter=tag:${tag}&key=93ed4aea5970c22ed269d4ec35&order=published_at%20desc`
+      `https://blog.triarc-labs.com/ghost/api/content/pages/?include=tags,authors&filter=tag:${tag}&key=93ed4aea5970c22ed269d4ec35&order=published_at%20desc`
     )
 
     if (!response.ok) {
@@ -202,6 +203,58 @@ export async function fetchGhostPages(fetch: LoadEvent['fetch'], tag: string): P
     }
 
     return mapPages(data)
+  } catch {
+    return []
+  }
+}
+
+// Pillar tags identify project pages in Ghost; the labels match the pillar pages (/strategy, /operations, /future).
+export const PROJECT_PILLAR_TAGS = ['hash-strategy', 'hash-operations', 'hash-innovation'] as const
+
+const pillarLabelMap: Record<string, string> = {
+  'hash-strategy': 'Strategie',
+  'hash-operations': 'Operationen',
+  'hash-innovation': 'Zukunft',
+}
+
+export function mapProjectCards(pageData: { pages: GhostPage[] }): ReferenceProjectCard[] {
+  return pageData.pages
+    .filter((page: GhostPage) => !!page.feature_image)
+    .map((page: GhostPage) => ({
+      slug: page.slug,
+      title: page.title,
+      teaser: page.excerpt.length === 500 ? page.excerpt + '...' : page.excerpt,
+      image: {
+        srcset: getSourceSet(page.feature_image),
+        sizes: getSizes(),
+        src: getSource(page.feature_image),
+        alt: page.feature_image_alt ?? page.title,
+      },
+      pillars: (page.tags ?? [])
+        .filter((tag) => tag.slug in pillarLabelMap)
+        .map((tag) => ({ name: pillarLabelMap[tag.slug], slug: tag.slug })),
+    }))
+}
+
+// Loads every project page across all pillars for the /references gallery. Returns [] so the page still renders if Ghost is down.
+export async function fetchGhostProjects(fetch: LoadEvent['fetch']): Promise<ReferenceProjectCard[]> {
+  try {
+    const filter = encodeURIComponent(`tag:[${PROJECT_PILLAR_TAGS.join(',')}]`)
+    const response = await fetch(
+      `https://blog.triarc-labs.com/ghost/api/content/pages/?include=tags&filter=${filter}&key=93ed4aea5970c22ed269d4ec35&limit=all&order=published_at%20desc`
+    )
+
+    if (!response.ok) {
+      return []
+    }
+
+    const data = await response.json()
+
+    if (!data.pages || data.pages.length === 0) {
+      return []
+    }
+
+    return mapProjectCards(data)
   } catch {
     return []
   }

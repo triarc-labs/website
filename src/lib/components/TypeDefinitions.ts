@@ -224,6 +224,19 @@ export interface TriarcProjectContent {
   content: Omit<TriarcSectionDefinition, 'iconSource'>
 }
 
+export interface ReferencePillar {
+  name: string
+  slug: string
+}
+
+export interface ReferenceProjectCard {
+  slug: string
+  title: string
+  teaser: string
+  image: GhostImage
+  pillars: ReferencePillar[]
+}
+
 export interface TriarcProjectDetailContent {
   title: string
   description: string

@@ -57,12 +57,6 @@
       items: [
         {
           type: 'link',
-          title: 'Mission',
-          path: '/mission',
-          description: 'Was uns ausmacht',
-        },
-        {
-          type: 'link',
           title: 'Strategie',
           path: '/strategy',
           description: 'Strategie in die Praxis',

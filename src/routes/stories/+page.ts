@@ -13,10 +13,10 @@ export const load: PageLoad = ({ url }) => {
     `https://blog.triarc-labs.com/ghost/api/content/tags/?include=count.posts&filter=visibility:public&key=93ed4aea5970c22ed269d4ec35`
   )
   const postsFeatured = fetch(
-    `https://blog.triarc-labs.com/ghost/api/content/posts?include=tags,authors&filter=featured:true${postFilter}&key=93ed4aea5970c22ed269d4ec35&limit=4&order=published_at%20desc`
+    `https://blog.triarc-labs.com/ghost/api/content/posts/?include=tags,authors&filter=featured:true${postFilter}&key=93ed4aea5970c22ed269d4ec35&limit=4&order=published_at%20desc`
   )
   const postsNonFeatured = fetch(
-    `https://blog.triarc-labs.com/ghost/api/content/posts?include=tags,authors&filter=featured:false${postFilter}&key=93ed4aea5970c22ed269d4ec35&limit=21&order=published_at%20desc`
+    `https://blog.triarc-labs.com/ghost/api/content/posts/?include=tags,authors&filter=featured:false${postFilter}&key=93ed4aea5970c22ed269d4ec35&limit=21&order=published_at%20desc`
   )
 
   return Promise.all([tags, postsFeatured, postsNonFeatured]).then(
