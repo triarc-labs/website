@@ -60,7 +60,7 @@
               href="/contact"
               class="rounded-full bg-white px-4 py-2 md:px-6 text-base font-medium text-black shadow-lg transition duration-300 hover:-translate-y-0.5 hover:shadow-xl"
             >
-              Projekt besprechen
+              Kontaktieren Sie uns!
             </a>
             <a
               href="/references"

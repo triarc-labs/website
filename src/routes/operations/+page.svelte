@@ -22,7 +22,7 @@
   showFooter={false}
   breadcrumbs={[
     { name: 'Home', href: '/' },
-    { name: 'Operationen', href: '/operations' },
+    { name: 'Betrieb', href: '/operations' },
   ]}
 />
 <FooterNoContact />

@@ -98,7 +98,7 @@
   orbits
   kicker="Über uns"
   title="Jobs"
-  content="Erfahre mehr über unsere offenen Stellen und was dich sonst noch dazu interessieren könnte."
+  content="Erfahre mehr über unsere offenen Stellen und was Dich sonst noch dazu interessieren könnte."
 />
 <JobIntro />
 
@@ -109,7 +109,7 @@
         <span class="block">Unsere Stellen</span>
       </h2>
       <p class="mt-4 text-lg leading-6">
-        Wir bieten unterschiedliche Stufen, auf denen du deine Karriere bei uns starten kannst.
+        Wir bieten unterschiedliche Stufen, auf denen Du Deine Karriere bei uns starten kannst.
       </p>
     </div>
   </div>
@@ -140,7 +140,7 @@
 <!--        <span class="block">Immer noch hier?</span>-->
 <!--      </h2>-->
 <!--      <p class="mt-4 text-lg leading-6">-->
-<!--        Du findest, du passt zu uns und kannst etwas beisteuern? Wir freuen uns auf deine Bewerbung und sehen dich in-->
+<!--        Du findest, Du passt zu uns und kannst etwas beisteuern? Wir freuen uns auf Deine Bewerbung und sehen Dich in-->
 <!--        unserem Jungle.-->
 <!--      </p>-->
 <!--    </div>-->

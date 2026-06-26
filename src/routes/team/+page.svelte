@@ -6,7 +6,7 @@
   import Reveal from '$lib/components/Reveal.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
   import { teamMetadata } from '$lib/content/triarc-page-metadata'
-  import joinTheTeam from '$lib/assets/img/intro/content_team.svg'
+  import joinTheTeam from '$lib/assets/img/custom-software/triarc-adventure.svg'
 </script>
 
 <MetaHead pageMetadata={teamMetadata}></MetaHead>

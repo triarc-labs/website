@@ -20,7 +20,7 @@
   $: projects = data.projects
 
   // Filter by pillar; only show categories that actually have projects, in a fixed order
-  const pillarOrder = ['Strategie', 'Operationen', 'Zukunft']
+  const pillarOrder = ['Strategie', 'Betrieb', 'Zukunft']
   let activeCategory: string | null = null
 
   $: categories = pillarOrder.filter((label) =>
@@ -40,19 +40,19 @@
 
   const activeFilterStyles: Record<string, string> = {
     Strategie: 'border-transparent bg-red-triarc text-white font-bold shadow',
-    Operationen: 'border-transparent bg-green-triarc-deep text-white font-bold shadow',
+    Betrieb: 'border-transparent bg-green-triarc-deep text-white font-bold shadow',
     Zukunft: 'border-transparent bg-blue-triarc text-white font-bold shadow',
   }
   const hoverFilterStyles: Record<string, string> = {
     Strategie: 'hover:border-transparent hover:bg-red-triarc hover:text-white hover:shadow',
-    Operationen: 'hover:border-transparent hover:bg-green-triarc-deep hover:text-white hover:shadow',
+    Betrieb: 'hover:border-transparent hover:bg-green-triarc-deep hover:text-white hover:shadow',
     Zukunft: 'hover:border-transparent hover:bg-blue-triarc hover:text-white hover:shadow',
   }
 
   // Per-pillar colours for the tags shown on each project card
   const pillarTagStyles: Record<string, string> = {
     Strategie: 'border-red-triarc text-red-triarc',
-    Operationen: 'border-green-triarc-deep text-green-triarc-deep',
+    Betrieb: 'border-green-triarc-deep text-green-triarc-deep',
     Zukunft: 'border-blue-triarc text-blue-triarc',
   }
 </script>

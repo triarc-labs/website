@@ -18,12 +18,12 @@
       },
     },
     {
-      title: 'Starte dein Abenteuer!',
+      title: 'Starte Dein Abenteuer!',
       content:
         'Together you succeed <br/><br/>' +
-        'Werde Teil des Teams und bewirb dich, wenn du Leidenschaft, Elan und Tatendrang hast und du dich mit unseren <a class="underline decoration-red-triarc" href="/">Werten</a> identifizieren kannst. <br/> <br/>' +
-        'Du arbeitest und kommunizierst gerne im Team. Das Neue begeistert dich. Du bist eine positiv eingestellte Persönlichkeit, allzeit bereit für neue Herausforderungen. <br/><br/>' +
-        'Lehrabschluss/HF/Bachelor/Master oder selbst angeeignet. Bei uns ist nichts strikt vorgegeben, wir evaluieren immer zu deiner Situation. ',
+        'Werde Teil des Teams und bewirb Dich, wenn Du Leidenschaft, Elan und Tatendrang hast und Du Dich mit unseren <a class="underline decoration-red-triarc" href="/">Werten</a> identifizieren kannst. <br/> <br/>' +
+        'Du arbeitest und kommunizierst gerne im Team. Das Neue begeistert Dich. Du bist eine positiv eingestellte Persönlichkeit, allzeit bereit für neue Herausforderungen. <br/><br/>' +
+        'Lehrabschluss/HF/Bachelor/Master oder selbst angeeignet. Bei uns ist nichts strikt vorgegeben, wir evaluieren immer zu Deiner Situation. ',
       image: { src: adventurer, alt: 'Triarc Career' },
     },
   ]

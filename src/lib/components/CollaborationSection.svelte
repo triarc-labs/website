@@ -30,7 +30,7 @@
           <h3 class="mb-8 text-sm font-bold uppercase tracking-widest text-gray-700">{content.flowTitle}</h3>
 
           <!-- Accessible, viewport-independent summary for screen readers -->
-          <ol class="sr-only" aria-label="Dein Weg als Tech Lead durch das Projekt – du bist in jeder Phase dabei">
+          <ol class="sr-only" aria-label="Dein Weg als Tech Lead durch das Projekt – Du bist in jeder Phase dabei">
             {#each content.phases as phase, i}
               <li>
                 Phase {i + 1}, {phase.name}: {phase.description} Zusammenarbeit mit {phase.collaborators.join(' und ')}.

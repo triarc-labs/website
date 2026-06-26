@@ -181,7 +181,7 @@
       <div class="py-16">
         <h2 class="text-2xl font-bold text-gray-900">Bewerbungsformular</h2>
         <h3 class="text-base leading-6 mt-3 mb-8 font-medium text-black">
-          Interessiert? Bewirb dich direkt über das Formular
+          Interessiert? Bewirb Dich direkt über das Formular
         </h3>
         <form id="application-form" on:submit|preventDefault={sendMail} action="#" method="POST">
           <div class="space-y-12 pb-12">
@@ -313,7 +313,7 @@
                 <div class="col-span-full">
                   <div class="flex justify-between">
                     <label for="arbeitgeber" class="block text-sm font-medium text-gray-900"
-                      >Was liegt dir bei einem Arbeitgeber besonders am Herzen?</label
+                      >Was liegt Dir bei einem Arbeitgeber besonders am Herzen?</label
                     >
                     <span id="arbeitgeber-optional" class="text-sm text-gray-500">Optional</span>
                   </div>
@@ -549,7 +549,7 @@
                   <div class="ml-3">
                     <p class="text-sm font-medium text-green-800">
                       Deine Bewerbung wurde erfolgreich übermittelt. Du solltest in Kürze eine Bestätigungs-E-Mail
-                      erhalten. Wir melden uns so rasch wie möglich bei dir.
+                      erhalten. Wir melden uns so rasch wie möglich bei Dir.
                     </p>
                   </div>
                 </div>

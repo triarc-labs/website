@@ -6,7 +6,7 @@ import type { PageLoad } from './$types'
 // breadcrumb parent so every project has exactly one trail (no duplicate SEO signals).
 const PILLARS: Record<string, { name: string; href: string }> = {
   'hash-strategy': { name: 'Strategie', href: '/strategy' },
-  'hash-operations': { name: 'Operationen', href: '/operations' },
+  'hash-operations': { name: 'Betrieb', href: '/operations' },
   'hash-innovation': { name: 'Zukunft', href: '/future' },
 }
 

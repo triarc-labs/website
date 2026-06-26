@@ -8,7 +8,7 @@ export type CollaborationPhase = {
   collaborators: string[]
 }
 
-/** Copy + data model for the "Wie du bei uns arbeitest" section on job detail pages. */
+/** Copy + data model for the "Wie Du bei uns arbeitest" section on job detail pages. */
 export type CollaborationContent = {
   /** Small uppercase label above the heading. */
   kicker: string
@@ -26,10 +26,10 @@ export type CollaborationContent = {
 
 export const ourCollaboration: CollaborationContent = {
   kicker: 'Deine Rolle',
-  title: 'Wie du bei uns arbeitest',
+  title: 'Wie Du bei uns arbeitest',
   roleParagraphs: [
-    'Als Entwickler:in bei triarc bist du Tech Lead und damit die technische Konstante im Projekt: Du begleitest es vom ersten Konzept bis zum Review-Meeting mit dem Kunden – und übersetzt durchgehend zwischen Mensch und Technologie.',
-    'In jeder Phase arbeitest du mit anderen zusammen: mit UX, PL und Kunde im Konzept, mit den Devs im Sprint, mit der PL beim Testen und schliesslich mit PL und Kunde im Review. So wird aus einer Idee Schritt für Schritt Software, die wirklich trägt.',
+    'Als Entwickler:in bei triarc bist Du Tech Lead und damit die technische Konstante im Projekt: Du begleitest es vom ersten Konzept bis zum Review-Meeting mit dem Kunden – und übersetzt durchgehend zwischen Mensch und Technologie.',
+    'In jeder Phase arbeitest Du mit anderen zusammen: mit UX, PL und Kunde im Konzept, mit den Devs im Sprint, mit der PL beim Testen und schliesslich mit PL und Kunde im Review. So wird aus einer Idee Schritt für Schritt Software, die wirklich trägt.',
   ],
   leadLabel: 'Tech Lead',
   flowTitle: 'Dein Weg durch das Projekt',

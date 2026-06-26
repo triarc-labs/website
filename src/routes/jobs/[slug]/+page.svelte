@@ -5,6 +5,7 @@
   import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import GradientHero from '$lib/components/GradientHero.svelte'
   import CollaborationSection from '$lib/components/CollaborationSection.svelte'
+  import PassionStatement from '$lib/components/PassionStatement.svelte'
 
   import type { PageData } from './$types'
   import { page } from '$app/stores'
@@ -33,6 +34,8 @@
 
   // The collaboration section is only relevant for the senior listing.
   $: isSenior = $page.params.slug === 'senior'
+  // The "Wir suchen Menschen mit Passion" statement only shows for the open application.
+  $: isInitiativ = $page.params.slug === 'initiativ'
 </script>
 
 <MetaHead
@@ -64,7 +67,10 @@
     </div>
   </div>
 {/if}
-{#if jobListingExtended}
+<!-- Senior/Professional/Junior lead with the requirements; the open application leads with the passion statement. -->
+{#if isInitiativ}
+  <PassionStatement />
+{:else if jobListingExtended}
   <Block bind:content={jobListingExtended} />
 {/if}
 
@@ -72,7 +78,11 @@
   <CollaborationSection />
 {/if}
 <Block bind:content={benefits} />
-{#if data.jobListing.hasTechnologySection}
+{#if isInitiativ}
+  {#if jobListingExtended}
+    <Block bind:content={jobListingExtended} />
+  {/if}
+{:else if data.jobListing.hasTechnologySection}
   <Technology />
 {/if}
 {#if hiring}

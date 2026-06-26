@@ -13,7 +13,7 @@
   let block = {
     title: '<span class="text-sm">wir suchen</span><br/>Senior Software Engineer',
     content:
-      'Als Senior begleitest du Projekte vom Requirements-Engineering bis in den Betrieb. Du bist der Vermittler zwischen dem Kunden und deinen Entwickler-KollegInnen. Und du machst das nicht zum ersten Mal. Du kannst im Team unterstützen, wo es an was fehlt.',
+      'Als Senior begleitest Du Projekte vom Requirements-Engineering bis in den Betrieb. Du bist der Vermittler zwischen dem Kunden und Deinen Entwickler-KollegInnen. Und Du machst das nicht zum ersten Mal. Du kannst im Team unterstützen, wo es an was fehlt.',
     image: { src: seniorDev, alt: 'Senior Software Engineer' },
     bulletPoints: [
       "Erfahrungen mit C# in der Entwicklung von API's",
@@ -41,7 +41,7 @@
 <Technology />
 <!--<GradientHero kicker="Jobs"-->
 <!--  title="Developer Job"-->
-<!--  content="Erfahre mehr über unsere offene Entwickler Stelle und was dich sonst noch dazu interessieren könnte."-->
+<!--  content="Erfahre mehr über unsere offene Entwickler Stelle und was Dich sonst noch dazu interessieren könnte."-->
 <!--/>-->
 <CompanyAbout />
 <ApplicationForm availableJobs={[listedJob]} jobString={listedJob} isDefinedListing={true} />
@@ -53,7 +53,7 @@
 <!--        <span class="block">Immer noch hier?</span>-->
 <!--      </h2>-->
 <!--      <p class="mt-4 text-lg leading-6">-->
-<!--        Du findest, du passt zu uns und kannst etwas beisteuern? Wir freuen uns auf deine Bewerbung und sehen dich in-->
+<!--        Du findest, Du passt zu uns und kannst etwas beisteuern? Wir freuen uns auf Deine Bewerbung und sehen Dich in-->
 <!--        unserem Jungle.-->
 <!--      </p>-->
 <!--    </div>-->

@@ -213,7 +213,7 @@ export const PROJECT_PILLAR_TAGS = ['hash-strategy', 'hash-operations', 'hash-in
 
 const pillarLabelMap: Record<string, string> = {
   'hash-strategy': 'Strategie',
-  'hash-operations': 'Operationen',
+  'hash-operations': 'Betrieb',
   'hash-innovation': 'Zukunft',
 }
 

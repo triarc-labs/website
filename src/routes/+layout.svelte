@@ -63,7 +63,7 @@
         },
         {
           type: 'link',
-          title: 'Operationen',
+          title: 'Betrieb',
           path: '/operations',
           description: 'Operativen Reibungsverlust reduzieren',
         },

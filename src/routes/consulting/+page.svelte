@@ -125,7 +125,7 @@
             <div class="flex flex-col items-start gap-6 min-[480px]:flex-row min-[480px]:items-end md:mt-8">
               <div class="text-base text-black">
                 <div class="font-semibold">Iris Zenegaglia</div>
-                <div class="mt-1">Digitalisierungs-/Organisationsberaterin, Coach (bso i. A.), Partnerin</div>
+                <div class="mt-1">Digitalisierungs-/Organisationsberaterin, Coach (bso), Partnerin</div>
                 <div class="mt-2 flex space-x-2 fill-gray-900">
                   <a href="mailto:iris@triarc-labs.com" aria-label="Email">
                     <Icon size="small" src={envelope}></Icon>
@@ -233,9 +233,7 @@
                     {#each service.posts.slice(0, 1) as post}
                       <li>
                         <a
-                          href={post.link.href}
-                          target="_blank"
-                          rel="noreferrer"
+                          href="/stories/{post.slug}"
                           class="text-sm text-black transition hover:text-blue-triarc"
                         >
                           Artikel: {post.title}
@@ -337,9 +335,7 @@
           {#each stories as post, index}
             <Reveal delay={index * 100} class="h-full">
               <a
-                href={post.link.href}
-                target="_blank"
-                rel="noreferrer"
+                href="/stories/{post.slug}"
                 class="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div class="aspect-[16/9] overflow-hidden">

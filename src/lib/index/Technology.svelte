@@ -12,7 +12,7 @@
         <p class="text-base leading-6">
           Unser Team bringt ein breites Fachwissen mit und beherrscht <span class="underline">fast</span>
           alle gängigen Programmiersprachen. <br />
-          Wir freuen uns auf deine Unterstützung in unseren Projekten, welche wir über mehrere Technologien hinweg zum Erfolg
+          Wir freuen uns auf Deine Unterstützung in unseren Projekten, welche wir über mehrere Technologien hinweg zum Erfolg
           führen.
         </p>
       </div>

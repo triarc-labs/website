@@ -41,7 +41,7 @@
   <GradientHero
     kicker="Über uns"
     title="Kontakt"
-    content="Sprechen Sie mit uns über Ihre Ideen – wir freuen uns auf Ihr Projekt."
+    content="Sprechen Sie mit uns über Ihre Ideen"
   />
 
   <div class="bg-white flex-shrink-0">

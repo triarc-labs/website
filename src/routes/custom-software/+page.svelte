@@ -3,7 +3,6 @@
   import Container from '$lib/components/Container.svelte'
   import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import Reveal from '$lib/components/Reveal.svelte'
-  import ProcessCycle from '$lib/components/ProcessCycle.svelte'
   import EnhancedImage from '$lib/index/EnhancedImage.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
   import Icon from '$lib/components/Icon.svelte'
@@ -49,28 +48,6 @@
       title: 'Plattformen & Self-Service',
       content: 'Digitale Geschäftsprozesse für Endkundinnen und Partnernetzwerke.',
       accent: 'bg-yellow-triarc',
-    },
-  ]
-
-  const processSteps = [
-    {
-      title: 'Concept',
-      content:
-        'Zusammen erarbeiten wir Ziele sowie Anforderungen, welche erfüllt werden sollen. Gemeinsam erarbeitet durch das Management, die Mitarbeitenden sowie unsere Projektleitung.',
-    },
-    {
-      title: 'Planning',
-      content:
-        'Nach einer Aufarbeitung der Anforderungen und Einschätzung des Aufwands werden Anforderungen zusammen mit dem Aufwand priorisiert, verschoben oder angepasst. Das Resultat ist ein Sprint mit Anforderungen von 100-180 Stunden Entwicklungsaufwand.',
-    },
-    {
-      title: 'Entwicklung',
-      content: 'Die Entwicklung beginnt, es wird fleissig getestet und optimiert bis zum Review Meeting.',
-    },
-    {
-      title: 'Review',
-      content:
-        'Die Entwicklung ist abgeschlossen und das Resultat kann vom Kunden getestet werden. Sobald abgenommen, geht es direkt in den produktiven Betrieb und die Anwender dürfen sich über die neuesten Änderungen freuen.',
     },
   ]
 
@@ -246,23 +223,6 @@
             Aktuelle Einblicke im Story-Blog
             <Icon src={Arrow} size="small" />
           </a>
-        </div>
-      </Reveal>
-    </Container>
-  </section>
-
-  <!-- Agile process -->
-  <section class="py-16 md:py-24">
-    <Container>
-      <Reveal>
-        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Unser agiler Entwicklungsprozess</h2>
-        <p class="mt-4 text-lg text-black">
-          Wir führen unsere Projekte erfolgreich seit einem Jahrzehnt agil. Diese Methode hat sich sowohl für uns als
-          auch für den Kunden immer bewährt. Unser agiler Entwicklungsprozess besteht aus vier Schritten, welche sich
-          pro Sprint wiederholen.
-        </p>
-        <div class="mt-12">
-          <ProcessCycle steps={processSteps} />
         </div>
       </Reveal>
     </Container>

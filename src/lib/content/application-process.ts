@@ -9,22 +9,22 @@ export const ourApplicationProcess: BlockContent = {
   steps: [
     {
       title: 'Bewerbung einreichen',
-      content: 'Nimm den Mut zusammen und bewirb dich mit deinen Unterlagen direkt über unser Bewerbungsformular.',
+      content: 'Nimm den Mut zusammen und bewirb Dich mit Deinen Unterlagen direkt über unser Bewerbungsformular.',
     },
     {
       title: 'Persönliches Interview',
       content:
-        'Nach kurzer Prüfung von deinem CV und dem ersten Eindruck, melden wir uns bei dir für ein erstes Vorstellungsgespräch. Remote oder in unserem Office können wir uns gegenseitig austauschen und schauen ob sich Synergien ergeben.',
+        'Nach kurzer Prüfung von Deinem CV melden wir uns bei Dir für ein erstes Vorstellungsgespräch. Remote oder in unserem Office können wir uns gegenseitig austauschen und herausfinden ob sich Synergien ergeben.',
     },
     {
       title: 'Technisches Interview',
       content:
-        'Damit wir dich initial in unser Trackeesystem einstufen können, bekommst du die Gelegenheit dich mit einem Entwickler austauschen.',
+        'Damit wir Dich initial in unser Trackeesystem einstufen können, bekommst Du die Gelegenheit Dich mit einem Entwickler auszutauschen. Zeig uns, was Du kannst, an einem Fallbeispiel.',
     },
     {
-      title: 'Probe-Halbtag oder -Tag (optional)',
+      title: 'Probe-Halbtag oder -Tag (situativ)',
       content:
-        'Lerne das Team kennen und arbeite an einer effektiven Projektchallenge, damit du einen guten Eindruck von uns bekommst und wir von dir.',
+        'Lerne das Team kennen und arbeite an einer effektiven Projektchallenge, damit Du einen guten Eindruck von uns bekommst und wir von Dir.',
     },
   ],
 }
