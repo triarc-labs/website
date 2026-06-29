@@ -39,8 +39,14 @@
     }
   }
 
+  // Titles for pages that intentionally stay out of the navigation (e.g. campaign
+  // landing pages) so the mobile top bar still shows a meaningful label.
+  const offNavMetaInfo: Record<string, MetaInfo> = {
+    '/ai': { title: 'Smarter mit KI', description: 'KI für Ihr Unternehmen' },
+  }
+
   beforeUpdate(() => {
-    const navItem = linkMetaInfo[data.pathname]
+    const navItem = linkMetaInfo[data.pathname] ?? offNavMetaInfo[data.pathname]
     if (navItem) {
       mobileTitle = navItem.title
       mobileSubTitle = navItem.description

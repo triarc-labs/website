@@ -92,6 +92,13 @@ export const landingMetadata: TriarcPageMetadata = {
   ogImage: 'https://triarc-labs.com/triarc-og-default.png',
 }
 
+export const aiMetadata: TriarcPageMetadata = {
+  title: 'Ihr Unternehmen. Smarter mit KI. – triarc laboratories',
+  metaTitle: 'KI für KMU: Potenzial erkennen & Prototypen bauen',
+  description:
+    'KI richtig einsetzen, bevor es die Konkurrenz tut. Wir zeigen kleinen und mittleren Unternehmen das Potenzial von Agentic KI – von der Potenzialberatung bis zum Prototyp in wenigen Tagen.',
+}
+
 export const referencesMetadata: TriarcPageMetadata = {
   title: 'Lösungen & Referenzen – triarc laboratories',
   metaTitle: 'Referenzen & Projekte | Custom Software Schweiz | triarc labs',

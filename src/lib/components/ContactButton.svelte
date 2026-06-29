@@ -9,8 +9,9 @@
   // avoid showing the same call to action twice.
   $: isHome = $page.url.pathname === '/'
 
-  // On the contact page itself the floating button would be redundant.
-  $: isContact = $page.url.pathname.startsWith('/contact')
+  // On the contact page and the /ai campaign page the floating button would be
+  // redundant – both already expose their own contact call to action.
+  $: isContact = $page.url.pathname.startsWith('/contact') || $page.url.pathname.startsWith('/ai')
 
   let scrolledPastHero = false
 
