@@ -11,6 +11,7 @@
   import linkedIn from '$lib/assets/icons/square-linkedin-brands-solid-full.svg'
   import elke from '$lib/assets/team/elke.jpg?w=768&format=webp;png&metadata&enhanced'
   import maintenance from '$lib/assets/img/custom-software/maintenance.svg'
+  import agileJourney from '$lib/assets/img/custom-software/agile-journey.svg'
   import { customSoftwareMetadata } from '$lib/content/triarc-page-metadata'
 
   const quote = {
@@ -76,6 +77,28 @@
       title: 'Transparente Kommunikation',
       content:
         'Die Teams sind untereinander und mit dem Kunden im ständigen Austausch. Der Kunde ist jederzeit auf dem aktuellen Stand und in die Entwicklung involviert. Mögliche Änderungen oder Hindernisse können direkt kommuniziert werden.',
+    },
+  ]
+
+  const processSteps = [
+    {
+      title: 'Concept',
+      content:
+        'Zusammen erarbeiten wir Ziele sowie Anforderungen, welche erfüllt werden sollen. Gemeinsam erarbeitet durch Management, Mitarbeitern sowie unserer Projektleitung.',
+    },
+    {
+      title: 'Planning',
+      content:
+        'Nach einer Aufarbeitung der Anforderungen und Einschätzung des Aufwands, werden Anforderungen zusammen mit dem Aufwand priorisiert, verschoben oder angepasst. Das Resultat ist ein Sprint mit Anforderungen von 100-180 Stunden Entwicklungsaufwand.',
+    },
+    {
+      title: 'Entwicklung',
+      content: 'Die Entwicklung beginnt, es wird fleissig getestet und optimiert bis zum Review Meeting.',
+    },
+    {
+      title: 'Review',
+      content:
+        'Die Entwicklung ist abgeschlossen und das Resultat kann vom Kunden getestet werden. Sobald abgenommen, gehts direkt in den produktiven Betrieb und die Anwender dürfen sich über die neusten Änderungen freuen.',
     },
   ]
 
@@ -224,6 +247,47 @@
             <Icon src={Arrow} size="small" />
           </a>
         </div>
+      </Reveal>
+    </Container>
+  </section>
+
+  <!-- Agile development process -->
+  <section class="bg-white py-16 md:py-24">
+    <Container>
+      <Reveal>
+        <h2 class="text-2xl font-bold text-black">Unser agiler Entwicklungsprozess</h2>
+        <p class="mt-2 text-base leading-6 text-black">
+          Wir führen unsere Projekte erfolgreich seit einem Jahrzehnt agil. Diese Methode hat sich sowohl für uns, wie
+          auch für den Kunden immer bewährt. Unser agiler Entwicklungsprozess besteht aus vier Schritten, welche sich
+          pro Sprint wiederholen.
+        </p>
+        <ul class="-mb-8 mt-12">
+          {#each processSteps as step, i}
+            <li>
+              <div class="relative pb-8">
+                {#if i < processSteps.length - 1}
+                  <span class="absolute top-8 left-4 -ml-px h-[calc(100%-2rem)] w-px bg-black" aria-hidden="true" />
+                {/if}
+                <div class="relative flex space-x-3">
+                  <div>
+                    <span
+                      class="flex h-8 w-8 items-center justify-center rounded-full border border-black text-sm font-bold text-black"
+                    >
+                      {i + 1}
+                    </span>
+                  </div>
+                  <div class="min-w-0 flex-1 pt-1.5">
+                    <h3 class="text-sm font-semibold text-black">{step.title}</h3>
+                    <p class="text-black">{step.content}</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          {/each}
+        </ul>
+      </Reveal>
+      <Reveal>
+        <img src={agileJourney} alt="Agiler Entwicklungsprozess" class="mt-12 w-full" />
       </Reveal>
     </Container>
   </section>
