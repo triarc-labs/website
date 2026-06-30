@@ -4,6 +4,7 @@
   import MetaHead from '$lib/components/MetaHead.svelte'
   import AiContactModal from '$lib/components/AiContactModal.svelte'
   import PersonContactLinks from '$lib/components/PersonContactLinks.svelte'
+  import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import { aiMetadata } from '$lib/content/triarc-page-metadata'
   import iris from '$lib/assets/team/iris.jpg?format=webp;png&w=400&enhanced'
   import serge from '$lib/assets/team/serge.jpg?format=webp;png&w=400&enhanced'
@@ -76,7 +77,7 @@
           <button
             type="button"
             on:click={() => openContact('Anfrage kostenloses Erstgespräch')}
-            class="mt-10 inline-flex w-full items-center justify-between gap-x-2 rounded-full text-left md:w-auto md:justify-center bg-white px-7 py-3 text-sm font-medium md:text-base text-black shadow-lg transition duration-300 hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-triarc-blended"
+            class="mt-10 inline-flex w-full items-center justify-center gap-x-2 rounded-full text-center md:w-auto bg-white px-7 py-3 text-sm font-medium md:text-base text-black shadow-lg transition duration-300 hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-triarc-blended"
           >
             Kostenloses Erstgespräch vereinbaren
             <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -125,7 +126,7 @@
           <button
             type="button"
             on:click={() => openContact('Anfrage kostenloses Kennenlern-Gespräch')}
-            class="mt-9 inline-flex w-full items-center justify-between gap-x-2 rounded-full text-left md:w-auto md:justify-center bg-black px-6 py-3 text-sm font-medium md:text-base text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2"
+            class="mt-9 inline-flex w-full items-center justify-center gap-x-2 rounded-full text-center md:w-auto bg-black px-6 py-3 text-sm font-medium md:text-base text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2"
           >
             Lassen Sie uns gemeinsam hinschauen
             <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -164,7 +165,7 @@
                 <button
                   type="button"
                   on:click={() => openContact('Anfrage KI-Potenzialberatung')}
-                  class="mt-6 inline-flex w-full items-center justify-between gap-x-2 rounded-full text-left md:w-auto md:justify-center bg-black px-6 py-3 text-sm font-medium md:text-base text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2"
+                  class="mt-6 inline-flex w-full items-center justify-center gap-x-2 rounded-full text-center md:w-auto bg-black px-6 py-3 text-sm font-medium md:text-base text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2"
                 >
                   KI-Potenzialberatung anfragen
                   <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -190,7 +191,7 @@
                 <button
                   type="button"
                   on:click={() => openContact('Besprechung Prototyp-Idee')}
-                  class="mt-6 inline-flex w-full items-center justify-between gap-x-2 rounded-full text-left md:w-auto md:justify-center bg-black px-6 py-3 text-sm font-medium md:text-base text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2"
+                  class="mt-6 inline-flex w-full items-center justify-center gap-x-2 rounded-full text-center md:w-auto bg-black px-6 py-3 text-sm font-medium md:text-base text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2"
                 >
                   Prototyp besprechen
                   <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -228,7 +229,7 @@
               >
                 <!-- Image: 108px tall on mobile, full card height on desktop -->
                 <div
-                  class="h-[108px] w-24 flex-none self-start overflow-hidden rounded-xl md:h-full md:self-stretch [&>picture]:block [&>picture]:h-full"
+                  class="h-[135px] w-28 flex-none self-start overflow-hidden rounded-xl md:h-full md:self-stretch [&>picture]:block [&>picture]:h-full"
                 >
                   <enhanced:img src={person.image} alt={person.name} class="h-full w-full object-cover" />
                 </div>
@@ -326,7 +327,7 @@
           <button
             type="button"
             on:click={() => openContact('Anfrage kostenloses Kennenlernen')}
-            class="mt-10 inline-flex w-full items-center justify-between gap-x-2 rounded-full text-left md:w-auto md:justify-center bg-white px-7 py-3 text-sm font-medium md:text-base text-black shadow-lg transition duration-300 hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-triarc-blended"
+            class="mt-10 inline-flex w-full items-center justify-center gap-x-2 rounded-full text-center md:w-auto bg-white px-7 py-3 text-sm font-medium md:text-base text-black shadow-lg transition duration-300 hover:-translate-y-0.5 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-red-triarc-blended"
           >
             Kostenloses Kennenlernen vereinbaren
             <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -341,6 +342,8 @@
       </div>
     </Container>
   </section>
+
+  <FooterNoContact />
 </div>
 
 <AiContactModal bind:open={modalOpen} subject={modalSubject} on:close={() => (modalOpen = false)} />
