@@ -144,14 +144,16 @@
       <Reveal>
         <div class="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <span class="text-sm font-bold uppercase tracking-widest text-gray-500">Unser Fokus</span>
-            <h2 class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              AI Transformation in der Software
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              AI Transformation
             </h2>
             <p class="mt-4 text-base text-black">
-              AI ermöglicht neue Wege in der Benutzung und Gestaltung von Software. Der Weg ist jedoch steinig in der
-              Praxis – wir bieten dazu die technische Unterstützung und Expertise, um in Zusammenarbeit die richtigen
-              Schritte vorzunehmen und der Zukunft gewappnet zu sein.
+              AI ermöglicht neue Wege in der Gestaltung von Digitalisierung. Der Weg dorthin ist jedoch nicht gradlinig
+              und nicht einfach zu erkennen – wir bieten dazu die beratende und technische Unterstützung und Expertise,
+              um die richtigen Schritte vorzunehmen und die Weichen für eine erfolgreiche Zukunft mit AI zu stellen.
+            </p>
+            <p class="mt-4 text-base text-black">
+              Konkret haben wir für und mit unseren Kunden bereits folgende AI-Lösungen entwickelt:
             </p>
             <ul class="mt-6 flex flex-wrap gap-3">
               {#each aiFields as field}
@@ -160,7 +162,7 @@
             </ul>
             <p class="mt-6 text-base text-black">
               Ein Beispiel aus dem Lab: das AI-unterstützte Voice Reporting. Zeit, Leistung und Materialien werden vor
-              Ort per Spracheingabe rapportiert. Das entlastet den Polier von mühsamer Datenerfassung und schafft Raum
+              Ort per Spracheingabe rapportiert. Das entlastet den Polier von mühseliger Datenerfassung und schafft Raum
               für das Wesentliche.
             </p>
           </div>
