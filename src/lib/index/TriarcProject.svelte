@@ -22,21 +22,16 @@
         class="w-[112px] max-w-fit flex flex-wrap content-start justify-start gap-2 flex-grow-0 lg:w-24 lg:max-w-none lg:flex-shrink-0 lg:justify-end lg:mt-1"
       >
         {#each project.icons as icon}
-          <Icon
-            size="medium"
-            color={icon.iconColor}
-            src={icon.iconSource}
-            class="lg:w-11 lg:h-11 category-icon"
-          />
+          <Icon size="medium" color={icon.iconColor} src={icon.iconSource} class="lg:w-11 lg:h-11 category-icon" />
         {/each}
       </div>
       <div class="flex flex-col w-full">
         <div
-          class="max-w-prose text-4xl leading-tight md:text-5xl md:leading-tight text-white font-bold text-balance pb-4"
+          class="max-w-prose hyphens-auto break-words text-4xl leading-tight md:text-5xl md:leading-tight text-white font-bold text-balance pb-4"
         >
           {project.title}
         </div>
-        <div class="max-w-prose text-lg text-white pb-4">
+        <div class="max-w-prose hyphens-auto break-words text-lg text-white pb-4">
           {project.description}
         </div>
       </div>
