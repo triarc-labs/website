@@ -9,6 +9,20 @@
   import iris from '$lib/assets/team/iris.jpg?format=webp;png&w=400&enhanced'
   import serge from '$lib/assets/team/serge.jpg?format=webp;png&w=400&enhanced'
 
+  import analyticaLogo from '$lib/assets/img/customer/analytica-logo-main.svg'
+  import waloLogo from '$lib/assets/img/customer/walo-logo.svg'
+  import glbLogo from '$lib/assets/img/customer/glb-logo.svg'
+  import orthoTeamLogo from '$lib/assets/img/customer/ortho-team-logo.svg'
+  import wettsteinLogo from '$lib/assets/img/customer/wettstein-logo.png'
+  import helvetasLogo from '$lib/assets/img/customer/helvetas.gif'
+  import riwaxLogo from '$lib/assets/img/customer/riwax-logo.svg'
+  import burkhalterLogo from '$lib/assets/img/customer/burkhalter_holding_logo.svg'
+  import helsanaLogo from '$lib/assets/img/customer/helsana-logo.svg'
+  import srfLogo from '$lib/assets/img/customer/srf-logo.svg'
+  import kibagLogo from '$lib/assets/img/customer/kibag-logo.svg'
+  import volvoLogo from '$lib/assets/img/customer/volvo-logo.png'
+  import schindlerLogo from '$lib/assets/img/customer/schindler-logo.png'
+
   let modalOpen = false
   let modalSubject = ''
 
@@ -29,7 +43,7 @@
     },
     {
       color: 'bg-blue-triarc',
-      text: 'Sie wollen nicht blind in Tools investieren, die am Ende nicht zu Ihnen passen.',
+      text: 'Sie wollen nicht blind in Tools investieren, welche am Ende keinen Mehrwert bringen.',
     },
   ]
 
@@ -50,6 +64,24 @@
       email: 'serge@triarc-labs.com',
       linkedin: 'https://www.linkedin.com/in/serge-m%C3%BCller-568a0a134/',
     },
+  ]
+
+  // Customer logos shown in the "Schweizer Unternehmen, die uns vertrauen" section.
+  // `size` tunes each logo's max height so the marks appear optically balanced.
+  const customers = [
+    { src: analyticaLogo, alt: 'Analytica', size: 'max-h-12' },
+    { src: waloLogo, alt: 'Walo', size: 'max-h-20' },
+    { src: glbLogo, alt: 'GLB', size: 'max-h-16' },
+    { src: orthoTeamLogo, alt: 'Ortho-Team', size: 'max-h-10' },
+    { src: wettsteinLogo, alt: 'Wettstein', size: 'max-h-16 invert' },
+    { src: helvetasLogo, alt: 'Helvetas', size: 'max-h-10' },
+    { src: riwaxLogo, alt: 'Riwax', size: 'max-h-12' },
+    { src: burkhalterLogo, alt: 'Burkhalter', size: 'max-h-12' },
+    { src: helsanaLogo, alt: 'Helsana', size: 'max-h-6' },
+    { src: srfLogo, alt: 'SRF', size: 'max-h-10' },
+    { src: kibagLogo, alt: 'Kibag', size: 'max-h-20' },
+    { src: volvoLogo, alt: 'Volvo', size: 'max-h-24' },
+    { src: schindlerLogo, alt: 'Schindler', size: 'max-h-28' },
   ]
 </script>
 
@@ -158,7 +190,7 @@
             <div class="flex h-full flex-col rounded-2xl bg-white p-8 shadow-lg">
               <h3 class="text-xl font-bold text-gray-900">KI-Potenzialberatung für Ihr Unternehmen</h3>
               <p class="mt-4 flex-grow text-base leading-7 text-black">
-                Wo lohnt sich KI bei Ihnen wirklich? Wir analysieren Ihre Prozesse und zeigen Ihnen ehrlich, was möglich
+                Wann lohnt sich KI wirklich? Wir analysieren Ihre Prozesse und zeigen Ihnen konkret, was möglich
                 ist. Am Ende wissen Sie genau, wo Sie ansetzen können.
               </p>
               <div>
@@ -339,6 +371,34 @@
             </svg>
           </button>
         </Reveal>
+      </div>
+    </Container>
+  </section>
+
+  <!-- ===== Kundenlogos ===== -->
+  <section class="bg-white">
+    <Container>
+      <div class="py-16 md:py-24">
+        <Reveal y={16}>
+          <h2 class="text-center text-xl font-bold text-gray-900">Schweizer Unternehmen, die uns vertrauen</h2>
+        </Reveal>
+
+        <!-- flex + justify-center so a partial last row (e.g. 3 of 5) is centred rather than left-aligned -->
+        <div class="mt-10 flex flex-wrap justify-center gap-5">
+          {#each customers as customer, i}
+            <Reveal
+              y={16}
+              delay={(i % 5) * 60}
+              class="basis-[calc((100%-1.25rem)/2)] sm:basis-[calc((100%-2.5rem)/3)] lg:basis-[calc((100%-5rem)/5)]"
+            >
+              <div
+                class="flex min-h-[140px] items-center justify-center rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+              >
+                <img src={customer.src} loading="lazy" alt={customer.alt} class="{customer.size} w-auto filter" />
+              </div>
+            </Reveal>
+          {/each}
+        </div>
       </div>
     </Container>
   </section>
