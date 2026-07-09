@@ -190,8 +190,8 @@
             <div class="flex h-full flex-col rounded-2xl bg-white p-8 shadow-lg">
               <h3 class="text-xl font-bold text-gray-900">KI-Potenzialberatung für Ihr Unternehmen</h3>
               <p class="mt-4 flex-grow text-base leading-7 text-black">
-                Wann lohnt sich KI wirklich? Wir analysieren Ihre Prozesse und zeigen Ihnen konkret, was möglich
-                ist. Am Ende wissen Sie genau, wo Sie ansetzen können.
+                Wann lohnt sich KI wirklich? Wir analysieren Ihre Prozesse und zeigen Ihnen konkret, was möglich ist. Am
+                Ende wissen Sie genau, wo Sie ansetzen können.
               </p>
               <div>
                 <button

@@ -75,9 +75,7 @@
         >
           {index + 1}
         </span>
-        <span
-          class="text-base font-bold {active === index ? 'text-gray-900' : 'text-gray-500'}"
-        >
+        <span class="text-base font-bold {active === index ? 'text-gray-900' : 'text-gray-500'}">
           {step.title}
         </span>
       </button>

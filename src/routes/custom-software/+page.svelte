@@ -197,9 +197,7 @@
   >
     <Container>
       <Reveal>
-        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Wo Custom Software in der Praxis wirkt
-        </h2>
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Wo Custom Software in der Praxis wirkt</h2>
         <p class="mt-4 text-lg text-white">
           Custom Software setzt überall dort an, wo Standardsoftware an ihre Grenzen stösst. Oft gilt: 80&nbsp;%
           Standard, 20&nbsp;% Custom – genau dort, wo Sie es für Ihr Geschäft brauchen. Diese 20&nbsp;% sind der

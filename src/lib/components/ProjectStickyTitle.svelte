@@ -11,7 +11,10 @@
 >
   <Icon class="lg:hidden inline" size="medium" color={iconColor} src={iconSrc} />
   <Icon class="hidden lg:inline lg:mt-1" size="large" color={iconColor} src={iconSrc} />
-  <span id="sticky-title" class="project-title text-4xl leading-tight md:text-5xl md:leading-tight text-white font-bold break-words">
+  <span
+    id="sticky-title"
+    class="project-title text-4xl leading-tight md:text-5xl md:leading-tight text-white font-bold break-words"
+  >
     {title}
   </span>
 </div>

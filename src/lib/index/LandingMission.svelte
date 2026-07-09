@@ -30,9 +30,7 @@
   <div></div>
   {#each contents as contentBlock, index}
     <div class="group">
-      <div
-        class="{index === 0 ? 'pb-10 md:pb-16' : 'py-10 md:py-16'} {index % 2 === 1 ? 'bg-gray-50' : 'bg-white'}"
-      >
+      <div class="{index === 0 ? 'pb-10 md:pb-16' : 'py-10 md:py-16'} {index % 2 === 1 ? 'bg-gray-50' : 'bg-white'}">
         <Block content={contentBlock.content} quoteOverlap={index !== contents.length - 1} />
       </div>
       {#if contentBlock.divider}

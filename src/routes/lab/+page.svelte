@@ -22,8 +22,6 @@
 
     submitted = true
   }
-
-
 </script>
 
 <MetaHead pageMetadata={labMetadata} />

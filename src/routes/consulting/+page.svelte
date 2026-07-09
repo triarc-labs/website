@@ -180,9 +180,7 @@
     <Container>
       <Reveal>
         <div class="grid gap-10 lg:grid-cols-[1fr,2fr]">
-          <h2 class="text-3xl font-bold tracking-tight text-black sm:text-4xl">
-            Digitalisierung, die getragen wird
-          </h2>
+          <h2 class="text-3xl font-bold tracking-tight text-black sm:text-4xl">Digitalisierung, die getragen wird</h2>
           <div class="flex flex-col gap-y-6 text-lg text-black">
             {#each introParagraphs as paragraph}
               <p>{paragraph}</p>
@@ -232,10 +230,7 @@
                   <ul class="mt-5 flex flex-col gap-y-2 border-t border-gray-100 pt-4">
                     {#each service.posts.slice(0, 1) as post}
                       <li>
-                        <a
-                          href="/stories/{post.slug}"
-                          class="text-sm text-black transition hover:text-blue-triarc"
-                        >
+                        <a href="/stories/{post.slug}" class="text-sm text-black transition hover:text-blue-triarc">
                           Artikel: {post.title}
                           <svg
                             class="ml-1 inline-block h-[1em] w-[1em] fill-current align-[-0.1em]"

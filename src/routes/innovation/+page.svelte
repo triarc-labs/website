@@ -27,7 +27,13 @@
     linkedin: 'https://www.linkedin.com/in/pascal-bertschi-9b00b480/',
   }
 
-  const aiFields = ['Vertragsanalyse', 'Protokollerstellung', 'Assistenzen', 'Wissensmanagement', 'Sprachbarrieren überwinden']
+  const aiFields = [
+    'Vertragsanalyse',
+    'Protokollerstellung',
+    'Assistenzen',
+    'Wissensmanagement',
+    'Sprachbarrieren überwinden',
+  ]
 
   const voiceReportingVideo: VideoContent = {
     videoTitle: 'AI Proof of Concept',
@@ -144,9 +150,7 @@
       <Reveal>
         <div class="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              AI Transformation
-            </h2>
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">AI Transformation</h2>
             <p class="mt-4 text-base text-black">
               AI ermöglicht neue Wege in der Gestaltung von Digitalisierung. Der Weg dorthin ist jedoch nicht gradlinig
               und nicht einfach zu erkennen – wir bieten dazu die beratende und technische Unterstützung und Expertise,

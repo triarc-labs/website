@@ -47,41 +47,41 @@
       <div class="pt-16 lg:pt-28 md:grid md:grid-cols-2 md:gap-8 xl:grid-cols-3 lg:-mx-16">
         <div class="md:col-span-2">
           <div class="flex flex-col mx-auto max-w-[832px] md:px-6">
-          <Reveal y={16}>
-            <span class="flex items-center text-lg">
-              {landingContent.content.prefix}
-            </span>
-          </Reveal>
-          <Reveal y={16} delay={100}>
-            <h1 class="py-6">
-              <img
-                src={triarcLogo}
-                alt={landingContent.content.title}
-                class="max-h-12 md:max-h-16 w-auto max-w-full"
-              />
-            </h1>
-          </Reveal>
-          <Reveal y={16} delay={200}>
-            <p class="text-lg md:text-xl text-white/90">
-              {landingContent.content.description}
-            </p>
-          </Reveal>
-          <Reveal y={16} delay={300}>
-            <div class="flex flex-wrap gap-4 pb-16 pt-10 lg:pb-24">
-            <a
-              href="/contact"
-              class="rounded-full bg-white px-4 py-2 md:px-6 text-base font-medium text-black shadow-lg transition duration-300 hover:-translate-y-0.5 hover:shadow-xl"
-            >
-              Kontaktieren Sie uns!
-            </a>
-            <a
-              href="/references"
-              class="rounded-full border border-white/40 px-4 py-2 md:px-6 text-base text-white transition duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white/10"
-            >
-              Referenzen entdecken
-            </a>
-            </div>
-          </Reveal>
+            <Reveal y={16}>
+              <span class="flex items-center text-lg">
+                {landingContent.content.prefix}
+              </span>
+            </Reveal>
+            <Reveal y={16} delay={100}>
+              <h1 class="py-6">
+                <img
+                  src={triarcLogo}
+                  alt={landingContent.content.title}
+                  class="max-h-12 md:max-h-16 w-auto max-w-full"
+                />
+              </h1>
+            </Reveal>
+            <Reveal y={16} delay={200}>
+              <p class="text-lg md:text-xl text-white/90">
+                {landingContent.content.description}
+              </p>
+            </Reveal>
+            <Reveal y={16} delay={300}>
+              <div class="flex flex-wrap gap-4 pb-16 pt-10 lg:pb-24">
+                <a
+                  href="/contact"
+                  class="rounded-full bg-white px-4 py-2 md:px-6 text-base font-medium text-black shadow-lg transition duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+                >
+                  Kontaktieren Sie uns!
+                </a>
+                <a
+                  href="/references"
+                  class="rounded-full border border-white/40 px-4 py-2 md:px-6 text-base text-white transition duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white/10"
+                >
+                  Referenzen entdecken
+                </a>
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>

@@ -38,11 +38,7 @@
 <MetaHead pageMetadata={contactMetadata}></MetaHead>
 
 <div class="min-h-screen flex flex-col">
-  <GradientHero
-    kicker="Über uns"
-    title="Kontakt"
-    content="Sprechen Sie mit uns über Ihre Ideen"
-  />
+  <GradientHero kicker="Über uns" title="Kontakt" content="Sprechen Sie mit uns über Ihre Ideen" />
 
   <div class="bg-white flex-shrink-0">
     <Container>

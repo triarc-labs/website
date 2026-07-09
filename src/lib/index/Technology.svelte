@@ -16,10 +16,7 @@
           führen.
         </p>
       </div>
-      <ul
-        class="grid list-none grid-cols-1 gap-6 self-center p-0 mt-8 sm:grid-cols-2 lg:grid-cols-3"
-        id="technology"
-      >
+      <ul class="grid list-none grid-cols-1 gap-6 self-center p-0 mt-8 sm:grid-cols-2 lg:grid-cols-3" id="technology">
         {#each technologies as technology}
           <li class="flex flex-col rounded-3xl border border-gray-200 bg-white p-7 text-left shadow-sm">
             <div class="flex items-center gap-4">

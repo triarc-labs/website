@@ -55,7 +55,9 @@
 
             <!-- Row 2: the Tech-Lead spine spanning every phase -->
             <div class="col-span-4">
-              <div class="relative min-h-[2.5rem] overflow-hidden rounded-full border border-gray-300 bg-white shadow-sm">
+              <div
+                class="relative min-h-[2.5rem] overflow-hidden rounded-full border border-gray-300 bg-white shadow-sm"
+              >
                 <!--
                   The pill track mirrors the header grid above (4 columns + gap-x-6) and fills the
                   full bar width, so its columns line up exactly with the phase headers. The pill
@@ -80,9 +82,7 @@
                 <div class="mx-auto h-4 w-px bg-gray-300"></div>
                 <div class="mt-3 flex flex-wrap justify-center gap-1.5">
                   {#each phase.collaborators as collaborator}
-                    <span
-                      class="rounded-full px-2.5 py-1 text-xs font-normal text-gray-600 ring-1 ring-gray-400"
-                    >
+                    <span class="rounded-full px-2.5 py-1 text-xs font-normal text-gray-600 ring-1 ring-gray-400">
                       {collaborator}
                     </span>
                   {/each}
@@ -121,9 +121,7 @@
                     <p class="mt-1 text-sm leading-relaxed text-gray-700">{phase.description}</p>
                     <div class="mt-2 flex flex-wrap gap-1.5">
                       {#each phase.collaborators as collaborator}
-                        <span
-                          class="rounded-full px-2.5 py-1 text-xs font-normal text-gray-600 ring-1 ring-gray-400"
-                        >
+                        <span class="rounded-full px-2.5 py-1 text-xs font-normal text-gray-600 ring-1 ring-gray-400">
                           {collaborator}
                         </span>
                       {/each}

@@ -48,7 +48,9 @@
         {/if}
       </div>
     </div>
-    <div class="w-full md:flex-auto mt-8 md:pt-24 md:pb-12 group-even:lg:pl-20 group-even:lg:pr-8 group-odd:lg:pr-20 group-odd:lg:pl-8">
+    <div
+      class="w-full md:flex-auto mt-8 md:pt-24 md:pb-12 group-even:lg:pl-20 group-even:lg:pr-8 group-odd:lg:pr-20 group-odd:lg:pl-8"
+    >
       <!--      <figure class="relative isolate pt-6 sm:pt-12">-->
       <blockquote
         class="hidden md:block text-xl font-semibold leading-7 {quote.highlight
