@@ -116,19 +116,23 @@
 
   <div class="mx-auto flex max-w-screen-xl flex-col gap-6 px-4 pb-16 sm:px-6 md:pb-24 lg:px-8">
     {#each listings as listing}
-      <div class="overflow-hidden rounded-3xl shadow-lg">
+      <!-- Whole card links to the detail page (like the references cards); the CTA below is a
+           visual-only span so we don't nest an <a> inside this <a>. -->
+      <a
+        href="jobs/{listing.slug}"
+        class="job-card group block overflow-hidden rounded-3xl shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
+      >
         <Block bind:content={listing.BasicJobInfo}>
           <div slot="columnCta" class="mt-8">
-            <a
-              href="jobs/{listing.slug}"
-              class="inline-flex items-center gap-x-1 rounded-full bg-black px-4 py-2 text-base font-medium text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+            <span
+              class="mehr-erfahren inline-flex items-center gap-x-1 rounded-full bg-black px-4 py-2 text-base font-medium text-white shadow-sm transition duration-300 group-hover:-translate-y-0.5 group-hover:shadow-[0_10px_24px_-8px_rgba(0,0,0,0.25)]"
             >
               Mehr erfahren
               <Icon src={Arrow} size="small" />
-            </a>
+            </span>
           </div>
         </Block>
-      </div>
+      </a>
     {/each}
   </div>
 </section>
@@ -149,3 +153,21 @@
 <!--</div>-->
 
 <FooterNoContact />
+
+<style lang="postcss">
+  /* Block wraps its content in an `overflow-hidden` box (for its collapse animation). The CTA
+     button sits flush at that box's bottom edge, so the button's soft hover shadow was clipped
+     there and read as a hard/angular edge. These job cards are never collapsed, so lifting that
+     clip lets the shadow fade out naturally. The card itself still clips (rounded corners) but the
+     button sits far enough from the card edges that its shadow is unaffected. */
+  .job-card :global(.overflow-hidden.max-h-infiniti) {
+    overflow: visible;
+  }
+
+  /* When the cursor is directly on the button (while already hovering the card), give it an
+     extra float on top of the card-level lift — a hint that the button itself is the link.
+     The `.job-card:hover .mehr-erfahren:hover` selector outranks the card-hover lift, so it wins. */
+  .job-card:hover .mehr-erfahren:hover {
+    @apply -translate-y-1.5 shadow-[0_16px_34px_-10px_rgba(0,0,0,0.3)];
+  }
+</style>

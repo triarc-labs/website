@@ -355,7 +355,7 @@
           </svg>
         </button>
       </div>
-      <nav class="flex-grow overflow-y-auto px-8 pb-12 pt-2">
+      <nav class="flex-grow overflow-y-auto px-8 pt-2 pb-[calc(3rem+env(safe-area-inset-bottom))]">
         {#each navItems as navItem, groupIndex}
           <div class="mobile-menu__group" style="--stagger: {groupIndex}">
             {#if navItem.type === 'link'}
@@ -504,7 +504,12 @@
 
   /* === Mobile fullscreen menu === */
   .mobile-menu {
-    @apply fixed inset-0 z-50;
+    @apply fixed inset-x-0 top-0 z-50;
+    /* Cover the full screen height, including the area behind the mobile browser chrome.
+       `inset-0` alone stops at the small viewport, leaving the gradient cut off at the bottom;
+       the large-viewport height (lvh) makes it run the whole screen height. */
+    height: 100vh;
+    height: 100lvh;
     visibility: hidden;
     transition: visibility 0s linear 450ms;
   }

@@ -23,6 +23,13 @@
   const pillarOrder = ['Strategie', 'Betrieb', 'Zukunft']
   let activeCategory: string | null = null
 
+  // Preserve the selected filter across back/forward navigation (e.g. returning from a
+  // project detail page via the browser back button). SvelteKit stores this in history state.
+  export const snapshot = {
+    capture: () => activeCategory,
+    restore: (value: string | null) => (activeCategory = value),
+  }
+
   $: categories = pillarOrder.filter((label) =>
     projects.some((project) => project.pillars.some((p) => p.name === label))
   )

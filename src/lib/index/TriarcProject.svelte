@@ -25,16 +25,22 @@
           <Icon size="medium" color={icon.iconColor} src={icon.iconSource} class="lg:w-11 lg:h-11 category-icon" />
         {/each}
       </div>
+      <!-- Title and lead share the same available width. `max-w-prose` is a ch-based cap that
+           scales with font size, so it made the large title far wider than the small lead; using
+           the column width keeps both consistent across every project. -->
       <div class="flex flex-col w-full">
         <div
-          class="max-w-prose hyphens-auto break-words text-4xl leading-tight md:text-5xl md:leading-tight text-white font-bold text-balance pb-4"
+          class="max-w-full hyphens-auto break-words text-4xl leading-tight md:text-5xl md:leading-tight text-white font-bold text-balance pb-4"
         >
           {project.title}
         </div>
-        <div class="max-w-prose hyphens-auto break-words text-lg text-white pb-4">
+        <div class="max-w-full hyphens-auto break-words text-lg text-white pb-4">
           {project.description}
         </div>
       </div>
+      <!-- Mirrors the icon column (+ gap) on the right so title & lead keep the same distance to
+           the screen edge on both sides. Auto-matches if the icon column width changes. -->
+      <div class="hidden lg:block lg:w-24 lg:flex-shrink-0" aria-hidden="true"></div>
     </div>
   </Container>
 </div>
