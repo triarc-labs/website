@@ -264,6 +264,12 @@
     <!-- eslint-disable-next-line svelte/no-at-html-tags -- Static JSON-LD -->
     {@html `<script type="application/ld+json">${breadcrumbJsonLd}</script` + '>'}
   {/if}
+  {#if menuOpen}
+    <!-- While the fullscreen menu is open, tint iOS Safari's chrome to match the gradient's
+         bottom edge (bg-gradient-to-tr starts bottom-left at blue-triarc-blended). Otherwise the
+         translucent bottom URL bar shows the page content behind it instead of the menu. -->
+    <meta name="theme-color" content="#004778" />
+  {/if}
 </svelte:head>
 
 <svelte:window on:keydown={onWindowKeydown} />
