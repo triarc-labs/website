@@ -4,7 +4,6 @@ import juniorDev from '$lib/assets/img/jobs/junior-dev.svg'
 import beHero from '$lib/assets/img/jobs/be_the_hero.svg'
 // import cloud from '$lib/assets/img/jobs/cloud_hosting.svg'
 import initiative from '$lib/assets/img/jobs/exploring.svg'
-import checklist from '$lib/assets/img/jobs/list.svg'
 // import sales from '$lib/assets/img/jobs/sales.svg'
 // import design from '$lib/assets/img/jobs/design.svg'
 // import office from '$lib/assets/img/jobs/office.svg'
@@ -14,33 +13,34 @@ import checklist from '$lib/assets/img/jobs/list.svg'
 export const JobPostings: JobPosting[] = [
   {
     content:
-      'Als Senior begleitest du Projekte vom Requirements-Engineering bis in den Betrieb. Du bist der Vermittler zwischen dem Kunden und deinen Entwickler-KollegInnen. Und du machst das nicht zum ersten Mal. ',
+      'Als Senior begleitest Du Projekte vom Requirements-Engineering bis in den Betrieb. Du bist der Vermittler zwischen dem Kunden und Deinen Entwickler-KollegInnen. Und Du machst das nicht zum ersten Mal. ',
     claim: 'Senior Software Engineer',
     img: jobListingImage,
     open: true,
     responsibilities:
-      'sind so breit gefächert und abwechslungsreich wie die Arbeit, die dich bei uns erwartet: vom Design bis zur Lösungsfindung ist alles dabei, individuell angepasst auf unsere branchenübergreifenden Kunden. In unserem Team aus den qualifiziertesten Entwicklern profitierst du von unserer jahrelangen Erfahrung, und wir von deiner. Durch die agile Entwicklung nach SCRUM arbeiten wir effizient und motiviert. Du arbeitest an Web- und Mobile-Anwendungen (inkl. Backend) und wendest dabei Clean Code an. Du bist vertraut mit unserem aktuell eingesetzten <a class="underline" href="/#technology">Stack</a>.',
+      'sind so breit gefächert und abwechslungsreich wie die Arbeit, die Dich bei uns erwartet: vom Design bis zur Lösungsfindung ist alles dabei, individuell angepasst auf unsere branchenübergreifenden Kunden. In unserem Team aus den qualifiziertesten Entwicklern profitierst Du von unserer jahrelangen Erfahrung, und wir von Deiner. Durch die agile Entwicklung nach SCRUM arbeiten wir effizient und motiviert. Du arbeitest an Web- und Mobile-Anwendungen (inkl. Backend) und wendest dabei Clean Code an. Du bist vertraut mit unserem aktuell eingesetzten <a class="underline" href="/#technology">Stack</a>.',
     skills: [
       'Leidenschaft für die Software Entwicklung',
       'Hochschulabschluss in Informatik (ETH/FH/vergleichbarer Leistungsnachweis)',
       'Hohe Methodenkompetenz und logisches, vernetztes Denken',
+      'Freude am aktiven Kundenkontakt und die Fähigkeit, zwischen Kunde und Technologie zu übersetzen',
       'Erfahrung mit KI (Einsatz während Software Entwicklung), sowie Umsetzung von Software mit KI-Funktionalitäten',
       'Spass an der Arbeit im Team',
       'Lösungsorientiertes Denken und Handeln',
       'Lernfähigkeit und kontinuierliche Weiterentwicklung',
-      'Gute Deutsch- sowie Englisch- Kenntnisse in Wort und Schrift',
+      'Sehr gute Deutsch- sowie gute Englisch-Kenntnisse in Wort und Schrift',
       '5 Jahre Erfahrung mit Angular, dotnet, Postgres, Docker und Kubernetes',
     ],
     experienceRequirements: '5 Jahre Erfahrung mit Angular, dotnet, Postgres, Docker und Kubernetes',
   },
   // {
   //   content:
-  //     'Wir sind Ingenieure: bestausgebildete und praxiserfahrene IT-Fachleute. Wir können, was wir tun. Und tun für unsere Kunden alles, was wir können. Willst du mittun?',
+  //     'Wir sind Ingenieure: bestausgebildete und praxiserfahrene IT-Fachleute. Wir können, was wir tun. Und tun für unsere Kunden alles, was wir können. Willst Du mittun?',
   //   claim: 'Professional Software Engineer',
   //   img: 'img/jobs/be_the_hero.svg',
   //   open: false,
   //   responsiblities:
-  //     'umfassen das ganze Spektrum vom Design bis zur Lösungsfindung, individuell angepasst auf unsere branchenübergreifenden Kunden. Das ist herausfordernd, ja, aber das bringt dich auch weiter. Und du bist nicht allein: In unserem Team aus den qualifiziertesten Entwicklern profitierst du von unserer jahrelangen Erfahrung. Durch die agile Entwicklung nach SCRUM arbeiten wir effizient und motiviert. Du arbeitest an Web- und Mobileanwendungen (inkl. Backend) und wendest dabei Clean Code an. Du bist vertraut mit unserem aktuell eingesetzten <a class="underline" href="/#technology">Stack</a>.',
+  //     'umfassen das ganze Spektrum vom Design bis zur Lösungsfindung, individuell angepasst auf unsere branchenübergreifenden Kunden. Das ist herausfordernd, ja, aber das bringt Dich auch weiter. Und Du bist nicht allein: In unserem Team aus den qualifiziertesten Entwicklern profitierst Du von unserer jahrelangen Erfahrung. Durch die agile Entwicklung nach SCRUM arbeiten wir effizient und motiviert. Du arbeitest an Web- und Mobileanwendungen (inkl. Backend) und wendest dabei Clean Code an. Du bist vertraut mit unserem aktuell eingesetzten <a class="underline" href="/#technology">Stack</a>.',
   //   skills: [
   //     'Leidenschaft für die Software Entwicklung',
   //     'Hochschulabschluss in Informatik (ETH/FH/vergleichbarer Leistungsnachweis)',
@@ -55,7 +55,7 @@ export const JobPostings: JobPosting[] = [
   // },
   // {
   //  content:
-  //     'Möchtest du die Teams im Infrastrukturbereich unterstützen und dich um unsere Kubernetes Cluster und unseren Tech-Stack kümmern? Dann fehlt dir jetzt nur noch ein Klick zum Glück: <a class="underline" href="mailto:development@triarc-labs.com">development@triarc-labs.com</a>',
+  //     'Möchtest Du die Teams im Infrastrukturbereich unterstützen und Dich um unsere Kubernetes Cluster und unseren Tech-Stack kümmern? Dann fehlt Dir jetzt nur noch ein Klick zum Glück: <a class="underline" href="mailto:development@triarc-labs.com">development@triarc-labs.com</a>',
   //   claim: 'DevOps / Operation Engineer',
   //   img: 'img/jobs/cloud_hosting.svg',
   //   open: false,
@@ -85,30 +85,46 @@ export const DetailedJobListings: {
     slug: 'junior',
     hasTechnologySection: true,
     BasicJobInfo: {
-      jobDetails: { currentlyHiring: false, jobName: 'Junior Software Engineer', jobPensum: '80-100%' },
+      jobDetails: { currentlyHiring: false, jobName: 'Junior Software Engineer', jobPensum: '60-100%' },
       title: 'Junior Software Engineer',
       content:
-        'Als Junior bist hast du bereits erste Erfahrungen in der Softwareentwicklung gesammelt. Du verstehst die Basics, kannst jedoch noch nicht viel praktische Erfahrung vorweisen. Du bist motiviert und begeistert dies zu ändern.',
+        'Als Junior bist hast Du bereits erste Erfahrungen in der Softwareentwicklung gesammelt. Du verstehst die Basics, kannst jedoch noch nicht viel praktische Erfahrung vorweisen. Du bist motiviert und begeistert dies zu ändern.',
       image: { src: juniorDev, alt: 'Junior Software Engineer' },
-      bulletPoints: [
-        'Erste Erfahrungen mit C# oder Java',
-        'Erste Erfahrungen im Bereich Web / Single Page Applications',
-      ],
-      collapsible: true,
-      collapsed: true,
+      compactPaddingY: true,
     },
     ExtendedJobInfo: {
-      title: 'Anforderungen',
-      content: 'Was erwarten wir konkret von dir?',
-      image: { src: checklist, alt: 'Requirements' },
-      bulletPoints: [
-        'Selbstständig in neue Technologien einarbeiten können',
-        'Einfache Features selbstständig umsetzen können',
-        'Entwicklungsworkflow befolgen',
-        'Verständnis für sinnvolles Testing',
-        'Verständnis für Objektorientierte Programmierung',
-        '"Sauberen“ Code schreiben können',
-        'In Meetings aktiv teilnehmen und Probleme ansprechen',
+      title: 'Das bringst Du mit',
+      content: 'Was erwarten wir konkret von Dir?',
+      bulletGroups: [
+        {
+          title: 'Technik & Arbeitsweise',
+          bulletPoints: [
+            'Du arbeitest Dich selbstständig in neue Technologien ein',
+            'Du setzt einfache Features eigenständig um',
+            'Du befolgst unseren Entwicklungsworkflow',
+            'Du verstehst objektorientierte Programmierung',
+            'Du bringst ein Verständnis für sinnvolles Testing mit',
+            'Du schreibst sauberen, verständlichen Code',
+          ],
+        },
+        {
+          title: 'Interesse',
+          bulletPoints: [
+            'Du bist interessiert und offen für Neues und hinterfragst bestehende Prozesse',
+            'Du siehst KI nicht als Bedrohung, sondern als spannende Herausforderung, die es zu meistern gilt',
+            'Du hast keine Angst vor dem Kundenkontakt und bringst Dich im Austausch mit dem Kunden ein',
+          ],
+        },
+        {
+          title: 'Zusammenarbeit',
+          bulletPoints: ['Du nimmst in Meetings aktiv teil und sprichst Probleme an'],
+        },
+        {
+          title: 'Kommunikation',
+          bulletPoints: [
+            'Sehr gute Deutschkenntnisse in Wort und Schrift – unsere Kunden sind lokal und sprechen Schweizerdeutsch',
+          ],
+        },
       ],
     },
   },
@@ -116,31 +132,50 @@ export const DetailedJobListings: {
     slug: 'professional',
     hasTechnologySection: true,
     BasicJobInfo: {
-      jobDetails: { currentlyHiring: false, jobName: 'Professional Software Engineer', jobPensum: '80-100%' },
+      jobDetails: { currentlyHiring: true, jobName: 'Professional Software Engineer', jobPensum: '60-100%' },
       title: 'Professional Software Engineer',
       content:
-        'Als Professional hast du bereits mehrjährige Erfahrung in Softwareentwicklungsprojekten. Dir fehlen jedoch noch das Know-How zu einigen Technologien in unserem Stack. Du bist selbstständig und übernimmst Verantwortung für deine Aufgaben.',
+        'Als Professional hast Du bereits mehrjährige Erfahrung in Softwareentwicklungsprojekten. Dir fehlen jedoch noch das Know-How zu einigen Technologien in unserem Stack. Du bist selbstständig, übernimmst Verantwortung für Deine Aufgaben und schätzt den direkten Austausch mit unseren Kunden.',
       image: { src: beHero, alt: 'Professional Software Engineer' },
-      bulletPoints: [
-        "Erfahrungen mit C# in der Entwicklung von API's",
-        'Erfahrungen im Bereich Web und Angular',
-        'Kenntnisse von Elasticsearch / Postgres / MongoDB von Vorteil',
-      ],
-      collapsible: true,
-      collapsed: true,
+      compactPaddingY: true,
     },
     ExtendedJobInfo: {
-      title: 'Anforderungen',
-      content: 'Was erwarten wir konkret von dir?',
-      image: { src: checklist, alt: 'Requirements' },
-      bulletPoints: [
-        'Architektonische Entscheidungen Nachvollziehen und Verstehen können',
-        'Probleme und Bugs in bekannten Projekten identifizieren und beheben können',
-        'Längerfristiges selbstständiges Arbeiten an komplizierteren Features',
-        'Verständnis für Datenmodellierung',
-        'Eigenständige Priorisierung der zugeteilten Aufgaben',
-        'Zugeteilte Aufgaben verstehen und möglichst termingerecht erledigen – oder über Verspätung informieren',
-        'FullStack Entwicklung mit C#, Typescript sowie Angular',
+      title: 'Das bringst Du mit',
+      content: 'Was erwarten wir konkret von Dir?',
+      bulletGroups: [
+        {
+          title: 'Technik & Architektur',
+          bulletPoints: [
+            'Du verstehst architektonische Entscheidungen und kannst sie nachvollziehen',
+            'Du identifizierst Probleme und Bugs in bestehenden Projekten und behebst sie',
+            'Du arbeitest längerfristig und selbstständig an komplexeren Features',
+            'Du verstehst Datenmodellierung',
+            'Du entwickelst Full-Stack mit C#, TypeScript und Angular',
+          ],
+        },
+        {
+          title: 'Interesse',
+          bulletPoints: [
+            'Du bist interessiert und offen für Neues und hinterfragst bestehende Prozesse',
+            'Du siehst KI nicht als Bedrohung, sondern als spannende Herausforderung, die es zu meistern gilt',
+            'Du hast keine Angst vor dem Kundenkontakt und agierst als technischer Vermittler',
+          ],
+        },
+        {
+          title: 'Zusammenarbeit & Arbeitsweise',
+          bulletPoints: [
+            'Du priorisierst Deine zugeteilten Aufgaben eigenständig',
+            'Du erledigst Aufgaben termingerecht – oder informierst frühzeitig über Verzögerungen',
+            'Du pflegst aktiven Kundenkontakt: Anforderungen aufnehmen, Lösungen verständlich erklären und Feedback einholen',
+            'Du übersetzt in der neuen Welt von KI und Vibecoding zwischen Kunde und Technologie',
+          ],
+        },
+        {
+          title: 'Kommunikation',
+          bulletPoints: [
+            'Sehr gute Deutschkenntnisse in Wort und Schrift – unsere Kunden sind lokal und sprechen Schweizerdeutsch',
+          ],
+        },
       ],
     },
   },
@@ -151,31 +186,69 @@ export const DetailedJobListings: {
       jobDetails: { currentlyHiring: true, jobName: 'Senior Software Engineer', jobPensum: '60-100%' },
       title: 'Senior Software Engineer',
       content:
-        'Als Senior begleitest du Projekte vom Requirements-Engineering bis in den Betrieb. Du bist der Vermittler zwischen dem Kunden und deinen Entwickler-KollegInnen. Und du machst das nicht zum ersten Mal. Du kannst im Team unterstützen, wo es an was fehlt.',
+        'Als Senior begleitest Du Projekte vom Requirements-Engineering bis in den Betrieb. Du bist der Vermittler zwischen dem Kunden und Deinen Entwickler-KollegInnen. Und Du machst das nicht zum ersten Mal. Du kannst im Team unterstützen, wo es an was fehlt.',
       image: { src: jobListingImage, alt: 'Senior Software Engineer' },
-      bulletPoints: [
-        "Erfahrungen mit C# in der Entwicklung von API's",
-        'Erfahrungen im Bereich Web und Angular',
-        'Erfahrungen mit Elasticsearch / Postgres / MongoDB',
-        'Erfahrungen Docker / Kubernetes / Gitlab CI',
-        'Erfahrungen mit KI (Einsatz und Entwicklung)',
-      ],
-      collapsible: true,
-      collapsed: true,
+      compactPaddingY: true,
     },
     ExtendedJobInfo: {
-      title: 'Anforderungen',
-      content: 'Was erwarten wir konkret von dir?',
-      image: { src: checklist, alt: 'Requirements' },
+      title: 'Das bringst Du mit',
+      content: 'Was erwarten wir konkret von Dir?',
+      bulletGroups: [
+        {
+          title: 'Technik & Architektur',
+          bulletPoints: [
+            'Du verstehst komplexe Anforderungen und konzipierst die passenden Softwarelösungen dazu',
+            'Du evaluierst neue Technologien und bindest sie ein',
+            'Du verstehst verschiedene Programmierstrategien und setzt sie passend ein',
+            'Du bringst mehrjahrige Erfahrung aus der Software Entwicklung mit',
+            'Du kennst Dich im eingesetzten oder ähnlichen Techstack aus und kannst darin Full-Stack entwickeln',
+          ],
+        },
+        {
+          title: 'Interesse',
+          bulletPoints: [
+            'Du bist interessiert und offen für Neues und hinterfragst bestehende Prozesse',
+            'Du siehst KI nicht als Bedrohung, sondern als spannende Herausforderung, die es zu meistern gilt',
+            'Du hast keine Angst vor dem Kundenkontakt und agierst als technischer Vermittler',
+          ],
+        },
+        {
+          title: 'Zusammenarbeit & Kunde',
+          bulletPoints: [
+            'Du übernimmst die technische Verantwortung und kannst diese kommunizieren',
+            'Du begleitest Kunden vom Requirements-Engineering bis in den Betrieb',
+            'Du übersetzt in der neuen Welt von KI und Vibecoding zwischen Kunde und Technologie',
+          ],
+        },
+        {
+          title: 'Kommunikation',
+          bulletPoints: [
+            'Sehr gute Deutschkenntnisse in Wort und Schrift – unsere Kunden sind lokal und sprechen Schweizerdeutsch',
+          ],
+        },
+      ],
+    },
+  },
+  {
+    slug: 'initiativ',
+    hasTechnologySection: true,
+    BasicJobInfo: {
+      jobDetails: { currentlyHiring: true, jobName: 'Initiativbewerbung', hideMeta: true },
+      title: 'Initiativ bewerben',
+      content:
+        'Auch wenn wir derzeit keine offenen Stellen ausgeschrieben haben oder keine der derzeitigen Stellen Deine Fähigkeiten passend abbildet, sind wir stets an talentierten und motivierten Bewerbern interessiert. Wenn Du der Meinung bist, dass Deine Fähigkeiten und Erfahrungen gut zu uns passen, freuen wir uns auf Deine Initiativbewerbung.',
+      image: { src: initiative, alt: 'Initiativbewerbung' },
+      compactPaddingY: true,
+    },
+    ExtendedJobInfo: {
+      title: 'Das bringst Du mit',
+      content: 'Was erwarten wir konkret von Dir?',
       bulletPoints: [
-        'Komplexe Anforderungen verstehen und entsprechende Softwarelösungen konzipieren und umsetzen können',
-        'Gutes Verständnis für die eingesetzte Toolchain entwickeln und diese erweitern können',
-        'Erfahrung mit KI (Einsatz während Software Entwicklung), sowie Umsetzung von Software mit KI-Funktionalitäten',
-        'Aktive Teilnahme bei der Planung von neuen Projekten',
-        'Gutes Verständnis für verteilte Systemarchitekturen',
-        'Neue Technologien evaluieren und einbinden',
-        'Verschiedene Programmierstrategien verstehen und passend einsetzen können',
-        'Als gleichwertiges Teammitglied wahrgenommen werden',
+        'Du bringst Leidenschaft für die Softwareentwicklung mit',
+        'Du hast Spass an der Arbeit im Team',
+        'Du bist lernfähig und entwickelst Dich kontinuierlich weiter',
+        'Du siehst KI nicht als Bedrohung, sondern als spannende Herausforderung, die es zu meistern gilt',
+        'Du hast gute Deutsch- sowie Englischkenntnisse in Wort und Schrift',
       ],
     },
   },
@@ -190,7 +263,7 @@ export const DetailedJobListings: {
   //     },
   //     title: '(Dev)Ops Engineer',
   //     content:
-  //       'Als (Dev)Ops betreust du unsere Projekte im Unterhalt. Du reagierst auf Meldungen in unserem Monitoringsystem und verbesserst dieses laufend. Du hilfst im Team Infrastrukturen in unserer Projekte aufzubauen und diese zu automatisieren. Dein Ziel ist eine stabile Umgebung für die Entwicklung und den Kunden zu liefern.',
+  //       'Als (Dev)Ops betreust Du unsere Projekte im Unterhalt. Du reagierst auf Meldungen in unserem Monitoringsystem und verbesserst dieses laufend. Du hilfst im Team Infrastrukturen in unserer Projekte aufzubauen und diese zu automatisieren. Dein Ziel ist eine stabile Umgebung für die Entwicklung und den Kunden zu liefern.',
   //
   //     image: { src: cloud, alt: 'Dev/Ops Engineer' },
   //     bulletPoints: [
@@ -203,7 +276,7 @@ export const DetailedJobListings: {
   //   },
   //   ExtendedJobInfo: {
   //     title: 'Anforderungen',
-  //     content: 'Was erwarten wir konkret von dir?',
+  //     content: 'Was erwarten wir konkret von Dir?',
   //     image: { src: checklist, alt: 'Requirements' },
   //     bulletPoints: [
   //       'Leidenschaft für die Software Entwicklung',
@@ -227,7 +300,7 @@ export const DetailedJobListings: {
   //     },
   //     title: 'Technical Sales',
   //     content:
-  //       'Als (Dev)Ops betreust du unsere Projekte im Unterhalt. Du reagierst auf Meldungen in unserem Monitoringsystem und verbesserst dieses laufend. Du hilfst im Team Infrastrukturen in unserer Projekte aufzubauen und diese zu automatisieren. Dein Ziel ist eine stabile Umgebung für die Entwicklung und den Kunden zu liefern.',
+  //       'Als (Dev)Ops betreust Du unsere Projekte im Unterhalt. Du reagierst auf Meldungen in unserem Monitoringsystem und verbesserst dieses laufend. Du hilfst im Team Infrastrukturen in unserer Projekte aufzubauen und diese zu automatisieren. Dein Ziel ist eine stabile Umgebung für die Entwicklung und den Kunden zu liefern.',
   //
   //     image: { src: sales, alt: 'Dev/Ops Engineer' },
   //     bulletPoints: ['Lorem Ipsum', 'Lorem Ipsum', 'Lorem Ipsum'],
@@ -236,7 +309,7 @@ export const DetailedJobListings: {
   //   },
   //   ExtendedJobInfo: {
   //     title: 'Anforderungen',
-  //     content: 'Was erwarten wir konkret von dir?',
+  //     content: 'Was erwarten wir konkret von Dir?',
   //     image: { src: checklist, alt: 'Requirements' },
   //     bulletPoints: [
   //       'Abschluss in Informatik',
@@ -260,7 +333,7 @@ export const DetailedJobListings: {
   //     },
   //     title: 'UI/UX Designer',
   //     content:
-  //       'Du arbeitest eng mit Kunden zusammen, um Projektanforderungen zu sammeln und aufzubereiten. Du entwickelst Designideen und visualisierst diese durch Storyboards, Prozessabläufe und Seitenübersichten. Dabei gestaltest du grafische Benutzeroberflächen für Mobile- und Web-Anwendungen, erstellst UI-Konzepte und Prototypen und schaffst originelle Grafiken. Zudem identifizierst und behebst du UX-Probleme in bestehenden Projekten und setzt Stilstandards für Schriftarten, Farben und Bilder um.',
+  //       'Du arbeitest eng mit Kunden zusammen, um Projektanforderungen zu sammeln und aufzubereiten. Du entwickelst Designideen und visualisierst diese durch Storyboards, Prozessabläufe und Seitenübersichten. Dabei gestaltest Du grafische Benutzeroberflächen für Mobile- und Web-Anwendungen, erstellst UI-Konzepte und Prototypen und schaffst originelle Grafiken. Zudem identifizierst und behebst Du UX-Probleme in bestehenden Projekten und setzt Stilstandards für Schriftarten, Farben und Bilder um.',
   //     image: { src: design, alt: 'Dev/Ops Engineer' },
   //     bulletPoints: ['Lorem Ipsum', 'Lorem Ipsum', 'Lorem Ipsum'],
   //     collapsible: true,
@@ -268,7 +341,7 @@ export const DetailedJobListings: {
   //   },
   //   ExtendedJobInfo: {
   //     title: 'Anforderungen',
-  //     content: 'Was erwarten wir konkret von dir?',
+  //     content: 'Was erwarten wir konkret von Dir?',
   //     image: { src: checklist, alt: 'Requirements' },
   //     bulletPoints: [
   //       'Nachgewiesene Berufserfahrung als UI/UX Designer oder ähnlicher Funktion',
@@ -291,7 +364,7 @@ export const DetailedJobListings: {
   //     },
   //     title: 'Projektmanager<br/>',
   //     content:
-  //       'Du übernimmst die Verantwortung für Softwareprojekte, von der Kundenvision bis zum Go-Live. Du identifizierst und managst Anforderungen, erstellst Angebote und führst Verkaufsgespräche zur Projektakquisition. Dabei planst du Ressourcen und Zeiten, führst agile Teams und coachst sie regelmässig. Zudem organisierst und leitest du Meetings, pflegst Kundenbeziehungen und kümmerst dich um die Koordination von Wartungsarbeiten sowie das Eskalationsmanagement bei Problemen.',
+  //       'Du übernimmst die Verantwortung für Softwareprojekte, von der Kundenvision bis zum Go-Live. Du identifizierst und managst Anforderungen, erstellst Angebote und führst Verkaufsgespräche zur Projektakquisition. Dabei planst Du Ressourcen und Zeiten, führst agile Teams und coachst sie regelmässig. Zudem organisierst und leitest Du Meetings, pflegst Kundenbeziehungen und kümmerst Dich um die Koordination von Wartungsarbeiten sowie das Eskalationsmanagement bei Problemen.',
   //     image: { src: projectlead, alt: 'Dev/Ops Engineer' },
   //     bulletPoints: ['Lorem Ipsum', 'Lorem Ipsum', 'Lorem Ipsum'],
   //     collapsible: true,
@@ -299,7 +372,7 @@ export const DetailedJobListings: {
   //   },
   //   ExtendedJobInfo: {
   //     title: 'Anforderungen',
-  //     content: 'Was erwarten wir konkret von dir?',
+  //     content: 'Was erwarten wir konkret von Dir?',
   //     image: { src: checklist, alt: 'Requirements' },
   //     bulletPoints: [
   //       'Hochschulabschluss in Informatik (BSc)',
@@ -308,8 +381,8 @@ export const DetailedJobListings: {
   //       'Du handelst und denkst lösungsorientiert und strukturiert',
   //       'Du arbeitest gerne im Team und im direkten Kontakt mit Kunden',
   //       'Du gehst Konflikten nicht aus dem Weg, sondern klärst sie auf',
-  //       'Du bist interessiert an deiner kontinuierlichen Weiterentwicklung - Priorisieren und einen kühlen Kopf zu bewahren liegt dir',
-  //       'Du vertiefst dich gerne in die Details von Anforderungsspezifikationen für Softwarefeatures',
+  //       'Du bist interessiert an Deiner kontinuierlichen Weiterentwicklung - Priorisieren und einen kühlen Kopf zu bewahren liegt Dir',
+  //       'Du vertiefst Dich gerne in die Details von Anforderungsspezifikationen für Softwarefeatures',
   //       'Du hast ein Flair dafür, dem Kunden weiterführende Digitalisierungspotenziale aufzuzeigen',
   //       'Du bist verantwortungsbewusst, sehr selbstständig und sorgfältig',
   //       'Du hast sehr gute Deutsch- und Englisch-Kenntnisse',
@@ -327,7 +400,7 @@ export const DetailedJobListings: {
   //     },
   //     title: 'Office Manager',
   //     content:
-  //       'Du kümmerst dich um das Office- und Materialmanagement, organisierst Reparaturen und betreust unser Reinigungspersonal sowie Gärtner. Du unterstützt in der Buchhaltung, indem du Rechnungen prüfst und Spesen sammelst. Im HR-Bereich koordinierst du Stellenausschreibungen, organisierst den Onboardingprozess und bist Ansprechpartner für Mitarbeiter. Zudem planst du Events und unterstützt die Geschäftsleitung bei administrativen Aufgaben und der Koordination von Meetings.',
+  //       'Du kümmerst Dich um das Office- und Materialmanagement, organisierst Reparaturen und betreust unser Reinigungspersonal sowie Gärtner. Du unterstützt in der Buchhaltung, indem Du Rechnungen prüfst und Spesen sammelst. Im HR-Bereich koordinierst Du Stellenausschreibungen, organisierst den Onboardingprozess und bist Ansprechpartner für Mitarbeiter. Zudem planst Du Events und unterstützt die Geschäftsleitung bei administrativen Aufgaben und der Koordination von Meetings.',
   //     image: { src: office, alt: 'Dev/Ops Engineer' },
   //     bulletPoints: ['Lorem Ipsum', 'Lorem Ipsum', 'Lorem Ipsum'],
   //     collapsible: true,
@@ -335,14 +408,14 @@ export const DetailedJobListings: {
   //   },
   //   ExtendedJobInfo: {
   //     title: 'Anforderungen',
-  //     content: 'Was erwarten wir konkret von dir?',
+  //     content: 'Was erwarten wir konkret von Dir?',
   //     image: { src: checklist, alt: 'Requirements' },
   //     bulletPoints: [
   //       'Mindestens 3 Jahre Erfahrung in einer ähnlichen Funktion',
   //       'Du hast eine kaufmännische Grundausbildung oder ähnliches',
-  //       'Du arbeitest gern digital, d.h. neben der Officepalette hast Du keine Berührungsängste, dich in digitale Tools einzuarbeiten und diese anzuwenden',
+  //       'Du arbeitest gern digital, d.h. neben der Officepalette hast Du keine Berührungsängste, Dich in digitale Tools einzuarbeiten und diese anzuwenden',
   //       'Du bist offen, hilfsbereit und kommunikativ',
-  //       'Du hast deine Todoliste im Griff',
+  //       'Du hast Deine Todoliste im Griff',
   //       'Du bist verantwortungsbewusst, sehr selbstständig und sorgfältig',
   //       'Du arbeitest gerne in einem flexiblen und dynamischen Umfeld',
   //       'Du hast sehr gute Deutsch- und Englisch-Kenntnisse',
@@ -354,18 +427,18 @@ export const DetailedJobListings: {
 // //TODO: Add Initiativbewerbung, PL, Sales
 // export const JobListings: BlockContent[] = [
 //   {
-//     jobDetails: { currentlyHiring: false, jobName: 'Junior Software Engineer', jobPensum: '80-100%' },
+//     jobDetails: { currentlyHiring: false, jobName: 'Junior Software Engineer', jobPensum: '60-100%' },
 //     title: 'Junior Software Engineer',
 //     content:
-//       'Als Junior bist hast du bereits erste Erfahrungen in der Softwareentwicklung gesammelt. Du verstehst die Basics, kannst jedoch noch nicht viel praktische Erfahrung vorweisen. Du bist motiviert und begeistert dies zu ändern.',
+//       'Als Junior bist hast Du bereits erste Erfahrungen in der Softwareentwicklung gesammelt. Du verstehst die Basics, kannst jedoch noch nicht viel praktische Erfahrung vorweisen. Du bist motiviert und begeistert dies zu ändern.',
 //     image: { src: juniorDev, alt: 'Junior Software Engineer' },
 //     bulletPoints: ['Erste Erfahrungen mit C# oder Java', 'Erste Erfahrungen im Bereich Web / Single Page Applications'],
 //   },
 //   {
-//     jobDetails: { currentlyHiring: false, slug: 'professional', jobName: 'Professional Software Engineer' },
+//     jobDetails: { currentlyHiring: true, slug: 'professional', jobName: 'Professional Software Engineer' },
 //     title: 'Professional Software Engineer',
 //     content:
-//       'Als Professional hast du bereits mehrjährige Erfahrung in Softwareentwicklungsprojekten. Dir fehlen jedoch noch das Know-How zu einigen Technologien in unserem Stack. Du bist selbstständig und übernimmst Verantwortung für deine Aufgaben.',
+//       'Als Professional hast Du bereits mehrjährige Erfahrung in Softwareentwicklungsprojekten. Dir fehlen jedoch noch das Know-How zu einigen Technologien in unserem Stack. Du bist selbstständig, übernimmst Verantwortung für Deine Aufgaben.',
 //     image: { src: beHero, alt: 'Professional Software Engineer' },
 //     bulletPoints: [
 //       "Erfahrungen mit C# in der Entwicklung von API's",
@@ -377,7 +450,7 @@ export const DetailedJobListings: {
 //     jobDetails: { currentlyHiring: true, slug: 'senior', jobName: 'Senior Software Engineer' },
 //     title: 'Senior Software Engineer',
 //     content:
-//       'Als Senior begleitest du Projekte vom Requirements-Engineering bis in den Betrieb. Du bist der Vermittler zwischen dem Kunden und deinen Entwickler-KollegInnen. Und du machst das nicht zum ersten Mal. Du kannst im Team unterstützen, wo es an was fehlt.',
+//       'Als Senior begleitest Du Projekte vom Requirements-Engineering bis in den Betrieb. Du bist der Vermittler zwischen dem Kunden und Deinen Entwickler-KollegInnen. Und Du machst das nicht zum ersten Mal. Du kannst im Team unterstützen, wo es an was fehlt.',
 //     image: { src: jobListingImage, alt: 'Senior Software Engineer' },
 //     bulletPoints: [
 //       "Erfahrungen mit C# in der Entwicklung von API's",
@@ -394,7 +467,7 @@ export const DetailedJobListings: {
 //     },
 //     title: '(Dev)Ops Engineer',
 //     content:
-//       'Als (Dev)Ops betreust du unsere Projekte im Unterhalt. Du reagierst auf Meldungen in unserem Monitoringsystem und verbesserst dieses laufend. Du hilfst im Team Infrastrukturen in unserer Projekte aufzubauen und diese zu automatisieren. Dein Ziel ist eine stabile Umgebung für die Entwicklung und den Kunden zu liefern.',
+//       'Als (Dev)Ops betreust Du unsere Projekte im Unterhalt. Du reagierst auf Meldungen in unserem Monitoringsystem und verbesserst dieses laufend. Du hilfst im Team Infrastrukturen in unserer Projekte aufzubauen und diese zu automatisieren. Dein Ziel ist eine stabile Umgebung für die Entwicklung und den Kunden zu liefern.',
 //
 //     image: { src: cloud, alt: 'Dev/Ops Engineer' },
 //     bulletPoints: [
@@ -404,17 +477,3 @@ export const DetailedJobListings: {
 //     ],
 //   },
 // ]
-
-export const Initiativbewerbung: BlockContent = {
-  title: 'Initiativ bewerben',
-  content:
-    'Auch wenn wir derzeit keine offenen Stellen ausgeschrieben haben oder keine der derzeitigen Stellen deine Fähigkeiten passend abbildet, sind wir stets an talentierten und motivierten Bewerbern interessiert. Wenn du der Meinung bist, dass deine Fähigkeiten und Erfahrungen gut zu uns passen, freuen wir uns auf deine Initiativbewerbung.',
-
-  image: { src: initiative, alt: 'Initiativbewerbung' },
-  bulletPoints: [
-    'Spass an der Arbeit im Team',
-    'Lernfähigkeit und kontinuierliche Weiterentwicklung',
-    'Gute Deutsch- sowie Englisch- Kenntnisse in Wort und Schrift',
-    'Leidenschaft für die Software Entwicklung',
-  ],
-}

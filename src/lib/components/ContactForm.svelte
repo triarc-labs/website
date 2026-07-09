@@ -36,11 +36,11 @@
   }
 </script>
 
-<div class="bg-gray-100 flex-grow" id="contactform">
+<div class="bg-white flex-grow" id="contactform">
   <Container>
     <div class="py-16">
       <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">Kontaktformular</h2>
-      <h3 class="text-lg mt-3 font-medium text-gray-500">Interessiert? Schreib uns eine Nachricht</h3>
+      <h3 class="text-lg mt-3 font-medium text-black">Interessiert? Schreiben Sie uns eine Nachricht</h3>
       <form action="#" method="POST" class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
         <div class="sm:col-span-2">
           <label for="subject" class="block text-sm font-medium text-gray-900">Betreff</label>
@@ -142,7 +142,7 @@
             on:click={send}
             disabled={sending || !firstName || !lastName || !subject || !message}
             type="button"
-            class="mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-blue-triarc disabled:bg-gray-500 px-6 py-3 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2 sm:w-auto"
+            class="mt-4 inline-flex items-center justify-center gap-x-1 rounded-full bg-black px-4 py-2 text-base font-medium text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg disabled:cursor-not-allowed disabled:bg-gray-400 disabled:hover:translate-y-0 disabled:hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2"
           >
             {#if sending}
               <svg
@@ -174,6 +174,13 @@
               >
             {:else}
               Absenden
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"
+                />
+              </svg>
             {/if}
           </button>
         </div>

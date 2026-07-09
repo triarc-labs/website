@@ -9,6 +9,16 @@ body {
   font-family: 'Lexend', sans-serif;
 }
 
+/* Project sub-page body text (prose-custom) aligns left with the header text:
+   flush-left below lg (where the header stacks the icon above the text), and
+   offset to sit under the header text once the icon moves into the left gutter
+   at lg+. Images keep their own full-width/centered layout. */
+@media (min-width: 1024px) {
+  .prose-custom :is(h2, p, ul, ol) {
+    margin-left: 120px;
+  }
+}
+
 .plyr {
   --plyr-color-main: #c8102e;
   --plyr-video-control-background-hover: #c8102e;

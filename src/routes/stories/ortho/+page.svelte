@@ -5,6 +5,8 @@
   import applicationIPadViewImage from '$lib/assets/img/stories/ortho/application-iPad-view-1080.webp'
   import orthoLogo from '$lib/assets/img/stories/ortho/ortho-logo.png'
   import orthoTeamImage from '$lib/assets/img/stories/ortho/ortho-team.jpg'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { storiesMetadata } from '$lib/content/triarc-page-metadata'
   let scanBoxes = {
     image: scanBoxesImage,
     imageAlt: 'scan boxes',
@@ -22,6 +24,8 @@
     imageAlt: 'application close up view',
   }
 </script>
+
+<MetaHead pageMetadata={storiesMetadata}></MetaHead>
 
 <svelte:head>
   <title>Success stories - triarc-labs</title>
@@ -195,7 +199,7 @@
       </div>
       <div class="relative text-base py-4 max-w-prose mx-auto lg:max-w-5xl lg:mx-0 lg:pr-72">
         <p class="text-lg text-gray-500">
-          «Dabei haben wir 1:1 mitbekommen, wieviel Kreativität, Erfahrung und Engagement bei der Umsetzung
+          «Dabei haben wir 1:1 mitbekommen, wie viel Kreativität, Erfahrung und Engagement bei der Umsetzung
           unterschiedlichster Anforderungen eingeflossen sind. Mit ein Grund dafür ist sicherlich, dass triarc-labs
           inhabergeführt ist.»
         </p>

@@ -3,7 +3,8 @@ import type { BlockContent } from '$lib/components/TypeDefinitions'
 export const ourBenefits: BlockContent = {
   collapsible: false,
   collapsed: false,
-  title: 'Was wir dir bieten',
+  background: '!bg-white',
+  title: 'Was wir Dir bieten',
   content:
     'Wir sind eine Software-Boutique im Herzen von Zürich, entwickeln leidenschaftlich gerne Software und sind immer auf der Suche nach neuen Talenten die uns ergänzen.',
   cards: [
@@ -15,7 +16,7 @@ export const ourBenefits: BlockContent = {
     {
       title: 'Erfolgsbeteiligung',
       content:
-        'Du trägst massgeblich zum Erfolg bei und sollst dafür auch belohnt werden. Ein grosser Teil des Gewinns wird quartalsweise an die Mitarbeiter ausgeschüttet',
+        'Du trägst massgeblich zum Erfolg bei und sollst dafür auch belohnt werden. Ein grosser Teil des Gewinns wird jährlich an die Mitarbeiter ausgeschüttet',
     },
     {
       title: 'Coaching',
@@ -30,12 +31,12 @@ export const ourBenefits: BlockContent = {
     {
       title: 'Transparenz für alle',
       content:
-        'Alle Löhne werden offen kommuniziert. Es gibt keine individuellen Löhne. Die Löhne richten sich nach deiner Stufe im Trackeesystem. Für die höchste Stufe gibt’s aktuell 96k zuzgl. Bonus von 8 - 16k CHF.',
+        'Alle Löhne werden offen kommuniziert. Es gibt keine individuellen Löhne. Die Löhne richten sich nach Deiner Stufe im Trackeesystem. Für Seniors gibt’s aktuell 104k zuzgl. Jahresbonus.',
     },
     {
       title: 'Office Jungle',
       content:
-        'Unser Office direkt am Bahnhof Hardbrücke ist eine Oase mitten in der Stadt. Über 100 Pflanzen sorgen für frische Luft und einen zauberhaften Hintergrund in deinen Teams-Calls',
+        'Unser Office direkt am Bahnhof Hardbrücke ist eine Oase mitten in der Stadt. Über 100 Pflanzen sorgen für frische Luft und einen zauberhaften Hintergrund in Deinen Teams-Calls',
     },
 
     // {
@@ -46,17 +47,17 @@ export const ourBenefits: BlockContent = {
     {
       title: 'Home-Office',
       content:
-        'Arbeite von zuhause aus, wenn du willst. Wieso auch nicht? Wir arbeiten so oder so komplett digital zusammen. Unsere Weisung: Lass dich min. 1 Mal pro Woche im Office blicken (ab 80% zweimal). Guter Kaffee, gute Gesellschaft, Dschungel und Gym bekommst du aber nur im Büro',
+        'Arbeite von zuhause aus, wenn Du willst. Wieso auch nicht? Wir arbeiten so oder so komplett digital zusammen. Unsere Weisung: Lass Dich min. 1 Mal pro Woche im Office blicken (ab 80% zweimal). Guter Kaffee, gute Gesellschaft, Dschungel und Gym bekommst Du aber nur im Büro',
     },
     {
       title: 'Hardware',
       content:
-        'Wähle das Setup, das zu dir passt. Nutze deine vorhandenen Skills in deinem OS. Egal ob Windows, macOS, PopOS oder Arch, du bist dein eigener Administrator sowie Support. Dazu gibt es deine Lieblingsmaus, Tastatur und Kopfhörer.',
+        'Wähle das Setup, das zu Dir passt. Nutze Deine vorhandenen Skills in Deinem OS. Egal ob Windows, macOS, PopOS oder Arch, Du bist Dein eigener Administrator sowie Support. Dazu gibt es Deine Lieblingsmaus, Tastatur und Kopfhörer.',
     },
     {
       title: 'Kaffee / Bar',
       content:
-        'Bediene dich an der triarc-Bar. Kaffee, Softdrinks, Bier und ein sortiertes Snack-Angebot warten auf deinen Zugriff. Darunter Sachen, die den Futterneid deiner Ernährungsberaterin wecken. Und für den Beerenhunger auch mal frische Früchtchen.',
+        'Bediene Dich an der triarc-Bar. Kaffee, Softdrinks, Bier und ein sortiertes Snack-Angebot warten auf Deinen Zugriff. Darunter Sachen, die den Futterneid Deiner Ernährungsberaterin wecken. Und für den Beerenhunger auch mal frische Früchtchen.',
     },
 
     {
@@ -67,7 +68,7 @@ export const ourBenefits: BlockContent = {
     {
       title: 'Office Gym',
       content:
-        'Rudere den Bug von der Seele. Pump dir frische Ideen ins Hirn. Stemm dich gegen Widerstand. Inhouse warten Blei und Matten auf Beschäftigung. Unser wöchentliche Gym Session mit Coach hilft dir die nötige Motivation zu finden.',
+        'Rudere den Bug von der Seele. Pump Dir frische Ideen ins Hirn. Stemm Dich gegen Widerstand. Inhouse warten Blei und Matten auf Beschäftigung. Unser wöchentliche Gym Session mit Coach hilft Dir die nötige Motivation zu finden.',
     },
     {
       title: 'Ein soziales Umfeld',

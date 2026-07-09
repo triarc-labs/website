@@ -7,6 +7,7 @@
   import StepsBlock from '$lib/components/BlockContentBlocks/StepsBlock.svelte'
   import CardsBlock from '$lib/components/BlockContentBlocks/CardsBlock.svelte'
   import BulletPointsBlock from '$lib/components/BlockContentBlocks/BulletPointsBlock.svelte'
+  import BulletGroupsBlock from '$lib/components/BlockContentBlocks/BulletGroupsBlock.svelte'
   import LinkBlock from '$lib/components/BlockContentBlocks/LinkBlock.svelte'
   import FooterBlock from '$lib/components/BlockContentBlocks/FooterBlock.svelte'
   import TextContentBlock from '$lib/components/BlockContentBlocks/TextContentBlock.svelte'
@@ -19,20 +20,38 @@
   import Testimonials from '$lib/index/Testimonials.svelte'
   export let content: BlockContent
   export let inline: boolean = false
+  // Lets the quote image overlap the following section (see QuoteBlock).
+  export let quoteOverlap: boolean = false
 </script>
 
 {#if content.quote}
-  <QuoteBlock bind:quote={content.quote} />
+  <QuoteBlock bind:quote={content.quote} overlap={quoteOverlap} />
 {/if}
 
 {#if content.title}
-  <div class="alternating md:min-h-0 group">
-    <Container size={inline ? 'small' : 'wide'} class={inline ? 'ml-0' : ''}>
+  <div
+    class="alternating md:min-h-0 group {content.gradientBackground
+      ? 'bg-gradient-to-tr from-red-triarc-blended to-blue-triarc-blended'
+      : ''} {content.background ?? ''}"
+  >
+    <Container size={inline ? 'small' : 'wide'} class={content.collapsible ? '!px-6' : inline ? 'ml-0' : ''}>
       <div
         class="
-          {!content.collapsed ? 'pb-16 pt-8 md:py-32 items-center' : 'py-6'} flex-col
-          {content.collapsible ? 'md:flex-row' : 'group-odd:md:flex-row group-even:md:flex-row-reverse'}
-          {!content.collapsed && inline ? 'md:py-8' : ''} flex relative transition-all"
+          {!content.collapsed
+          ? `${
+              content.collapsible
+                ? 'py-6'
+                : content.noPaddingY
+                  ? ''
+                  : content.compactPaddingY
+                    ? 'py-8 md:py-12'
+                    : 'pb-16 pt-8 md:py-32'
+            } items-center`
+          : 'py-6'} flex-col
+          {content.collapsible || content.imageRight
+          ? 'md:flex-row'
+          : 'group-odd:md:flex-row group-even:md:flex-row-reverse'}
+          {!content.collapsed && inline && !content.noPaddingY ? 'md:py-8' : ''} flex relative transition-all"
       >
         <div
           role={content.collapsible ? 'button' : ''}
@@ -44,16 +63,20 @@
           {#if content.collapsible}
             <CollapsibleCaret bind:collapsed={content.collapsed} />
           {/if}
-          <div>
+          <div class={content.jobDetails ? 'min-w-0 grow' : ''}>
             {#if !content.jobDetails}
-              <TitleBlock bind:title={content.title} />
+              <TitleBlock
+                bind:title={content.title}
+                large={content.largeTitle}
+                light={content.gradientBackground || content.light}
+              />
             {/if}
             {#if content.jobDetails}
               <JobDetailsBlock bind:jobDetails={content.jobDetails} bind:title={content.title} />
             {/if}
             <div class="overflow-hidden {!content.collapsed ? 'max-h-infiniti' : 'max-h-0'}">
               {#if content.content}
-                <TextContentBlock bind:content={content.content} />
+                <TextContentBlock bind:content={content.content} light={content.light} />
               {/if}
               {#if content.blockquote}
                 <InlineQuoteBlock bind:quote={content.blockquote} />
@@ -75,17 +98,22 @@
                 <BulletPointsBlock bind:bulletPoints={content.bulletPoints} />
               {/if}
 
+              {#if content.bulletGroups}
+                <BulletGroupsBlock bind:bulletGroups={content.bulletGroups} light={content.light} />
+              {/if}
+
               {#if content.cards}
                 <CardsBlock bind:cards={content.cards} />
               {/if}
 
               {#if content.steps}
-                <StepsBlock bind:steps={content.steps} />
+                <StepsBlock bind:steps={content.steps} light={content.light} />
               {/if}
 
               {#if content.items}
                 <ItemsBlock bind:items={content.items} />
               {/if}
+              <slot name="columnCta" />
             </div>
           </div>
         </div>
@@ -120,7 +148,7 @@
 {/if}
 
 {#if content.video && !content.video.embedded}
-  <div class="bg-blue-triarc py-8">
+  <div class="bg-gradient-to-tr from-green-triarc-blended to-red-triarc-blended py-[92px]">
     <Container>
       <VideoBlock bind:content={content.video} />
     </Container>

@@ -1,7 +1,11 @@
 <script lang="ts">
   import teamCall from '$lib/assets/img/office/teamcall.png'
   import officeView from '$lib/assets/img/office/office_view.jpg'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { storiesMetadata } from '$lib/content/triarc-page-metadata'
 </script>
+
+<MetaHead pageMetadata={storiesMetadata}></MetaHead>
 
 <svelte:head>
   <title>Day at triarc - triarc-labs</title>

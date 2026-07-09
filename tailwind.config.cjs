@@ -10,14 +10,23 @@ module.exports = {
       colors: {
         'red-triarc': '#C8102E',
         'green-triarc': '#009639',
+        // Darkest green that keeps WCAG AA contrast (4.9:1) under white body text
+        'green-triarc-deep': '#00832f',
         'blue-triarc': '#0077c8',
+        'white-triarc': '#FFFFFF',
         'blue-triarc-light': '#3392d3',
+        'red-triarc-blended': '#780a1c',
+        'green-triarc-blended': '#005a2d',
+        'blue-triarc-blended': '#004778',
         'yellow-triarc': '#FFE74C',
         wood: '#D0AE84',
         'orange-ebl-base': 'rgba(254, 107, 21, 1)',
         'orange-ebl-medium': 'rgba(254, 107, 21, 0.6)',
         'orange-ebl-weak': 'rgba(254, 107, 21, 0.1)',
         'blue-ideesport-weak': 'rgba(30, 170, 230, 0.1)',
+      },
+      spacing: {
+        navbar: '64px',
       },
       maxWidth: {},
       maxHeight: {
@@ -32,6 +41,56 @@ module.exports = {
           '50%': { transform: 'rotate(3deg)' },
         },
       },
+      typography: (theme) => ({
+        custom: {
+          css: {
+            img: {
+              paddingTop: theme('spacing.8'),
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            },
+            h2: {
+              fontSize: theme('fontSize.lg'),
+              fontWeight: theme('fontWeight.bold'),
+              paddingTop: theme('spacing.8'),
+              paddingBottom: theme('spacing.3'),
+              lineHeight: theme('lineHeight.7'),
+              marginTop: 0,
+              marginBottom: 0,
+            },
+            p: {
+              fontSize: theme('fontSize.base'),
+              fontWeight: theme('fontWeight.normal'),
+              maxWidth: theme('maxWidth.prose'),
+            },
+            ul: {
+              listStyleType: 'disc',
+              paddingLeft: theme('spacing.5'),
+              marginTop: theme('spacing.4'),
+              marginBottom: theme('spacing.4'),
+              maxWidth: theme('maxWidth.prose'),
+            },
+            ol: {
+              listStyleType: 'decimal',
+              paddingLeft: theme('spacing.5'),
+              marginTop: theme('spacing.4'),
+              marginBottom: theme('spacing.4'),
+              maxWidth: theme('maxWidth.prose'),
+            },
+            li: {
+              marginTop: theme('spacing.2'),
+              marginBottom: theme('spacing.2'),
+              '&::marker': {
+                color: theme('colors.gray.900'), // Optional: customize bullet color
+              },
+            },
+            '.kg-card.kg-product-card': {
+              display: 'none',
+            },
+            // kg,
+          },
+        },
+      }),
     },
   },
   variants: {

@@ -9,7 +9,7 @@
 
 <div class="bg-white">
   <div class="text-center px-16 lg:px-8 py-8 max-w-4xl lg:mr-auto md:py-16 sm:px-6" id="partners">
-    <h2 class="text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl">Bereits Beratene Kunden</h2>
+    <h2 class="text-3xl leading-9 font-extrabold tracking-tight sm:text-4xl">Bereits beratene Kunden</h2>
     <div class="mt-6 grid grid-cols-2 md:grid-cols-3 lg:mt-8 customer-grid">
       <div class="customer-grid-row">
         <a

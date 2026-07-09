@@ -30,3 +30,6 @@ yarn.lock
 AGENTS.md
 
 
+
+# Local Claude Code session files
+.claude/settings.local.json

@@ -1,57 +1,44 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
+  import Landing from '$lib/index/Landing.svelte'
+  import LandingMission from '$lib/index/LandingMission.svelte'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { landingMetadata } from '$lib/content/triarc-page-metadata'
 
-  let navMenuElement: HTMLElement | null
-
-  function scrollToMenu() {
-    if (document.scrollingElement && navMenuElement) {
-      document.scrollingElement.scrollTo({
-        behavior: 'smooth',
-        top: navMenuElement.offsetTop,
-      })
-    }
-  }
-
-  onMount(() => {
-    navMenuElement = document.getElementById('nav-menu')
-  })
+  const organizationSchema = JSON.stringify(
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'triarc laboratories Ltd.',
+      url: 'https://triarc-labs.com',
+      logo: 'https://triarc-labs.com/triarc-logo-black.svg',
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+41 44 279 10 00',
+        contactType: 'sales',
+        email: 'development@triarc-labs.com',
+        availableLanguage: ['German', 'English'],
+      },
+      sameAs: ['https://www.linkedin.com/company/triarc-laboratories-ltd/'],
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Neue Hard 14',
+        addressLocality: 'Zürich',
+        addressRegion: 'ZH',
+        postalCode: '8005',
+        addressCountry: 'CH',
+      },
+    },
+    null,
+    2
+  )
 </script>
 
+<MetaHead pageMetadata={landingMetadata}></MetaHead>
+
 <svelte:head>
-  <title>Custom Softwareentwicklung Schweiz</title>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -- Static JSON-LD -->
+  {@html '<script type="application/ld+json">' + organizationSchema + '</script>'}
 </svelte:head>
 
-<div
-  class="bg-gray-100 relative bg-opacity-20 flex-col flex items-center min-h-screen w-full flex-grow justify-center intro"
->
-  <!--  <img src={logo} alt="triarc laboratories ltd" class="absolute top-8 left-8 right-8 z-20" width="242" height="42" />-->
-  <!--  <div class="absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-50 z-10" />-->
-  <video
-    autoplay
-    muted
-    loop
-    playsInline
-    class="object-cover absolute left-0 right-0 top-0 bottom-0 h-screen w-screen"
-    id="intro-video"
-  >
-    <source src="https://storage.googleapis.com/triarc-website/triarc-intro-1080-v2.mp4" type="video/mp4" />
-    <source src="https://storage.googleapis.com/triarc-website/triarc-intro-1080-v2.webm" type="video/webm" />
-  </video>
-  <button
-    aria-label="Zur Navigation scrollen"
-    class="animate-bounce z-40 lg:hidden absolute bottom-6 right-6 bg-white p-2 w-10 h-10 ring-1 ring-red-triarc/5 shadow-lg rounded-full flex items-center justify-center"
-    on:click={scrollToMenu}
-  >
-    <svg
-      class="w-6 h-6 text-blue-triarc"
-      fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-    </svg>
-  </button>
-</div>
+<Landing></Landing>
+<LandingMission></LandingMission>

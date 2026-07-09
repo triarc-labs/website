@@ -1,5 +1,31 @@
 import type { PageLoad } from './$types'
-import { mapPosts } from '../stories/utils'
+import type { LoadEvent } from '@sveltejs/kit'
+import { mapPosts } from '$lib/util/ghost-helpers'
+
+const GHOST_KEY = '93ed4aea5970c22ed269d4ec35'
+
+// Returns [] instead of throwing so the consulting page still renders when Ghost is unavailable.
+async function fetchPostsByTag(fetch: LoadEvent['fetch'], tag: string): Promise<MappedPost[]> {
+  try {
+    const response = await fetch(
+      `https://blog.triarc-labs.com/ghost/api/content/posts/?include=tags,authors&filter=tag:${tag}&key=${GHOST_KEY}&limit=3&order=published_at%20desc`
+    )
+
+    if (!response.ok) {
+      return []
+    }
+
+    const data = await response.json()
+
+    if (!data.posts) {
+      return []
+    }
+
+    return mapPosts(data)
+  } catch {
+    return []
+  }
+}
 
 export interface MappedPost {
   slug: string
@@ -30,51 +56,24 @@ export interface ConsultingPosts {
   coaching?: MappedPost[]
 }
 
-export const load: PageLoad = () => {
-  const postsBeratung = fetch(
-    `https://blog.triarc-labs.com/ghost/api/content/posts?include=tags,authors&key=93ed4aea5970c22ed269d4ec35&limit=3&order=published_at%20desc&filter=tag:getting-started&filter=tag:hash-consulting`
-  )
+export const load: PageLoad = async ({ fetch }) => {
+  const [consulting, potential, vision, changeManagement, coaching] = await Promise.all([
+    fetchPostsByTag(fetch, 'hash-consulting'),
+    fetchPostsByTag(fetch, 'hash-potential-workshop'),
+    fetchPostsByTag(fetch, 'hash-vision-workshop'),
+    fetchPostsByTag(fetch, 'hash-change-management'),
+    fetchPostsByTag(fetch, 'hash-coaching'),
+  ])
 
-  const postsPotential = fetch(
-    `https://blog.triarc-labs.com/ghost/api/content/posts?include=tags,authors&filter=tag:hash-potential-workshop&key=93ed4aea5970c22ed269d4ec35&limit=3&order=published_at%20desc`
-  )
+  const posts: ConsultingPosts = {
+    consulting,
+    potential,
+    vision,
+    changeManagement,
+    coaching,
+  }
 
-  const postsVision = fetch(
-    `https://blog.triarc-labs.com/ghost/api/content/posts?include=tags,authors&key=93ed4aea5970c22ed269d4ec35&limit=3&order=published_at%20desc&filter=tag:hash-vision-workshop`
-  )
-
-  const postsChangeManagement = fetch(
-    `https://blog.triarc-labs.com/ghost/api/content/posts?include=tags,authors&key=93ed4aea5970c22ed269d4ec35&limit=3&order=published_at%20desc&filter=tag:hash-change-management`
-  )
-
-  const postsCoaching = fetch(
-    `https://blog.triarc-labs.com/ghost/api/content/posts?include=tags,authors&key=93ed4aea5970c22ed269d4ec35&limit=3&order=published_at%20desc&filter=tag:hash-coaching`
-  )
-
-  return Promise.all([postsBeratung, postsPotential, postsVision, postsChangeManagement, postsCoaching]).then(
-    async ([postResponse, potentialResponse, visionResponse, changeManagementResponse, coachingResponse]) => {
-      const consultingData = await postResponse.json()
-      const potentialData = await potentialResponse.json()
-      const visionData = await visionResponse.json()
-      const changeManagementData = await changeManagementResponse.json()
-      const coachingData = await coachingResponse.json()
-
-      const consulting = mapPosts(consultingData)
-      const potential = mapPosts(potentialData)
-      const vision = mapPosts(visionData)
-      const changeManagement = mapPosts(changeManagementData)
-      const coaching = mapPosts(coachingData)
-
-      const posts: ConsultingPosts = {
-        consulting: consulting,
-        potential: potential,
-        vision: vision,
-        changeManagement: changeManagement,
-        coaching: coaching,
-      }
-      return {
-        posts,
-      }
-    }
-  )
+  return {
+    posts,
+  }
 }

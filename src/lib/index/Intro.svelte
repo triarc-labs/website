@@ -2,7 +2,7 @@
   let sloganList = [
     {
       content:
-        'Wir sind Ingenieure. Bestausgebildete und praxiserfahrene IT-Fachleute, die können, was sie tun. Und für Sie alles tun, was sie können.',
+        'Wir sind Ingenieure. Bestens ausgebildete und praxiserfahrene IT-Fachleute, die können, was sie tun. Und für Sie alles tun, was sie können.',
       color: 'bg-red-triarc',
       linkText: 'Digital Evolutionaries',
       href: '#aboutUs',

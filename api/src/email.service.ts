@@ -63,8 +63,11 @@ export class EmailService {
   async sendMail(data: ApplicationFormDto, attachments: Array<Express.Multer.File>) {
     // Gitlab Markdown needs double \n for proper Newlines
     const today = new Date()
-    const bucketFolder = `${encodeURIComponent(data.firstName)}_${encodeURIComponent(data.lastName)}_${today.getDate().toString().padStart(2, '0')}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getFullYear()}_${today.getHours().toString().padStart(2, '0')}-${today.getMinutes().toString().padStart(2, '0')}-${today.getSeconds().toString().padStart(2, '0')}`
-    const filenames = attachments.map((file) => encodeURIComponent(file.originalname)).join('\n')
+    // The folder is stored raw in GCS; only the URL gets percent-encoded (see handleAttachments).
+    // Pre-encoding it here would store a literal "%20" that no longer matches the decoded URL.
+    const safeName = `${data.firstName}_${data.lastName}`.replace(/\s+/g, '-')
+    const bucketFolder = `${safeName}_${today.getDate().toString().padStart(2, '0')}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getFullYear()}_${today.getHours().toString().padStart(2, '0')}-${today.getMinutes().toString().padStart(2, '0')}-${today.getSeconds().toString().padStart(2, '0')}`
+    const filenames = attachments.map((file) => file.originalname).join('\n')
     const attachmentLinks: GitlabLink[] = await this.handleAttachments(attachments, bucketFolder)
     const issueSubject = `${data.jobListing} - ${data.firstName} ${data.lastName}`
     const replySubject =
@@ -105,14 +108,8 @@ export class EmailService {
   private async handleAttachments(attachments: Array<Express.Multer.File>, bucketFolder: string) {
     const links: GitlabLink[] = []
     for (const file of attachments) {
-      await this.gStorage.uploadFile(
-        this.gStorage.getDefaultBucket(),
-        encodeURIComponent(file.originalname),
-        file.buffer,
-        bucketFolder
-      )
-      const fileURI = encodeURIComponent(file.originalname)
-      const fileUrl = `${gCloudBaseURL}${this.gStorage.getDefaultBucket()}/${bucketFolder}/${fileURI}`
+      await this.gStorage.uploadFile(this.gStorage.getDefaultBucket(), file.originalname, file.buffer, bucketFolder)
+      const fileUrl = `${gCloudBaseURL}${this.gStorage.getDefaultBucket()}/${this.encodePathSegment(bucketFolder)}/${this.encodePathSegment(file.originalname)}`
       const fileLink: GitlabLink = {
         title: file.originalname,
         url: fileUrl,
@@ -120,6 +117,14 @@ export class EmailService {
       links.push(fileLink)
     }
     return links
+  }
+
+  // encodeURIComponent leaves ! ' ( ) * unencoded; parentheses break Markdown links in the Gitlab issue
+  private encodePathSegment(segment: string) {
+    return encodeURIComponent(segment).replace(
+      /[!'()*]/g,
+      (char) => `%${char.charCodeAt(0).toString(16).toUpperCase()}`
+    )
   }
   private createResponseButtons(data: ApplicationFormDto, replySubject: string) {
     const subject = encodeURIComponent(replySubject)

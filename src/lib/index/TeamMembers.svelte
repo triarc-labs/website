@@ -5,7 +5,6 @@
   import elke from '$lib/assets/team/elke.jpg?format=webp;png&w=500&enhanced'
   import max from '$lib/assets/team/max.jpg?format=webp;png&w=500&enhanced'
   import iris from '$lib/assets/team/iris.jpg?format=webp;png&w=500&enhanced'
-  import michel from '$lib/assets/team/michel.jpg?format=webp;png&w=500&enhanced'
   import luka from '$lib/assets/team/luka.jpg?format=webp;png&w=500&enhanced'
   import till from '$lib/assets/team/till.jpg?format=webp;png&w=500&enhanced'
   import david from '$lib/assets/team/david.jpg?format=webp;png&w=500&enhanced'
@@ -72,15 +71,6 @@
       special: false,
       email: 'iris@triarc-labs.com',
       linkedIn: 'https://www.linkedin.com/in/iriszenegagliagloor/',
-    },
-    {
-      name: 'Michel Gabriel',
-      job: 'Software Developer',
-      nerdJob: 'Software Developer',
-      image: michel,
-      special: false,
-      email: 'michel@triarc-labs.com',
-      linkedIn: 'https://www.linkedin.com/in/michel-gabriel/',
     },
     {
       name: 'Luka Kramer',

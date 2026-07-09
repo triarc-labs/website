@@ -1,9 +1,11 @@
 <script lang="ts">
-  import Hero from '$lib/components/Hero.svelte'
+  import GradientHero from '$lib/components/GradientHero.svelte'
   import Container from '$lib/components/Container.svelte'
-  import heroImage from '$lib/assets/hero/Contact.jpg?width=300;600;1000;2000&format=webp&metadata&enhanced'
+  import FooterNoContact from '$lib/components/FooterNoContact.svelte'
   import iris from '$lib/assets/team/iris.jpg?format=webp;png&w=500&enhanced'
   import serge from '$lib/assets/team/serge.jpg?format=webp;png&w=1024&enhanced'
+  import MetaHead from '$lib/components/MetaHead.svelte'
+  import { contactMetadata } from '$lib/content/triarc-page-metadata'
 
   let firstName = '',
     lastName = '',
@@ -33,20 +35,20 @@
   }
 </script>
 
-<svelte:head>
-  <title>Kontakt - triarc-labs</title>
-</svelte:head>
+<MetaHead pageMetadata={contactMetadata}></MetaHead>
 
 <div class="min-h-screen flex flex-col">
-  <Hero title="Kontaktinfos" content="" image={heroImage} imageAlt="Triarc Contact Header" />
+  <GradientHero kicker="Über uns" title="Kontakt" content="Sprechen Sie mit uns über Ihre Ideen" />
 
   <div class="bg-white flex-shrink-0">
     <Container>
       <div class="bg-white py-16 md:py-24">
-        <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
+        <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 xl:grid-cols-5">
           <div class="max-w-2xl xl:col-span-2">
             <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Kontakt</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-500">Sprich mit uns über deine Ideen</p>
+            <p class="mt-6 text-lg leading-8 text-black">
+              Kontaktieren Sie uns für ein Gespräch über Ihre Ideen, Visionen und Ziele.
+            </p>
             <div class="grid grid-cols-1 gap-y-6 gap-x-8 mt-9">
               <div class="flex">
                 <div class="flex-shrink-0">
@@ -56,7 +58,7 @@
                     /></svg
                   >
                 </div>
-                <div class="ml-3 text-base text-gray-500">
+                <div class="ml-3 text-base text-black">
                   <a href="tel:+41789466951" class="decoration-red-triarc underline">+41 44 279 10 00</a>
                   <p class="mt-1">Mon-Fri 09:00 - 18:00</p>
                 </div>
@@ -69,7 +71,7 @@
                     /></svg
                   >
                 </div>
-                <div class="ml-3 text-base text-gray-500">
+                <div class="ml-3 text-base text-black">
                   <p>triarc laboratories ltd.</p>
                   <p>Neue Hard 14</p>
                   <p>8005 Zürich</p>
@@ -83,7 +85,7 @@
                     /></svg
                   >
                 </div>
-                <div class="ml-3 text-base text-gray-500">
+                <div class="ml-3 text-base text-black">
                   <div>
                     <a href="mailto:development@triarc-labs.com&subject=Kontakt" class="decoration-red-triarc underline"
                       >development@triarc-labs.com</a
@@ -101,7 +103,7 @@
                 </div>
                 <a
                   aria-label="Linkedin"
-                  class="ml-3 text-base text-gray-500"
+                  class="ml-3 text-base text-black"
                   href="https://www.linkedin.com/company/triarc-laboratories-ltd/mycompany/"
                 >
                   LinkedIn
@@ -119,9 +121,9 @@
                 />
               </div>
               <div class="max-w-xl flex-auto">
-                <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-700">Iris Zenegaglia</h3>
-                <p class="text-base leading-7 text-gray-500">Beratung Digitalisierung / Partner</p>
-                <p class="mt-6 text-base leading-7 text-gray-500">
+                <h3 class="text-lg font-semibold leading-8 tracking-tight text-black">Iris Zenegaglia</h3>
+                <p class="text-base leading-7 text-black">Beratung Digitalisierung / Partner</p>
+                <p class="mt-6 text-base leading-7 text-black">
                   Wenn Sie in Ihrer digitalen Transformation vorankommen möchten oder Unterstützung bei der Entwicklung
                   von Visionen und Strategien im digitalen Bereich wünschen, dann lade ich Sie herzlich dazu ein mich zu
                   kontaktieren.
@@ -132,7 +134,7 @@
                       <div class="flex-shrink-0 items-center justify-start flex w-6">
                         <a
                           aria-label="Linkedin"
-                          class="text-base text-gray-500"
+                          class="text-base text-black"
                           href="https://www.linkedin.com/in/iriszenegagliagloor/"
                         >
                           <svg
@@ -148,7 +150,7 @@
                       </div>
                       <a
                         href="mailto:iris@triarc-labs.com&subject=Kontakt"
-                        class="decoration-red-triarc underline text-base text-gray-500">iris@triarc-labs.com</a
+                        class="decoration-red-triarc underline text-base text-black">iris@triarc-labs.com</a
                       >
                     </div>
                   </li>
@@ -161,9 +163,9 @@
             <!--                <enhanced:img alt="Photo Dave Haug" src={dave} class="flex-none w-full rounded-2xl object-cover" />-->
             <!--              </div>-->
             <!--              <div class="max-w-xl flex-auto">-->
-            <!--                <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-700">Dave Haug</h3>-->
-            <!--                <p class="text-base leading-7 text-gray-500">Business Development</p>-->
-            <!--                <p class="mt-6 text-base leading-7 text-gray-500">-->
+            <!--                <h3 class="text-lg font-semibold leading-8 tracking-tight text-black">Dave Haug</h3>-->
+            <!--                <p class="text-base leading-7 text-black">Business Development</p>-->
+            <!--                <p class="mt-6 text-base leading-7 text-black">-->
             <!--                  Wollen Sie mehr über unsere Projekte und Lösungen, sowie darüber, wie wir eine individuell auf Ihre-->
             <!--                  Bedürfnisse zugeschnittene digitale Lösung bereitstellen können erfahren? Zögern Sie nicht, mich zu-->
             <!--                  kontaktieren.-->
@@ -174,7 +176,7 @@
             <!--                      <div class="flex-shrink-0 items-center justify-start flex w-6">-->
             <!--                        <a-->
             <!--                          aria-label="Linkedin"-->
-            <!--                          class="text-base text-gray-500"-->
+            <!--                          class="text-base text-black"-->
             <!--                          href="https://www.linkedin.com/in/dave-haug-442064a5/"-->
             <!--                        >-->
             <!--                          <svg-->
@@ -190,7 +192,7 @@
             <!--                      </div>-->
             <!--                      <a-->
             <!--                        href="mailto:dave@triarc-labs.com&subject=Kontakt"-->
-            <!--                        class="decoration-red-triarc underline text-base text-gray-500">dave@triarc-labs.com</a-->
+            <!--                        class="decoration-red-triarc underline text-base text-black">dave@triarc-labs.com</a-->
             <!--                      >-->
             <!--                    </div>-->
             <!--                  </li>-->
@@ -202,9 +204,9 @@
                 <enhanced:img class="aspect-[4/5] rounded-2xl object-cover" alt="Photo Serge Müller" src={serge} />
               </div>
               <div class="max-w-fit flex-auto">
-                <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-700">Serge Müller</h3>
-                <p class="text-base leading-7 text-gray-500">CEO</p>
-                <p class="mt-6 text-base leading-7 text-gray-500">
+                <h3 class="text-lg font-semibold leading-8 tracking-tight text-black">Serge Müller</h3>
+                <p class="text-base leading-7 text-black">CEO</p>
+                <p class="mt-6 text-base leading-7 text-black">
                   Sind Sie auf der Suche nach einem verlässlichen Sparring-Partner für Ihre digitale Entwicklungsreise?
                   Meine Mission ist es, Unternehmen wie Ihres aktiv dabei zu unterstützen. Von der ersten Idee bis in
                   den Betrieb. Lassen Sie uns die digitalen Möglichkeiten Ihres Unternehmens entfalten und gemeinsam
@@ -216,7 +218,7 @@
                       <div class="flex-shrink-0 items-center justify-start flex w-6">
                         <a
                           aria-label="Linkedin"
-                          class="text-base text-gray-500 justify-self-center self-center"
+                          class="text-base text-black justify-self-center self-center"
                           href="https://www.linkedin.com/in/serge-m%C3%BCller-568a0a134/"
                         >
                           <svg class="" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" height="1.125em"
@@ -228,7 +230,7 @@
                       </div>
                       <a
                         href="mailto:serge@triarc-labs.com&subject=Kontakt"
-                        class="decoration-red-triarc underline text-base text-gray-500">serge@triarc-labs.com</a
+                        class="decoration-red-triarc underline text-base text-black">serge@triarc-labs.com</a
                       >
                     </div>
                   </li>
@@ -253,16 +255,18 @@
 
   <hr />
 
-  <div class="bg-gray-100 flex-grow">
+  <div
+    class="relative overflow-hidden bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended flex-grow"
+  >
     <Container>
       <div class="py-16">
-        <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">Kontaktformular</h2>
-        <h3 class="text-lg mt-3 font-medium text-gray-500">
-          Interessiert? Trete in Kontakt, damit wir gemeinsam Lösungen schaffen
+        <h2 class="text-2xl font-bold text-white sm:text-3xl sm:tracking-tight">Kontaktformular</h2>
+        <h3 class="text-lg mt-3 font-medium text-white">
+          Interessiert? Lassen Sie uns ins Gespräch kommen und gemeinsam Lösungen entwickeln.
         </h3>
         <form action="#" method="POST" class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
           <div>
-            <label for="first-name" class="block text-sm font-medium text-gray-900">Vorname</label>
+            <label for="first-name" class="block text-sm font-medium text-white">Vorname</label>
             <div class="mt-1">
               <input
                 type="text"
@@ -275,7 +279,7 @@
             </div>
           </div>
           <div>
-            <label for="last-name" class="block text-sm font-medium text-gray-900">Nachname</label>
+            <label for="last-name" class="block text-sm font-medium text-white">Nachname</label>
             <div class="mt-1">
               <input
                 type="text"
@@ -288,7 +292,7 @@
             </div>
           </div>
           <div>
-            <label for="email" class="block text-sm font-medium text-gray-900">Email</label>
+            <label for="email" class="block text-sm font-medium text-white">Email</label>
             <div class="mt-1">
               <input
                 id="email"
@@ -302,8 +306,8 @@
           </div>
           <div>
             <div class="flex justify-between">
-              <label for="phone" class="block text-sm font-medium text-gray-900">Telefon</label>
-              <span id="phone-optional" class="text-sm text-gray-500">Optional</span>
+              <label for="phone" class="block text-sm font-medium text-white">Telefon</label>
+              <span id="phone-optional" class="text-sm text-white/80">Optional</span>
             </div>
             <div class="mt-1">
               <input
@@ -318,7 +322,7 @@
             </div>
           </div>
           <div class="sm:col-span-2">
-            <label for="subject" class="block text-sm font-medium text-gray-900">Betreff</label>
+            <label for="subject" class="block text-sm font-medium text-white">Betreff</label>
             <div class="mt-1">
               <input
                 type="text"
@@ -331,7 +335,7 @@
           </div>
           <div class="sm:col-span-2">
             <div class="flex justify-between">
-              <label for="message" class="block text-sm font-medium text-gray-900">Nachricht</label>
+              <label for="message" class="block text-sm font-medium text-white">Nachricht</label>
             </div>
             <div class="mt-1">
               <textarea
@@ -361,11 +365,11 @@
               on:click={send}
               disabled={sending || !firstName || !lastName || !subject || !message}
               type="button"
-              class="mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-blue-triarc disabled:bg-gray-500 px-6 py-3 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2 sm:w-auto"
+              class="mt-4 inline-flex items-center justify-center gap-x-1 rounded-full bg-white px-4 py-2 text-base font-medium text-black shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500 disabled:hover:translate-y-0 disabled:hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2"
             >
               {#if sending}
                 <svg
-                  class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                  class="animate-spin -ml-1 mr-3 h-5 w-5"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -393,6 +397,13 @@
                 >
               {:else}
                 Absenden
+                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
               {/if}
             </button>
           </div>
@@ -400,4 +411,6 @@
       </div>
     </Container>
   </div>
+
+  <FooterNoContact />
 </div>

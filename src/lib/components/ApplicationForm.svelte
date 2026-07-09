@@ -175,12 +175,14 @@
   }
 </script>
 
-<div class="alternating">
+<div class="alternating !bg-white">
   <div class="flex-grow" id="applicationForm">
     <Container>
       <div class="py-16">
-        <h2 class="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">Bewerbungsformular</h2>
-        <h3 class="text-lg mt-3 mb-8 font-medium text-gray-500">Interessiert? Bewirb dich direkt über das Formular</h3>
+        <h2 class="text-2xl font-bold text-gray-900">Bewerbungsformular</h2>
+        <h3 class="text-base leading-6 mt-3 mb-8 font-medium text-black">
+          Interessiert? Bewirb Dich direkt über das Formular
+        </h3>
         <form id="application-form" on:submit|preventDefault={sendMail} action="#" method="POST">
           <div class="space-y-12 pb-12">
             <div
@@ -313,7 +315,7 @@
                 <div class="col-span-full">
                   <div class="flex justify-between">
                     <label for="arbeitgeber" class="block text-sm font-medium text-gray-900"
-                      >Was liegt dir bei einem Arbeitgeber besonders am Herzen?</label
+                      >Was liegt Dir bei einem Arbeitgeber besonders am Herzen?</label
                     >
                     <span id="arbeitgeber-optional" class="text-sm text-gray-500">Optional</span>
                   </div>
@@ -370,7 +372,7 @@
                       /></svg
                     >
                     <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                      <span class="text-blue-triarc font-semibold">Zum hochladen klicken</span> oder Files ziehen
+                      <span class="text-blue-triarc font-semibold">Zum Hochladen klicken</span> oder Files ziehen
                     </p>
                     <p class="text-xs text-gray-500 dark:text-gray-400">PDF (Max. 10Mb)</p>
                   </Dropzone>
@@ -444,7 +446,7 @@
                   <div class="flex flex-col items-start gap-y-3">
                     <div class="flex md:pr-8">
                       <input
-                        class="self-center focus:border-blue-triarc focus:ring-blue-triarc shadow-sm py-2 px-2 rounded-md border-gray-600"
+                        class="self-center text-black focus:border-blue-triarc focus:ring-blue-triarc shadow-sm py-2 px-2 rounded-md border-gray-600"
                         required
                         bind:checked={conditionAccepted}
                         type="checkbox"
@@ -463,7 +465,7 @@
                     </div>
                     <div class="flex md:pr-8">
                       <input
-                        class="self-center focus:border-blue-triarc focus:ring-blue-triarc shadow-sm py-2 px-2 rounded-md border-gray-600"
+                        class="self-center text-black focus:border-blue-triarc focus:ring-blue-triarc shadow-sm py-2 px-2 rounded-md border-gray-600"
                         required
                         bind:checked={noAgencyAccepted}
                         type="checkbox"
@@ -473,7 +475,7 @@
                         for="condition-box"
                         class="inline pl-4 text-wrap text-s font-medium text-gray-900 decoration-red-triarc"
                       >
-                        Wir akzeptieren keine Bewerbungen über Personalvermittlern oder Headhuntern. Ich bestätige, dass
+                        Wir akzeptieren keine Bewerbungen über Personalvermittler oder Headhunter. Ich bestätige, dass
                         ich mich direkt bewerbe.
                       </label>
                     </div>
@@ -482,8 +484,8 @@
                     <!--{/if}-->
                     <button
                       type="submit"
-                      disabled={sent || sending}
-                      class="min-w-40 sm:w-auto mt-4 max-h-[50px] items-center inline-flex justify-center rounded-md border border-transparent bg-blue-triarc hover:bg-blue-triarc/90 disabled:bg-blue-triarc/30 px-6 py-3 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2"
+                      disabled={sent || sending || !conditionAccepted || !noAgencyAccepted}
+                      class="mt-4 inline-flex items-center justify-center gap-x-1 rounded-full bg-black px-4 py-2 text-base font-medium text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg disabled:cursor-not-allowed disabled:bg-gray-400 disabled:hover:translate-y-0 disabled:hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-triarc focus:ring-offset-2"
                     >
                       {#if sending}
                         <svg
@@ -515,6 +517,13 @@
                         >
                       {:else}
                         Absenden
+                        <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                          <path
+                            fill-rule="evenodd"
+                            d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
                       {/if}
                     </button>
                   </div>
@@ -542,7 +551,7 @@
                   <div class="ml-3">
                     <p class="text-sm font-medium text-green-800">
                       Deine Bewerbung wurde erfolgreich übermittelt. Du solltest in Kürze eine Bestätigungs-E-Mail
-                      erhalten. Wir melden uns so rasch wie möglich bei dir.
+                      erhalten. Wir melden uns so rasch wie möglich bei Dir.
                     </p>
                   </div>
                 </div>

@@ -1,13 +1,36 @@
 import type { Picture } from 'imagetools-core'
 
+export interface GhostImage {
+  srcset: string
+  sizes: string
+  src: string
+  alt: string
+}
+
 export interface BlockContent {
   title?: string
+  /** Render the title as a large section heading (see TitleBlock). */
+  largeTitle?: boolean
+  /** Drop the block's top/bottom padding (see Block). */
+  noPaddingY?: boolean
+  /** Use reduced vertical padding (e.g. compact listing cards) instead of the large default (see Block). */
+  compactPaddingY?: boolean
+  /** Force the image to the right on desktop, overriding the alternating odd/even layout (see Block). */
+  imageRight?: boolean
+  /** Give the section the header gradient background (see Block). */
+  gradientBackground?: boolean
+  /** Custom background utility classes for the section wrapper (see Block). */
+  background?: string
+  /** Render title/text/steps in white (for dark/gradient backgrounds). */
+  light?: boolean
   content?: string
   formReference?: string
   footer?: string
   link?: LinkContent
   image?: ImageContent
   bulletPoints?: string[]
+  /** Thematically grouped bullet points, each with its own sub-heading. */
+  bulletGroups?: BulletGroup[]
   cards?: Card[]
   steps?: Step[]
   items?: Item[]
@@ -41,6 +64,8 @@ export interface MappedPost {
   footer: string
 }
 
+export type TriarcQuoteHighlight = 'green' | 'blue' | 'red' | 'white'
+
 export interface Quote {
   content: string
   person: string
@@ -50,7 +75,7 @@ export interface Quote {
   personTitle: string
   linkedin?: string
   email?: string
-  highlight?: 'green' | 'blue' | 'red'
+  highlight?: TriarcQuoteHighlight
 }
 
 export interface Testimonial {
@@ -80,6 +105,11 @@ export interface Item {
   content: string
 }
 
+export interface BulletGroup {
+  title: string
+  bulletPoints: string[]
+}
+
 export interface Card {
   title: string
   content: string
@@ -94,7 +124,10 @@ export interface LinkContent {
 export interface JobDetails {
   currentlyHiring: boolean
   jobName: string
-  jobPensum: string
+  /** Optional — listings without a fixed workload (e.g. unsolicited applications) omit this. */
+  jobPensum?: string
+  /** Hide the "(m/w/d) …" subtitle and the hiring badge on the listing card (e.g. unsolicited applications). */
+  hideMeta?: boolean
 }
 
 export interface VideoContent {
@@ -147,4 +180,81 @@ export interface NavItemLink {
   description: string
   path: string
 }
+
 export type NavItem = NavItemHeading | NavItemLink
+
+export interface TriarcSectionDefinition {
+  prefix: string
+  title: string
+  description: string
+  iconSource: string
+  sectionLink: string
+}
+
+export interface TriarcLandingPageText {
+  content: Omit<TriarcSectionDefinition, 'iconSource' | 'sectionLink'>
+  strategy: TriarcSectionDefinition
+  operations: TriarcSectionDefinition
+  future: TriarcSectionDefinition
+}
+
+export type GradientColor = 'green-blue' | 'blue-red' | 'red-green' | 'green-red' | 'red-blue'
+export type TriarcColor = 'green' | 'blue' | 'red'
+
+export interface TriarcGradientDivider {
+  title: string
+  content: string
+  color: GradientColor
+  linksTo: string
+  buttonLabel: string
+}
+
+export interface TriarcSubsectionDefinition {
+  main: Omit<TriarcSectionDefinition, 'sectionLink' | 'prefix'>
+  projects: TriarcProjectContent[]
+}
+
+export interface MissionBlock {
+  content: BlockContent
+  divider?: TriarcGradientDivider
+}
+
+export interface TriarcProjectContent {
+  image: GhostImage
+  content: Omit<TriarcSectionDefinition, 'iconSource'>
+}
+
+export interface ReferencePillar {
+  name: string
+  slug: string
+}
+
+export interface ReferenceProjectCard {
+  slug: string
+  title: string
+  teaser: string
+  image: GhostImage
+  pillars: ReferencePillar[]
+}
+
+export interface TriarcProjectDetailContent {
+  title: string
+  description: string
+  image: GhostImage
+  secondaryImage?: GhostImage
+  htmlContent: string
+  icons: {
+    iconSource: string
+    iconColor: TriarcColor
+  }[]
+  gradient?: GradientColor
+}
+
+export interface TriarcPageMetadata {
+  title: string
+  metaTitle?: string
+  description: string
+  ogImage?: string
+  /** Canonical URL – falls abweichend von der aktuellen Seiten-URL */
+  canonicalUrl?: string
+}
