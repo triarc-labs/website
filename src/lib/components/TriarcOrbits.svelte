@@ -67,6 +67,10 @@
   let pointerX = 0
   let pointerY = 0
   let pointerActive = false
+  // Gate: the animation loop only starts once the browser is idle, so the heavy
+  // per-frame canvas work never competes with the initial paint (LCP/TBT).
+  let started = false
+  let startHandle: number | ReturnType<typeof setTimeout> = 0
 
   $: activeTarget = activeColor
 
@@ -244,10 +248,40 @@
   }
 
   function scheduleFrame() {
-    if (reducedMotion || !inView || !pageVisible || rafId) {
+    if (reducedMotion || !started || !inView || !pageVisible || rafId) {
       return
     }
     rafId = requestAnimationFrame(step)
+  }
+
+  // Show one static frame right away, then kick off the animation loop once the
+  // main thread is idle. Deferring keeps the critical-path work off the CPU
+  // during load, which is what Lighthouse's TBT/LCP penalise.
+  function startWhenIdle() {
+    drawStatic()
+    const begin = () => {
+      startHandle = 0
+      started = true
+      lastTime = 0
+      scheduleFrame()
+    }
+    if (typeof window.requestIdleCallback === 'function') {
+      startHandle = window.requestIdleCallback(begin, { timeout: 2000 })
+    } else {
+      startHandle = setTimeout(begin, 300)
+    }
+  }
+
+  function cancelIdleStart() {
+    if (!startHandle) {
+      return
+    }
+    if (typeof window.cancelIdleCallback === 'function') {
+      window.cancelIdleCallback(startHandle as number)
+    } else {
+      clearTimeout(startHandle as ReturnType<typeof setTimeout>)
+    }
+    startHandle = 0
   }
 
   function stopFrames() {
@@ -331,10 +365,11 @@
       window.addEventListener('pointermove', onPointerMove, { passive: true })
       window.addEventListener('pointerdown', onPointerDown, { passive: true })
       window.addEventListener('blur', onPointerLeave)
-      scheduleFrame()
+      startWhenIdle()
     }
 
     return () => {
+      cancelIdleStart()
       stopFrames()
       resizeObserver.disconnect()
       intersectionObserver.disconnect()

@@ -57,6 +57,8 @@
                 <img
                   src={triarcLogo}
                   alt={landingContent.content.title}
+                  width="1292"
+                  height="168"
                   class="max-h-12 md:max-h-16 w-auto max-w-full"
                 />
               </h1>

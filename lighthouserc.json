@@ -4,7 +4,7 @@
       "startServerCommand": "npm run preview -- --port 4173",
       "startServerReadyPattern": "localhost:4173",
       "url": ["http://localhost:4173/", "http://localhost:4173/references", "http://localhost:4173/custom-software"],
-      "numberOfRuns": 1
+      "numberOfRuns": 3
     },
     "assert": {
       "assertions": {
