@@ -46,7 +46,7 @@
            end of the second card's content, at every width. -->
       <div class="pt-16 lg:pt-28 md:grid md:grid-cols-2 md:gap-8 xl:grid-cols-3 lg:-mx-16">
         <div class="md:col-span-2">
-          <div class="flex flex-col mx-auto max-w-[832px] px-6">
+          <div class="flex flex-col mx-auto max-w-[832px] md:px-6">
           <Reveal y={16}>
             <span class="flex items-center text-lg">
               {landingContent.content.prefix}
@@ -54,7 +54,11 @@
           </Reveal>
           <Reveal y={16} delay={100}>
             <h1 class="py-6">
-              <img src={triarcLogo} alt={landingContent.content.title} class="h-12 md:h-16 w-auto" />
+              <img
+                src={triarcLogo}
+                alt={landingContent.content.title}
+                class="max-h-12 md:max-h-16 w-auto max-w-full"
+              />
             </h1>
           </Reveal>
           <Reveal y={16} delay={200}>
