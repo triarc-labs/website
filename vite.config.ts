@@ -7,6 +7,7 @@ import { defineConfig } from 'vite'
 const BUILD_TIME = new Date().toISOString()
 
 const config: UserConfig = {
+  server: process.env.PORT ? { port: Number(process.env.PORT), strictPort: true } : undefined,
   plugins: [enhancedImages(), imagetools(), sveltekit()],
   ssr: {
     noExternal: Object.keys({}),
