@@ -10,7 +10,7 @@
 
 <div class="flex flex-col pb-16 lg:pb-32">
   <Container class="justify-center items-center text-center">
-    <span class="pt-16 lg:pt-32 pb-10 font-semibold font-sans text-7xl text-black">
+    <span class="pt-16 lg:pt-32 pb-10 font-semibold font-sans text-5xl sm:text-6xl md:text-7xl text-black">
       Together
       <span class="mx-2 bg-gradient-to-r from-red-triarc via-green-triarc to-blue-triarc bg-clip-text text-transparent">
         you
