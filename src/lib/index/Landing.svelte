@@ -38,11 +38,15 @@
   <TriarcOrbits {activeColor} focusX={0.72} focusY={0.6} portraitCrest={0.22} />
   <div class="relative">
     <Container>
-      <!-- On lg+ the header text lives in the same bleed + 3-col grid as the cards below, spanning
-           columns 1–2 with the cards' p-6 inset. This left-aligns the kicker, logo, lead & buttons
-           with the first card's content and lets the lead run to the end of the second card's content. -->
-      <div class="pt-16 lg:pt-28 lg:-mx-16 lg:grid lg:grid-cols-3 lg:gap-8">
-        <div class="flex flex-col lg:col-span-2 lg:px-6">
+      <!-- The header text sits in the exact same responsive grid + bleed as the cards below and
+           spans columns 1–2. Cards 1 & 2 (each max-w-400 + gap-8) always form a centred 832px block
+           within that area — because card 1 is justify-end and card 2 justify-start — so mirroring
+           that centred block (max-w-[832px] mx-auto) with the cards' p-6 inset keeps the kicker,
+           logo, lead & buttons aligned with the first card's content and lets the lead run to the
+           end of the second card's content, at every width. -->
+      <div class="pt-16 lg:pt-28 md:grid md:grid-cols-2 md:gap-8 xl:grid-cols-3 lg:-mx-16">
+        <div class="md:col-span-2">
+          <div class="flex flex-col mx-auto max-w-[832px] px-6">
           <Reveal y={16}>
             <span class="flex items-center text-lg">
               {landingContent.content.prefix}
@@ -74,6 +78,7 @@
             </a>
             </div>
           </Reveal>
+          </div>
         </div>
       </div>
       <div class="grid grid-cols-1 justify-items-center gap-8 pb-28 md:grid-cols-2 xl:grid-cols-3 lg:-mx-16">
