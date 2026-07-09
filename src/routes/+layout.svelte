@@ -504,12 +504,11 @@
 
   /* === Mobile fullscreen menu === */
   .mobile-menu {
-    @apply fixed inset-x-0 top-0 z-50;
-    /* Cover the full screen height, including the area behind the mobile browser chrome.
-       `inset-0` alone stops at the small viewport, leaving the gradient cut off at the bottom;
-       the large-viewport height (lvh) makes it run the whole screen height. */
-    height: 100vh;
-    height: 100lvh;
+    /* Pin all four edges so the overlay fills the fixed containing block. On iOS Safari that
+       block is the layout (large) viewport, so `bottom: 0` sits behind the collapsible bottom
+       browser bar — the gradient runs the full screen height and behind the chrome instead of
+       being cut off above it. `100dvh`/`100lvh` on a top-anchored element proved unreliable here. */
+    @apply fixed inset-0 z-50;
     visibility: hidden;
     transition: visibility 0s linear 450ms;
   }
