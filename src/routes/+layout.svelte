@@ -331,10 +331,17 @@
     aria-label="Navigation"
     aria-hidden={!menuOpen}
   >
-    <div
-      class="mobile-menu__panel bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended"
-    >
-      <div class="flex flex-shrink-0 items-center justify-between px-8 pb-2 pt-5">
+    <div class="mobile-menu__panel">
+      <!-- Gradient sits on its own layer. iOS Safari does not paint a gradient background-image
+           into the bottom safe-area band under viewport-fit=cover, so the solid background-color
+           on .mobile-menu (the gradient's bottom colour) fills behind the URL bar instead. -->
+      <div
+        class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-blue-triarc-blended via-green-triarc-blended to-red-triarc-blended"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="relative flex flex-shrink-0 items-center justify-between px-8 pb-2 pt-[calc(1.25rem+env(safe-area-inset-top))]"
+      >
         <a href="/" on:click={hideMenu} aria-label="Zur Startseite">
           <img src={logoNegative} alt="triarc laboratories ltd" class="h-8" height="32" />
         </a>
@@ -355,7 +362,7 @@
           </svg>
         </button>
       </div>
-      <nav class="flex-grow overflow-y-auto px-8 pt-2 pb-[calc(3rem+env(safe-area-inset-bottom))]">
+      <nav class="relative flex-grow overflow-y-auto px-8 pt-2 pb-[calc(3rem+env(safe-area-inset-bottom))]">
         {#each navItems as navItem, groupIndex}
           <div class="mobile-menu__group" style="--stagger: {groupIndex}">
             {#if navItem.type === 'link'}
@@ -453,11 +460,10 @@
   /*}*/
 
   #page .mobile-bar {
-    @apply h-16;
-  }
-
-  #page .mobile-bar {
-    @apply sticky top-0;
+    /* min-height + safe-area top padding so the hamburger/title clear the status bar and Dynamic
+       Island once `viewport-fit=cover` lets the bar extend edge-to-edge behind the chrome. */
+    @apply sticky top-0 min-h-[4rem];
+    padding-top: calc(0.5rem + env(safe-area-inset-top));
   }
 
   /* Horizontal padding mirrors Container so the nav aligns with the page content edges */
@@ -504,26 +510,28 @@
 
   /* === Mobile fullscreen menu === */
   .mobile-menu {
-    /* Pin all four edges so the overlay fills the fixed containing block. On iOS Safari that
-       block is the layout (large) viewport, so `bottom: 0` sits behind the collapsible bottom
-       browser bar — the gradient runs the full screen height and behind the chrome instead of
-       being cut off above it. `100dvh`/`100lvh` on a top-anchored element proved unreliable here. */
+    /* Fills the whole screen, including behind iOS Safari's status bar and bottom URL bar. This
+       only reaches behind the chrome because the viewport meta opts into `viewport-fit=cover`.
+       The clip-path reveal and the solid background-color both live here (on the fixed element):
+       iOS only paints the bottom safe-area band for a fixed element with a solid background-color,
+       so bg-blue-triarc-blended (the gradient's bottom colour) shows behind the URL bar while the
+       gradient layer covers the rest. Inner content keeps `env(safe-area-inset-*)` padding. */
     @apply fixed inset-0 z-50;
+    background-color: #004778;
+    clip-path: circle(0px at 44px 32px);
     visibility: hidden;
-    transition: visibility 0s linear 450ms;
+    transition:
+      clip-path 450ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      visibility 0s linear 450ms;
   }
   .mobile-menu--open {
+    clip-path: circle(150% at 44px 32px);
     visibility: visible;
     transition-delay: 0s;
   }
 
   .mobile-menu__panel {
     @apply absolute inset-0 flex flex-col text-white;
-    clip-path: circle(0px at 44px 32px);
-    transition: clip-path 450ms cubic-bezier(0.22, 0.61, 0.36, 1);
-  }
-  .mobile-menu--open .mobile-menu__panel {
-    clip-path: circle(150% at 44px 32px);
   }
 
   .mobile-menu__group {
@@ -541,22 +549,21 @@
 
   @media (prefers-reduced-motion: reduce) {
     .mobile-menu,
-    .mobile-menu__panel,
     .mobile-menu__group {
       transition: none;
     }
-    .mobile-menu__panel {
+    .mobile-menu {
       clip-path: none;
       opacity: 0;
     }
-    .mobile-menu--open .mobile-menu__panel {
+    .mobile-menu--open {
       opacity: 1;
     }
     .mobile-menu__group {
       opacity: 1;
       transform: none;
     }
-    .mobile-menu:not(.mobile-menu--open) .mobile-menu__panel {
+    .mobile-menu:not(.mobile-menu--open) {
       opacity: 0;
     }
   }
