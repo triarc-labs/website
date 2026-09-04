@@ -80,7 +80,8 @@
     )
   }
 
-  const jobPostings = JobPostings
+  // Only advertise open positions to search engines (JobPosting structured data).
+  const jobPostings = JobPostings.filter((posting) => posting.open)
 
   let listings: DetailedJobListing[] = DetailedJobListings.filter(
     (listing) => listing.BasicJobInfo.jobDetails?.currentlyHiring

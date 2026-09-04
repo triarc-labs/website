@@ -82,13 +82,18 @@
     >
       <span>© {year} triarc laboratories ltd.</span>
       <span>Keine Cookies aus Überzeugung</span>
-      <a
-        href="https://www.swissmadesoftware.org/en/companies/triarc-laboratories-ltd./home.html"
-        rel="noreferrer"
-        target="_blank"
-      >
-        <img src="/logos/swiss-logo.png" width="160" height="24" alt="swissmadesoftware" />
-      </a>
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+        <a
+          href="https://www.swissmadesoftware.org/en/companies/triarc-laboratories-ltd./home.html"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <img src="/logos/swiss-logo.png" width="160" height="24" alt="swissmadesoftware" />
+        </a>
+        <a href="https://www.swissai.ch/" rel="noreferrer" target="_blank">
+          <img src="/logos/swissai-logo.svg" width="97" height="20" alt="swissai" />
+        </a>
+      </div>
     </div>
   </Container>
 </footer>

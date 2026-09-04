@@ -16,7 +16,7 @@ export const JobPostings: JobPosting[] = [
       'Als Senior begleitest Du Projekte vom Requirements-Engineering bis in den Betrieb. Du bist der Vermittler zwischen dem Kunden und Deinen Entwickler-KollegInnen. Und Du machst das nicht zum ersten Mal. ',
     claim: 'Senior Software Engineer',
     img: jobListingImage,
-    open: true,
+    open: false,
     responsibilities:
       'sind so breit gefächert und abwechslungsreich wie die Arbeit, die Dich bei uns erwartet: vom Design bis zur Lösungsfindung ist alles dabei, individuell angepasst auf unsere branchenübergreifenden Kunden. In unserem Team aus den qualifiziertesten Entwicklern profitierst Du von unserer jahrelangen Erfahrung, und wir von Deiner. Durch die agile Entwicklung nach SCRUM arbeiten wir effizient und motiviert. Du arbeitest an Web- und Mobile-Anwendungen (inkl. Backend) und wendest dabei Clean Code an. Du bist vertraut mit unserem aktuell eingesetzten <a class="underline" href="/#technology">Stack</a>.',
     skills: [
@@ -183,7 +183,7 @@ export const DetailedJobListings: {
     slug: 'senior',
     hasTechnologySection: true,
     BasicJobInfo: {
-      jobDetails: { currentlyHiring: true, jobName: 'Senior Software Engineer', jobPensum: '60-100%' },
+      jobDetails: { currentlyHiring: false, jobName: 'Senior Software Engineer', jobPensum: '60-100%' },
       title: 'Senior Software Engineer',
       content:
         'Als Senior begleitest Du Projekte vom Requirements-Engineering bis in den Betrieb. Du bist der Vermittler zwischen dem Kunden und Deinen Entwickler-KollegInnen. Und Du machst das nicht zum ersten Mal. Du kannst im Team unterstützen, wo es an was fehlt.',
