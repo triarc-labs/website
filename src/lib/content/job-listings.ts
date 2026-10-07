@@ -132,7 +132,7 @@ export const DetailedJobListings: {
     slug: 'professional',
     hasTechnologySection: true,
     BasicJobInfo: {
-      jobDetails: { currentlyHiring: true, jobName: 'Professional Software Engineer', jobPensum: '60-100%' },
+      jobDetails: { currentlyHiring: false, jobName: 'Professional Software Engineer', jobPensum: '60-100%' },
       title: 'Professional Software Engineer',
       content:
         'Als Professional hast Du bereits mehrjährige Erfahrung in Softwareentwicklungsprojekten. Dir fehlen jedoch noch das Know-How zu einigen Technologien in unserem Stack. Du bist selbstständig, übernimmst Verantwortung für Deine Aufgaben und schätzt den direkten Austausch mit unseren Kunden.',
