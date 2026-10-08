@@ -15,7 +15,8 @@ const config = {
     // By default, `npm run build` will create a standard Node app.
     // You can create optimized builds for different platforms by
     // specifying a different adapter
-    adapter: vercel(),
+    // adapter-vercel 4 only infers runtimes up to Node 20; pin it to match the Vercel project setting.
+    adapter: vercel({ runtime: 'nodejs24.x' }),
   },
 }
 
