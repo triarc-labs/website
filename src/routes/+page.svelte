@@ -1,6 +1,7 @@
 <script lang="ts">
   import Landing from '$lib/index/Landing.svelte'
   import LandingMission from '$lib/index/LandingMission.svelte'
+  import CustomerCarousel from '$lib/index/CustomerCarousel.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
   import { landingMetadata } from '$lib/content/triarc-page-metadata'
 
@@ -42,3 +43,6 @@
 
 <Landing></Landing>
 <LandingMission></LandingMission>
+<!-- Keeps the end of the page clear of the fixed logo bar -->
+<div class="h-16" aria-hidden="true"></div>
+<CustomerCarousel />
