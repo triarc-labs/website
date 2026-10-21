@@ -1,6 +1,7 @@
 <script lang="ts">
   import Landing from '$lib/index/Landing.svelte'
   import LandingMission from '$lib/index/LandingMission.svelte'
+  import CustomerCarousel from '$lib/index/CustomerCarousel.svelte'
   import MetaHead from '$lib/components/MetaHead.svelte'
   import { landingMetadata } from '$lib/content/triarc-page-metadata'
 
@@ -41,4 +42,5 @@
 </svelte:head>
 
 <Landing></Landing>
+<CustomerCarousel />
 <LandingMission></LandingMission>
