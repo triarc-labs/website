@@ -68,8 +68,7 @@
 
 <style lang="postcss">
   .customer-carousel {
-    @apply fixed bottom-0 inset-x-0 z-40 overflow-hidden bg-white shadow-2xl;
-    padding-bottom: env(safe-area-inset-bottom);
+    @apply overflow-hidden bg-white pt-3;
     mask-image: linear-gradient(to right, transparent, #000 64px, #000 calc(100% - 64px), transparent);
   }
 

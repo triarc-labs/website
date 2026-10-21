@@ -42,7 +42,5 @@
 </svelte:head>
 
 <Landing></Landing>
-<LandingMission></LandingMission>
-<!-- Keeps the end of the page clear of the fixed logo bar -->
-<div class="h-16" aria-hidden="true"></div>
 <CustomerCarousel />
+<LandingMission></LandingMission>
